@@ -1,0 +1,173 @@
+{
+  "users": [
+    {
+      "slug": "max-kern",
+      "user_id": "U0AAWACN0DB",
+      "name": "Max Kern",
+      "title": "Product Engineer",
+      "email": "max@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-02/10839438955604_53db9fbea1fc0af4da98_original.jpg"
+    },
+    {
+      "slug": "micaela-banuelos",
+      "user_id": "U0B12GKT518",
+      "name": "Micaela Banuelos",
+      "title": "",
+      "email": "micaela.banuelos@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-04/11081206191376_74798604e67f43a1b8e9_original.jpg"
+    },
+    {
+      "slug": "michelle-austreich",
+      "user_id": "U09LQ01LFST",
+      "name": "Michelle Austreich",
+      "title": "Talent",
+      "email": "michelle@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-19/10939384051347_df9bc55bf6b6eaf35560_original.png"
+    },
+    {
+      "slug": "midhush-karthic",
+      "user_id": "U0A224LQJ67",
+      "name": "Midhush Karthic",
+      "title": "",
+      "email": "midhush@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-02/10864288780048_21a79386c06d527604cb_original.jpg"
+    },
+    {
+      "slug": "nate-moss",
+      "user_id": "U0B0JR1SH1T",
+      "name": "Nate Moss",
+      "title": "Regional Sales Director, Commercial",
+      "email": "nate.moss@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-01/11043373865332_3fead659263c6052c15b_original.jpg"
+    },
+    {
+      "slug": "nate-sandler",
+      "user_id": "U0AS30K5FB8",
+      "name": "Nate Sandler",
+      "title": "Regional Sales Director, West",
+      "email": "nate.sandler@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-13/10902286311301_4894a8a207d05a5fa1a9_original.jpg"
+    },
+    {
+      "slug": "nate-selvidge",
+      "user_id": "U0A4GDV6X4G",
+      "name": "Nate Selvidge",
+      "title": "Product Engineer",
+      "email": "nate.selvidge@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2025-12-15/10123096186485_17a76452eff673e4eaa8_original.jpg"
+    },
+    {
+      "slug": "nick-slavin",
+      "user_id": "U0A1CG2KP38",
+      "name": "Nick Slavin",
+      "title": "Solutions Engineering",
+      "email": "nick.slavin@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2025-12-09/10085880146582_68caae405f4cd5b16efe_original.jpg"
+    },
+    {
+      "slug": "parker-henderson",
+      "user_id": "U09N06TGHPS",
+      "name": "Parker Henderson",
+      "title": "Design engineer",
+      "email": "parker@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-01/10827105281525_4ec30e523da58bdb94d3_original.png"
+    },
+    {
+      "slug": "paul-tancre",
+      "user_id": "U0B164KA204",
+      "name": "Paul Tancre",
+      "title": "Developer Support Manager (EMEA)",
+      "email": "paul.tancre@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-04/11056988601844_cae70018aaf374915437_original.jpg"
+    },
+    {
+      "slug": "raman-hundal",
+      "user_id": "U0AA20FPCAC",
+      "name": "Raman Hundal",
+      "title": "Growth Marketing",
+      "email": "raman@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-01/10842007808609_5025ef774589cc032719_original.png"
+    },
+    {
+      "slug": "ronald-koh",
+      "user_id": "U0B164LDD6Y",
+      "name": "Ronald Koh",
+      "title": "Developer Support Engineer",
+      "email": "ronald.koh@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-04/11052674834118_e3c396ad1a1ff4c211fb_original.png"
+    },
+    {
+      "slug": "rose-wijnberg",
+      "user_id": "U0AF0615H6E",
+      "name": "Rose Wijnberg",
+      "title": "Field Marketing EMEA",
+      "email": "rose.wijnberg@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-02-17/10523912526965_7d89687c05c552164058_original.jpg"
+    },
+    {
+      "slug": "ross-stapleton-gray",
+      "user_id": "U0A2M8286SV",
+      "name": "Ross Stapleton-Gray",
+      "title": "Security and Privacy Lead",
+      "email": "ross@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-01/10858630943168_6446110f00265b88cf3a_original.jpg"
+    },
+    {
+      "slug": "scott-anderson",
+      "user_id": "U0AFLV1AU7N",
+      "name": "Scott Anderson",
+      "title": "",
+      "email": "scott@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-01/10828910158050_599bc9d549a1ad579029_original.jpg"
+    },
+    {
+      "slug": "spencer-seale",
+      "user_id": "U0B2CS7D6KF",
+      "name": "Spencer Seale",
+      "title": "Solutions Engineer",
+      "email": "spencer.seale@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-11/11105084714598_076981fb04f8cf6a3aab_original.png"
+    },
+    {
+      "slug": "steve-duras",
+      "user_id": "U0ADZ5CUCSV",
+      "name": "Steve Duras",
+      "title": "",
+      "email": "steve.duras@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-02-10/10481958958450_9b124c919dd06f4d8369_original.png"
+    },
+    {
+      "slug": "thomas-vaeth",
+      "user_id": "U0B0322SX5F",
+      "name": "Thomas Vaeth",
+      "title": "",
+      "email": "thomas.vaeth@braintrustdata.com",
+      "photo_url": null,
+      "photo_skipped": "default gravatar"
+    },
+    {
+      "slug": "yash-vedanaparti",
+      "user_id": "U0AAYFZK3D0",
+      "name": "Yash Vedanaparti",
+      "title": "AI Engineer",
+      "email": "yash@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-04-20/10957228554564_e44d6037d3138f642963_original.jpg"
+    },
+    {
+      "slug": "zach-hamilton",
+      "user_id": "U0B2CS8FRJR",
+      "name": "Zach Hamilton",
+      "title": "",
+      "email": "zach.hamilton@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2026-05-11/11104112264385_b876f9beb414f4dfbcdd_original.png"
+    },
+    {
+      "slug": "zach-henkhaus",
+      "user_id": "U0A25N22KV5",
+      "name": "Zach Henkhaus",
+      "title": "Sr Account Executive",
+      "email": "zach.henkhaus@braintrustdata.com",
+      "photo_url": "https://avatars.slack-edge.com/2025-12-09/10102158894705_a979ff793623062b0037_original.jpg"
+    }
+  ]
+}

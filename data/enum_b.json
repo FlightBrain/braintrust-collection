@@ -1,0 +1,114 @@
+[
+  {
+    "slug": "cedric-h",
+    "name": "Cedric Halber",
+    "user_id": "U0AKYLPJUFJ",
+    "role": "Python SDK, bt cli",
+    "email": "cedric@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-02/10829316278611_e13f5d2869fbe8d6358f_original.png"
+  },
+  {
+    "slug": "christina-c",
+    "name": "Christina Crum",
+    "user_id": "U0ABYKAFW8M",
+    "role": "",
+    "email": "christina.crum@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-16/10933839204454_fdc422bd9fa2e471612b_original.png"
+  },
+  {
+    "slug": "colin-b",
+    "name": "Colin Bennett",
+    "user_id": "U0A3SFT8JR2",
+    "role": "",
+    "email": "colin.bennett@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2025-12-17/10146579498996_d2518c2e4bf73aa42913_original.png"
+  },
+  {
+    "slug": "curtis-g",
+    "name": "Curtis Galione",
+    "user_id": "U09P17J36S0",
+    "role": "Solutions Engineer",
+    "email": "curtis@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-02/10837138981378_d80c8f74f87e17580b6a_original.png"
+  },
+  {
+    "slug": "dan-diemer",
+    "name": "Dan Diemer",
+    "user_id": "U0AJNUTJLKZ",
+    "role": "Solutions Engineer",
+    "email": "dan.diemer@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-03-09/10661841694850_3e7f0ea466eaf15e36c1_original.png"
+  },
+  {
+    "slug": "danielle-n",
+    "name": "Danielle Norton",
+    "user_id": "U09Q2J6SM8C",
+    "role": "Enterprise Account Executive",
+    "email": "danielle.norton@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-01-16/10344233953968_60508b3bf1cbc5bc03ed_original.png"
+  },
+  {
+    "slug": "daniel-nguyen",
+    "name": "Daniel Nguyen",
+    "user_id": "U0A830V27A6",
+    "role": "design engineer",
+    "email": "daniel.nguyen@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-01/10858152562928_966da63077461d2adbc4_original.jpg"
+  },
+  {
+    "slug": "darryl-w",
+    "name": "Darryl Wong",
+    "user_id": "U0ALWCQDH7C",
+    "role": "",
+    "email": "darryl.wong@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-02/10817438883383_b736015a2af30b9a021e_original.jpg"
+  },
+  {
+    "slug": "david-aguilera",
+    "name": "David Aguilera",
+    "user_id": "U0AC0JKU2F4",
+    "role": "Commercial Account Executive",
+    "email": "david.aguilera@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-02-02/10421505874325_e39c708333fa23a27c51_original.jpg"
+  },
+  {
+    "slug": "david-case",
+    "name": "David Case",
+    "user_id": "U09118T5LDQ",
+    "role": "Strategic Account Exec",
+    "email": "david.case@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2025-06-11/9018717587975_b64b4cf1d5a421797ba1_original.jpg"
+  },
+  {
+    "slug": "dominic-s",
+    "name": "Dominic Suares",
+    "user_id": "U0ALR3BL205",
+    "role": "",
+    "email": "dominic.suares@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-03-18/10756552604480_ce21175e6e10d3c7f52a_original.jpg"
+  },
+  {
+    "slug": "elijah-k",
+    "name": "Elijah Kurien",
+    "user_id": "U0AJHS88L5N",
+    "role": "Code Monkey",
+    "email": "elijah@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-01/10831052679874_bf58056fe0e6e021f75a_original.jpg"
+  },
+  {
+    "slug": "eric-k",
+    "name": "Eric Kontargyris",
+    "user_id": "U0A8MGQTB7D",
+    "role": "Solutions Engineer",
+    "email": "eric.kontargyris@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-15/10921805649218_3b60876fc7bef6a81307_original.png"
+  },
+  {
+    "slug": "erik-w",
+    "name": "Erik Weathers",
+    "user_id": "U0ATS1XEW2Y",
+    "role": "",
+    "email": "erik.weathers@braintrustdata.com",
+    "photo": "https://avatars.slack-edge.com/2026-04-20/10953397512790_46cfb94840e3b8dd1a3d_original.jpg"
+  }
+]

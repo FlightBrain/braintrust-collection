@@ -544,7 +544,7 @@
   </div>
   <div class="nav-meta">
     <span><span class="dot">●</span> COLLECTION: <span id="nav-collection">BT-1</span></span>
-    <span>SUPPLY: <span id="nav-supply">077</span></span>
+    <span>SUPPLY: <span id="nav-supply">161</span></span>
     <span>NETWORK: WEST</span>
   </div>
 </nav>
@@ -555,28 +555,31 @@
     <span id="hero-tag-label">GENESIS · CLASS OF 2026</span>
   </div>
   <h1>The Sales Floor<br><span class="accent" id="hero-headline">on-chain</span>.</h1>
-  <p class="hero-sub" id="hero-sub">A three-volume drop of the West Coast sales floor at Braintrust. 15 portraits, 3 editions, 45 mints. Hover any card to flip and reveal its traits.</p>
+  <p class="hero-sub" id="hero-sub">161 hand-pixeled portraits of Braintrust. Genesis edition live. Galaxy and Cyberpunk editions coming soon. Hover any card to flip and reveal its traits.</p>
 
   <div class="themes" role="tablist">
     <button class="theme-btn active" data-theme="corporate" data-color="#00FF94" data-color2="#00E5FF"
             data-label="GENESIS · CLASS OF 2026" data-collection="BT-1" data-headline="on-chain"
             data-vol-tag="VOLUME I · GENESIS" data-vol-title="Corporate Mint"
             data-vol-desc="The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops."
-            data-sub="A three-volume drop of the West Coast sales floor at Braintrust. 15 portraits, 3 editions, 45 mints. Hover any card to flip and reveal its traits.">
+            data-sub="161 hand-pixeled portraits of Braintrust. Genesis edition. Hover any card to flip and reveal traits.">
       <span class="icon">◆</span>GENESIS
     </button>
+    <!-- Galaxy + Cyberpunk hidden, focusing on Genesis edition only -->
     <button class="theme-btn" data-theme="galaxy" data-color="#FF6B9D" data-color2="#FFD93D"
-            data-label="GALAXY · BRAIN-CORE" data-collection="BT-3" data-headline="galaxy-brain"
-            data-vol-tag="VOLUME III · GALAXY" data-vol-title="Brain-Core Exposed"
-            data-vol-desc="Every operator at maximum cognition. Full cortex exposed, hemisphere split, glowing circuit traces, eight cybernetic cables, gold neural ports embedded in the neck plate."
-            data-sub="The Galaxy-Brain Edition. Skull-cap removed. Cortex on display. Each operator is now 100% on-chain consciousness.">
+            data-label="GALAXY (COMING SOON)" data-collection="BT-3" data-headline="galaxy-brain"
+            data-vol-tag="VOLUME II · GALAXY" data-vol-title="Coming Soon"
+            data-vol-desc=""
+            data-sub=""
+            style="display:none">
       <span class="icon">⚯</span>GALAXY
     </button>
     <button class="theme-btn" data-theme="cyberpunk" data-color="#FF66C4" data-color2="#60E6FF"
-            data-label="CYBERPUNK · 2087 STREET" data-collection="BT-4" data-headline="jacked-in"
-            data-vol-tag="VOLUME IV · CYBERPUNK" data-vol-title="2087 Street Edition"
-            data-vol-desc="Every operator hoods-up. Cyber visors replace eyes. Neon scar tattoos. Magenta/cyan grid streets with terminal-green code rain in the alleyways."
-            data-sub="The Cyberpunk Edition. Hoods up, visors down. 15 operators wired into the grid.">
+            data-label="CYBERPUNK (COMING SOON)" data-collection="BT-4" data-headline="jacked-in"
+            data-vol-tag="VOLUME III · CYBERPUNK" data-vol-title="Coming Soon"
+            data-vol-desc=""
+            data-sub=""
+            style="display:none">
       <span class="icon">▮</span>CYBERPUNK
     </button>
   </div>
@@ -607,7 +610,7 @@
     <div class="volume-desc" id="vol-desc">The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops.</div>
   </div>
   <div class="volume-stats">
-    <div class="v-stat"><div class="v-stat-num">077</div><div class="v-stat-label">Mints</div></div>
+    <div class="v-stat"><div class="v-stat-num">161</div><div class="v-stat-label">Mints</div></div>
     <div class="v-stat"><div class="v-stat-num" id="vol-mythics">01</div><div class="v-stat-label">Mythic</div></div>
     <div class="v-stat"><div class="v-stat-num">100%</div><div class="v-stat-label">Revealed</div></div>
   </div>
@@ -631,7 +634,7 @@
 <div class="grid" id="grid"></div>
 
 <footer>
-  BRAINTRUST.DEV · CURATED BY <a href="https://www.linkedin.com/in/kensington-belza/">KENSINGTON BELZA</a> · MMXXVI · 3 VOLUMES · 231 MINTS
+  BRAINTRUST.DEV · CURATED BY <a href="https://www.linkedin.com/in/kensington-belza/">KENSINGTON BELZA</a> · MMXXVI · 1 VOLUME LIVE · MORE COMING
 </footer>
 
 <div class="modal" id="modal">
@@ -699,10 +702,10 @@
 <div class="mint-reveal" id="mint-reveal">
   <div class="mint-reveal-inner">
     <div class="mint-tag">⬢ INITIAL MINT · BT-1 GENESIS</div>
-    <h1 class="mint-title">15 Operators<br><span style="color:var(--theme-color)">unrevealed</span>.</h1>
-    <p class="mint-sub">Welcome to the Braintrust Sales Floor drop. 15 hand-pixeled portraits across 4 editions. 60 unique mints. Click below to reveal.</p>
+    <h1 class="mint-title">77 Operators<br><span style="color:var(--theme-color)">unrevealed</span>.</h1>
+    <p class="mint-sub">Welcome to the Braintrust collection. 161 hand-pixeled portraits across the company. Genesis edition. Click below to reveal.</p>
     <button class="mint-cta" id="mint-cta">▶ REVEAL THE FLOOR</button>
-    <div class="mint-stats">77 OPERATORS · 3 EDITIONS · 231 MINTS · 1 MYTHIC</div>
+    <div class="mint-stats">161 OPERATORS · GENESIS EDITION · 2 MYTHIC</div>
   </div>
 </div>
 
@@ -796,7 +799,7 @@ function renderGrid() {
       </div>
       <div class="card-face card-back">
         <div class="back-header">
-          <span class="back-token">#${String(p.id).padStart(3,'0')} / 077</span>
+          <span class="back-token">#${String(p.id).padStart(3,'0')} / 161</span>
           <span class="back-token">${currentTheme.toUpperCase()}</span>
         </div>
         <div>
@@ -845,7 +848,12 @@ function renderGrid() {
 // === Filter render ===
 function renderFilters() {
   const bar = document.getElementById('filter-bar');
-  const filters = ['ALL', 'AE', 'SUNGLASSES', 'LASER_EYES', 'AI_AGENT', 'BEACH', 'SNORKEL', 'CHAIN', 'CROWN', 'MYSTERY'];
+  // Compute filter pills dynamically from people.tags so all of them actually match someone
+  const tagCount = {};
+  people.forEach(p => (p.tags || []).forEach(t => tagCount[t] = (tagCount[t] || 0) + 1));
+  // Top 10 most common tags + 'ALL', so every filter pill matches at least 2 people
+  const topTags = Object.entries(tagCount).sort((a,b) => b[1] - a[1]).slice(0, 10).map(x => x[0]);
+  const filters = ['ALL', ...topTags];
   bar.innerHTML = filters.map(f =>
     `<button class="filter-pill ${(f === 'ALL' && !activeFilter) || activeFilter === f ? 'active' : ''}" data-filter="${f}">${f.replace('_', ' ')}</button>`
   ).join('');
@@ -1003,7 +1011,7 @@ function openCompareModal() {
   content.innerHTML = `
     <button class="close" onclick="closeModal()">×</button>
     <h2 style="text-align:center; font-size:28px; margin-bottom:8px; font-weight:800;">All 3 Editions</h2>
-    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">SWIPE THROUGH 77 OPERATORS × 3 VOLUMES</p>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">161 OPERATORS · GENESIS EDITION</p>
     <div id="compare-grid" style="display:grid; gap:12px;"></div>
   `;
   const cmpGrid = document.getElementById('compare-grid');
@@ -1030,7 +1038,7 @@ function openModal(p, r) {
   const collection = themeBtn.dataset.collection;
   const label = themeBtn.dataset.label.split(' · ')[0];
   const content = document.getElementById('modal-content');
-  const token = `${String(p.id).padStart(3,'0')} / 077`;
+  const token = `${String(p.id).padStart(3,'0')} / 161`;
   content.innerHTML = `
     <button class="close" onclick="closeModal()">×</button>
     <div class="modal-nft"><img src="nfts/${currentTheme}/${p.slug}_nft.svg" alt="${p.name}"></div>
@@ -1230,7 +1238,7 @@ function renderStats() {
   const counter = document.getElementById('mint-counter');
   if (counter) {
     let val = 0;
-    const target = 231;
+    const target = 161;
     const interval = setInterval(() => {
       val += 1;
       counter.textContent = String(val).padStart(4, '0');
@@ -1242,7 +1250,7 @@ function renderStats() {
 // === TRADE ACTIVITY TICKER (fake but vibey) ===
 const tradeActions = ['MINTED', 'TRANSFERRED', 'LISTED', 'BID PLACED', 'SOLD', 'RE-MINTED'];
 const tradeBuyers = ['@kb', '@nathan', '@walton', '@jay', '@dave', '@catherine', '@joe', '@ryan', '@anon3F2A', '@vault0x7'];
-const themes = ['GENESIS', 'GALAXY', 'CYBERPUNK'];
+const themes = ['GENESIS'];
 function genTrades() {
   const ticker = document.getElementById('ticker-inner');
   const items = [];

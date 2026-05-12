@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "alex-wrenn",
+    "name": "Alex Wrenn",
+    "role": "Enterprise Account Executive"
+  },
+  {
+    "slug": "amy-prince",
+    "name": "Amy Prince",
+    "role": ""
+  },
+  {
+    "slug": "brad-umbaugh",
+    "name": "Brad Umbaugh",
+    "role": "Documentation Engineer"
+  },
+  {
+    "slug": "colin-b",
+    "name": "Colin Bennett",
+    "role": ""
+  },
+  {
+    "slug": "darryl-w",
+    "name": "Darryl Wong",
+    "role": ""
+  },
+  {
+    "slug": "eric-k",
+    "name": "Eric Kontargyris",
+    "role": "Solutions Engineer"
+  },
+  {
+    "slug": "greg-schultz",
+    "name": "Greg Schultz",
+    "role": "Tech Recruiting"
+  },
+  {
+    "slug": "jeff-mccollum",
+    "name": "Jeff",
+    "role": "Customer Solutions Architect"
+  },
+  {
+    "slug": "jessica-chiu",
+    "name": "Jessica Chiu",
+    "role": "Developer Support Manager, AMER"
+  },
+  {
+    "slug": "josep",
+    "name": "Josep",
+    "role": "Developer Support Engineer"
+  },
+  {
+    "slug": "kevin-gosse",
+    "name": "Kevin Gosse",
+    "role": ""
+  },
+  {
+    "slug": "matt-stauffer",
+    "name": "Matt Stauffer",
+    "role": "Enterprise Account Executive"
+  },
+  {
+    "slug": "matt-rulon",
+    "name": "Matt",
+    "role": "Strategic Account Executive"
+  },
+  {
+    "slug": "nate-moss",
+    "name": "Nate Moss",
+    "role": "Regional Sales Director, Commercial"
+  },
+  {
+    "slug": "paul-tancre",
+    "name": "Paul Tancre",
+    "role": "Developer Support Manager (EMEA)"
+  },
+  {
+    "slug": "scott-anderson",
+    "name": "Scott Anderson",
+    "role": ""
+  },
+  {
+    "slug": "zach-henkhaus",
+    "name": "Zach Henkhaus",
+    "role": "Sr Account Executive"
+  }
+]

@@ -1,0 +1,87 @@
+[
+  {
+    "slug": "alex-steere",
+    "name": "Alex Steere",
+    "role": "Brainstore eng"
+  },
+  {
+    "slug": "amanda-gilbert",
+    "name": "Amanda Gilbert",
+    "role": ""
+  },
+  {
+    "slug": "barry-oneill",
+    "name": "Barry O'Neill",
+    "role": "Customer Solutions Architect"
+  },
+  {
+    "slug": "christina-c",
+    "name": "Christina Crum",
+    "role": ""
+  },
+  {
+    "slug": "daniel-nguyen",
+    "name": "Daniel Nguyen",
+    "role": "design engineer"
+  },
+  {
+    "slug": "elijah-k",
+    "name": "Elijah Kurien",
+    "role": "Code Monkey"
+  },
+  {
+    "slug": "giran-moodley",
+    "name": "Giran",
+    "role": "Member of Technical Staff, Field Engineering"
+  },
+  {
+    "slug": "james-purcell",
+    "name": "James Purcell",
+    "role": "Customer Solutions Architect"
+  },
+  {
+    "slug": "jessica-alder",
+    "name": "Jessica Alder",
+    "role": "Developer Support Engineer"
+  },
+  {
+    "slug": "johnny",
+    "name": "Johnny",
+    "role": "Customer Solutions Architect"
+  },
+  {
+    "slug": "ken",
+    "name": "ken",
+    "role": "engineer"
+  },
+  {
+    "slug": "matt-silva",
+    "name": "Matt Silva",
+    "role": "Design Engineer"
+  },
+  {
+    "slug": "kati-kankaanpaa",
+    "name": "Kati Kankaanp\u00e4\u00e4",
+    "role": "CSA"
+  },
+  {
+    "slug": "midhush-karthic",
+    "name": "Midhush Karthic",
+    "role": ""
+  },
+  {
+    "slug": "parker-henderson",
+    "name": "Parker Henderson",
+    "role": "Design engineer"
+  },
+  {
+    "slug": "ross-stapleton-gray",
+    "name": "Ross Stapleton-Gray",
+    "role": "Security and Privacy Lead"
+  },
+  {
+    "slug": "zach-hamilton",
+    "name": "Zach Hamilton",
+    "role": ""
+  }
+]

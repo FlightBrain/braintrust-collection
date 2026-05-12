@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "erin-mcnulty",
+    "name": "Erin McNulty",
+    "user_id": "U0AV230TGKY",
+    "role": "Software Engineer",
+    "email": "erin.mcnulty@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-04-27/11000054309907_25dcd895e2e86cf757ab_original.png"
+  },
+  {
+    "slug": "everett-smith",
+    "name": "Everett Smith",
+    "user_id": "U0AHH6J92MR",
+    "role": "Developer Support Engineer",
+    "email": "everett@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-03-02/10643072799072_2adea4eea65af5fba943_original.jpg"
+  },
+  {
+    "slug": "giran-moodley",
+    "name": "Giran",
+    "user_id": "U0AEEG88J8Y",
+    "role": "Member of Technical Staff, Field Engineering",
+    "email": "giran@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-03-17/10718318640450_abd069286c5c017e6861_original.png"
+  },
+  {
+    "slug": "greg-schultz",
+    "name": "Greg Schultz",
+    "user_id": "U0AEEG9A1R6",
+    "role": "Tech Recruiting",
+    "email": "greg@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-04-02/10827149604947_89acaeaa5b515f142946_original.jpg"
+  },
+  {
+    "slug": "gwendolyn-jenkins",
+    "name": "Gwen",
+    "user_id": "U0AUXP2CQ75",
+    "role": "Sourceress",
+    "email": "gwendolyn.jenkins@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-04-27/10988757853495_c4c3c03989f2b6940dc2_original.jpg"
+  },
+  {
+    "slug": "homin-lee",
+    "name": "homin",
+    "user_id": "U0AV7NGCT9A",
+    "role": "",
+    "email": "homin.lee@braintrustdata.com",
+    "photo_url": null
+  },
+  {
+    "slug": "jack-burns",
+    "name": "Jack Burns",
+    "user_id": "U0ABU7A8YLB",
+    "role": "Sales",
+    "email": "jack.burns@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-02-02/10409451558935_0a6299d80647557fb028_original.png"
+  },
+  {
+    "slug": "jake-fedro",
+    "name": "Jake Fedro",
+    "user_id": "U0ADPRJH54L",
+    "role": "Account Executive",
+    "email": "jake.fedro@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-02-08/10495947909632_dbb35b7651bcbd8e2eee_original.png"
+  },
+  {
+    "slug": "james-purcell",
+    "name": "James Purcell",
+    "user_id": "U0A3MCBNFT4",
+    "role": "Customer Solutions Architect",
+    "email": "james.purcell@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2025-12-15/10127351414164_29db7805eb0403a90e1c_original.jpg"
+  },
+  {
+    "slug": "jeff-mccollum",
+    "name": "Jeff",
+    "user_id": "U093R3C1WP9",
+    "role": "Customer Solutions Architect",
+    "email": "jeff@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-04-02/10834549200194_cc7a10568d245f1dcc92_original.jpg"
+  },
+  {
+    "slug": "jeff-walburg",
+    "name": "Jeff Walburg",
+    "user_id": "U09D5CCA1RA",
+    "role": "Enterprise Account Executive",
+    "email": "jeff.walburg@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-04-02/10862935063712_07b6780fbb1f6c593146_original.png"
+  },
+  {
+    "slug": "jess-wang",
+    "name": "Jess Wang",
+    "user_id": "U0A59ABLRJA",
+    "role": "Developer Advocate",
+    "email": "jess@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-03-05/10653040594465_943d8d69a81a0541dbf2_original.png"
+  },
+  {
+    "slug": "jesse-seldess",
+    "name": "Jesse Seldess",
+    "user_id": "U09TAP8UG8J",
+    "role": "Documentation Lead",
+    "email": "jesse@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2025-11-17/9933160081142_e3d67fbbcf6128ac31c7_original.jpg"
+  },
+  {
+    "slug": "jessica-alder",
+    "name": "Jessica Alder",
+    "user_id": "U0A7778FHMX",
+    "role": "Developer Support Engineer",
+    "email": "jessica.alder@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-01-05/10228293717811_fd35c1ccc18a74d190a0_original.jpg"
+  },
+  {
+    "slug": "jessica-chiu",
+    "name": "Jessica Chiu",
+    "user_id": "U0AJY18UDR9",
+    "role": "Developer Support Manager, AMER",
+    "email": "jessica.chiu@braintrustdata.com",
+    "photo_url": "https://avatars.slack-edge.com/2026-03-08/10650103772275_05115246c09467ef1cd7_original.png"
+  }
+]

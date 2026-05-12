@@ -71,6 +71,17 @@ VALID_HAIR_STYLES = {"short_parted", "slick_back", "undercut", "messy", "curly_s
 
 def sanitize(p):
     """Fix common agent mistakes (wrong field, typos)."""
+    # Some agents used 'trait_hex' instead of 'trait'
+    if "trait" not in p and "trait_hex" in p:
+        p["trait"] = p["trait_hex"]
+    # Default trait if missing entirely (deterministic from slug hash)
+    if not p.get("trait"):
+        import hashlib
+        palette = ["#00FF94","#FF6B9D","#FFD93D","#00D9FF","#9D7AFF","#FF8C42",
+                   "#7B61FF","#FF3366","#00E5FF","#FFC857","#A8E6CF","#4ECDC4",
+                   "#E0E0E0","#FF66C4","#B8FF3D","#7BFFD4","#FFAA00","#FF4488",
+                   "#88CCFF","#FFD0AA","#AAFF88","#FF88AA","#88FFAA","#FFCCFF"]
+        p["trait"] = palette[hashlib.md5(p["slug"].encode()).digest()[0] % len(palette)]
     # earring_stud is an accessory, not a signature
     if p.get("signature") == "earring_stud":
         p["signature"] = "earring"
@@ -99,7 +110,7 @@ def main():
 
     all_people = []
     seen_slugs = set()
-    for i in range(1, 6):
+    for i in range(1, 11):
         batch_path = DATA_DIR / f"batch_{i}.json"
         if not batch_path.exists():
             print(f"WARNING: {batch_path} missing")

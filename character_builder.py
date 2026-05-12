@@ -1607,5 +1607,46 @@ def main():
     print(f"\nBuilt {len(people)} characters for theme: {theme}")
 
 
+# ============ V2 SPRITE INTEGRATION ============
+# Swap in upgraded sprites from face_sprites_v2, hair_sprites_v2, sprites_items_v2.
+# Falls back gracefully if any v2 file is missing.
+def _integrate_v2():
+    import sys
+    swapped = []
+    try:
+        import face_sprites_v2 as fsv
+        # Reassign face draw functions to v2
+        globals()["draw_head"]      = fsv.draw_head_v2
+        globals()["draw_eyes"]      = fsv.draw_eyes_v2
+        globals()["draw_eyebrows"]  = fsv.draw_eyebrows_v2
+        globals()["draw_mouth"]     = lambda c, k, skin_key=None: fsv.draw_mouth_v2(c, k)
+        globals()["draw_nose"]      = fsv.draw_nose_v2
+        swapped.append("face")
+    except Exception as e:
+        print(f"face_sprites_v2 not loaded: {e}", file=sys.stderr)
+
+    try:
+        import hair_sprites_v2 as hsv
+        globals()["HAIR_FNS"] = hsv.HAIR_FNS_V2
+        swapped.append("hair (15 styles)")
+    except Exception as e:
+        print(f"hair_sprites_v2 not loaded: {e}", file=sys.stderr)
+
+    try:
+        import sprites_items_v2 as siv
+        # sprites_items_v2 has same function names as originals, so import and globals-swap
+        for n in dir(siv):
+            if n.startswith("sig_") or n.startswith("acc_"):
+                globals()[n] = getattr(siv, n)
+        swapped.append("items (25 sig+acc)")
+    except Exception as e:
+        print(f"sprites_items_v2 not loaded: {e}", file=sys.stderr)
+
+    if swapped:
+        print(f"[v2 sprites loaded: {', '.join(swapped)}]", file=sys.stderr)
+
+_integrate_v2()
+
+
 if __name__ == "__main__":
     main()
