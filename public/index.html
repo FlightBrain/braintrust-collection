@@ -516,6 +516,122 @@
   .lb-row .lb-tier { font-size: 9px; letter-spacing: 0.2em; color: var(--rarity-color); margin-top: 2px; }
   .lb-row .lb-score { font-size: 13px; font-weight: 700; color: var(--theme-color); }
 
+  /* === Gamification: coin counter, quests, shop, cosmetics === */
+  #coin-display { color: #FFD93D; font-weight: 700; }
+  .coin-flash { animation: coin-pulse 0.5s; }
+  @keyframes coin-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.4); color: var(--theme-color); }
+    100% { transform: scale(1); }
+  }
+  .coin-toast {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(135deg, #FFD93D, #FFAA00); color: #050709;
+    padding: 10px 20px; border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+    box-shadow: 0 8px 24px rgba(255, 217, 61, 0.4);
+    opacity: 0; transition: all 0.3s; z-index: 200; pointer-events: none;
+  }
+  .coin-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  .quest-row, .shop-row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 10px; margin-bottom: 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .quest-row.done { opacity: 0.5; border-color: var(--theme-color); }
+  .quest-row .icon, .shop-row .icon { font-size: 22px; width: 34px; text-align: center; }
+  .quest-row .body, .shop-row .body { flex: 1; }
+  .quest-row .name, .shop-row .name { font-family: Inter, sans-serif; font-size: 13px; font-weight: 700; }
+  .quest-row .desc, .shop-row .desc { font-size: 10px; color: var(--text-dim); margin-top: 3px; letter-spacing: 0.1em; }
+  .quest-row .progress { display: block; height: 4px; background: rgba(255,255,255,0.06); border-radius: 100px; margin-top: 6px; overflow: hidden; }
+  .quest-row .progress .fill { display: block; height: 100%; background: var(--theme-color); transition: width 0.5s; }
+  .quest-row .reward, .shop-row .price {
+    font-size: 13px; font-weight: 700; color: #FFD93D;
+    background: rgba(255, 217, 61, 0.1); padding: 6px 10px; border-radius: 6px;
+    border: 1px solid rgba(255, 217, 61, 0.3);
+    white-space: nowrap;
+  }
+  .shop-row .buy-btn {
+    padding: 7px 14px; background: var(--theme-color); color: #050709;
+    border: none; border-radius: 6px; cursor: none;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  }
+  .shop-row .buy-btn:hover { transform: translateY(-1px); }
+  .shop-row .buy-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .shop-row .buy-btn.owned { background: var(--mythic); color: white; cursor: default; }
+  .shop-row .buy-btn.equipped { background: var(--legendary); color: #050709; }
+
+  /* Cosmetic overlays for cards */
+  .card.cosmetic-sparkles::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      radial-gradient(circle at 20% 30%, #FFD93D 1px, transparent 2px),
+      radial-gradient(circle at 80% 60%, #FFFFFF 1px, transparent 2px),
+      radial-gradient(circle at 50% 80%, #FFD93D 1px, transparent 2px),
+      radial-gradient(circle at 30% 70%, #FFFFFF 1px, transparent 2px),
+      radial-gradient(circle at 70% 20%, #FFD93D 1px, transparent 2px);
+    animation: sparkle-twinkle 2s infinite alternate;
+    z-index: 5;
+  }
+  @keyframes sparkle-twinkle { 0% { opacity: 0.4; } 100% { opacity: 1; } }
+
+  .card.cosmetic-aura {
+    box-shadow: 0 0 30px var(--card-trait, var(--theme-color)),
+                0 0 60px color-mix(in srgb, var(--card-trait, var(--theme-color)) 40%, transparent) !important;
+  }
+
+  .card.cosmetic-halo::before {
+    content: ""; position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+    width: 50%; height: 12px; border: 3px solid #FFD93D; border-radius: 50%;
+    box-shadow: 0 0 12px #FFD93D; z-index: 6;
+  }
+
+  .card.cosmetic-rainbow-border {
+    background: linear-gradient(45deg, #FF3366, #FFD93D, #00FF94, #00D9FF, #9D7AFF, #FF66C4) !important;
+    background-size: 600% 600% !important;
+    animation: rainbow-shift 4s ease infinite !important;
+    padding: 3px;
+  }
+  .card.cosmetic-rainbow-border .card-face { border-radius: 13px; }
+  @keyframes rainbow-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .card.cosmetic-confetti:hover::after {
+    content: "🎉"; position: absolute; top: 5px; right: 5px; font-size: 16px;
+    animation: confetti-spin 1s linear infinite;
+  }
+  @keyframes confetti-spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+  .card.cosmetic-animated-bg {
+    background: linear-gradient(135deg, var(--card-trait, #00FF94), #050709, var(--card-trait, #00E5FF)) !important;
+    background-size: 300% 300% !important;
+    animation: bg-shift 6s ease infinite !important;
+  }
+  @keyframes bg-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .quest-summary {
+    padding: 14px; background: var(--panel); border: 1px solid var(--theme-color); border-radius: 10px;
+    margin-bottom: 16px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;
+  }
+  .quest-summary .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: var(--theme-color); }
+  .quest-summary .stat-label { font-size: 9px; color: var(--text-dim); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; }
+
+  .secret-egg {
+    position: fixed; cursor: none; font-size: 14px; opacity: 0.15; z-index: 30;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .secret-egg:hover { opacity: 1; transform: scale(1.3); }
+
   @media (max-width: 640px) {
     .hero { padding: 56px 20px 24px; }
     .volume { padding: 0 20px; }
@@ -544,7 +660,8 @@
   </div>
   <div class="nav-meta">
     <span><span class="dot">●</span> COLLECTION: <span id="nav-collection">BT-1</span></span>
-    <span>SUPPLY: <span id="nav-supply">161</span></span>
+    <span>SUPPLY: <span id="nav-supply">015</span></span>
+    <span><span class="dot">●</span> COINS: <span id="coin-display">0</span></span>
     <span>NETWORK: WEST</span>
   </div>
 </nav>
@@ -555,14 +672,14 @@
     <span id="hero-tag-label">GENESIS · CLASS OF 2026</span>
   </div>
   <h1>The Sales Floor<br><span class="accent" id="hero-headline">on-chain</span>.</h1>
-  <p class="hero-sub" id="hero-sub">161 hand-pixeled portraits of Braintrust. Genesis edition live. Galaxy and Cyberpunk editions coming soon. Hover any card to flip and reveal its traits.</p>
+  <p class="hero-sub" id="hero-sub">The original Braintrust sales floor, hand-pixeled. Flip cards, complete quests, earn coins, and unlock cosmetic upgrades for the collection.</p>
 
   <div class="themes" role="tablist">
     <button class="theme-btn active" data-theme="corporate" data-color="#00FF94" data-color2="#00E5FF"
             data-label="GENESIS · CLASS OF 2026" data-collection="BT-1" data-headline="on-chain"
             data-vol-tag="VOLUME I · GENESIS" data-vol-title="Corporate Mint"
             data-vol-desc="The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops."
-            data-sub="161 hand-pixeled portraits of Braintrust. Genesis edition. Hover any card to flip and reveal traits.">
+            data-sub="The original Braintrust sales floor, hand-pixeled. Flip cards, complete quests, earn coins, unlock cosmetics.">
       <span class="icon">◆</span>GENESIS
     </button>
     <!-- Galaxy + Cyberpunk hidden, focusing on Genesis edition only -->
@@ -610,7 +727,7 @@
     <div class="volume-desc" id="vol-desc">The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops.</div>
   </div>
   <div class="volume-stats">
-    <div class="v-stat"><div class="v-stat-num">161</div><div class="v-stat-label">Mints</div></div>
+    <div class="v-stat"><div class="v-stat-num">015</div><div class="v-stat-label">Mints</div></div>
     <div class="v-stat"><div class="v-stat-num" id="vol-mythics">01</div><div class="v-stat-label">Mythic</div></div>
     <div class="v-stat"><div class="v-stat-num">100%</div><div class="v-stat-label">Revealed</div></div>
   </div>
@@ -678,11 +795,21 @@
 <div class="floaters">
   <button class="float-btn" id="music-btn" title="Toggle music">♫</button>
   <button class="float-btn" id="sound-btn" title="Toggle SFX">🔊</button>
+  <button class="float-btn" id="quests-btn" title="Quests + Coins">🎯</button>
+  <button class="float-btn" id="shop-btn" title="Cosmetic Shop">🛒</button>
   <button class="float-btn" id="trophy-btn" title="Achievements">🏆</button>
   <button class="float-btn" id="leaderboard-btn" title="Rarity leaderboard">★</button>
   <button class="float-btn" id="pack-btn-floating" title="Open pack">▣</button>
   <button class="float-btn" id="back-to-top" title="Back to top">↑</button>
 </div>
+
+<!-- Hidden easter eggs scattered on the page -->
+<div class="secret-egg" id="egg-1" style="top: 130px; left: 12px;">⚯</div>
+<div class="secret-egg" id="egg-2" style="bottom: 200px; right: 14px;">◆</div>
+<div class="secret-egg" id="egg-3" style="top: 50%; left: 10px;">★</div>
+
+<!-- Coin earn toast -->
+<div class="coin-toast" id="coin-toast"></div>
 
 <!-- Pack opening modal -->
 <div class="pack-modal" id="pack-modal">
@@ -703,9 +830,9 @@
   <div class="mint-reveal-inner">
     <div class="mint-tag">⬢ INITIAL MINT · BT-1 GENESIS</div>
     <h1 class="mint-title">77 Operators<br><span style="color:var(--theme-color)">unrevealed</span>.</h1>
-    <p class="mint-sub">Welcome to the Braintrust collection. 161 hand-pixeled portraits across the company. Genesis edition. Click below to reveal.</p>
+    <p class="mint-sub">Welcome to the Braintrust Sales Floor drop. 15 operators. Earn coins by completing quests. Unlock cosmetic upgrades to make your collection cooler.</p>
     <button class="mint-cta" id="mint-cta">▶ REVEAL THE FLOOR</button>
-    <div class="mint-stats">161 OPERATORS · GENESIS EDITION · 2 MYTHIC</div>
+    <div class="mint-stats">15 OPERATORS · GENESIS EDITION · GAMIFIED</div>
   </div>
 </div>
 
@@ -799,7 +926,7 @@ function renderGrid() {
       </div>
       <div class="card-face card-back">
         <div class="back-header">
-          <span class="back-token">#${String(p.id).padStart(3,'0')} / 161</span>
+          <span class="back-token">#${String(p.id).padStart(3,'0')} / 015</span>
           <span class="back-token">${currentTheme.toUpperCase()}</span>
         </div>
         <div>
@@ -1011,7 +1138,7 @@ function openCompareModal() {
   content.innerHTML = `
     <button class="close" onclick="closeModal()">×</button>
     <h2 style="text-align:center; font-size:28px; margin-bottom:8px; font-weight:800;">All 3 Editions</h2>
-    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">161 OPERATORS · GENESIS EDITION</p>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">15 OPERATORS · GENESIS EDITION</p>
     <div id="compare-grid" style="display:grid; gap:12px;"></div>
   `;
   const cmpGrid = document.getElementById('compare-grid');
@@ -1038,7 +1165,7 @@ function openModal(p, r) {
   const collection = themeBtn.dataset.collection;
   const label = themeBtn.dataset.label.split(' · ')[0];
   const content = document.getElementById('modal-content');
-  const token = `${String(p.id).padStart(3,'0')} / 161`;
+  const token = `${String(p.id).padStart(3,'0')} / 015`;
   content.innerHTML = `
     <button class="close" onclick="closeModal()">×</button>
     <div class="modal-nft"><img src="nfts/${currentTheme}/${p.slug}_nft.svg" alt="${p.name}"></div>
@@ -1238,7 +1365,7 @@ function renderStats() {
   const counter = document.getElementById('mint-counter');
   if (counter) {
     let val = 0;
-    const target = 161;
+    const target = 15;
     const interval = setInterval(() => {
       val += 1;
       counter.textContent = String(val).padStart(4, '0');
@@ -1353,6 +1480,269 @@ document.getElementById('mint-cta').addEventListener('click', () => {
 document.getElementById('back-to-top').addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// ============================================================
+// === GAMIFICATION: COINS, QUESTS, SHOP, COSMETICS ===
+// ============================================================
+const COIN_KEY = 'bt_coins';
+const QUEST_KEY = 'bt_quests';
+const OWNED_KEY = 'bt_cosmetics_owned';
+const EQUIPPED_KEY = 'bt_cosmetics_equipped';
+const STREAK_KEY = 'bt_streak';
+const EGG_KEY = 'bt_eggs_found';
+
+const QUESTS = [
+  { id: 'first_flip',     name: 'First Flip',       desc: 'Flip your first card',                    icon: '👀', reward: 5,   max: 1 },
+  { id: 'flip_5',         name: 'Quick Browser',    desc: 'Flip 5 different cards',                  icon: '🃏', reward: 15,  max: 5 },
+  { id: 'flip_all',       name: 'Completionist',    desc: 'Flip all 15 cards',                       icon: '💯', reward: 60,  max: 15 },
+  { id: 'open_pack',      name: 'Pack Opener',      desc: 'Open your first pack',                    icon: '📦', reward: 10,  max: 1 },
+  { id: 'pull_legend',    name: 'Lucky Pull',       desc: 'Pull a Legendary or Mythic from a pack',  icon: '✨', reward: 50,  max: 1 },
+  { id: 'open_lb',        name: 'Scholar',          desc: 'Open the rarity leaderboard',             icon: '📜', reward: 8,   max: 1 },
+  { id: 'use_search',     name: 'Searcher',         desc: 'Search for an operator by name',          icon: '🔍', reward: 8,   max: 1 },
+  { id: 'shuffle',        name: 'Shuffler',         desc: 'Shuffle the grid',                        icon: '🎲', reward: 8,   max: 1 },
+  { id: 'streak_3',       name: 'Habit',            desc: 'Visit 3 days in a row',                   icon: '🔥', reward: 25,  max: 3 },
+  { id: 'streak_7',       name: 'Veteran',          desc: 'Visit 7 days in a row',                   icon: '🏅', reward: 75,  max: 7 },
+  { id: 'find_eggs',      name: 'Egg Hunter',       desc: 'Find all 3 hidden Braintrust symbols',    icon: '🥚', reward: 40,  max: 3 },
+  { id: 'buy_cosmetic',   name: 'Customizer',       desc: 'Buy your first cosmetic',                 icon: '🛒', reward: 20,  max: 1 },
+];
+
+const SHOP = [
+  { id: 'sparkles',         name: 'Sparkles',          icon: '✨', desc: 'Twinkling stars dance around your cards.', price: 50 },
+  { id: 'aura',             name: 'Glow Aura',         icon: '💫', desc: 'Each card emanates a colored glow.',       price: 100 },
+  { id: 'halo',             name: 'Holy Halo',         icon: '😇', desc: 'Angelic gold ring crowns every card.',     price: 200 },
+  { id: 'confetti',         name: 'Party Mode',        icon: '🎉', desc: 'Confetti emoji spins when hovering.',      price: 150 },
+  { id: 'animated-bg',      name: 'Animated BG',       icon: '🌀', desc: 'Backgrounds shift through trait colors.',  price: 300 },
+  { id: 'rainbow-border',   name: 'Rainbow Frame',     icon: '🌈', desc: 'Cards get a shifting rainbow border.',     price: 500 },
+];
+
+let coins = parseInt(localStorage.getItem(COIN_KEY) || '0', 10);
+let questProgress = JSON.parse(localStorage.getItem(QUEST_KEY) || '{}');
+let owned = JSON.parse(localStorage.getItem(OWNED_KEY) || '[]');
+let equipped = JSON.parse(localStorage.getItem(EQUIPPED_KEY) || '[]');
+let eggsFound = JSON.parse(localStorage.getItem(EGG_KEY) || '[]');
+
+function saveAll() {
+  localStorage.setItem(COIN_KEY, String(coins));
+  localStorage.setItem(QUEST_KEY, JSON.stringify(questProgress));
+  localStorage.setItem(OWNED_KEY, JSON.stringify(owned));
+  localStorage.setItem(EQUIPPED_KEY, JSON.stringify(equipped));
+  localStorage.setItem(EGG_KEY, JSON.stringify(eggsFound));
+}
+
+function updateCoinDisplay() {
+  const el = document.getElementById('coin-display');
+  if (el) {
+    el.textContent = coins;
+    el.classList.add('coin-flash');
+    setTimeout(() => el.classList.remove('coin-flash'), 500);
+  }
+}
+
+function awardCoins(amount, reason) {
+  coins += amount;
+  saveAll();
+  updateCoinDisplay();
+  const toast = document.getElementById('coin-toast');
+  toast.textContent = `+${amount} coins · ${reason}`;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2500);
+  playChord([523, 659, 784], 0.2);
+}
+
+function progressQuest(questId, increment = 1) {
+  const q = QUESTS.find(x => x.id === questId);
+  if (!q) return;
+  const current = questProgress[questId] || 0;
+  if (current >= q.max) return;  // already done
+  const next = Math.min(current + increment, q.max);
+  questProgress[questId] = next;
+  saveAll();
+  if (next === q.max) {
+    awardCoins(q.reward, q.name + ' complete!');
+  }
+}
+
+// === DAILY STREAK ===
+function handleStreak() {
+  const streak = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"days":0,"last":""}');
+  const today = new Date().toISOString().slice(0, 10);
+  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  if (streak.last === today) {
+    // Already counted today
+  } else if (streak.last === yesterday) {
+    streak.days += 1;
+    streak.last = today;
+    awardCoins(5, `Day ${streak.days} streak`);
+    progressQuest('streak_3');
+    progressQuest('streak_7');
+    if (streak.days >= 3) progressQuest('streak_3', 999);
+    if (streak.days >= 7) progressQuest('streak_7', 999);
+  } else {
+    // Streak broken or new
+    streak.days = 1;
+    streak.last = today;
+    awardCoins(5, 'Welcome back');
+    progressQuest('streak_3');
+    progressQuest('streak_7');
+  }
+  localStorage.setItem(STREAK_KEY, JSON.stringify(streak));
+  return streak;
+}
+
+// === QUEST/SHOP MODALS ===
+document.getElementById('quests-btn').addEventListener('click', () => {
+  const streak = JSON.parse(localStorage.getItem(STREAK_KEY) || '{"days":1}');
+  const done = QUESTS.filter(q => (questProgress[q.id] || 0) >= q.max).length;
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 style="text-align:center; font-size:28px; margin-bottom:8px; font-weight:800;">🎯 Quests</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">EARN COINS BY DOING THINGS</p>
+    <div class="quest-summary">
+      <div><div class="stat-num">${coins}</div><div class="stat-label">Coins</div></div>
+      <div><div class="stat-num">${done}/${QUESTS.length}</div><div class="stat-label">Complete</div></div>
+      <div><div class="stat-num">${streak.days || 1}</div><div class="stat-label">Day Streak</div></div>
+    </div>
+    ${QUESTS.map(q => {
+      const cur = questProgress[q.id] || 0;
+      const isDone = cur >= q.max;
+      return `
+        <div class="quest-row ${isDone ? 'done' : ''}">
+          <span class="icon">${q.icon}</span>
+          <div class="body">
+            <div class="name">${q.name} ${isDone ? '✓' : ''}</div>
+            <div class="desc">${q.desc}</div>
+            ${q.max > 1 ? `<span class="progress"><span class="fill" style="width:${(cur/q.max)*100}%"></span></span>` : ''}
+          </div>
+          <div class="reward">+${q.reward}</div>
+        </div>`;
+    }).join('')}
+  `;
+  document.getElementById('modal').classList.add('open');
+});
+
+document.getElementById('shop-btn').addEventListener('click', () => {
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 style="text-align:center; font-size:28px; margin-bottom:8px; font-weight:800;">🛒 Cosmetic Shop</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">SPEND COINS TO UPGRADE YOUR COLLECTION</p>
+    <div class="quest-summary">
+      <div><div class="stat-num">${coins}</div><div class="stat-label">Coins</div></div>
+      <div><div class="stat-num">${owned.length}/${SHOP.length}</div><div class="stat-label">Owned</div></div>
+      <div><div class="stat-num">${equipped.length}</div><div class="stat-label">Equipped</div></div>
+    </div>
+    ${SHOP.map(s => {
+      const isOwned = owned.includes(s.id);
+      const isEquipped = equipped.includes(s.id);
+      const canAfford = coins >= s.price;
+      return `
+        <div class="shop-row">
+          <span class="icon">${s.icon}</span>
+          <div class="body">
+            <div class="name">${s.name}</div>
+            <div class="desc">${s.desc}</div>
+          </div>
+          ${isOwned
+            ? `<button class="buy-btn ${isEquipped ? 'equipped' : 'owned'}" onclick="toggleEquip('${s.id}')">${isEquipped ? 'EQUIPPED' : 'EQUIP'}</button>`
+            : `<button class="buy-btn" onclick="buyCosmetic('${s.id}')" ${canAfford ? '' : 'disabled'}>${canAfford ? `BUY ${s.price}` : `NEED ${s.price - coins}`}</button>`
+          }
+        </div>`;
+    }).join('')}
+  `;
+  document.getElementById('modal').classList.add('open');
+});
+
+function buyCosmetic(id) {
+  const item = SHOP.find(s => s.id === id);
+  if (!item || coins < item.price || owned.includes(id)) return;
+  coins -= item.price;
+  owned.push(id);
+  equipped.push(id);
+  saveAll();
+  updateCoinDisplay();
+  applyCosmetics();
+  progressQuest('buy_cosmetic');
+  document.getElementById('shop-btn').click();  // refresh modal
+  playChord([523, 659, 784, 1046], 0.4);
+}
+
+function toggleEquip(id) {
+  if (equipped.includes(id)) {
+    equipped = equipped.filter(x => x !== id);
+  } else {
+    equipped.push(id);
+  }
+  saveAll();
+  applyCosmetics();
+  document.getElementById('shop-btn').click();
+}
+
+function applyCosmetics() {
+  document.querySelectorAll('.card').forEach(card => {
+    SHOP.forEach(s => {
+      card.classList.toggle('cosmetic-' + s.id, equipped.includes(s.id));
+    });
+  });
+}
+
+// Hook quest triggers onto existing actions
+document.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (card && !e.target.closest('.back-btn')) {
+    progressQuest('first_flip');
+    // Count distinct cards flipped via stored Set in localStorage
+    const flipped = new Set(JSON.parse(localStorage.getItem('bt_flipped_set') || '[]'));
+    if (!flipped.has(card.dataset.slug)) {
+      flipped.add(card.dataset.slug);
+      localStorage.setItem('bt_flipped_set', JSON.stringify([...flipped]));
+      // Update flip_5 and flip_all to actual unique count
+      questProgress.flip_5 = Math.min(flipped.size, 5);
+      questProgress.flip_all = Math.min(flipped.size, 15);
+      saveAll();
+      if (flipped.size === 5 && (questProgress.flip_5 || 0) < 5) {
+        awardCoins(15, 'Quick Browser complete!');
+      }
+      if (flipped.size === 15) {
+        const reward = QUESTS.find(q => q.id === 'flip_all').reward;
+        awardCoins(reward, 'COMPLETIONIST!');
+      }
+    }
+  }
+});
+
+document.getElementById('leaderboard-btn').addEventListener('click', () => progressQuest('open_lb'));
+document.getElementById('search').addEventListener('input', () => progressQuest('use_search'));
+document.getElementById('shuffle-btn').addEventListener('click', () => progressQuest('shuffle'));
+document.getElementById('pack-open-btn').addEventListener('click', () => progressQuest('open_pack'));
+
+// Easter eggs
+document.querySelectorAll('.secret-egg').forEach(egg => {
+  egg.addEventListener('click', () => {
+    if (eggsFound.includes(egg.id)) return;
+    eggsFound.push(egg.id);
+    saveAll();
+    egg.style.opacity = '0';
+    setTimeout(() => egg.remove(), 300);
+    awardCoins(10, `Hidden ${egg.textContent} found`);
+    questProgress.find_eggs = eggsFound.length;
+    if (eggsFound.length === 3) {
+      awardCoins(QUESTS.find(q => q.id === 'find_eggs').reward, 'Egg Hunter complete!');
+    }
+    saveAll();
+  });
+});
+
+// Hide already-found eggs on load
+eggsFound.forEach(id => {
+  const e = document.getElementById(id);
+  if (e) e.style.display = 'none';
+});
+
+// Initialize
+updateCoinDisplay();
+handleStreak();
+setTimeout(applyCosmetics, 1000);  // wait for cards to render
 
 // ============================================================
 // === v8: PARTICLES, MUSIC, PACK OPENING, ACHIEVEMENTS, TRAIL ===
