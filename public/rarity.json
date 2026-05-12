@@ -1,0 +1,6701 @@
+{
+  "mo": {
+    "slug": "mo",
+    "score": 153.89,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "PINT_GLASS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "STUBBLE",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "MYTHIC",
+    "tier_color": "#FF3366",
+    "rank": 1
+  },
+  "trey": {
+    "slug": "trey",
+    "score": 152.82,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "PINT_GLASS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "UNDERCUT",
+        "count": 5,
+        "weight": 2.4
+      }
+    ],
+    "tier": "LEGENDARY",
+    "tier_color": "#FFD93D",
+    "rank": 2
+  },
+  "joe": {
+    "slug": "joe",
+    "score": 152.39,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROSS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AR_GLASSES",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "LEGENDARY",
+    "tier_color": "#FFD93D",
+    "rank": 3
+  },
+  "jaiden": {
+    "slug": "jaiden",
+    "score": 147.94,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "PINT_GLASS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "LEGENDARY",
+    "tier_color": "#FFD93D",
+    "rank": 4
+  },
+  "mike-deeks": {
+    "slug": "mike-deeks",
+    "score": 142.11,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "EARRING",
+        "count": 4,
+        "weight": 50.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AVIATORS",
+        "count": 4,
+        "weight": 15.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT_WARM",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 5
+  },
+  "saralyn": {
+    "slug": "saralyn",
+    "score": 141.74,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROSS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 6
+  },
+  "owen": {
+    "slug": "owen",
+    "score": 133.68,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "EARRING",
+        "count": 4,
+        "weight": 50.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "HOODIE",
+        "count": 5,
+        "weight": 2.4
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 7
+  },
+  "john-huang": {
+    "slug": "john-huang",
+    "score": 131.35,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "EARRING",
+        "count": 4,
+        "weight": 50.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "UNDERCUT",
+        "count": 5,
+        "weight": 2.4
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 8
+  },
+  "shelly": {
+    "slug": "shelly",
+    "score": 128.01,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROWN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AR_GLASSES",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 9
+  },
+  "austin-moehle": {
+    "slug": "austin-moehle",
+    "score": 127.99,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "BEANIE",
+        "count": 3,
+        "weight": 20.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 10
+  },
+  "phil-h": {
+    "slug": "phil-h",
+    "score": 127.79,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "SURFBOARD",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "RED_LIPS",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SLICK_BACK",
+        "count": 4,
+        "weight": 3.0
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 11
+  },
+  "keslar": {
+    "slug": "keslar",
+    "score": 126.0,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROWN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
+    "rank": 12
+  },
+  "stephen": {
+    "slug": "stephen",
+    "score": 124.22,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROWN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AR_GLASSES",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 13
+  },
+  "doug": {
+    "slug": "doug",
+    "score": 123.38,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROWN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "STUBBLE",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 14
+  },
+  "walton": {
+    "slug": "walton",
+    "score": 122.71,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "EARRING",
+        "count": 4,
+        "weight": 50.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 15
+  },
+  "olmo": {
+    "slug": "olmo",
+    "score": 120.91,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AVIATORS",
+        "count": 4,
+        "weight": 15.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT_WARM",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 16
+  },
+  "deven": {
+    "slug": "deven",
+    "score": 117.62,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "GLASSES_CLEAR",
+        "count": 2,
+        "weight": 30.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 17
+  },
+  "duncan": {
+    "slug": "duncan",
+    "score": 117.55,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "SURFBOARD",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "WARM",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 18
+  },
+  "ornella": {
+    "slug": "ornella",
+    "score": 115.94,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 19
+  },
+  "nick": {
+    "slug": "nick",
+    "score": 115.54,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "HOODIE",
+        "count": 5,
+        "weight": 2.4
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 20
+  },
+  "mengying": {
+    "slug": "mengying",
+    "score": 115.39,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "RED_LIPS",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 21
+  },
+  "jack-gardner": {
+    "slug": "jack-gardner",
+    "score": 115.21,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 22
+  },
+  "ameya": {
+    "slug": "ameya",
+    "score": 115.02,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 23
+  },
+  "ava": {
+    "slug": "ava",
+    "score": 114.66,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "SURFBOARD",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 24
+  },
+  "clarissa": {
+    "slug": "clarissa",
+    "score": 114.6,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "SURFBOARD",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 25
+  },
+  "nathan": {
+    "slug": "nathan",
+    "score": 114.56,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 26
+  },
+  "luca": {
+    "slug": "luca",
+    "score": 114.12,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 27
+  },
+  "morgane": {
+    "slug": "morgane",
+    "score": 112.34,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 28
+  },
+  "katherine-m": {
+    "slug": "katherine-m",
+    "score": 111.58,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "SURFBOARD",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 29
+  },
+  "kensington": {
+    "slug": "kensington",
+    "score": 111.53,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "BT_PIN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 30
+  },
+  "mohan": {
+    "slug": "mohan",
+    "score": 110.37,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "BT_PIN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
+    "rank": 31
+  },
+  "pedro": {
+    "slug": "pedro",
+    "score": 109.26,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "AUBURN",
+        "count": 2,
+        "weight": 6.0
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 32
+  },
+  "carleton": {
+    "slug": "carleton",
+    "score": 108.6,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 33
+  },
+  "chris": {
+    "slug": "chris",
+    "score": 107.51,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 34
+  },
+  "tony": {
+    "slug": "tony",
+    "score": 107.15,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "AUBURN",
+        "count": 2,
+        "weight": 6.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 35
+  },
+  "martin": {
+    "slug": "martin",
+    "score": 105.93,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 36
+  },
+  "sacha": {
+    "slug": "sacha",
+    "score": 105.31,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT_WARM",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 37
+  },
+  "alex-jb": {
+    "slug": "alex-jb",
+    "score": 105.25,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 38
+  },
+  "renee": {
+    "slug": "renee",
+    "score": 104.9,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 39
+  },
+  "hurshal": {
+    "slug": "hurshal",
+    "score": 104.45,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "RED_LIPS",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 40
+  },
+  "dave-smith": {
+    "slug": "dave-smith",
+    "score": 102.45,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AVIATORS",
+        "count": 4,
+        "weight": 15.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 41
+  },
+  "max": {
+    "slug": "max",
+    "score": 100.34,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "UNDERCUT",
+        "count": 5,
+        "weight": 2.4
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 42
+  },
+  "austin-c": {
+    "slug": "austin-c",
+    "score": 100.31,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_SHORT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 43
+  },
+  "garrett": {
+    "slug": "garrett",
+    "score": 100.2,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT_WARM",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 44
+  },
+  "bryan": {
+    "slug": "bryan",
+    "score": 99.95,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARBUDS",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 45
+  },
+  "kevin-green": {
+    "slug": "kevin-green",
+    "score": 99.66,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 46
+  },
+  "tara": {
+    "slug": "tara",
+    "score": 99.14,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 47
+  },
+  "matt-perpick": {
+    "slug": "matt-perpick",
+    "score": 98.52,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 48
+  },
+  "barrett": {
+    "slug": "barrett",
+    "score": 98.19,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 49
+  },
+  "drew": {
+    "slug": "drew",
+    "score": 97.99,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 50
+  },
+  "hossein": {
+    "slug": "hossein",
+    "score": 97.68,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROSS",
+        "count": 3,
+        "weight": 66.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AR_GLASSES",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "LIGHT",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "STUBBLE",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 51
+  },
+  "mike-winnett": {
+    "slug": "mike-winnett",
+    "score": 92.09,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "HOODIE",
+        "count": 5,
+        "weight": 2.4
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "UNDERCUT",
+        "count": 5,
+        "weight": 2.4
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 52
+  },
+  "liv": {
+    "slug": "liv",
+    "score": 90.54,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "STUBBLE",
+        "count": 4,
+        "weight": 3.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 53
+  },
+  "alec": {
+    "slug": "alec",
+    "score": 88.85,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "NONE",
+        "count": 1,
+        "weight": 60.0
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 54
+  },
+  "shaune": {
+    "slug": "shaune",
+    "score": 82.22,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "BT_PIN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "GLASSES_CLEAR",
+        "count": 2,
+        "weight": 30.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 55
+  },
+  "ankur": {
+    "slug": "ankur",
+    "score": 70.12,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "BT_PIN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "RED_LIPS",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SLICK_BACK",
+        "count": 4,
+        "weight": 3.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 56
+  },
+  "lexi": {
+    "slug": "lexi",
+    "score": 69.2,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CROWN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AR_GLASSES",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 57
+  },
+  "remi": {
+    "slug": "remi",
+    "score": 62.58,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "SUNGLASSES",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 58
+  },
+  "boats": {
+    "slug": "boats",
+    "score": 62.4,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "BEANIE",
+        "count": 3,
+        "weight": 20.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 59
+  },
+  "david-elner": {
+    "slug": "david-elner",
+    "score": 61.16,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "AVIATORS",
+        "count": 4,
+        "weight": 15.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "UNDERCUT",
+        "count": 5,
+        "weight": 2.4
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 60
+  },
+  "stelliana": {
+    "slug": "stelliana",
+    "score": 58.6,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "RED_LIPS",
+        "count": 5,
+        "weight": 12.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SWEATER",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 61
+  },
+  "catherine": {
+    "slug": "catherine",
+    "score": 56.6,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "WARM",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SLICK_BACK",
+        "count": 4,
+        "weight": 3.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 62
+  },
+  "evan-keith": {
+    "slug": "evan-keith",
+    "score": 56.13,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "BT_PIN",
+        "count": 5,
+        "weight": 40.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 63
+  },
+  "michael-basil": {
+    "slug": "michael-basil",
+    "score": 55.69,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "ZIP_UP",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 64
+  },
+  "evan": {
+    "slug": "evan",
+    "score": 54.42,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "BEANIE",
+        "count": 3,
+        "weight": 20.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BROWN",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SHORT_PARTED",
+        "count": 10,
+        "weight": 1.2
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 65
+  },
+  "sarah-zeng": {
+    "slug": "sarah-zeng",
+    "score": 51.96,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "EARRING_STUD",
+        "count": 6,
+        "weight": 10.0
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "FULL",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 66
+  },
+  "casey": {
+    "slug": "casey",
+    "score": 51.25,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CAP",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "HOODIE",
+        "count": 5,
+        "weight": 2.4
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "BEACH_BLONDE",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 67
+  },
+  "manu": {
+    "slug": "manu",
+    "score": 48.25,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "WATCH",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BLAZER_OPEN",
+        "count": 8,
+        "weight": 1.5
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 68
+  },
+  "eden": {
+    "slug": "eden",
+    "score": 47.86,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLACK",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "NEUTRAL",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "LONG",
+        "count": 15,
+        "weight": 0.8
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_STRAIGHT",
+        "count": 8,
+        "weight": 1.5
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 69
+  },
+  "dan": {
+    "slug": "dan",
+    "score": 47.83,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "ARCHED",
+        "count": 19,
+        "weight": 3.2
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "WARM",
+        "count": 3,
+        "weight": 4.0
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 70
+  },
+  "ryan": {
+    "slug": "ryan",
+    "score": 47.1,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "CHAIN",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GOLD",
+        "count": 11,
+        "weight": 5.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "CURLY_LONG",
+        "count": 7,
+        "weight": 1.7
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 71
+  },
+  "pb": {
+    "slug": "pb",
+    "score": 46.92,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "NECKLACE_GOLD",
+        "count": 6,
+        "weight": 33.3
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "PINK",
+        "count": 32,
+        "weight": 1.9
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBLONDE",
+        "count": 18,
+        "weight": 0.7
+      },
+      {
+        "trait": "EYES",
+        "value": "HAZEL",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "SUIT_TIE",
+        "count": 10,
+        "weight": 1.2
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 72
+  },
+  "andrew": {
+    "slug": "andrew",
+    "score": 46.78,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "STRAIGHT",
+        "count": 34,
+        "weight": 1.8
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "GREEN",
+        "count": 9,
+        "weight": 6.7
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "TSHIRT",
+        "count": 14,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "FADE",
+        "count": 9,
+        "weight": 1.3
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 73
+  },
+  "jay": {
+    "slug": "jay",
+    "score": 46.7,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "POCKET_SQUARE",
+        "count": 8,
+        "weight": 25.0
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "MAGENTA",
+        "count": 8,
+        "weight": 7.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "DBROWN",
+        "count": 11,
+        "weight": 1.1
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "SCRUFF",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "MOUTH",
+        "value": "GRIN",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "LONG_WAVY",
+        "count": 6,
+        "weight": 2.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 74
+  },
+  "chris-munn": {
+    "slug": "chris-munn",
+    "score": 44.35,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "HEADSET",
+        "count": 7,
+        "weight": 28.6
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMIRK",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "SQUARE",
+        "count": 19,
+        "weight": 0.6
+      },
+      {
+        "trait": "SHIRT",
+        "value": "BUTTON_UP",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 75
+  },
+  "jack-bullard": {
+    "slug": "jack-bullard",
+    "score": 38.21,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "LBROWN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "EYES",
+        "value": "BROWN",
+        "count": 23,
+        "weight": 0.5
+      },
+      {
+        "trait": "SKIN",
+        "value": "MEDIUM",
+        "count": 7,
+        "weight": 1.7
+      },
+      {
+        "trait": "BEARD",
+        "value": "MUSTACHE",
+        "count": 6,
+        "weight": 2.0
+      },
+      {
+        "trait": "MOUTH",
+        "value": "SMILE",
+        "count": 29,
+        "weight": 0.4
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "OVAL",
+        "count": 26,
+        "weight": 0.5
+      },
+      {
+        "trait": "SHIRT",
+        "value": "HOODIE",
+        "count": 5,
+        "weight": 2.4
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "SLICK_BACK",
+        "count": 4,
+        "weight": 3.0
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 76
+  },
+  "sam-foxhall": {
+    "slug": "sam-foxhall",
+    "score": 32.45,
+    "breakdown": [
+      {
+        "trait": "SIGNATURE",
+        "value": "QUESTION_MARK",
+        "count": 12,
+        "weight": 16.7
+      },
+      {
+        "trait": "ACCESSORY",
+        "value": "NONE",
+        "count": 40,
+        "weight": 1.5
+      },
+      {
+        "trait": "BROW_STYLE",
+        "value": "THICK",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "SNORKEL",
+        "value": "TRUE",
+        "count": 24,
+        "weight": 2.5
+      },
+      {
+        "trait": "BRAIN_COLOR",
+        "value": "BLUE",
+        "count": 17,
+        "weight": 3.5
+      },
+      {
+        "trait": "HAIR_COLOR",
+        "value": "BLONDE",
+        "count": 9,
+        "weight": 1.3
+      },
+      {
+        "trait": "EYES",
+        "value": "BLUE",
+        "count": 28,
+        "weight": 0.4
+      },
+      {
+        "trait": "SKIN",
+        "value": "TAN",
+        "count": 60,
+        "weight": 0.2
+      },
+      {
+        "trait": "BEARD",
+        "value": "NONE",
+        "count": 51,
+        "weight": 0.2
+      },
+      {
+        "trait": "MOUTH",
+        "value": "BIG_GRIN",
+        "count": 12,
+        "weight": 1.0
+      },
+      {
+        "trait": "FACE_SHAPE",
+        "value": "ROUND",
+        "count": 17,
+        "weight": 0.7
+      },
+      {
+        "trait": "SHIRT",
+        "value": "POLO",
+        "count": 13,
+        "weight": 0.9
+      },
+      {
+        "trait": "HAIR_STYLE",
+        "value": "MESSY",
+        "count": 13,
+        "weight": 0.9
+      }
+    ],
+    "tier": "COMMON",
+    "tier_color": "#8B95A8",
+    "rank": 77
+  }
+}

@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Braintrust · The Sales Floor Drop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="https://www.braintrust.dev/icon180.png">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #050709; --bg-2: #0A0E17; --panel: #0F1320;
+    --line: rgba(255,255,255,0.08);
+    --text: #ffffff; --text-dim: #8B95A8;
+    --theme-color: #00FF94;
+    --theme-color-2: #00E5FF;
+    --mythic: #FF3366; --legendary: #FFD93D; --rare: #9D7AFF; --uncommon: #00D9FF; --common: #8B95A8;
+  }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body {
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% -10%, color-mix(in srgb, var(--theme-color) 12%, transparent), transparent 70%),
+      radial-gradient(ellipse 800px 500px at 100% 100%, color-mix(in srgb, var(--theme-color) 6%, transparent), transparent 70%),
+      radial-gradient(ellipse 600px 400px at 0% 60%, color-mix(in srgb, var(--theme-color-2) 4%, transparent), transparent 70%),
+      var(--bg);
+    background-attachment: fixed;
+    transition: background 0.6s;
+  }
+  body::before {
+    content: ""; position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.014) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px);
+    background-size: 28px 28px; pointer-events: none; z-index: 0;
+  }
+
+  /* === Custom cursor === */
+  body { cursor: none; }
+  .cursor {
+    position: fixed; width: 14px; height: 14px;
+    border: 2px solid var(--theme-color); border-radius: 50%;
+    pointer-events: none; z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s, border-color 0.4s;
+    mix-blend-mode: difference;
+  }
+  .cursor.hover { width: 36px; height: 36px; background: var(--theme-color); border-color: var(--theme-color); }
+  @media (hover: none) { body { cursor: auto; } .cursor { display: none; } }
+
+  /* === Nav === */
+  .nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(5,7,9,0.78); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .nav-brand { display: flex; align-items: center; gap: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; }
+  .nav-brand img { width: 22px; height: 22px; }
+  .nav-meta { display: flex; gap: 20px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.12em; }
+  .nav-meta .dot { color: var(--theme-color); transition: color 0.4s; }
+  @media (max-width: 720px) { .nav-meta { display: none; } .nav-brand span { display: none; } }
+
+  /* === Hero === */
+  .hero { position: relative; z-index: 1; padding: 80px 32px 28px; max-width: 1400px; margin: 0 auto; text-align: center; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: var(--text-dim); margin-bottom: 24px;
+    backdrop-filter: blur(10px); background: rgba(255,255,255,0.02);
+  }
+  .hero-tag .live-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--theme-color); box-shadow: 0 0 12px var(--theme-color); animation: pulse 2s infinite; transition: background 0.4s, box-shadow 0.4s; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+  h1 {
+    font-size: clamp(40px, 7.5vw, 88px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.95;
+    margin-bottom: 22px;
+    background: linear-gradient(180deg, #ffffff 0%, #8B95A8 130%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 .accent {
+    background: linear-gradient(135deg, var(--theme-color) 0%, color-mix(in srgb, var(--theme-color) 40%, var(--theme-color-2)) 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    transition: background 0.6s;
+  }
+  .hero-sub { font-size: 16px; color: var(--text-dim); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+  /* === Theme switcher === */
+  .themes {
+    display: flex; justify-content: center; margin: 36px auto 0; max-width: 640px; padding: 4px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 100px;
+    position: relative; z-index: 1;
+  }
+  .theme-btn {
+    flex: 1; padding: 12px 14px;
+    background: transparent; border: none; color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.18em; cursor: none; border-radius: 100px;
+    transition: color 0.3s, background 0.4s, transform 0.2s;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .theme-btn.active {
+    color: #050709; background: var(--theme-color);
+    box-shadow: 0 6px 24px color-mix(in srgb, var(--theme-color) 40%, transparent);
+  }
+  .theme-btn:not(.active):hover { color: var(--text); transform: scale(1.02); }
+  .theme-btn .icon { margin-right: 6px; opacity: 0.7; }
+
+  /* === Volume header === */
+  .volume {
+    max-width: 1400px; margin: 64px auto 28px; padding: 0 32px;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+    flex-wrap: wrap;
+  }
+  .volume-meta { flex: 1; min-width: 280px; }
+  .volume-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--theme-color); letter-spacing: 0.3em; margin-bottom: 8px; font-weight: 600; transition: color 0.4s; }
+  .volume-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .volume-desc { font-size: 14px; color: var(--text-dim); margin-top: 8px; max-width: 600px; line-height: 1.6; }
+  .volume-stats { display: flex; gap: 22px; padding-bottom: 6px; }
+  .v-stat { text-align: right; }
+  .v-stat-num { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; }
+  .v-stat-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-dim); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 2px; }
+
+  /* === Toolbar (search + random + filter) === */
+  .toolbar {
+    max-width: 1400px; margin: 0 auto 14px; padding: 0 32px;
+    display: flex; gap: 12px; align-items: center; flex-wrap: wrap;
+  }
+  .search-wrap { position: relative; flex: 1; min-width: 200px; max-width: 320px; }
+  .search-input {
+    width: 100%; padding: 10px 14px 10px 36px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 100px;
+    color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+    outline: none; cursor: none; transition: all 0.2s;
+  }
+  .search-input::placeholder { color: var(--text-dim); }
+  .search-input:focus { border-color: var(--theme-color); background: rgba(255,255,255,0.06); }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-dim); font-size: 12px; pointer-events: none; font-family: 'JetBrains Mono', monospace; }
+  .tool-btn {
+    padding: 9px 14px; background: rgba(255,255,255,0.03); border: 1px solid var(--line); border-radius: 100px;
+    color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em;
+    cursor: none; transition: all 0.2s; text-transform: uppercase;
+  }
+  .tool-btn:hover { background: var(--theme-color); color: #050709; border-color: var(--theme-color); transform: translateY(-1px); }
+
+  /* === Trait filter === */
+  .filter-bar {
+    max-width: 1400px; margin: 0 auto 24px; padding: 0 32px;
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .filter-pill {
+    padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px;
+    background: rgba(255,255,255,0.02); color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+    cursor: none; transition: all 0.2s; text-transform: uppercase;
+  }
+  .filter-pill:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .filter-pill.active { color: #050709; background: var(--theme-color); border-color: var(--theme-color); }
+
+  /* === Grid === */
+  .grid {
+    position: relative; z-index: 1;
+    max-width: 1400px; margin: 0 auto; padding: 0 32px 100px;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px;
+    perspective: 1500px;
+  }
+
+  /* === Card (3D flip + tilt) === */
+  .card {
+    position: relative; aspect-ratio: 1;
+    cursor: none;
+    transform-style: preserve-3d;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.5s;
+    opacity: 0; transform: translateY(60px) rotateX(-20deg);
+    --tx: 0deg; --ty: 0deg; --lift: 0px;
+  }
+  .card.revealed { opacity: 1; transform: translateY(0) rotateX(0deg); }
+  .card.flipped { transform: rotateY(180deg); }
+  .card.revealed:not(.flipped):hover {
+    transform: translateY(-6px) rotateX(var(--tx)) rotateY(var(--ty));
+    transition: transform 0.1s linear;
+  }
+  .card.flipped.revealed:hover { transform: rotateY(180deg) translateY(-6px); }
+
+  .card-face {
+    position: absolute; inset: 0;
+    border-radius: 16px; overflow: hidden;
+    background: var(--panel); border: 1px solid var(--line);
+    backface-visibility: hidden;
+    transition: box-shadow 0.3s, border-color 0.3s;
+  }
+  .card:hover .card-front { box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px var(--card-trait, var(--theme-color)); border-color: var(--card-trait, var(--theme-color)); }
+  .card-front img {
+    width: 100%; height: 100%; display: block;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+    transition: opacity 0.35s;
+  }
+  .card.swapping .card-front img { opacity: 0; }
+
+  /* === Card front overlay (rarity badge + name on hover) === */
+  .card-front-overlay {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.88) 100%);
+    opacity: 0; transition: opacity 0.3s;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 14px;
+  }
+  .card:hover .card-front-overlay { opacity: 1; }
+  .rarity-badge {
+    align-self: flex-start;
+    padding: 4px 10px;
+    background: rgba(0,0,0,0.7); border: 1px solid var(--rarity-color, var(--theme-color));
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--rarity-color, var(--theme-color));
+    backdrop-filter: blur(8px);
+  }
+  .card-name-row { display: flex; justify-content: space-between; align-items: flex-end; }
+  .card-name { font-size: 14px; font-weight: 700; color: #fff; }
+  .card-flip-hint { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--card-trait, var(--theme-color)); letter-spacing: 0.18em; text-transform: uppercase; }
+
+  /* === Card back === */
+  .card-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(160deg, var(--bg-2) 0%, var(--panel) 100%);
+    padding: 18px 16px; display: flex; flex-direction: column; gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .back-header { display: flex; justify-content: space-between; align-items: center; }
+  .back-token { font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+  .back-name { font-family: Inter, sans-serif; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; margin-top: 2px; line-height: 1.1; }
+  .back-role { font-size: 9px; color: var(--card-trait, var(--theme-color)); letter-spacing: 0.2em; margin-top: 1px; text-transform: uppercase; }
+  .back-rarity {
+    margin-top: 6px; padding: 6px 10px; border: 1px solid var(--rarity-color, var(--theme-color));
+    border-radius: 6px; display: flex; justify-content: space-between; align-items: center;
+    background: color-mix(in srgb, var(--rarity-color, var(--theme-color)) 12%, transparent);
+  }
+  .back-rarity .tier { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: var(--rarity-color, var(--theme-color)); }
+  .back-rarity .score { font-size: 10px; color: var(--text-dim); }
+  .back-traits { display: flex; flex-direction: column; gap: 2px; font-size: 9px; margin-top: 6px; }
+  .back-trait { display: flex; justify-content: space-between; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .back-trait .k { color: var(--text-dim); letter-spacing: 0.1em; }
+  .back-trait .v { color: var(--text); font-weight: 600; }
+  .back-trait .c { color: var(--card-trait, var(--theme-color)); margin-left: 6px; font-size: 8px; }
+  .back-actions { margin-top: auto; display: flex; gap: 6px; }
+  .back-btn {
+    flex: 1; padding: 7px; border: 1px solid var(--line); background: rgba(255,255,255,0.04);
+    color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.12em;
+    border-radius: 6px; cursor: none; text-decoration: none; text-align: center;
+    transition: all 0.2s; text-transform: uppercase;
+  }
+  .back-btn:hover { background: var(--card-trait, var(--theme-color)); color: #050709; border-color: var(--card-trait, var(--theme-color)); }
+
+  /* === Modal === */
+  .modal { position: fixed; inset: 0; background: rgba(5,7,9,0.94); backdrop-filter: blur(24px); display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px; animation: fadeIn 0.25s; }
+  .modal.open { display: flex; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .modal-content { max-width: 820px; width: 100%; max-height: 92vh; overflow-y: auto; background: var(--bg-2); border: 1px solid var(--line); border-radius: 20px; padding: 36px; position: relative; animation: slideUp 0.3s; }
+  @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .close { position: absolute; top: 20px; right: 20px; width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid var(--line); color: var(--text-dim); font-size: 18px; cursor: none; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+  .close:hover { background: rgba(255,255,255,0.1); color: var(--text); }
+  .modal-nft { max-width: 480px; margin: 0 auto 24px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 1; }
+  .modal-nft img { width: 100%; height: 100%; display: block; image-rendering: pixelated; image-rendering: crisp-edges; }
+  .modal-meta { text-align: center; margin-bottom: 24px; }
+  .modal-meta h2 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .modal-meta .role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 0.2em; text-transform: uppercase; }
+  .modal-traits { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 24px; }
+  .trait-pill { padding: 6px 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.15em; text-transform: uppercase; }
+  .trait-pill .v { margin-left: 6px; font-weight: 600; }
+  .actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; background: var(--theme-color); color: #050709; text-decoration: none; font-family: Inter, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.02em; border: none; border-radius: 10px; cursor: none; transition: all 0.2s; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 30px color-mix(in srgb, var(--theme-color) 30%, transparent); }
+  .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); box-shadow: none; }
+
+  /* === Glitch transition === */
+  .glitch {
+    position: fixed; inset: 0; z-index: 200;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0, transparent 2px, rgba(255,255,255,0.04) 2px, rgba(255,255,255,0.04) 3px);
+    opacity: 0;
+    mix-blend-mode: screen;
+  }
+  .glitch.active { animation: glitch 0.5s; }
+  @keyframes glitch {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    20% { opacity: 1; transform: translateX(-3px); filter: hue-rotate(90deg); }
+    40% { opacity: 1; transform: translateX(3px); filter: hue-rotate(-90deg); }
+    60% { opacity: 0.6; transform: translateX(-1px); }
+    80% { opacity: 0.3; transform: translateX(1px); }
+  }
+
+  footer { position: relative; z-index: 1; text-align: center; padding: 40px 32px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+  footer a { color: var(--theme-color); text-decoration: none; cursor: none; transition: color 0.4s; }
+
+  /* === Stats dashboard === */
+  .stats-dashboard {
+    max-width: 1400px; margin: 32px auto 0; padding: 0 32px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;
+  }
+  .stats-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px;
+  }
+  .stats-card-label { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--text-dim); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+  .stats-card-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-dim); letter-spacing: 0.15em; margin-top: 6px; opacity: 0.6; }
+  .rarity-bars, .trait-bars { display: flex; flex-direction: column; gap: 6px; }
+  .rarity-bar, .trait-bar {
+    display: grid; grid-template-columns: 80px 1fr 28px; gap: 8px; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  }
+  .rarity-bar .label, .trait-bar .label { color: var(--text); letter-spacing: 0.1em; font-weight: 600; }
+  /* One-of-one trait list */
+  .oneofone-list { display: flex; flex-direction: column; gap: 5px; }
+  .oneofone-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 6px 10px; background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line); border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    transition: border-color 0.2s, background 0.2s; cursor: none;
+  }
+  .oneofone-row:hover { border-color: var(--theme-color); background: rgba(255,255,255,0.06); }
+  .oneofone-row .trait { color: var(--theme-color); letter-spacing: 0.15em; font-weight: 700; }
+  .oneofone-row .holder { color: var(--text-dim); }
+  .oneofone-row .holder b { color: var(--text); font-family: Inter, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0; }
+  .rarity-bar .bar, .trait-bar .bar {
+    display: block;
+    height: 8px; width: 100%;
+    background: rgba(255,255,255,0.05); border-radius: 100px;
+    overflow: hidden; position: relative;
+  }
+  .rarity-bar .fill, .trait-bar .fill {
+    display: block;
+    height: 100%; background: var(--bar-color, var(--theme-color)); border-radius: 100px;
+    transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 0 8px var(--bar-color, var(--theme-color));
+  }
+  .rarity-bar .count, .trait-bar .count { text-align: right; color: var(--text-dim); }
+  .mint-counter { font-family: 'JetBrains Mono', monospace; font-size: 42px; font-weight: 700; letter-spacing: 0.06em; color: var(--theme-color); transition: color 0.4s; text-shadow: 0 0 20px color-mix(in srgb, var(--theme-color) 40%, transparent); }
+
+  /* === Trade activity ticker === */
+  .ticker {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+    background: rgba(5,7,9,0.92); backdrop-filter: blur(20px);
+    border-top: 1px solid var(--line);
+    padding: 10px 0;
+    overflow: hidden;
+  }
+  .ticker-inner {
+    display: flex; gap: 40px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.12em;
+    color: var(--text-dim);
+    animation: ticker-scroll 60s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-inner .item { display: inline-flex; align-items: center; gap: 8px; }
+  .ticker-inner .item .who { color: var(--theme-color); font-weight: 600; transition: color 0.4s; }
+  .ticker-inner .item .tier { padding: 2px 6px; background: rgba(255,255,255,0.06); border-radius: 3px; font-size: 9px; }
+  .ticker:hover .ticker-inner { animation-play-state: paused; }
+  @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* === Floating buttons === */
+  .floaters {
+    position: fixed; right: 20px; bottom: 60px; z-index: 50;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .float-btn {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--panel); border: 1px solid var(--line); color: var(--text);
+    font-size: 18px; cursor: none;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; backdrop-filter: blur(10px);
+  }
+  .float-btn:hover {
+    background: var(--theme-color); color: #050709; border-color: var(--theme-color);
+    transform: translateY(-2px); box-shadow: 0 8px 24px color-mix(in srgb, var(--theme-color) 40%, transparent);
+  }
+  .float-btn.muted { opacity: 0.5; }
+
+  /* === Mint reveal overlay === */
+  .mint-reveal {
+    position: fixed; inset: 0; z-index: 1000;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+    opacity: 1; transition: opacity 0.6s, transform 0.6s;
+  }
+  .mint-reveal.dismissed { opacity: 0; transform: scale(1.05); pointer-events: none; }
+  .mint-reveal::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 800px 500px at 50% 50%, color-mix(in srgb, var(--theme-color) 14%, transparent), transparent 60%),
+      var(--bg);
+  }
+  .mint-reveal-inner { position: relative; text-align: center; max-width: 600px; padding: 32px; }
+  .mint-tag {
+    display: inline-block; padding: 7px 14px; border: 1px solid var(--line); border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: var(--text-dim); margin-bottom: 24px;
+  }
+  .mint-title { font-size: clamp(36px, 7vw, 64px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 18px; }
+  .mint-sub { color: var(--text-dim); font-size: 15px; line-height: 1.7; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .mint-cta {
+    padding: 16px 36px; background: var(--theme-color); color: #050709;
+    border: none; border-radius: 100px; cursor: none;
+    font-family: Inter, sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
+    transition: all 0.2s;
+    box-shadow: 0 12px 40px color-mix(in srgb, var(--theme-color) 30%, transparent);
+  }
+  .mint-cta:hover { transform: translateY(-2px); box-shadow: 0 16px 48px color-mix(in srgb, var(--theme-color) 50%, transparent); }
+  .mint-stats { margin-top: 28px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.22em; }
+
+  /* === Achievement toast === */
+  .achievement-toast {
+    position: fixed; top: 80px; right: -400px; z-index: 200;
+    background: linear-gradient(135deg, var(--bg-2) 0%, var(--panel) 100%);
+    border: 1px solid var(--theme-color);
+    border-radius: 12px; padding: 14px 18px;
+    display: flex; align-items: center; gap: 14px;
+    min-width: 280px; max-width: 360px;
+    box-shadow: 0 20px 60px color-mix(in srgb, var(--theme-color) 30%, transparent);
+    transition: right 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .achievement-toast.show { right: 20px; }
+  .achievement-icon {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--theme-color); color: #050709;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700;
+  }
+  .achievement-title { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--text-dim); letter-spacing: 0.2em; }
+  .achievement-name { font-size: 14px; font-weight: 700; color: var(--text); margin-top: 2px; }
+
+  /* === Pack opening CTA + modal === */
+  .pack-cta-wrap { display: flex; justify-content: center; padding: 0 32px 8px; position: relative; z-index: 2; }
+  .pack-cta {
+    padding: 14px 28px; background: linear-gradient(135deg, var(--theme-color), color-mix(in srgb, var(--theme-color) 50%, var(--theme-color-2)));
+    color: #050709; border: none; border-radius: 100px; cursor: none;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.16em;
+    display: inline-flex; align-items: center; gap: 12px;
+    transition: all 0.2s; box-shadow: 0 12px 40px color-mix(in srgb, var(--theme-color) 30%, transparent);
+    animation: pack-pulse 3s ease-in-out infinite;
+  }
+  .pack-cta:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 16px 48px color-mix(in srgb, var(--theme-color) 50%, transparent); }
+  .pack-icon { font-size: 16px; }
+  @keyframes pack-pulse {
+    0%, 100% { box-shadow: 0 12px 40px color-mix(in srgb, var(--theme-color) 30%, transparent); }
+    50% { box-shadow: 0 12px 50px color-mix(in srgb, var(--theme-color) 60%, transparent); }
+  }
+
+  .pack-modal {
+    position: fixed; inset: 0; z-index: 150;
+    background: rgba(5,7,9,0.96); backdrop-filter: blur(24px);
+    display: none; align-items: center; justify-content: center; padding: 24px;
+  }
+  .pack-modal.open { display: flex; }
+  .pack-inner { max-width: 900px; width: 100%; text-align: center; position: relative; }
+  .pack-close {
+    position: absolute; top: 0; right: 0;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--line);
+    color: var(--text-dim); font-size: 18px; cursor: none;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pack-title { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .pack-sub { color: var(--text-dim); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; margin-bottom: 36px; }
+  .pack-cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    perspective: 1500px;
+  }
+  .pack-card {
+    aspect-ratio: 1; position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: none;
+  }
+  .pack-card.revealing { animation: pack-shake 1.5s ease-in-out; }
+  .pack-card.flipped { transform: rotateY(180deg); }
+  @keyframes pack-shake {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    25% { transform: translateY(-8px) rotate(-2deg); }
+    50% { transform: translateY(-12px) rotate(2deg); }
+    75% { transform: translateY(-6px) rotate(-1deg); }
+  }
+  .pack-face { position: absolute; inset: 0; border-radius: 16px; backface-visibility: hidden; }
+  .pack-back {
+    background: linear-gradient(135deg, var(--bg-2) 0%, var(--panel) 100%);
+    border: 1px solid var(--theme-color);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 0 40px color-mix(in srgb, var(--theme-color) 30%, transparent);
+  }
+  .pack-back::before {
+    content: "?";
+    font-size: 80px; font-weight: 900;
+    color: var(--theme-color); opacity: 0.8;
+  }
+  .pack-front { transform: rotateY(180deg); border: 1px solid var(--line); overflow: hidden; }
+  .pack-front img { width: 100%; height: 100%; image-rendering: pixelated; }
+  .pack-actions { margin-top: 28px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+  /* === Leaderboard modal items === */
+  .lb-row {
+    display: grid; grid-template-columns: 50px 64px 1fr auto; gap: 12px;
+    padding: 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  .lb-row:hover { transform: translateX(4px); border-color: var(--rarity-color); }
+  .lb-row .rank { font-size: 14px; color: var(--text-dim); }
+  .lb-row .rank.top3 { color: var(--theme-color); font-weight: 700; }
+  .lb-row .lb-thumb { aspect-ratio: 1; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); }
+  .lb-row .lb-thumb img { width: 100%; height: 100%; image-rendering: pixelated; }
+  .lb-row .lb-name { font-family: Inter, sans-serif; font-size: 13px; font-weight: 700; }
+  .lb-row .lb-tier { font-size: 9px; letter-spacing: 0.2em; color: var(--rarity-color); margin-top: 2px; }
+  .lb-row .lb-score { font-size: 13px; font-weight: 700; color: var(--theme-color); }
+
+  @media (max-width: 640px) {
+    .hero { padding: 56px 20px 24px; }
+    .volume { padding: 0 20px; }
+    .grid { padding: 0 16px 60px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .modal-content { padding: 24px; }
+    .theme-btn { padding: 10px 6px; font-size: 9.5px; }
+    .filter-bar { padding: 0 16px; }
+    body { cursor: auto; }
+    .cursor { display: none; }
+    .card { cursor: pointer; }
+    .card-front-overlay { opacity: 1; background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%); }
+    .stats-dashboard { padding: 0 16px; }
+    .floaters { right: 14px; bottom: 64px; }
+    .float-btn { width: 40px; height: 40px; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <img src="https://www.braintrust.dev/icon180.png" alt="BT">
+    <span>BRAINTRUST</span>
+  </div>
+  <div class="nav-meta">
+    <span><span class="dot">●</span> COLLECTION: <span id="nav-collection">BT-1</span></span>
+    <span>SUPPLY: <span id="nav-supply">077</span></span>
+    <span>NETWORK: WEST</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">
+    <span class="live-dot"></span>
+    <span id="hero-tag-label">GENESIS · CLASS OF 2026</span>
+  </div>
+  <h1>The Sales Floor<br><span class="accent" id="hero-headline">on-chain</span>.</h1>
+  <p class="hero-sub" id="hero-sub">A three-volume drop of the West Coast sales floor at Braintrust. 15 portraits, 3 editions, 45 mints. Hover any card to flip and reveal its traits.</p>
+
+  <div class="themes" role="tablist">
+    <button class="theme-btn active" data-theme="corporate" data-color="#00FF94" data-color2="#00E5FF"
+            data-label="GENESIS · CLASS OF 2026" data-collection="BT-1" data-headline="on-chain"
+            data-vol-tag="VOLUME I · GENESIS" data-vol-title="Corporate Mint"
+            data-vol-desc="The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops."
+            data-sub="A three-volume drop of the West Coast sales floor at Braintrust. 15 portraits, 3 editions, 45 mints. Hover any card to flip and reveal its traits.">
+      <span class="icon">◆</span>GENESIS
+    </button>
+    <button class="theme-btn" data-theme="galaxy" data-color="#FF6B9D" data-color2="#FFD93D"
+            data-label="GALAXY · BRAIN-CORE" data-collection="BT-3" data-headline="galaxy-brain"
+            data-vol-tag="VOLUME III · GALAXY" data-vol-title="Brain-Core Exposed"
+            data-vol-desc="Every operator at maximum cognition. Full cortex exposed, hemisphere split, glowing circuit traces, eight cybernetic cables, gold neural ports embedded in the neck plate."
+            data-sub="The Galaxy-Brain Edition. Skull-cap removed. Cortex on display. Each operator is now 100% on-chain consciousness.">
+      <span class="icon">⚯</span>GALAXY
+    </button>
+    <button class="theme-btn" data-theme="cyberpunk" data-color="#FF66C4" data-color2="#60E6FF"
+            data-label="CYBERPUNK · 2087 STREET" data-collection="BT-4" data-headline="jacked-in"
+            data-vol-tag="VOLUME IV · CYBERPUNK" data-vol-title="2087 Street Edition"
+            data-vol-desc="Every operator hoods-up. Cyber visors replace eyes. Neon scar tattoos. Magenta/cyan grid streets with terminal-green code rain in the alleyways."
+            data-sub="The Cyberpunk Edition. Hoods up, visors down. 15 operators wired into the grid.">
+      <span class="icon">▮</span>CYBERPUNK
+    </button>
+  </div>
+</section>
+
+<!-- Stats dashboard -->
+<div class="stats-dashboard" id="stats-dashboard">
+  <div class="stats-card">
+    <div class="stats-card-label">RARITY DISTRIBUTION</div>
+    <div class="rarity-bars" id="rarity-bars"></div>
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-label">1-OF-1 TRAITS</div>
+    <div class="oneofone-list" id="trait-bars"></div>
+  </div>
+  <div class="stats-card">
+    <div class="stats-card-label">LIVE MINT COUNTER</div>
+    <div class="mint-counter" id="mint-counter">0000</div>
+    <div class="stats-card-sub">TOTAL MINTS · UPDATES IN REAL TIME</div>
+  </div>
+</div>
+
+<!-- Volume header (changes per theme) -->
+<div class="volume">
+  <div class="volume-meta">
+    <div class="volume-tag" id="vol-tag">VOLUME I · GENESIS</div>
+    <div class="volume-title" id="vol-title">Corporate Mint</div>
+    <div class="volume-desc" id="vol-desc">The original 15. Hand-pixeled portraits with signature accessories, trait scarcity, and CryptoPunks-inspired colored backdrops.</div>
+  </div>
+  <div class="volume-stats">
+    <div class="v-stat"><div class="v-stat-num">077</div><div class="v-stat-label">Mints</div></div>
+    <div class="v-stat"><div class="v-stat-num" id="vol-mythics">01</div><div class="v-stat-label">Mythic</div></div>
+    <div class="v-stat"><div class="v-stat-num">100%</div><div class="v-stat-label">Revealed</div></div>
+  </div>
+</div>
+
+<!-- Toolbar (search + random) -->
+<div class="toolbar">
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input class="search-input" type="text" id="search" placeholder="SEARCH BY NAME...">
+  </div>
+  <button class="tool-btn" id="random-btn">🎲 RANDOM</button>
+  <button class="tool-btn" id="shuffle-btn">⤭ SHUFFLE</button>
+  <button class="tool-btn" id="flip-all-btn">↻ FLIP ALL</button>
+  <button class="tool-btn" id="compare-btn">≡ COMPARE EDITIONS</button>
+</div>
+
+<!-- Trait filter -->
+<div class="filter-bar" id="filter-bar"></div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  BRAINTRUST.DEV · CURATED BY <a href="https://www.linkedin.com/in/kensington-belza/">KENSINGTON BELZA</a> · MMXXVI · 3 VOLUMES · 231 MINTS
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content" id="modal-content"></div>
+</div>
+
+<div class="glitch" id="glitch"></div>
+
+<!-- Background particles canvas (theme-aware) -->
+<canvas id="particles" style="position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.6"></canvas>
+
+<!-- Confetti canvas -->
+<canvas id="confetti" style="position:fixed;inset:0;pointer-events:none;z-index:90"></canvas>
+
+<!-- Cursor trail canvas -->
+<canvas id="trail" style="position:fixed;inset:0;pointer-events:none;z-index:9998"></canvas>
+
+<!-- Achievement notification -->
+<div class="achievement-toast" id="achievement-toast">
+  <div class="achievement-icon">★</div>
+  <div class="achievement-content">
+    <div class="achievement-title">ACHIEVEMENT UNLOCKED</div>
+    <div class="achievement-name" id="achievement-name"></div>
+  </div>
+</div>
+
+<!-- Trade activity ticker -->
+<div class="ticker" id="ticker">
+  <div class="ticker-inner" id="ticker-inner"></div>
+</div>
+
+<!-- Pack opening CTA banner -->
+<div class="pack-cta-wrap">
+  <button class="pack-cta" id="pack-open-btn">
+    <span class="pack-icon">▣</span>
+    <span class="pack-text">OPEN A FREE PACK · 3 RANDOM PULLS</span>
+  </button>
+</div>
+
+<!-- Sound + leaderboard floating buttons -->
+<div class="floaters">
+  <button class="float-btn" id="music-btn" title="Toggle music">♫</button>
+  <button class="float-btn" id="sound-btn" title="Toggle SFX">🔊</button>
+  <button class="float-btn" id="trophy-btn" title="Achievements">🏆</button>
+  <button class="float-btn" id="leaderboard-btn" title="Rarity leaderboard">★</button>
+  <button class="float-btn" id="pack-btn-floating" title="Open pack">▣</button>
+  <button class="float-btn" id="back-to-top" title="Back to top">↑</button>
+</div>
+
+<!-- Pack opening modal -->
+<div class="pack-modal" id="pack-modal">
+  <div class="pack-inner">
+    <button class="pack-close" onclick="closePack()">×</button>
+    <div class="pack-title" id="pack-title">Opening Pack...</div>
+    <div class="pack-sub" id="pack-sub">3 RANDOM PULLS · CURRENT EDITION</div>
+    <div class="pack-cards" id="pack-cards"></div>
+    <div class="pack-actions">
+      <button class="btn" id="pack-flip-btn" style="display:none">REVEAL ALL</button>
+      <button class="btn btn-ghost" id="pack-again-btn" style="display:none">▣ OPEN ANOTHER</button>
+    </div>
+  </div>
+</div>
+
+<!-- Mint reveal overlay (first visit) -->
+<div class="mint-reveal" id="mint-reveal">
+  <div class="mint-reveal-inner">
+    <div class="mint-tag">⬢ INITIAL MINT · BT-1 GENESIS</div>
+    <h1 class="mint-title">15 Operators<br><span style="color:var(--theme-color)">unrevealed</span>.</h1>
+    <p class="mint-sub">Welcome to the Braintrust Sales Floor drop. 15 hand-pixeled portraits across 4 editions. 60 unique mints. Click below to reveal.</p>
+    <button class="mint-cta" id="mint-cta">▶ REVEAL THE FLOOR</button>
+    <div class="mint-stats">77 OPERATORS · 3 EDITIONS · 231 MINTS · 1 MYTHIC</div>
+  </div>
+</div>
+
+<script>
+// People loaded from auto_people.json
+let people = [];
+let currentTheme = "corporate";
+let rarityData = {};
+let activeFilter = null;
+
+const TRAIT_NAME_MAP = {
+  "#00FF94": "EMERALD","#FF6B9D": "ROSE","#FFD93D": "GOLD","#00D9FF": "CYAN",
+  "#9D7AFF": "AMETHYST","#FF8C42": "AMBER","#7B61FF": "VIOLET","#FF3366": "CRIMSON",
+  "#00E5FF": "ELECTRIC","#FFC857": "SOLAR","#A8E6CF": "MINT","#4ECDC4": "TEAL",
+  "#E0E0E0": "PLATINUM","#FF66C4": "MAGENTA","#B8FF3D": "LIME","#7BFFD4": "AQUA",
+  "#FFAA00": "SUN","#FF4488": "BLUSH","#88CCFF": "SKY","#FFD0AA": "SAND",
+  "#AAFF88": "SAGE","#FF88AA": "PEACH","#88FFAA": "JADE","#FFCCFF": "PETAL",
+};
+
+function deriveTags(p) {
+  const t = [];
+  if (p.signature) t.push(p.signature.toUpperCase());
+  if (p.accessory) t.push(p.accessory.toUpperCase());
+  if (p.snorkel) t.push("SNORKEL");
+  if (p.beard && p.beard !== "none") t.push(p.beard.toUpperCase());
+  if (p.role && p.role.toLowerCase().includes("account executive")) t.push("AE");
+  return t;
+}
+
+// Load people first, then rarity, then render
+Promise.all([
+  fetch('auto_people.json').then(r => r.json()),
+  fetch('rarity.json').then(r => r.json()),
+]).then(([rawPeople, rarity]) => {
+  people = rawPeople.map((p, i) => ({
+    name: p.name,
+    role: p.role,
+    slug: p.slug,
+    trait: p.trait,
+    trait_name: TRAIT_NAME_MAP[p.trait.toUpperCase()] || "CHROMA",
+    id: i + 1,
+    tags: deriveTags(p),
+  }));
+  rarityData = rarity;
+  renderGrid();
+  renderFilters();
+  renderStats();
+});
+
+// === Cursor ===
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+document.addEventListener('mouseover', e => {
+  if (e.target.matches('.card, .theme-btn, .filter-pill, .btn, .back-btn, .close, a, .back-actions a')) {
+    cursor.classList.add('hover');
+  }
+});
+document.addEventListener('mouseout', e => {
+  if (e.target.matches('.card, .theme-btn, .filter-pill, .btn, .back-btn, .close, a, .back-actions a')) {
+    cursor.classList.remove('hover');
+  }
+});
+
+// === Grid render ===
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  const visible = activeFilter ? people.filter(p => p.tags.includes(activeFilter)) : people;
+
+  visible.forEach((p, i) => {
+    const r = rarityData[p.slug] || { tier: 'COMMON', tier_color: '#8B95A8', score: 0, rank: 0, breakdown: [] };
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.style.setProperty('--card-trait', p.trait);
+    card.style.setProperty('--rarity-color', r.tier_color);
+    card.dataset.slug = p.slug;
+
+    card.innerHTML = `
+      <div class="card-face card-front">
+        <img src="nfts/${currentTheme}/${p.slug}_nft.svg" alt="${p.name}" loading="lazy">
+        <div class="card-front-overlay">
+          <div class="rarity-badge">${r.tier} · #${String(r.rank).padStart(2,'0')}</div>
+          <div class="card-name-row">
+            <div class="card-name">${p.name}</div>
+            <div class="card-flip-hint">FLIP →</div>
+          </div>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div class="back-header">
+          <span class="back-token">#${String(p.id).padStart(3,'0')} / 077</span>
+          <span class="back-token">${currentTheme.toUpperCase()}</span>
+        </div>
+        <div>
+          <div class="back-name">${p.name}</div>
+          <div class="back-role">${p.role}</div>
+        </div>
+        <div class="back-rarity">
+          <span class="tier">${r.tier}</span>
+          <span class="score">SCORE ${r.score} · RANK ${r.rank}/15</span>
+        </div>
+        <div class="back-traits">
+          ${(r.breakdown || []).slice(0, 7).map(t =>
+            `<div class="back-trait"><span class="k">${t.trait}</span><span><span class="v">${t.value}</span><span class="c">·${t.count}</span></span></div>`
+          ).join('')}
+        </div>
+        <div class="back-actions">
+          <a class="back-btn" href="nfts/${currentTheme}/${p.slug}_nft.svg" download="${p.name.replace(/\s/g,'_')}_${currentTheme}_${String(p.id).padStart(3,'0')}.svg">↓ DOWNLOAD</a>
+          <button class="back-btn" onclick="event.stopPropagation(); shareTwitter('${p.slug}', '${p.name}', '${r.tier}')">SHARE</button>
+        </div>
+      </div>
+    `;
+    // Click toggles flip (don't trigger flip when clicking buttons on back)
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.back-btn')) return;
+      if (e.detail === 2) { openModal(p, r); }
+      else { card.classList.toggle('flipped'); }
+    });
+    grid.appendChild(card);
+  });
+
+  // Stagger reveal via IntersectionObserver
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, idx) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('revealed'), idx * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.card').forEach(c => observer.observe(c));
+
+  // Initialize 3D tilt on all cards
+  initTilt();
+}
+
+// === Filter render ===
+function renderFilters() {
+  const bar = document.getElementById('filter-bar');
+  const filters = ['ALL', 'AE', 'SUNGLASSES', 'LASER_EYES', 'AI_AGENT', 'BEACH', 'SNORKEL', 'CHAIN', 'CROWN', 'MYSTERY'];
+  bar.innerHTML = filters.map(f =>
+    `<button class="filter-pill ${(f === 'ALL' && !activeFilter) || activeFilter === f ? 'active' : ''}" data-filter="${f}">${f.replace('_', ' ')}</button>`
+  ).join('');
+  bar.querySelectorAll('.filter-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      activeFilter = (f === 'ALL') ? null : f;
+      renderFilters();
+      renderGrid();
+    });
+  });
+}
+
+// === Theme switching ===
+const themeBtns = document.querySelectorAll('.theme-btn');
+themeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.classList.contains('active')) return;
+    themeBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const theme = btn.dataset.theme;
+    document.documentElement.style.setProperty('--theme-color', btn.dataset.color);
+    document.documentElement.style.setProperty('--theme-color-2', btn.dataset.color2);
+    document.getElementById('hero-tag-label').textContent = btn.dataset.label;
+    document.getElementById('hero-headline').textContent = btn.dataset.headline;
+    document.getElementById('hero-sub').textContent = btn.dataset.sub;
+    document.getElementById('nav-collection').textContent = btn.dataset.collection;
+    document.getElementById('vol-tag').textContent = btn.dataset.volTag;
+    document.getElementById('vol-title').textContent = btn.dataset.volTitle;
+    document.getElementById('vol-desc').textContent = btn.dataset.volDesc;
+    currentTheme = theme;
+
+    // RESET ALL CARD FLIPS to face-front on theme switch
+    document.querySelectorAll('.card.flipped').forEach(c => c.classList.remove('flipped'));
+
+    // Glitch effect
+    const glitch = document.getElementById('glitch');
+    glitch.classList.add('active');
+    setTimeout(() => glitch.classList.remove('active'), 500);
+
+    // Swap card images (cross-fade)
+    document.querySelectorAll('.card').forEach(card => {
+      card.classList.add('swapping');
+      const img = card.querySelector('.card-front img');
+      const slug = card.dataset.slug;
+      const newSrc = `nfts/${theme}/${slug}_nft.svg`;
+      const pre = new Image();
+      pre.onload = () => {
+        img.src = newSrc;
+        requestAnimationFrame(() => card.classList.remove('swapping'));
+      };
+      pre.src = newSrc;
+      // Update back of card download/share to new theme
+      const dlBtn = card.querySelector('.back-actions a');
+      if (dlBtn) dlBtn.href = newSrc;
+      const tokenSpan = card.querySelectorAll('.back-token')[1];
+      if (tokenSpan) tokenSpan.textContent = theme.toUpperCase();
+    });
+  });
+});
+
+// === 3D card tilt on mouse hover ===
+function initTilt() {
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      if (card.classList.contains('flipped')) return;
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;  // -0.5 to 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const tx = -y * 12;  // pitch
+      const ty = x * 12;   // yaw
+      card.style.setProperty('--tx', tx + 'deg');
+      card.style.setProperty('--ty', ty + 'deg');
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--tx', '0deg');
+      card.style.setProperty('--ty', '0deg');
+    });
+  });
+}
+
+// === Background parallax on mouse move ===
+let parallaxX = 50, parallaxY = -10;
+document.addEventListener('mousemove', e => {
+  const x = (e.clientX / window.innerWidth) * 100;
+  const y = (e.clientY / window.innerHeight) * 50 - 25;
+  parallaxX += (x - parallaxX) * 0.05;
+  parallaxY += (y - parallaxY) * 0.05;
+  document.body.style.backgroundPosition =
+    `${parallaxX}% ${parallaxY}%, ${100 - parallaxX}% ${100 + parallaxY}%, 0% 60%, 0 0`;
+});
+
+// === Toolbar buttons ===
+document.getElementById('random-btn').addEventListener('click', () => {
+  const cards = document.querySelectorAll('.card');
+  if (!cards.length) return;
+  const idx = Math.floor(Math.random() * cards.length);
+  cards[idx].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  setTimeout(() => cards[idx].classList.add('flipped'), 600);
+  setTimeout(() => {
+    cards[idx].animate(
+      [{ boxShadow: '0 0 0 0 var(--theme-color)' },
+       { boxShadow: '0 0 0 30px transparent' }],
+      { duration: 1000, iterations: 2 }
+    );
+  }, 600);
+});
+
+document.getElementById('shuffle-btn').addEventListener('click', () => {
+  const grid = document.getElementById('grid');
+  const cards = Array.from(grid.children);
+  // Fisher-Yates shuffle
+  for (let i = cards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [cards[i], cards[j]] = [cards[j], cards[i]];
+  }
+  // Re-append in new order with fade
+  cards.forEach((c, i) => {
+    c.style.opacity = '0';
+    setTimeout(() => {
+      grid.appendChild(c);
+      c.style.opacity = '1';
+    }, i * 30);
+  });
+});
+
+document.getElementById('flip-all-btn').addEventListener('click', () => {
+  const cards = document.querySelectorAll('.card');
+  const anyFlipped = Array.from(cards).some(c => c.classList.contains('flipped'));
+  cards.forEach((c, i) => {
+    setTimeout(() => {
+      if (anyFlipped) c.classList.remove('flipped');
+      else c.classList.add('flipped');
+    }, i * 40);
+  });
+});
+
+document.getElementById('compare-btn').addEventListener('click', () => {
+  openCompareModal();
+});
+
+document.getElementById('search').addEventListener('input', (e) => {
+  const q = e.target.value.toLowerCase().trim();
+  document.querySelectorAll('.card').forEach(card => {
+    const slug = card.dataset.slug;
+    const p = people.find(p => p.slug === slug);
+    const match = !q || p.name.toLowerCase().includes(q) || p.trait_name.toLowerCase().includes(q) || (p.tags || []).join(' ').toLowerCase().includes(q);
+    card.style.display = match ? '' : 'none';
+  });
+});
+
+// === Compare editions modal ===
+function openCompareModal() {
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 style="text-align:center; font-size:28px; margin-bottom:8px; font-weight:800;">All 3 Editions</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">SWIPE THROUGH 77 OPERATORS × 3 VOLUMES</p>
+    <div id="compare-grid" style="display:grid; gap:12px;"></div>
+  `;
+  const cmpGrid = document.getElementById('compare-grid');
+  cmpGrid.innerHTML = people.map(p => {
+    const r = rarityData[p.slug] || { tier: 'COMMON', tier_color: '#8B95A8' };
+    return `
+      <div style="display:grid; grid-template-columns: 1fr repeat(3, 80px); gap:12px; align-items:center; padding:10px; background:var(--panel); border:1px solid var(--line); border-radius:12px;">
+        <div>
+          <div style="font-weight:700; font-size:14px;">${p.name}</div>
+          <div style="font-size:9px; color:${r.tier_color}; font-family:'JetBrains Mono',monospace; letter-spacing:0.18em; margin-top:2px;">${r.tier} · #${String(p.id).padStart(3,'0')}</div>
+        </div>
+        <a href="nfts/corporate/${p.slug}_nft.svg" download style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid var(--line);"><img src="nfts/corporate/${p.slug}_nft.svg" style="width:100%; height:100%; image-rendering:pixelated;"></a>
+        <a href="nfts/galaxy/${p.slug}_nft.svg" download style="border-radius:8px; overflow:hidden; aspect-ratio:1; border:1px solid var(--line);"><img src="nfts/galaxy/${p.slug}_nft.svg" style="width:100%; height:100%; image-rendering:pixelated;"></a>
+      </div>
+    `;
+  }).join('');
+  document.getElementById('modal').classList.add('open');
+}
+
+// === Modal (double-click on card) ===
+function openModal(p, r) {
+  const themeBtn = document.querySelector('.theme-btn.active');
+  const themeColor = themeBtn.dataset.color;
+  const collection = themeBtn.dataset.collection;
+  const label = themeBtn.dataset.label.split(' · ')[0];
+  const content = document.getElementById('modal-content');
+  const token = `${String(p.id).padStart(3,'0')} / 077`;
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <div class="modal-nft"><img src="nfts/${currentTheme}/${p.slug}_nft.svg" alt="${p.name}"></div>
+    <div class="modal-meta">
+      <h2>${p.name}</h2>
+      <div class="role">${p.role}</div>
+    </div>
+    <div class="modal-traits">
+      <div class="trait-pill">TOKEN<span class="v" style="color:${themeColor}">${token}</span></div>
+      <div class="trait-pill">RARITY<span class="v" style="color:${r.tier_color}">${r.tier}</span></div>
+      <div class="trait-pill">RANK<span class="v" style="color:${themeColor}">#${r.rank}/15</span></div>
+      <div class="trait-pill">EDITION<span class="v" style="color:${themeColor}">${label}</span></div>
+      <div class="trait-pill">CHAIN<span class="v" style="color:${themeColor}">${collection}</span></div>
+    </div>
+    <div class="actions">
+      <a class="btn" style="background:${themeColor}" href="nfts/${currentTheme}/${p.slug}_nft.svg" download="${p.name.replace(/\s/g,'_')}_${collection}_${String(p.id).padStart(3,'0')}.svg">↓ DOWNLOAD NFT</a>
+      <button class="btn btn-ghost" onclick="shareTwitter('${p.slug}','${p.name}','${r.tier}')">SHARE</button>
+      <button class="btn btn-ghost" onclick="copyLink('${p.slug}', this)">⎘ COPY LINK</button>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+
+function copyLink(slug, btn) {
+  const url = `${window.location.origin}/nfts/${currentTheme}/${slug}_nft.svg`;
+  navigator.clipboard.writeText(url).then(() => {
+    const orig = btn.innerHTML;
+    btn.innerHTML = '✓ COPIED';
+    setTimeout(() => btn.innerHTML = orig, 1500);
+  });
+}
+
+function shareTwitter(slug, name, tier) {
+  const url = `${window.location.origin}/?nft=${slug}&theme=${currentTheme}`;
+  const text = `just got ${name} (${tier}) from the Braintrust Sales Floor drop. 1 of 1. ${currentTheme.toUpperCase()} edition.`;
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+}
+
+document.getElementById('modal').addEventListener('click', (e) => { if (e.target.id === 'modal') closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+    const btns = Array.from(themeBtns);
+    const active = btns.findIndex(b => b.classList.contains('active'));
+    const next = e.key === 'ArrowRight' ? (active + 1) % btns.length : (active - 1 + btns.length) % btns.length;
+    btns[next].click();
+  }
+});
+
+// === SOUND SYSTEM (Web Audio synth) ===
+let audioCtx = null;
+let soundOn = localStorage.getItem('bt_sound') !== 'off';
+function getCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+function playBlip(freq = 600, dur = 0.06, type = 'sine', vol = 0.05) {
+  if (!soundOn) return;
+  try {
+    const ctx = getCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(vol, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.start(); osc.stop(ctx.currentTime + dur);
+  } catch (e) {}
+}
+function playChord(freqs, dur = 0.3, type = 'triangle', vol = 0.04) {
+  freqs.forEach((f, i) => setTimeout(() => playBlip(f, dur, type, vol), i * 50));
+}
+const soundBtn = document.getElementById('sound-btn');
+soundBtn.textContent = soundOn ? '🔊' : '🔇';
+if (!soundOn) soundBtn.classList.add('muted');
+soundBtn.addEventListener('click', () => {
+  soundOn = !soundOn;
+  localStorage.setItem('bt_sound', soundOn ? 'on' : 'off');
+  soundBtn.textContent = soundOn ? '🔊' : '🔇';
+  soundBtn.classList.toggle('muted', !soundOn);
+  if (soundOn) playChord([523, 659, 784], 0.15);
+});
+
+// Wire up sounds to interactions
+document.addEventListener('mouseover', e => {
+  if (e.target.matches('.card, .theme-btn, .filter-pill, .btn, .back-btn, .float-btn, .tool-btn')) playBlip(800, 0.03, 'sine', 0.02);
+});
+themeBtns.forEach(btn => btn.addEventListener('click', () => playChord([440, 554, 659], 0.2, 'triangle', 0.04)));
+
+// === CONFETTI on Mythic/Legendary card flip ===
+const confettiCanvas = document.getElementById('confetti');
+const cctx = confettiCanvas.getContext('2d');
+let confettiParticles = [];
+function resizeConfetti() {
+  confettiCanvas.width = window.innerWidth;
+  confettiCanvas.height = window.innerHeight;
+}
+resizeConfetti(); window.addEventListener('resize', resizeConfetti);
+function spawnConfetti(x, y, color) {
+  const colors = [color, '#FFD93D', '#FF3366', '#00E5FF', '#FFFFFF'];
+  for (let i = 0; i < 60; i++) {
+    confettiParticles.push({
+      x, y,
+      vx: (Math.random() - 0.5) * 14,
+      vy: -Math.random() * 12 - 3,
+      size: 4 + Math.random() * 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      rot: Math.random() * Math.PI * 2,
+      vrot: (Math.random() - 0.5) * 0.4,
+      life: 1,
+    });
+  }
+}
+function tickConfetti() {
+  cctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+  confettiParticles = confettiParticles.filter(p => p.life > 0);
+  confettiParticles.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    p.vy += 0.4;  // gravity
+    p.vx *= 0.99;
+    p.rot += p.vrot;
+    p.life -= 0.012;
+    cctx.save();
+    cctx.translate(p.x, p.y);
+    cctx.rotate(p.rot);
+    cctx.fillStyle = p.color;
+    cctx.globalAlpha = p.life;
+    cctx.fillRect(-p.size/2, -p.size/2, p.size, p.size);
+    cctx.restore();
+  });
+  requestAnimationFrame(tickConfetti);
+}
+tickConfetti();
+
+// Hook confetti to card flip
+document.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (!card || e.target.closest('.back-btn')) return;
+  const slug = card.dataset.slug;
+  const r = rarityData[slug];
+  if (r && (r.tier === 'MYTHIC' || r.tier === 'LEGENDARY') && !card.classList.contains('flipped')) {
+    const rect = card.getBoundingClientRect();
+    setTimeout(() => spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, r.tier_color), 100);
+    playChord([523, 659, 784, 1046], 0.4);
+  } else {
+    playBlip(440, 0.08, 'square', 0.03);
+  }
+});
+
+// === STATS DASHBOARD ===
+let statsRendered = false;
+function renderStats() {
+  if (statsRendered) return;
+  if (!Object.keys(rarityData).length) return;
+  statsRendered = true;
+
+  // Rarity tier distribution
+  const tiers = { MYTHIC: 0, LEGENDARY: 0, RARE: 0, UNCOMMON: 0, COMMON: 0 };
+  const tierColors = { MYTHIC: '#FF3366', LEGENDARY: '#FFD93D', RARE: '#9D7AFF', UNCOMMON: '#00D9FF', COMMON: '#8B95A8' };
+  Object.values(rarityData).forEach(r => { if (tiers[r.tier] != null) tiers[r.tier]++; });
+  const max = Math.max(1, ...Object.values(tiers));
+  const rarityHTML = Object.entries(tiers).map(([t, c]) => `
+    <div class="rarity-bar" style="--bar-color:${tierColors[t]}">
+      <span class="label" style="color:${tierColors[t]}">${t}</span>
+      <span class="bar"><span class="fill" style="width:${(c/max)*100}%"></span></span>
+      <span class="count">${String(c).padStart(2,'0')}</span>
+    </div>`).join('');
+  const rarityEl = document.getElementById('rarity-bars');
+  if (rarityEl) rarityEl.innerHTML = rarityHTML;
+
+  // 1-of-1 traits (show traits owned by exactly one operator, with holder)
+  const traitOwners = {};
+  people.forEach(p => (p.tags || []).forEach(t => {
+    if (!traitOwners[t]) traitOwners[t] = [];
+    traitOwners[t].push(p);
+  }));
+  // Pick interesting 1-of-1s, ordered by rarity importance
+  const priority = ['AI_AGENT','LASER_EYES','AR_GLASSES','BT_PIN','MYSTERY','PINT_GLASS','SURFBOARD','HEADSET','CROWN','AVIATORS','HOODIE','CHAIN','CURLY','CROSS','WATCH','GLASSES'];
+  const oneOfOnes = priority
+    .filter(t => traitOwners[t] && traitOwners[t].length === 1)
+    .slice(0, 7);
+  const oneOfOneHTML = oneOfOnes.map(t => {
+    const owner = traitOwners[t][0];
+    return `
+      <div class="oneofone-row" onclick="(() => { const c = document.querySelector('.card[data-slug=\\'${owner.slug}\\']'); if (c) { c.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(() => c.classList.add('flipped'), 600); } })()">
+        <span class="trait">${t.replace(/_/g, ' ')}</span>
+        <span class="holder">→ <b>${owner.name.split(' ')[0]}</b></span>
+      </div>`;
+  }).join('');
+  const traitEl = document.getElementById('trait-bars');
+  if (traitEl) traitEl.innerHTML = oneOfOneHTML;
+
+  // Mint counter (animated from 0 to 60)
+  const counter = document.getElementById('mint-counter');
+  if (counter) {
+    let val = 0;
+    const target = 231;
+    const interval = setInterval(() => {
+      val += 1;
+      counter.textContent = String(val).padStart(4, '0');
+      if (val >= target) clearInterval(interval);
+    }, 40);
+  }
+}
+
+// === TRADE ACTIVITY TICKER (fake but vibey) ===
+const tradeActions = ['MINTED', 'TRANSFERRED', 'LISTED', 'BID PLACED', 'SOLD', 'RE-MINTED'];
+const tradeBuyers = ['@kb', '@nathan', '@walton', '@jay', '@dave', '@catherine', '@joe', '@ryan', '@anon3F2A', '@vault0x7'];
+const themes = ['GENESIS', 'GALAXY', 'CYBERPUNK'];
+function genTrades() {
+  const ticker = document.getElementById('ticker-inner');
+  const items = [];
+  for (let i = 0; i < 30; i++) {
+    const p = people[Math.floor(Math.random() * people.length)];
+    const action = tradeActions[Math.floor(Math.random() * tradeActions.length)];
+    const buyer = tradeBuyers[Math.floor(Math.random() * tradeBuyers.length)];
+    const edition = themes[Math.floor(Math.random() * themes.length)];
+    const r = rarityData[p.slug] || { tier: 'COMMON' };
+    const mins = Math.floor(Math.random() * 59) + 1;
+    items.push(`<span class="item">▸ #${String(p.id).padStart(3,'0')} <span class="who">${p.name.toUpperCase()}</span> <span class="tier" style="color:${r.tier_color || '#fff'}">${r.tier}</span> ${action} BY ${buyer} · ${edition} · ${mins}M AGO</span>`);
+  }
+  // Duplicate for seamless scroll loop
+  ticker.innerHTML = items.join('') + items.join('');
+}
+setTimeout(genTrades, 500);
+setInterval(genTrades, 30000);
+
+// === LEADERBOARD MODAL ===
+document.getElementById('leaderboard-btn').addEventListener('click', () => {
+  playBlip(659, 0.08);
+  const sorted = Object.values(rarityData).sort((a, b) => a.rank - b.rank);
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 style="text-align:center; font-size:30px; margin-bottom:6px; font-weight:800;">★ Rarity Leaderboard</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">SINGLE-TRAIT SCARCITY · ALL 15 OPERATORS RANKED</p>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      ${sorted.map(r => {
+        const p = people.find(x => x.slug === r.slug);
+        return `
+          <div class="lb-row" style="--rarity-color:${r.tier_color}" onclick="closeModal(); setTimeout(() => { const c = document.querySelector('.card[data-slug=\\'${r.slug}\\']'); if (c) { c.scrollIntoView({behavior:'smooth',block:'center'}); setTimeout(() => c.classList.add('flipped'), 600); } }, 200);">
+            <span class="rank ${r.rank <= 3 ? 'top3' : ''}">#${String(r.rank).padStart(2,'0')}</span>
+            <div class="lb-thumb"><img src="nfts/${currentTheme}/${r.slug}_nft.svg"></div>
+            <div>
+              <div class="lb-name">${p.name}</div>
+              <div class="lb-tier">${r.tier}</div>
+            </div>
+            <span class="lb-score">${r.score}</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+  document.getElementById('modal').classList.add('open');
+});
+
+// === DIRECT LINK ROUTING (?nft=slug&theme=corporate) ===
+function applyRoute() {
+  const params = new URLSearchParams(window.location.search);
+  const theme = params.get('theme');
+  const slug = params.get('nft');
+  if (theme && ['corporate','galaxy','cyberpunk'].includes(theme)) {
+    const btn = document.querySelector(`.theme-btn[data-theme="${theme}"]`);
+    if (btn && !btn.classList.contains('active')) btn.click();
+  }
+  if (slug) {
+    setTimeout(() => {
+      const card = document.querySelector(`.card[data-slug="${slug}"]`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          card.classList.add('flipped');
+          const p = people.find(x => x.slug === slug);
+          const r = rarityData[slug];
+          if (p && r) {
+            if (r.tier === 'MYTHIC' || r.tier === 'LEGENDARY') {
+              const rect = card.getBoundingClientRect();
+              spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, r.tier_color);
+              playChord([523, 659, 784, 1046], 0.4);
+            }
+          }
+        }, 900);
+      }
+    }, 1500);
+  }
+}
+window.addEventListener('load', applyRoute);
+
+// === MINT REVEAL (first visit) ===
+if (!localStorage.getItem('bt_minted')) {
+  document.getElementById('mint-reveal').style.display = 'flex';
+} else {
+  document.getElementById('mint-reveal').style.display = 'none';
+}
+document.getElementById('mint-cta').addEventListener('click', () => {
+  playChord([392, 523, 659, 784, 1046], 0.5);
+  document.getElementById('mint-reveal').classList.add('dismissed');
+  setTimeout(() => {
+    document.getElementById('mint-reveal').style.display = 'none';
+    localStorage.setItem('bt_minted', '1');
+    // Trigger confetti burst from center
+    spawnConfetti(window.innerWidth / 2, window.innerHeight / 2, '#00FF94');
+    setTimeout(() => spawnConfetti(window.innerWidth / 2 - 200, window.innerHeight / 2 + 50, '#FFD93D'), 200);
+    setTimeout(() => spawnConfetti(window.innerWidth / 2 + 200, window.innerHeight / 2 + 50, '#FF3366'), 400);
+  }, 800);
+});
+
+// === BACK TO TOP ===
+document.getElementById('back-to-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ============================================================
+// === v8: PARTICLES, MUSIC, PACK OPENING, ACHIEVEMENTS, TRAIL ===
+// ============================================================
+
+// === PIXEL CURSOR TRAIL ===
+const trailCanvas = document.getElementById('trail');
+const tctx = trailCanvas.getContext('2d');
+let trailParticles = [];
+function resizeTrail() { trailCanvas.width = window.innerWidth; trailCanvas.height = window.innerHeight; }
+resizeTrail(); window.addEventListener('resize', resizeTrail);
+document.addEventListener('mousemove', e => {
+  if (Math.random() > 0.6) return;  // throttle
+  const color = getComputedStyle(document.documentElement).getPropertyValue('--theme-color').trim() || '#00FF94';
+  trailParticles.push({ x: e.clientX, y: e.clientY, size: 3 + Math.random() * 4, life: 1, color, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8 });
+});
+function tickTrail() {
+  tctx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
+  trailParticles = trailParticles.filter(p => p.life > 0);
+  trailParticles.forEach(p => {
+    p.life -= 0.04;
+    p.x += p.vx; p.y += p.vy;
+    p.size *= 0.96;
+    tctx.fillStyle = p.color;
+    tctx.globalAlpha = p.life;
+    tctx.fillRect(p.x - p.size/2, p.y - p.size/2, p.size, p.size);
+  });
+  tctx.globalAlpha = 1;
+  requestAnimationFrame(tickTrail);
+}
+tickTrail();
+
+// === BACKGROUND PARTICLES (theme-aware) ===
+const partCanvas = document.getElementById('particles');
+const pctx = partCanvas.getContext('2d');
+let bgParticles = [];
+function resizePart() { partCanvas.width = window.innerWidth; partCanvas.height = window.innerHeight; }
+resizePart(); window.addEventListener('resize', resizePart);
+
+function spawnParticles() {
+  const w = partCanvas.width, h = partCanvas.height;
+  bgParticles = [];
+  const color1 = getComputedStyle(document.documentElement).getPropertyValue('--theme-color').trim() || '#00FF94';
+  const color2 = getComputedStyle(document.documentElement).getPropertyValue('--theme-color-2').trim() || '#00E5FF';
+  if (currentTheme === 'aquatic') {
+    for (let i = 0; i < 35; i++) {
+      bgParticles.push({ type: 'bubble', x: Math.random() * w, y: Math.random() * h, vy: -0.3 - Math.random() * 0.7, size: 3 + Math.random() * 8, color: 'rgba(200,230,245,0.5)' });
+    }
+  } else if (currentTheme === 'galaxy') {
+    for (let i = 0; i < 50; i++) {
+      bgParticles.push({ type: 'spark', x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3, size: 1 + Math.random() * 3, color: i % 2 ? color1 : color2, twinkle: Math.random() * Math.PI });
+    }
+  } else if (currentTheme === 'cyberpunk') {
+    for (let i = 0; i < 40; i++) {
+      bgParticles.push({ type: 'rain', x: Math.random() * w, y: Math.random() * h, vy: 1.5 + Math.random() * 2, size: 2, color: i % 3 === 0 ? '#60FF8A' : (i % 2 ? color1 : color2), char: Math.random() > 0.5 ? '1' : '0' });
+    }
+  } else {
+    // Corporate: subtle floating dots
+    for (let i = 0; i < 25; i++) {
+      bgParticles.push({ type: 'dot', x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2, size: 1.5, color: color1, life: Math.random() });
+    }
+  }
+}
+function tickParticles() {
+  pctx.clearRect(0, 0, partCanvas.width, partCanvas.height);
+  const w = partCanvas.width, h = partCanvas.height;
+  bgParticles.forEach(p => {
+    if (p.type === 'bubble') {
+      p.y += p.vy;
+      if (p.y < -20) { p.y = h + 20; p.x = Math.random() * w; }
+      pctx.beginPath(); pctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      pctx.fillStyle = p.color; pctx.fill();
+      pctx.strokeStyle = 'rgba(255,255,255,0.3)'; pctx.lineWidth = 1; pctx.stroke();
+    } else if (p.type === 'spark') {
+      p.x += p.vx; p.y += p.vy; p.twinkle += 0.05;
+      const alpha = 0.3 + 0.4 * Math.sin(p.twinkle);
+      pctx.fillStyle = p.color; pctx.globalAlpha = alpha;
+      pctx.fillRect(p.x, p.y, p.size, p.size);
+      pctx.globalAlpha = 1;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+    } else if (p.type === 'rain') {
+      p.y += p.vy;
+      if (p.y > h + 20) { p.y = -20; p.x = Math.random() * w; p.char = Math.random() > 0.5 ? '1' : '0'; }
+      pctx.fillStyle = p.color; pctx.font = '14px JetBrains Mono, monospace';
+      pctx.globalAlpha = 0.6;
+      pctx.fillText(p.char, p.x, p.y);
+      pctx.globalAlpha = 1;
+    } else {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0 || p.x > w) p.vx *= -1;
+      if (p.y < 0 || p.y > h) p.vy *= -1;
+      p.life = (p.life + 0.005) % 1;
+      pctx.fillStyle = p.color; pctx.globalAlpha = 0.2 + 0.4 * Math.sin(p.life * Math.PI * 2);
+      pctx.fillRect(p.x, p.y, p.size, p.size);
+      pctx.globalAlpha = 1;
+    }
+  });
+  requestAnimationFrame(tickParticles);
+}
+spawnParticles();
+tickParticles();
+// Respawn particles on theme change
+themeBtns.forEach(btn => btn.addEventListener('click', () => setTimeout(spawnParticles, 100)));
+
+// === LO-FI BEATS MUSIC ENGINE ===
+// Procedural lo-fi: chord pads + kick + hi-hat + jazzy melody + vinyl crackle.
+// Default ON. 70 BPM. Chord progressions per theme.
+let musicOn = localStorage.getItem('bt_music') !== 'off';
+let musicLoop = null;
+let musicMaster = null;
+let crackleSource = null;
+
+// Note name to Hz (only what we need)
+const NOTE = { 'C2':65.41,'D2':73.42,'Eb2':77.78,'E2':82.41,'F2':87.31,'G2':98,'A2':110,'Bb2':116.54,'B2':123.47,
+               'C3':130.81,'D3':146.83,'Eb3':155.56,'E3':164.81,'F3':174.61,'G3':196,'A3':220,'Bb3':233.08,'B3':246.94,
+               'C4':261.63,'D4':293.66,'Eb4':311.13,'E4':329.63,'F4':349.23,'G4':392,'A4':440,'Bb4':466.16,'B4':493.88,
+               'C5':523.25,'D5':587.33,'E5':659.25,'F5':698.46,'G5':783.99,'A5':880 };
+
+// 8-bar chord progressions (2 beats each, 16 chord-changes per loop)
+const PROGRESSIONS = {
+  // ii-V-I jazz feel (Dmaj7 - G7 - Cmaj7 - Am7), warm and corporate-tasteful
+  corporate: [['D3','F3','A3','C4'], ['G2','B2','D3','F3'], ['C3','E3','G3','B3'], ['A2','C3','E3','G3']],
+  // Dreamy minor wash (Am9 - Em7 - Fmaj7 - Cmaj7)
+  aquatic:   [['A2','C3','E3','G3'], ['E3','G3','B3','D4'], ['F3','A3','C4','E4'], ['C3','E3','G3','B3']],
+  // Fmin jazz (Fm7 - Bbm7 - Eb7 - Abmaj7)
+  galaxy:    [['F3','Ab3','C4','Eb4'], ['Bb2','Db3','F3','Ab3'], ['Eb3','G3','Bb3','Db4'], ['Ab2','C3','Eb3','G3']],
+  // Synthy minor (Cm7 - Fm7 - G7 - Cm7)
+  cyberpunk: [['C3','Eb3','G3','Bb3'], ['F3','Ab3','C4','Eb4'], ['G2','B2','D3','F3'], ['C3','Eb3','G3','Bb3']],
+};
+// Pentatonic melody scales (matching key)
+const PENTATONIC = {
+  corporate: ['C4','D4','E4','G4','A4','C5','D5','E5'],
+  aquatic:   ['A3','C4','D4','E4','G4','A4','C5','D5'],
+  galaxy:    ['F4','Ab4','Bb4','C5','Eb4','F5','C5','Ab4'],
+  cyberpunk: ['C4','Eb4','F4','G4','Bb4','C5','Eb4','G5'],
+};
+
+function getMusicMaster() {
+  if (musicMaster) return musicMaster;
+  const ctx = getCtx();
+  musicMaster = ctx.createGain();
+  musicMaster.gain.value = 0.55;
+  // Master lowpass for warm lo-fi feel
+  const filter = ctx.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 2200;
+  filter.Q.value = 0.7;
+  musicMaster.connect(filter);
+  filter.connect(ctx.destination);
+  return musicMaster;
+}
+
+// Soft sine pad with slow attack
+function playPadNote(freqHz, durSec, vol = 0.025) {
+  if (!musicOn) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const osc = ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = freqHz;
+    // Slight detune for warmth
+    const osc2 = ctx.createOscillator();
+    osc2.type = 'triangle';
+    osc2.frequency.value = freqHz * 1.003;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(vol, ctx.currentTime + 0.2);
+    gain.gain.linearRampToValueAtTime(vol * 0.6, ctx.currentTime + durSec - 0.3);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + durSec);
+    osc.connect(gain); osc2.connect(gain); gain.connect(dest);
+    osc.start(); osc2.start();
+    osc.stop(ctx.currentTime + durSec); osc2.stop(ctx.currentTime + durSec);
+  } catch (e) {}
+}
+
+// Rhodes-style melody pluck
+function playMelodyNote(freqHz, durSec, vol = 0.04) {
+  if (!musicOn) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const osc = ctx.createOscillator();
+    osc.type = 'triangle';
+    osc.frequency.value = freqHz;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0, ctx.currentTime);
+    gain.gain.linearRampToValueAtTime(vol, ctx.currentTime + 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + durSec);
+    osc.connect(gain); gain.connect(dest);
+    osc.start(); osc.stop(ctx.currentTime + durSec);
+  } catch (e) {}
+}
+
+// Kick drum
+function playKick() {
+  if (!musicOn) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const osc = ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(120, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.15);
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.18, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+    osc.connect(gain); gain.connect(dest);
+    osc.start(); osc.stop(ctx.currentTime + 0.3);
+  } catch (e) {}
+}
+
+// Hi-hat (filtered white noise burst)
+function playHat(open = false) {
+  if (!musicOn) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.05, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const hp = ctx.createBiquadFilter();
+    hp.type = 'highpass'; hp.frequency.value = 7000;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(open ? 0.04 : 0.025, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + (open ? 0.15 : 0.04));
+    src.connect(hp); hp.connect(gain); gain.connect(dest);
+    src.start();
+  } catch (e) {}
+}
+
+// Snare
+function playSnare() {
+  if (!musicOn) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const buf = ctx.createBuffer(1, ctx.sampleRate * 0.1, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < data.length; i++) data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.04));
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass'; bp.frequency.value = 1500; bp.Q.value = 0.6;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0.045, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.18);
+    src.connect(bp); bp.connect(gain); gain.connect(dest);
+    src.start();
+  } catch (e) {}
+}
+
+// Continuous vinyl crackle
+function startCrackle() {
+  if (crackleSource) return;
+  try {
+    const ctx = getCtx();
+    const dest = getMusicMaster();
+    const bufSize = ctx.sampleRate * 2;
+    const buf = ctx.createBuffer(1, bufSize, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) {
+      data[i] = (Math.random() < 0.005 ? (Math.random() * 2 - 1) * 0.7 : 0);  // sparse pops
+    }
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.loop = true;
+    const hp = ctx.createBiquadFilter();
+    hp.type = 'highpass'; hp.frequency.value = 4000;
+    const gain = ctx.createGain();
+    gain.gain.value = 0.025;
+    src.connect(hp); hp.connect(gain); gain.connect(dest);
+    src.start();
+    crackleSource = src;
+  } catch (e) {}
+}
+function stopCrackle() {
+  if (crackleSource) { try { crackleSource.stop(); } catch (e) {} crackleSource = null; }
+}
+
+function startMusic() {
+  if (musicLoop) return;
+  startCrackle();
+  const BPM = 70;
+  const beat = 60 / BPM;  // ~0.857s
+  const eighth = beat / 2;  // ~0.428s
+  let step = 0;  // 8th-note step counter
+  let chordIdx = 0;
+  let chordChangedAt = 0;
+  const playStep = () => {
+    if (!musicOn) { stopMusic(); return; }
+    const prog = PROGRESSIONS[currentTheme] || PROGRESSIONS.corporate;
+    const pent = PENTATONIC[currentTheme] || PENTATONIC.corporate;
+    // 4 beats = 8 eighths per chord; cycle through 4 chords (32 eighths total)
+    const chordStep = Math.floor(step / 8) % prog.length;
+    const chord = prog[chordStep];
+    const beatInChord = step % 8;
+
+    // Play chord on first eighth of every 2 beats (every 4 eighths)
+    if (beatInChord === 0) {
+      chord.forEach(noteName => {
+        const f = NOTE[noteName];
+        if (f) playPadNote(f, beat * 4, 0.012);
+      });
+    }
+    // Drums
+    const beatPos = step % 8;
+    if (beatPos === 0 || beatPos === 4) playKick();
+    if (beatPos === 4) playSnare();
+    if (beatPos % 2 === 0) playHat(beatPos === 6);
+    else if (Math.random() > 0.5) playHat(false);
+    // Sparse melody (1 in 4 chance per eighth)
+    if (Math.random() < 0.32) {
+      const noteName = pent[Math.floor(Math.random() * pent.length)];
+      const f = NOTE[noteName];
+      if (f) playMelodyNote(f, eighth * 1.8, 0.022);
+    }
+    step++;
+    musicLoop = setTimeout(playStep, eighth * 1000);
+  };
+  playStep();
+}
+function stopMusic() {
+  if (musicLoop) { clearTimeout(musicLoop); musicLoop = null; }
+  stopCrackle();
+}
+const musicBtn = document.getElementById('music-btn');
+musicBtn.textContent = musicOn ? '♫' : '♪';
+musicBtn.title = musicOn ? 'Mute lo-fi' : 'Play lo-fi';
+if (!musicOn) musicBtn.classList.add('muted');
+musicBtn.addEventListener('click', () => {
+  musicOn = !musicOn;
+  localStorage.setItem('bt_music', musicOn ? 'on' : 'off');
+  musicBtn.textContent = musicOn ? '♫' : '♪';
+  musicBtn.title = musicOn ? 'Mute lo-fi' : 'Play lo-fi';
+  musicBtn.classList.toggle('muted', !musicOn);
+  if (musicOn) { getCtx().resume(); startMusic(); }
+  else stopMusic();
+});
+// Autoplay restriction: start music on first user gesture
+const startOnGesture = () => {
+  if (musicOn) { getCtx().resume(); startMusic(); }
+  document.removeEventListener('click', startOnGesture);
+  document.removeEventListener('keydown', startOnGesture);
+  document.removeEventListener('mousemove', startOnGesture);
+};
+document.addEventListener('click', startOnGesture, { once: true });
+document.addEventListener('keydown', startOnGesture, { once: true });
+document.addEventListener('mousemove', startOnGesture, { once: true });
+
+// === ACHIEVEMENTS ===
+const ACHIEVEMENTS = {
+  first_flip:    { name: 'FIRST FLIP', desc: 'Flip your first NFT' },
+  mythic_hunter: { name: 'MYTHIC HUNTER', desc: 'Flip the Mythic card' },
+  theme_hopper:  { name: 'THEME HOPPER', desc: 'View all 4 editions' },
+  pack_opener:   { name: 'PACK OPENER', desc: 'Open your first pack' },
+  collector_15:  { name: 'COLLECTOR', desc: 'Flip all 15 cards in one edition' },
+  completionist: { name: 'COMPLETIONIST', desc: 'Flip every card in every edition' },
+  lucky_pull:    { name: 'LUCKY PULL', desc: 'Pull a Mythic from a pack' },
+  leaderboard:   { name: 'SCHOLAR', desc: 'Open the rarity leaderboard' },
+  searcher:      { name: 'SEARCHER', desc: 'Search for an operator' },
+  shuffler:      { name: 'SHUFFLER', desc: 'Shuffle the grid' },
+};
+let unlocked = JSON.parse(localStorage.getItem('bt_achievements') || '[]');
+let themesVisited = new Set(JSON.parse(localStorage.getItem('bt_themes_visited') || '["corporate"]'));
+let flipsByTheme = JSON.parse(localStorage.getItem('bt_flips') || '{}');
+
+function unlock(id) {
+  if (unlocked.includes(id)) return;
+  unlocked.push(id);
+  localStorage.setItem('bt_achievements', JSON.stringify(unlocked));
+  const a = ACHIEVEMENTS[id];
+  document.getElementById('achievement-name').textContent = a.name;
+  const toast = document.getElementById('achievement-toast');
+  toast.classList.add('show');
+  playChord([659, 784, 988, 1175], 0.4);
+  setTimeout(() => toast.classList.remove('show'), 3200);
+}
+
+// Hook flip detection
+document.addEventListener('click', e => {
+  const card = e.target.closest('.card');
+  if (!card || e.target.closest('.back-btn')) return;
+  unlock('first_flip');
+  const slug = card.dataset.slug;
+  const r = rarityData[slug];
+  if (r && r.tier === 'MYTHIC') unlock('mythic_hunter');
+  // Track per-theme flips
+  if (!flipsByTheme[currentTheme]) flipsByTheme[currentTheme] = [];
+  if (!flipsByTheme[currentTheme].includes(slug)) {
+    flipsByTheme[currentTheme].push(slug);
+    localStorage.setItem('bt_flips', JSON.stringify(flipsByTheme));
+    if (flipsByTheme[currentTheme].length === 15) unlock('collector_15');
+    if (Object.keys(flipsByTheme).length === 4 && Object.values(flipsByTheme).every(arr => arr.length === 15)) unlock('completionist');
+  }
+});
+themeBtns.forEach(btn => btn.addEventListener('click', () => {
+  themesVisited.add(btn.dataset.theme);
+  localStorage.setItem('bt_themes_visited', JSON.stringify([...themesVisited]));
+  if (themesVisited.size === 4) unlock('theme_hopper');
+}));
+document.getElementById('leaderboard-btn').addEventListener('click', () => unlock('leaderboard'));
+document.getElementById('search').addEventListener('input', () => unlock('searcher'));
+document.getElementById('shuffle-btn').addEventListener('click', () => unlock('shuffler'));
+
+// Trophy button shows all achievements
+document.getElementById('trophy-btn').addEventListener('click', () => {
+  const content = document.getElementById('modal-content');
+  content.innerHTML = `
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 style="text-align:center; font-size:30px; margin-bottom:6px; font-weight:800;">🏆 Achievements</h2>
+    <p style="text-align:center; color:var(--text-dim); margin-bottom:24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.18em;">UNLOCKED ${unlocked.length} / ${Object.keys(ACHIEVEMENTS).length}</p>
+    <div style="display:flex; flex-direction:column; gap:8px;">
+      ${Object.entries(ACHIEVEMENTS).map(([id, a]) => {
+        const got = unlocked.includes(id);
+        return `
+          <div style="padding:12px; background:var(--panel); border:1px solid ${got ? 'var(--theme-color)' : 'var(--line)'}; border-radius:10px; display:flex; align-items:center; gap:14px; opacity:${got ? 1 : 0.5};">
+            <div style="width:36px; height:36px; border-radius:50%; background:${got ? 'var(--theme-color)' : 'rgba(255,255,255,0.05)'}; color:${got ? '#050709' : 'var(--text-dim)'}; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700;">${got ? '✓' : '?'}</div>
+            <div style="flex:1;">
+              <div style="font-size:14px; font-weight:700;">${a.name}</div>
+              <div style="font-size:11px; color:var(--text-dim); margin-top:2px;">${a.desc}</div>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>
+  `;
+  document.getElementById('modal').classList.add('open');
+});
+
+// === PACK OPENING ===
+function openPack() {
+  unlock('pack_opener');
+  playChord([392, 523, 659], 0.3);
+  // Pick 3 random people from current theme
+  const pool = [...people];
+  const picks = [];
+  for (let i = 0; i < 3; i++) {
+    const idx = Math.floor(Math.random() * pool.length);
+    picks.push(pool.splice(idx, 1)[0]);
+  }
+  const cards = document.getElementById('pack-cards');
+  cards.innerHTML = picks.map((p, i) => `
+    <div class="pack-card revealing" data-slug="${p.slug}" data-idx="${i}">
+      <div class="pack-face pack-back"></div>
+      <div class="pack-face pack-front"><img src="nfts/${currentTheme}/${p.slug}_nft.svg"></div>
+    </div>
+  `).join('');
+  document.getElementById('pack-modal').classList.add('open');
+  document.getElementById('pack-title').textContent = 'Opening Pack...';
+  document.getElementById('pack-flip-btn').style.display = 'none';
+  document.getElementById('pack-again-btn').style.display = 'none';
+
+  // After shake animation, allow flip
+  setTimeout(() => {
+    document.querySelectorAll('.pack-card').forEach(c => c.classList.remove('revealing'));
+    document.getElementById('pack-title').textContent = 'Click cards to reveal';
+    document.getElementById('pack-flip-btn').style.display = '';
+    document.getElementById('pack-flip-btn').textContent = 'REVEAL ALL';
+  }, 1500);
+
+  // Click any card flips it
+  document.querySelectorAll('.pack-card').forEach(card => {
+    card.addEventListener('click', () => {
+      if (card.classList.contains('flipped')) return;
+      card.classList.add('flipped');
+      const slug = card.dataset.slug;
+      const r = rarityData[slug];
+      playBlip(660, 0.12, 'square', 0.04);
+      if (r && (r.tier === 'MYTHIC' || r.tier === 'LEGENDARY')) {
+        const rect = card.getBoundingClientRect();
+        spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2, r.tier_color);
+        playChord([523, 659, 784, 1046], 0.4);
+        if (r.tier === 'MYTHIC') unlock('lucky_pull');
+      }
+      // If all flipped, show "open another"
+      if ([...document.querySelectorAll('.pack-card')].every(c => c.classList.contains('flipped'))) {
+        document.getElementById('pack-title').textContent = picks.some(p => rarityData[p.slug]?.tier === 'MYTHIC') ? '✨ MYTHIC PULL! ✨' : 'Pack opened';
+        document.getElementById('pack-flip-btn').style.display = 'none';
+        document.getElementById('pack-again-btn').style.display = '';
+      }
+    });
+  });
+}
+
+document.getElementById('pack-flip-btn').addEventListener('click', () => {
+  document.querySelectorAll('.pack-card:not(.flipped)').forEach((card, i) => {
+    setTimeout(() => card.click(), i * 250);
+  });
+});
+document.getElementById('pack-again-btn').addEventListener('click', () => openPack());
+document.getElementById('pack-open-btn').addEventListener('click', openPack);
+document.getElementById('pack-btn-floating').addEventListener('click', openPack);
+function closePack() { document.getElementById('pack-modal').classList.remove('open'); }
+document.getElementById('pack-modal').addEventListener('click', e => { if (e.target.id === 'pack-modal') closePack(); });
+</script>
+</body>
+</html>

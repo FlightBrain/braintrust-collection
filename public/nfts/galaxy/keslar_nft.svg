@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <style>image { image-rendering: pixelated; image-rendering: crisp-edges; }</style>
+  </defs>
+
+  <rect width="1024" height="1024" fill="#050709"/>
+  <g opacity="0.4"><line x1="0" y1="0" x2="0" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="64" y1="0" x2="64" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="128" y1="0" x2="128" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="192" y1="0" x2="192" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="256" y1="0" x2="256" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="320" y1="0" x2="320" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="384" y1="0" x2="384" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="448" y1="0" x2="448" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="512" y1="0" x2="512" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="576" y1="0" x2="576" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="640" y1="0" x2="640" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="704" y1="0" x2="704" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="768" y1="0" x2="768" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="832" y1="0" x2="832" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="896" y1="0" x2="896" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="960" y1="0" x2="960" y2="1024" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="0" x2="1024" y2="0" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="64" x2="1024" y2="64" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="128" x2="1024" y2="128" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="192" x2="1024" y2="192" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="256" x2="1024" y2="256" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="320" x2="1024" y2="320" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="384" x2="1024" y2="384" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="448" x2="1024" y2="448" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="512" x2="1024" y2="512" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="576" x2="1024" y2="576" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="640" x2="1024" y2="640" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="704" x2="1024" y2="704" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="768" x2="1024" y2="768" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="832" x2="1024" y2="832" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="896" x2="1024" y2="896" stroke="#0F1320" stroke-width="1"/>
+    <line x1="0" y1="960" x2="1024" y2="960" stroke="#0F1320" stroke-width="1"/></g>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1024" height="80" fill="#0A0E17"/>
+  <line x1="0" y1="80" x2="1024" y2="80" stroke="#B8FF3D" stroke-width="2"/>
+  <text x="40" y="50" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#FFFFFF" letter-spacing="6">BRAINTRUST</text>
+  <text x="984" y="50" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="700" fill="#B8FF3D" text-anchor="end" letter-spacing="3">#072 / 077</text>
+
+  <!-- Avatar panel -->
+  <rect x="112" y="120" width="800" height="600" fill="#212D0A"/>
+  <clipPath id="panel-clip-72"><rect x="112" y="120" width="800" height="600"/></clipPath>
+  <image href="data:image/png;base64,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" x="212" y="120" width="600" height="600" preserveAspectRatio="xMidYMid meet"/>
+  <g clip-path="url(#panel-clip-72)">
+  <circle cx="512" cy="280" r="170" fill="none" stroke="#B8FF3D" stroke-width="2" opacity="0.4">
+    <animate attributeName="r" values="170;200;170" dur="2.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.15;0.4" dur="2.4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="512" cy="280" r="140" fill="none" stroke="#B8FF3D" stroke-width="1.5" opacity="0.3">
+    <animate attributeName="r" values="140;170;140" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.4s" begin="0.4s" repeatCount="indefinite"/>
+  </circle>
+  <g opacity="0.8">
+    <line x1="160" y1="200" x2="200" y2="180" stroke="#B8FF3D" stroke-width="2">
+      <animate attributeName="opacity" values="0;1;0" dur="0.4s" begin="1s" repeatCount="indefinite"/>
+    </line>
+    <line x1="820" y1="220" x2="860" y2="200" stroke="#B8FF3D" stroke-width="2">
+      <animate attributeName="opacity" values="0;1;0" dur="0.4s" begin="2.2s" repeatCount="indefinite"/>
+    </line>
+  </g></g>
+  <rect x="112" y="120" width="800" height="600" fill="none" stroke="#B8FF3D" stroke-width="3"/>
+
+  <g stroke="#B8FF3D" stroke-width="3" fill="none">
+    <polyline points="112,140 112,120 132,120"/>
+    <polyline points="892,120 912,120 912,140"/>
+    <polyline points="912,700 912,720 892,720"/>
+    <polyline points="132,720 112,720 112,700"/>
+  </g>
+
+  <!-- Name -->
+  <text x="512" y="790" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">KESLAR SIMPSON</text>
+  <text x="512" y="828" font-family="'JetBrains Mono', monospace" font-size="14" fill="#B8FF3D" text-anchor="middle" letter-spacing="6">SDR</text>
+
+  <line x1="380" y1="858" x2="644" y2="858" stroke="#B8FF3D" stroke-width="1" opacity="0.4"/>
+
+  <g font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2">
+    <text x="160" y="908" fill="#8B95A8">TRAIT</text>
+    <text x="280" y="908" fill="#B8FF3D" font-weight="700">LIME</text>
+    <text x="540" y="908" fill="#8B95A8">EDITION</text>
+    <text x="680" y="908" fill="#B8FF3D" font-weight="700">GALAXY</text>
+    <text x="160" y="948" fill="#8B95A8">CHAIN</text>
+    <text x="280" y="948" fill="#B8FF3D" font-weight="700">BT-3</text>
+    <text x="540" y="948" fill="#8B95A8">MINT</text>
+    <text x="680" y="948" fill="#B8FF3D" font-weight="700">MMXXVI</text>
+  </g>
+
+  <line x1="0" y1="980" x2="1024" y2="980" stroke="#B8FF3D" stroke-width="2"/>
+  <text x="40" y="1010" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FFFFFF" opacity="0.5" letter-spacing="2">braintrust.dev</text>
+  <text x="984" y="1010" font-family="'JetBrains Mono', monospace" font-size="11" fill="#B8FF3D" text-anchor="end" letter-spacing="3">1 OF 1</text>
+</svg>
