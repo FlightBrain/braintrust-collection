@@ -1,0 +1,168 @@
+{
+  "sdrs": [
+    {
+      "slug": "kensington",
+      "name": "Kensington Belza",
+      "role": "Strategic SDR",
+      "items": [
+        "jeweled_crown__gold",
+        "third_eye__purple",
+        "gold_medallion__gold"
+      ],
+      "path": "sdrs/kensington.png"
+    },
+    {
+      "slug": "garrett",
+      "name": "Garrett Buchanan",
+      "role": "Account Executive",
+      "items": [
+        "king_crown__gold",
+        "cigar__brown",
+        "beard_full__black"
+      ],
+      "path": "sdrs/garrett.png"
+    },
+    {
+      "slug": "nick",
+      "name": "Nick Gaspardone",
+      "role": "Account Executive",
+      "items": [
+        "top_hat__black",
+        "aviators__gold",
+        "necktie__navy"
+      ],
+      "path": "sdrs/nick.png"
+    },
+    {
+      "slug": "ryan",
+      "name": "Ryan Gwyn",
+      "role": "Channel Manager",
+      "items": [
+        "brain_pendant_chain__gold",
+        "glowing_eyes__red",
+        "pixel_shades__black"
+      ],
+      "path": "sdrs/ryan.png"
+    },
+    {
+      "slug": "owen",
+      "name": "Owen Bloomer",
+      "role": "SDR",
+      "items": [
+        "cowboy_hat__brown",
+        "cigarette__white",
+        "mustache_chevron__brown"
+      ],
+      "path": "sdrs/owen.png"
+    },
+    {
+      "slug": "sacha",
+      "name": "Sacha Thompson",
+      "role": "SDR",
+      "items": [
+        "baseball_cap__red",
+        "headband__white",
+        "bubble_gum_bubble__default"
+      ],
+      "path": "sdrs/sacha.png"
+    },
+    {
+      "slug": "duncan",
+      "name": "Duncan Lewis",
+      "role": "SDR",
+      "items": [
+        "wizard_hat__purple",
+        "crown_of_thorns__default",
+        "goatee__black"
+      ],
+      "path": "sdrs/duncan.png"
+    },
+    {
+      "slug": "catherine",
+      "name": "Catherine Vincent",
+      "role": "SDR",
+      "items": [
+        "heart_eyes__pink",
+        "kiss_print__red",
+        "pearl_necklace__white"
+      ],
+      "path": "sdrs/catherine.png"
+    },
+    {
+      "slug": "ava",
+      "name": "Ava Baker",
+      "role": "SDR",
+      "items": [
+        "halo__gold",
+        "heart_eyes__red",
+        "face_tattoo__heart"
+      ],
+      "path": "sdrs/ava.png"
+    },
+    {
+      "slug": "alec",
+      "name": "Alec Sloan",
+      "role": "SDR",
+      "items": [
+        "top_hat__silver",
+        "monocle__gold",
+        "fat_gold_chain__gold"
+      ],
+      "path": "sdrs/alec.png"
+    },
+    {
+      "slug": "chris",
+      "name": "Chris Koenig",
+      "role": "SDR",
+      "items": [
+        "motorcycle_helmet__red",
+        "cyber_visor__red",
+        "scar__default"
+      ],
+      "path": "sdrs/chris.png"
+    },
+    {
+      "slug": "joe",
+      "name": "Joe Meade",
+      "role": "SDR",
+      "items": [
+        "spartan_helmet__bronze",
+        "mustache_chevron__black",
+        "face_tattoo__dollar"
+      ],
+      "path": "sdrs/joe.png"
+    },
+    {
+      "slug": "keslar",
+      "name": "Keslar Simpson",
+      "role": "SDR",
+      "items": [
+        "viking_helmet__bronze",
+        "beard_full__red"
+      ],
+      "path": "sdrs/keslar.png"
+    },
+    {
+      "slug": "evan",
+      "name": "Evan O'Reilly",
+      "role": "SDR",
+      "items": [
+        "durag__black",
+        "gold_grill__diamond",
+        "money_eyes__green"
+      ],
+      "path": "sdrs/evan.png"
+    },
+    {
+      "slug": "shaune",
+      "name": "Shaune Lundstrom",
+      "role": "SDR",
+      "items": [
+        "knight_helmet__steel",
+        "pipe_sherlock__default",
+        "birthmark_star__default"
+      ],
+      "path": "sdrs/shaune.png"
+    }
+  ]
+}

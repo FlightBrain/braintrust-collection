@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Reveal · Braintrust Collection v19</title>
+<link rel="icon" href="https://www.braintrust.dev/icon180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #050709; --panel: #0F1320; --line: rgba(255,255,255,0.08);
+    --text: #ffffff; --text-dim: #8B95A8;
+    --accent: #00FF94; --pick: #FFD93D;
+    --mythic: #FF3366; --legendary: #FFD93D; --rare: #9D7AFF; --uncommon: #00D9FF; --common: #8B95A8;
+  }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  body {
+    padding: 40px 24px 80px;
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(0, 255, 148, 0.12), transparent 70%),
+      radial-gradient(ellipse 800px 500px at 100% 100%, rgba(0, 255, 148, 0.06), transparent 70%),
+      var(--bg);
+    background-attachment: fixed;
+  }
+
+  .head { max-width: 1500px; margin: 0 auto 48px; text-align: center; }
+  .tag { display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border: 1px solid var(--line); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: var(--text-dim); margin-bottom: 22px; }
+  .tag .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+  h1 {
+    font-size: clamp(40px, 7vw, 84px); font-weight: 900; letter-spacing: -0.05em; line-height: 0.95;
+    margin-bottom: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #8B95A8 130%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  h1 .accent {
+    background: linear-gradient(135deg, var(--accent), #00E5FF);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .sub { color: var(--text-dim); font-size: 16px; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+  .links { display: flex; justify-content: center; gap: 12px; margin-top: 22px; flex-wrap: wrap; }
+  .link-btn {
+    padding: 9px 18px; border-radius: 100px; border: 1px solid var(--line);
+    background: rgba(255,255,255,0.02); color: var(--text);
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .link-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .grid {
+    max-width: 1500px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 24px 20px 20px;
+    position: relative; overflow: hidden;
+    transition: all 0.25s;
+  }
+  .card:hover { border-color: rgba(255,255,255,0.18); transform: translateY(-3px); }
+  .card::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0,255,148,0.06), transparent 60%);
+    pointer-events: none;
+  }
+
+  .portrait {
+    width: 100%; max-width: 240px;
+    aspect-ratio: 1; margin: 0 auto 16px;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+    background: linear-gradient(135deg, #1a1f2e 0%, #0d1118 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .name {
+    font-size: 20px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 4px; text-align: center;
+  }
+  .role {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--accent);
+    letter-spacing: 0.2em; text-align: center; margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .items {
+    border-top: 1px solid var(--line); padding-top: 14px;
+  }
+  .item-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 4px 0;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);
+  }
+  .item-row .icon { color: var(--pick); font-size: 9px; }
+  .item-row .key { color: #ffffff; font-weight: 500; }
+  .item-row .sep { color: var(--line); }
+  .item-row .color { color: var(--text-dim); font-style: italic; }
+
+  .loading { text-align: center; padding: 80px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+  .foot { max-width: 1500px; margin: 64px auto 0; padding-top: 28px; border-top: 1px solid var(--line); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+  .foot a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div class="tag"><span class="dot"></span> THE REVEAL · v19 · 48x48</div>
+  <h1>The Sales Floor<br><span class="accent">drops</span>.</h1>
+  <p class="sub">15 hand-pixeled operators, kitted out with 38 hand-picked NFT accessories chosen from a 157-variant catalog. The Genesis Collection.</p>
+  <div class="links">
+    <a class="link-btn" href="/">← Gallery</a>
+    <a class="link-btn" href="/picker">Picker</a>
+  </div>
+</div>
+
+<div class="grid" id="grid">
+  <div class="loading">Loading the drop...</div>
+</div>
+
+<div class="foot">
+  BRAINTRUST COLLECTION · v19 GENESIS REVEAL
+</div>
+
+<script>
+async function load() {
+  const res = await fetch('/sdrs/assignments.json');
+  const data = await res.json();
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  data.sdrs.forEach(sdr => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    const items = sdr.items.map(id => {
+      const [key, color] = id.split('__');
+      const colorTxt = color === 'default' ? '' : `<span class="sep">·</span><span class="color">${color}</span>`;
+      return `<div class="item-row"><span class="icon">★</span><span class="key">${key.replace(/_/g, ' ')}</span>${colorTxt}</div>`;
+    }).join('');
+    card.innerHTML = `
+      <img class="portrait" src="/${sdr.path}" alt="${sdr.name}">
+      <div class="name">${sdr.name}</div>
+      <div class="role">${sdr.role}</div>
+      <div class="items">${items}</div>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+load();
+</script>
+</body>
+</html>
