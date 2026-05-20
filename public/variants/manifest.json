@@ -1,596 +1,443 @@
 {
-  "items": {
-    "ai_orb_v2": [
-      {
-        "id": "ai_orb_v2__cyber_M",
-        "path": "variants/ai_orb_v2/cyber_M.png",
-        "palette": "cyber",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__cyber_L",
-        "path": "variants/ai_orb_v2/cyber_L.png",
-        "palette": "cyber",
-        "size": "L"
-      },
-      {
-        "id": "ai_orb_v2__emerald_M",
-        "path": "variants/ai_orb_v2/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__emerald_L",
-        "path": "variants/ai_orb_v2/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "ai_orb_v2__amethyst_M",
-        "path": "variants/ai_orb_v2/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__amethyst_L",
-        "path": "variants/ai_orb_v2/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "ai_orb_v2__plasma_M",
-        "path": "variants/ai_orb_v2/plasma_M.png",
-        "palette": "plasma",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__plasma_L",
-        "path": "variants/ai_orb_v2/plasma_L.png",
-        "palette": "plasma",
-        "size": "L"
-      },
-      {
-        "id": "ai_orb_v2__molten_M",
-        "path": "variants/ai_orb_v2/molten_M.png",
-        "palette": "molten",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__molten_L",
-        "path": "variants/ai_orb_v2/molten_L.png",
-        "palette": "molten",
-        "size": "L"
-      },
-      {
-        "id": "ai_orb_v2__holo_M",
-        "path": "variants/ai_orb_v2/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "ai_orb_v2__holo_L",
-        "path": "variants/ai_orb_v2/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      }
-    ],
-    "crystal_ball": [
-      {
-        "id": "crystal_ball__amethyst_M",
-        "path": "variants/crystal_ball/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__amethyst_L",
-        "path": "variants/crystal_ball/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "crystal_ball__sapphire_M",
-        "path": "variants/crystal_ball/sapphire_M.png",
-        "palette": "sapphire",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__sapphire_L",
-        "path": "variants/crystal_ball/sapphire_L.png",
-        "palette": "sapphire",
-        "size": "L"
-      },
-      {
-        "id": "crystal_ball__ruby_M",
-        "path": "variants/crystal_ball/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__ruby_L",
-        "path": "variants/crystal_ball/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      },
-      {
-        "id": "crystal_ball__emerald_M",
-        "path": "variants/crystal_ball/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__emerald_L",
-        "path": "variants/crystal_ball/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "crystal_ball__void_M",
-        "path": "variants/crystal_ball/void_M.png",
-        "palette": "void",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__void_L",
-        "path": "variants/crystal_ball/void_L.png",
-        "palette": "void",
-        "size": "L"
-      },
-      {
-        "id": "crystal_ball__holo_M",
-        "path": "variants/crystal_ball/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "crystal_ball__holo_L",
-        "path": "variants/crystal_ball/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      }
-    ],
-    "plasma_sphere": [
-      {
-        "id": "plasma_sphere__plasma_M",
-        "path": "variants/plasma_sphere/plasma_M.png",
-        "palette": "plasma",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__plasma_L",
-        "path": "variants/plasma_sphere/plasma_L.png",
-        "palette": "plasma",
-        "size": "L"
-      },
-      {
-        "id": "plasma_sphere__cyber_M",
-        "path": "variants/plasma_sphere/cyber_M.png",
-        "palette": "cyber",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__cyber_L",
-        "path": "variants/plasma_sphere/cyber_L.png",
-        "palette": "cyber",
-        "size": "L"
-      },
-      {
-        "id": "plasma_sphere__amethyst_M",
-        "path": "variants/plasma_sphere/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__amethyst_L",
-        "path": "variants/plasma_sphere/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "plasma_sphere__molten_M",
-        "path": "variants/plasma_sphere/molten_M.png",
-        "palette": "molten",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__molten_L",
-        "path": "variants/plasma_sphere/molten_L.png",
-        "palette": "molten",
-        "size": "L"
-      },
-      {
-        "id": "plasma_sphere__void_M",
-        "path": "variants/plasma_sphere/void_M.png",
-        "palette": "void",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__void_L",
-        "path": "variants/plasma_sphere/void_L.png",
-        "palette": "void",
-        "size": "L"
-      },
-      {
-        "id": "plasma_sphere__holo_M",
-        "path": "variants/plasma_sphere/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "plasma_sphere__holo_L",
-        "path": "variants/plasma_sphere/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      }
-    ],
-    "brain_orb": [
-      {
-        "id": "brain_orb__ruby_M",
-        "path": "variants/brain_orb/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__ruby_L",
-        "path": "variants/brain_orb/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      },
-      {
-        "id": "brain_orb__amethyst_M",
-        "path": "variants/brain_orb/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__amethyst_L",
-        "path": "variants/brain_orb/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "brain_orb__plasma_M",
-        "path": "variants/brain_orb/plasma_M.png",
-        "palette": "plasma",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__plasma_L",
-        "path": "variants/brain_orb/plasma_L.png",
-        "palette": "plasma",
-        "size": "L"
-      },
-      {
-        "id": "brain_orb__emerald_M",
-        "path": "variants/brain_orb/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__emerald_L",
-        "path": "variants/brain_orb/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "brain_orb__gold_M",
-        "path": "variants/brain_orb/gold_M.png",
-        "palette": "gold",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__gold_L",
-        "path": "variants/brain_orb/gold_L.png",
-        "palette": "gold",
-        "size": "L"
-      },
-      {
-        "id": "brain_orb__molten_M",
-        "path": "variants/brain_orb/molten_M.png",
-        "palette": "molten",
-        "size": "M"
-      },
-      {
-        "id": "brain_orb__molten_L",
-        "path": "variants/brain_orb/molten_L.png",
-        "palette": "molten",
-        "size": "L"
-      }
-    ],
-    "halo_orb": [
-      {
-        "id": "halo_orb__gold_M",
-        "path": "variants/halo_orb/gold_M.png",
-        "palette": "gold",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__gold_L",
-        "path": "variants/halo_orb/gold_L.png",
-        "palette": "gold",
-        "size": "L"
-      },
-      {
-        "id": "halo_orb__holo_M",
-        "path": "variants/halo_orb/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__holo_L",
-        "path": "variants/halo_orb/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      },
-      {
-        "id": "halo_orb__emerald_M",
-        "path": "variants/halo_orb/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__emerald_L",
-        "path": "variants/halo_orb/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "halo_orb__sapphire_M",
-        "path": "variants/halo_orb/sapphire_M.png",
-        "palette": "sapphire",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__sapphire_L",
-        "path": "variants/halo_orb/sapphire_L.png",
-        "palette": "sapphire",
-        "size": "L"
-      },
-      {
-        "id": "halo_orb__amethyst_M",
-        "path": "variants/halo_orb/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__amethyst_L",
-        "path": "variants/halo_orb/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "halo_orb__ruby_M",
-        "path": "variants/halo_orb/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "halo_orb__ruby_L",
-        "path": "variants/halo_orb/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      }
-    ],
-    "disco_ball": [
-      {
-        "id": "disco_ball__holo_M",
-        "path": "variants/disco_ball/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__holo_L",
-        "path": "variants/disco_ball/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      },
-      {
-        "id": "disco_ball__amethyst_M",
-        "path": "variants/disco_ball/amethyst_M.png",
-        "palette": "amethyst",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__amethyst_L",
-        "path": "variants/disco_ball/amethyst_L.png",
-        "palette": "amethyst",
-        "size": "L"
-      },
-      {
-        "id": "disco_ball__gold_M",
-        "path": "variants/disco_ball/gold_M.png",
-        "palette": "gold",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__gold_L",
-        "path": "variants/disco_ball/gold_L.png",
-        "palette": "gold",
-        "size": "L"
-      },
-      {
-        "id": "disco_ball__cyber_M",
-        "path": "variants/disco_ball/cyber_M.png",
-        "palette": "cyber",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__cyber_L",
-        "path": "variants/disco_ball/cyber_L.png",
-        "palette": "cyber",
-        "size": "L"
-      },
-      {
-        "id": "disco_ball__ruby_M",
-        "path": "variants/disco_ball/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__ruby_L",
-        "path": "variants/disco_ball/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      },
-      {
-        "id": "disco_ball__emerald_M",
-        "path": "variants/disco_ball/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "disco_ball__emerald_L",
-        "path": "variants/disco_ball/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      }
-    ],
-    "lightning": [
-      {
-        "id": "lightning__gold_M",
-        "path": "variants/lightning/gold_M.png",
-        "palette": "gold",
-        "size": "M"
-      },
-      {
-        "id": "lightning__gold_L",
-        "path": "variants/lightning/gold_L.png",
-        "palette": "gold",
-        "size": "L"
-      },
-      {
-        "id": "lightning__cyber_M",
-        "path": "variants/lightning/cyber_M.png",
-        "palette": "cyber",
-        "size": "M"
-      },
-      {
-        "id": "lightning__cyber_L",
-        "path": "variants/lightning/cyber_L.png",
-        "palette": "cyber",
-        "size": "L"
-      },
-      {
-        "id": "lightning__plasma_M",
-        "path": "variants/lightning/plasma_M.png",
-        "palette": "plasma",
-        "size": "M"
-      },
-      {
-        "id": "lightning__plasma_L",
-        "path": "variants/lightning/plasma_L.png",
-        "palette": "plasma",
-        "size": "L"
-      },
-      {
-        "id": "lightning__ruby_M",
-        "path": "variants/lightning/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "lightning__ruby_L",
-        "path": "variants/lightning/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      },
-      {
-        "id": "lightning__emerald_M",
-        "path": "variants/lightning/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "lightning__emerald_L",
-        "path": "variants/lightning/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "lightning__holo_M",
-        "path": "variants/lightning/holo_M.png",
-        "palette": "holo",
-        "size": "M"
-      },
-      {
-        "id": "lightning__holo_L",
-        "path": "variants/lightning/holo_L.png",
-        "palette": "holo",
-        "size": "L"
-      }
-    ],
-    "neon_dollar": [
-      {
-        "id": "neon_dollar__emerald_M",
-        "path": "variants/neon_dollar/emerald_M.png",
-        "palette": "emerald",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__emerald_L",
-        "path": "variants/neon_dollar/emerald_L.png",
-        "palette": "emerald",
-        "size": "L"
-      },
-      {
-        "id": "neon_dollar__gold_M",
-        "path": "variants/neon_dollar/gold_M.png",
-        "palette": "gold",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__gold_L",
-        "path": "variants/neon_dollar/gold_L.png",
-        "palette": "gold",
-        "size": "L"
-      },
-      {
-        "id": "neon_dollar__cyber_M",
-        "path": "variants/neon_dollar/cyber_M.png",
-        "palette": "cyber",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__cyber_L",
-        "path": "variants/neon_dollar/cyber_L.png",
-        "palette": "cyber",
-        "size": "L"
-      },
-      {
-        "id": "neon_dollar__plasma_M",
-        "path": "variants/neon_dollar/plasma_M.png",
-        "palette": "plasma",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__plasma_L",
-        "path": "variants/neon_dollar/plasma_L.png",
-        "palette": "plasma",
-        "size": "L"
-      },
-      {
-        "id": "neon_dollar__ruby_M",
-        "path": "variants/neon_dollar/ruby_M.png",
-        "palette": "ruby",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__ruby_L",
-        "path": "variants/neon_dollar/ruby_L.png",
-        "palette": "ruby",
-        "size": "L"
-      },
-      {
-        "id": "neon_dollar__molten_M",
-        "path": "variants/neon_dollar/molten_M.png",
-        "palette": "molten",
-        "size": "M"
-      },
-      {
-        "id": "neon_dollar__molten_L",
-        "path": "variants/neon_dollar/molten_L.png",
-        "palette": "molten",
-        "size": "L"
-      }
-    ]
+  "categories": {
+    "head": {
+      "king_crown": [
+        {
+          "id": "king_crown__gold",
+          "path": "variants/head/king_crown/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "king_crown__silver",
+          "path": "variants/head/king_crown/silver.png",
+          "color": "silver"
+        },
+        {
+          "id": "king_crown__rose",
+          "path": "variants/head/king_crown/rose.png",
+          "color": "rose"
+        },
+        {
+          "id": "king_crown__cyber",
+          "path": "variants/head/king_crown/cyber.png",
+          "color": "cyber"
+        }
+      ],
+      "jeweled_crown": [
+        {
+          "id": "jeweled_crown__gold",
+          "path": "variants/head/jeweled_crown/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "jeweled_crown__silver",
+          "path": "variants/head/jeweled_crown/silver.png",
+          "color": "silver"
+        }
+      ],
+      "laurel_crown": [
+        {
+          "id": "laurel_crown__gold",
+          "path": "variants/head/laurel_crown/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "laurel_crown__green",
+          "path": "variants/head/laurel_crown/green.png",
+          "color": "green"
+        }
+      ],
+      "top_hat": [
+        {
+          "id": "top_hat__black",
+          "path": "variants/head/top_hat/black.png",
+          "color": "black"
+        },
+        {
+          "id": "top_hat__red",
+          "path": "variants/head/top_hat/red.png",
+          "color": "red"
+        },
+        {
+          "id": "top_hat__silver",
+          "path": "variants/head/top_hat/silver.png",
+          "color": "silver"
+        }
+      ],
+      "beanie": [
+        {
+          "id": "beanie__red",
+          "path": "variants/head/beanie/red.png",
+          "color": "red"
+        },
+        {
+          "id": "beanie__navy",
+          "path": "variants/head/beanie/navy.png",
+          "color": "navy"
+        },
+        {
+          "id": "beanie__green",
+          "path": "variants/head/beanie/green.png",
+          "color": "green"
+        },
+        {
+          "id": "beanie__yellow",
+          "path": "variants/head/beanie/yellow.png",
+          "color": "yellow"
+        }
+      ],
+      "cowboy_hat": [
+        {
+          "id": "cowboy_hat__brown",
+          "path": "variants/head/cowboy_hat/brown.png",
+          "color": "brown"
+        },
+        {
+          "id": "cowboy_hat__black",
+          "path": "variants/head/cowboy_hat/black.png",
+          "color": "black"
+        }
+      ],
+      "devil_horns": [
+        {
+          "id": "devil_horns__red",
+          "path": "variants/head/devil_horns/red.png",
+          "color": "red"
+        },
+        {
+          "id": "devil_horns__black",
+          "path": "variants/head/devil_horns/black.png",
+          "color": "black"
+        }
+      ],
+      "halo": [
+        {
+          "id": "halo__gold",
+          "path": "variants/head/halo/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "halo__cyan",
+          "path": "variants/head/halo/cyan.png",
+          "color": "cyan"
+        }
+      ],
+      "wizard_hat": [
+        {
+          "id": "wizard_hat__purple",
+          "path": "variants/head/wizard_hat/purple.png",
+          "color": "purple"
+        },
+        {
+          "id": "wizard_hat__blue",
+          "path": "variants/head/wizard_hat/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "wizard_hat__black",
+          "path": "variants/head/wizard_hat/black.png",
+          "color": "black"
+        }
+      ]
+    },
+    "eyes": {
+      "pixel_shades": [
+        {
+          "id": "pixel_shades__black",
+          "path": "variants/eyes/pixel_shades/black.png",
+          "color": "black"
+        },
+        {
+          "id": "pixel_shades__red",
+          "path": "variants/eyes/pixel_shades/red.png",
+          "color": "red"
+        },
+        {
+          "id": "pixel_shades__blue",
+          "path": "variants/eyes/pixel_shades/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "pixel_shades__green",
+          "path": "variants/eyes/pixel_shades/green.png",
+          "color": "green"
+        },
+        {
+          "id": "pixel_shades__white",
+          "path": "variants/eyes/pixel_shades/white.png",
+          "color": "white"
+        }
+      ],
+      "aviators": [
+        {
+          "id": "aviators__gold",
+          "path": "variants/eyes/aviators/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "aviators__silver",
+          "path": "variants/eyes/aviators/silver.png",
+          "color": "silver"
+        }
+      ],
+      "three_d_glasses": [
+        {
+          "id": "three_d_glasses__default",
+          "path": "variants/eyes/three_d_glasses/default.png",
+          "color": "default"
+        }
+      ],
+      "vr_headset": [
+        {
+          "id": "vr_headset__black",
+          "path": "variants/eyes/vr_headset/black.png",
+          "color": "black"
+        },
+        {
+          "id": "vr_headset__silver",
+          "path": "variants/eyes/vr_headset/silver.png",
+          "color": "silver"
+        }
+      ],
+      "cyber_visor": [
+        {
+          "id": "cyber_visor__cyan",
+          "path": "variants/eyes/cyber_visor/cyan.png",
+          "color": "cyan"
+        },
+        {
+          "id": "cyber_visor__red",
+          "path": "variants/eyes/cyber_visor/red.png",
+          "color": "red"
+        },
+        {
+          "id": "cyber_visor__green",
+          "path": "variants/eyes/cyber_visor/green.png",
+          "color": "green"
+        },
+        {
+          "id": "cyber_visor__purple",
+          "path": "variants/eyes/cyber_visor/purple.png",
+          "color": "purple"
+        }
+      ],
+      "monocle": [
+        {
+          "id": "monocle__gold",
+          "path": "variants/eyes/monocle/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "monocle__silver",
+          "path": "variants/eyes/monocle/silver.png",
+          "color": "silver"
+        }
+      ],
+      "eyepatch": [
+        {
+          "id": "eyepatch__black",
+          "path": "variants/eyes/eyepatch/black.png",
+          "color": "black"
+        },
+        {
+          "id": "eyepatch__brown",
+          "path": "variants/eyes/eyepatch/brown.png",
+          "color": "brown"
+        }
+      ],
+      "laser_eyes": [
+        {
+          "id": "laser_eyes__red",
+          "path": "variants/eyes/laser_eyes/red.png",
+          "color": "red"
+        },
+        {
+          "id": "laser_eyes__blue",
+          "path": "variants/eyes/laser_eyes/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "laser_eyes__green",
+          "path": "variants/eyes/laser_eyes/green.png",
+          "color": "green"
+        },
+        {
+          "id": "laser_eyes__purple",
+          "path": "variants/eyes/laser_eyes/purple.png",
+          "color": "purple"
+        },
+        {
+          "id": "laser_eyes__white",
+          "path": "variants/eyes/laser_eyes/white.png",
+          "color": "white"
+        }
+      ],
+      "laser_eyes_rainbow": [
+        {
+          "id": "laser_eyes_rainbow__default",
+          "path": "variants/eyes/laser_eyes_rainbow/default.png",
+          "color": "default"
+        }
+      ],
+      "money_eyes": [
+        {
+          "id": "money_eyes__green",
+          "path": "variants/eyes/money_eyes/green.png",
+          "color": "green"
+        },
+        {
+          "id": "money_eyes__gold",
+          "path": "variants/eyes/money_eyes/gold.png",
+          "color": "gold"
+        }
+      ],
+      "x_eyes": [
+        {
+          "id": "x_eyes__black",
+          "path": "variants/eyes/x_eyes/black.png",
+          "color": "black"
+        },
+        {
+          "id": "x_eyes__red",
+          "path": "variants/eyes/x_eyes/red.png",
+          "color": "red"
+        }
+      ],
+      "glowing_eyes": [
+        {
+          "id": "glowing_eyes__white",
+          "path": "variants/eyes/glowing_eyes/white.png",
+          "color": "white"
+        },
+        {
+          "id": "glowing_eyes__red",
+          "path": "variants/eyes/glowing_eyes/red.png",
+          "color": "red"
+        },
+        {
+          "id": "glowing_eyes__cyan",
+          "path": "variants/eyes/glowing_eyes/cyan.png",
+          "color": "cyan"
+        },
+        {
+          "id": "glowing_eyes__yellow",
+          "path": "variants/eyes/glowing_eyes/yellow.png",
+          "color": "yellow"
+        }
+      ]
+    },
+    "mouth": {
+      "cigar": [
+        {
+          "id": "cigar__brown",
+          "path": "variants/mouth/cigar/brown.png",
+          "color": "brown"
+        }
+      ],
+      "cigarette": [
+        {
+          "id": "cigarette__white",
+          "path": "variants/mouth/cigarette/white.png",
+          "color": "white"
+        }
+      ],
+      "vampire_fangs": [
+        {
+          "id": "vampire_fangs__default",
+          "path": "variants/mouth/vampire_fangs/default.png",
+          "color": "default"
+        }
+      ],
+      "gold_grill": [
+        {
+          "id": "gold_grill__gold",
+          "path": "variants/mouth/gold_grill/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "gold_grill__diamond",
+          "path": "variants/mouth/gold_grill/diamond.png",
+          "color": "diamond"
+        }
+      ]
+    },
+    "neck": {
+      "fat_gold_chain": [
+        {
+          "id": "fat_gold_chain__gold",
+          "path": "variants/neck/fat_gold_chain/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "fat_gold_chain__silver",
+          "path": "variants/neck/fat_gold_chain/silver.png",
+          "color": "silver"
+        }
+      ],
+      "diamond_chain": [
+        {
+          "id": "diamond_chain__white",
+          "path": "variants/neck/diamond_chain/white.png",
+          "color": "white"
+        }
+      ],
+      "bowtie": [
+        {
+          "id": "bowtie__red",
+          "path": "variants/neck/bowtie/red.png",
+          "color": "red"
+        },
+        {
+          "id": "bowtie__black",
+          "path": "variants/neck/bowtie/black.png",
+          "color": "black"
+        },
+        {
+          "id": "bowtie__purple",
+          "path": "variants/neck/bowtie/purple.png",
+          "color": "purple"
+        }
+      ]
+    },
+    "face": {
+      "face_tattoo": [
+        {
+          "id": "face_tattoo__black",
+          "path": "variants/face/face_tattoo/black.png",
+          "color": "black"
+        },
+        {
+          "id": "face_tattoo__purple",
+          "path": "variants/face/face_tattoo/purple.png",
+          "color": "purple"
+        }
+      ],
+      "scar": [
+        {
+          "id": "scar__default",
+          "path": "variants/face/scar/default.png",
+          "color": "default"
+        }
+      ],
+      "mustache_handlebar": [
+        {
+          "id": "mustache_handlebar__black",
+          "path": "variants/face/mustache_handlebar/black.png",
+          "color": "black"
+        },
+        {
+          "id": "mustache_handlebar__brown",
+          "path": "variants/face/mustache_handlebar/brown.png",
+          "color": "brown"
+        }
+      ],
+      "blush": [
+        {
+          "id": "blush__pink",
+          "path": "variants/face/blush/pink.png",
+          "color": "pink"
+        }
+      ]
+    }
   }
 }

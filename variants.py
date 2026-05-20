@@ -1,37 +1,66 @@
 #!/usr/bin/env python3
-"""Variant farm: sweep every item across palettes + sizes.
+"""Variant farm: composite every accessory over the face template.
 
-Output: public/variants/{item}/{palette}_{size}.png
-
-Also writes public/variants/manifest.json so picker.html can render the grid
-without hardcoding paths.
+Output: public/variants/{category}/{accessory}__{color}.png
+Manifest: public/variants/manifest.json
 """
 import json
 import pathlib
 import shutil
 
-from items_v3 import new_canvas, SPHERE_PALETTES
-from items_v3_lib import ITEMS
+from items_v3 import new_canvas
+from face_template import draw_face_template
+from accessories_v3 import ACCESSORIES
 
 OUT = pathlib.Path("public/variants")
 
-# Per-item palette choices. Some items only make sense in certain colors.
-ITEM_PALETTES = {
-    "ai_orb_v2":     ["cyber", "emerald", "amethyst", "plasma", "molten", "holo"],
-    "crystal_ball":  ["amethyst", "sapphire", "ruby", "emerald", "void", "holo"],
-    "plasma_sphere": ["plasma", "cyber", "amethyst", "molten", "void", "holo"],
-    "brain_orb":     ["ruby", "amethyst", "plasma", "emerald", "gold", "molten"],
-    "halo_orb":      ["gold", "holo", "emerald", "sapphire", "amethyst", "ruby"],
-    "disco_ball":    ["holo", "amethyst", "gold", "cyber", "ruby", "emerald"],
-    "lightning":     ["gold", "cyber", "plasma", "ruby", "emerald", "holo"],
-    "neon_dollar":   ["emerald", "gold", "cyber", "plasma", "ruby", "molten"],
+# Category routing for sectioning in the picker
+CATEGORY = {
+    "king_crown":         "head",
+    "jeweled_crown":      "head",
+    "laurel_crown":       "head",
+    "top_hat":            "head",
+    "beanie":             "head",
+    "cowboy_hat":         "head",
+    "devil_horns":        "head",
+    "halo":               "head",
+    "wizard_hat":         "head",
+
+    "pixel_shades":       "eyes",
+    "aviators":           "eyes",
+    "three_d_glasses":    "eyes",
+    "vr_headset":         "eyes",
+    "cyber_visor":        "eyes",
+    "monocle":            "eyes",
+    "eyepatch":           "eyes",
+    "laser_eyes":         "eyes",
+    "laser_eyes_rainbow": "eyes",
+    "money_eyes":         "eyes",
+    "x_eyes":             "eyes",
+    "glowing_eyes":       "eyes",
+
+    "cigar":              "mouth",
+    "cigarette":          "mouth",
+    "vampire_fangs":      "mouth",
+    "gold_grill":         "mouth",
+
+    "fat_gold_chain":     "neck",
+    "diamond_chain":      "neck",
+    "bowtie":             "neck",
+
+    "face_tattoo":        "face",
+    "scar":               "face",
+    "mustache_handlebar": "face",
+    "blush":              "face",
 }
 
-SIZES = ["M", "L"]  # Skip S, too small for a contact sheet pick
+CATEGORY_ORDER = ["head", "eyes", "mouth", "neck", "face"]
 
 
 def clean_output():
-    for sub in OUT.iterdir() if OUT.exists() else []:
+    if not OUT.exists():
+        return
+    for sub in OUT.iterdir():
         if sub.is_dir() and not sub.name.startswith("_"):
             shutil.rmtree(sub)
 
@@ -40,38 +69,40 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     clean_output()
 
-    manifest = {"items": {}}
+    manifest = {"categories": {cat: {} for cat in CATEGORY_ORDER}}
     total = 0
 
-    for item_name, fn in ITEMS.items():
-        item_dir = OUT / item_name
+    for name, (fn, colors) in ACCESSORIES.items():
+        cat = CATEGORY.get(name, "face")
+        item_dir = OUT / cat / name
         item_dir.mkdir(parents=True, exist_ok=True)
         variants = []
 
-        for palette in ITEM_PALETTES.get(item_name, list(SPHERE_PALETTES)[:6]):
-            for size in SIZES:
-                vid = f"{palette}_{size}"
-                canvas = new_canvas()
-                try:
-                    fn(canvas, palette_name=palette, size=size)
-                except TypeError:
-                    # Item doesn't take palette/size kwargs, render default
-                    canvas = new_canvas()
+        for color in colors:
+            canvas = new_canvas()
+            draw_face_template(canvas)
+            try:
+                if color is None:
                     fn(canvas)
-                rel = f"variants/{item_name}/{vid}.png"
-                canvas.save(OUT / item_name / f"{vid}.png")
-                variants.append({
-                    "id": f"{item_name}__{vid}",
-                    "path": rel,
-                    "palette": palette,
-                    "size": size,
-                })
-                total += 1
+                else:
+                    fn(canvas, color=color)
+            except TypeError:
+                fn(canvas)
 
-        manifest["items"][item_name] = variants
+            color_label = color or "default"
+            fname = f"{color_label}.png"
+            canvas.save(item_dir / fname)
+            variants.append({
+                "id": f"{name}__{color_label}",
+                "path": f"variants/{cat}/{name}/{fname}",
+                "color": color_label,
+            })
+            total += 1
+
+        manifest["categories"][cat][name] = variants
 
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2))
-    print(f"wrote {total} variants across {len(ITEMS)} items")
+    print(f"wrote {total} accessory variants across {len(ACCESSORIES)} accessories")
     print(f"manifest: {OUT / 'manifest.json'}")
 
 

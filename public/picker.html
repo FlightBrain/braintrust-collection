@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Item Picker · Braintrust Collection</title>
+<title>Accessory Picker · Braintrust Collection</title>
 <link rel="icon" href="https://www.braintrust.dev/icon180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,15 +18,13 @@
   html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
   body { padding: 32px 24px 80px; }
 
-  /* === Header === */
   .head { max-width: 1400px; margin: 0 auto 32px; text-align: center; }
   .tag { display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border: 1px solid var(--line); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: var(--text-dim); margin-bottom: 18px; }
   .tag .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
   h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
   .accent { color: var(--accent); }
-  .sub { color: var(--text-dim); font-size: 14px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .sub { color: var(--text-dim); font-size: 14px; max-width: 700px; margin: 0 auto; line-height: 1.6; }
 
-  /* === Picks summary === */
   .picks-bar {
     max-width: 1400px; margin: 0 auto 32px;
     background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
@@ -44,29 +42,35 @@
   }
   .btn:hover { border-color: var(--accent); color: var(--accent); }
   .btn.primary { background: var(--accent); color: #050709; border-color: var(--accent); }
-  .btn.primary:hover { background: #00cc7a; color: #050709; }
   .btn.danger:hover { border-color: var(--reject); color: var(--reject); }
   .picks-list { width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); line-height: 1.7; word-break: break-all; }
   .picks-list .winner { color: var(--pick); }
 
-  /* === Sections === */
-  .section { max-width: 1400px; margin: 0 auto 48px; }
-  .section-head {
-    display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;
+  .category {
+    max-width: 1400px; margin: 0 auto 48px;
+  }
+  .cat-head {
+    display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px;
     padding-bottom: 12px; border-bottom: 1px solid var(--line);
   }
-  .section-name { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
-  .section-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+  .cat-name { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; text-transform: capitalize; }
+  .cat-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
 
-  /* === Grid === */
+  .accessory-row {
+    margin-bottom: 26px;
+  }
+  .acc-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim);
+    letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 8px;
+  }
   .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
   }
   .tile {
     background: var(--panel); border: 2px solid var(--line); border-radius: 12px;
-    padding: 16px 14px 12px; text-align: center;
+    padding: 14px 12px 10px; text-align: center;
     transition: all 0.2s; cursor: pointer;
     position: relative; overflow: hidden;
   }
@@ -83,8 +87,8 @@
   .tile.picked .star { opacity: 1; }
 
   .preview {
-    width: 100%; aspect-ratio: 1 / 1; max-width: 144px;
-    margin: 0 auto 10px;
+    width: 100%; aspect-ratio: 1 / 1; max-width: 132px;
+    margin: 0 auto 8px;
     image-rendering: pixelated; image-rendering: crisp-edges;
     background: rgba(0,0,0,0.4); border-radius: 8px;
   }
@@ -92,10 +96,8 @@
     font-family: 'JetBrains Mono', monospace; font-size: 10px;
     color: var(--text-dim); letter-spacing: 0.1em;
   }
-  .label .pal { color: #ffffff; font-weight: 600; }
-  .label .size { opacity: 0.7; margin-left: 4px; }
+  .label .color { color: #ffffff; font-weight: 600; }
 
-  /* === Reject button === */
   .reject-btn {
     position: absolute; top: 8px; left: 10px;
     width: 22px; height: 22px; border-radius: 50%;
@@ -109,10 +111,8 @@
   .tile .reject-btn:hover { opacity: 1; border-color: var(--reject); color: var(--reject); }
   .tile.rejected .reject-btn { opacity: 1; border-color: var(--reject); color: var(--reject); }
 
-  /* === Loading === */
   .loading { text-align: center; color: var(--text-dim); padding: 80px; font-family: 'JetBrains Mono', monospace; }
 
-  /* === Footer === */
   .foot { max-width: 1400px; margin: 60px auto 0; padding-top: 24px; border-top: 1px solid var(--line); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
   .foot a { color: var(--accent); text-decoration: none; }
 </style>
@@ -120,9 +120,9 @@
 <body>
 
 <div class="head">
-  <div class="tag"><span class="dot"></span> ITEM PICKER · v3 · 48x48</div>
-  <h1>Pick the <span class="accent">god-tier</span> items.</h1>
-  <p class="sub">96 candidates across 8 signature types. Click to star a variant. Reject (X) to mark a dud. When you have your winners, copy the list at the top and send it back.</p>
+  <div class="tag"><span class="dot"></span> ACCESSORY PICKER · v2 · 48x48</div>
+  <h1>Pick the <span class="accent">real</span> NFT accessories.</h1>
+  <p class="sub">CryptoPunks-style wearables on a neutral face. Crowns, glasses, laser eyes, cigars, chains, the works. Each accessory shown across its color variants. Star the winners, reject the duds.</p>
 </div>
 
 <div class="picks-bar">
@@ -135,16 +135,16 @@
 </div>
 
 <div id="root">
-  <div class="loading">Loading variants...</div>
+  <div class="loading">Loading accessories...</div>
 </div>
 
 <div class="foot">
-  BRAINTRUST COLLECTION · ITEM PICKER · <a href="/">BACK TO GALLERY</a>
+  BRAINTRUST COLLECTION · ACCESSORY PICKER · <a href="/">BACK TO GALLERY</a>
 </div>
 
 <script>
-const STORAGE_PICKS = 'item_picks_v3';
-const STORAGE_REJECTS = 'item_rejects_v3';
+const STORAGE_PICKS = 'acc_picks_v3';
+const STORAGE_REJECTS = 'acc_rejects_v3';
 
 let picks = new Set(JSON.parse(localStorage.getItem(STORAGE_PICKS) || '[]'));
 let rejects = new Set(JSON.parse(localStorage.getItem(STORAGE_REJECTS) || '[]'));
@@ -213,32 +213,45 @@ async function load() {
   const root = document.getElementById('root');
   root.innerHTML = '';
 
-  for (const [itemName, variants] of Object.entries(data.items)) {
+  for (const [catName, accessories] of Object.entries(data.categories)) {
+    const accList = Object.entries(accessories);
+    if (accList.length === 0) continue;
+
     const section = document.createElement('div');
-    section.className = 'section';
+    section.className = 'category';
+    const totalVariants = accList.reduce((sum, [_, v]) => sum + v.length, 0);
     section.innerHTML = `
-      <div class="section-head">
-        <div class="section-name">${itemName.replace(/_/g, ' ')}</div>
-        <div class="section-meta">${variants.length} VARIANTS</div>
+      <div class="cat-head">
+        <div class="cat-name">${catName}</div>
+        <div class="cat-meta">${accList.length} ACCESSORIES · ${totalVariants} VARIANTS</div>
       </div>
-      <div class="grid"></div>
     `;
-    const grid = section.querySelector('.grid');
-    variants.forEach(v => {
-      const tile = document.createElement('div');
-      tile.className = 'tile';
-      if (picks.has(v.id)) tile.classList.add('picked');
-      if (rejects.has(v.id)) tile.classList.add('rejected');
-      tile.innerHTML = `
-        <button class="reject-btn" title="Reject this variant">✕</button>
-        <div class="star">★</div>
-        <img class="preview" src="/${v.path}" alt="${v.id}">
-        <div class="label"><span class="pal">${v.palette}</span><span class="size">${v.size}</span></div>
-      `;
-      tile.addEventListener('click', () => togglePick(v.id, tile));
-      tile.querySelector('.reject-btn').addEventListener('click', (e) => toggleReject(e, v.id, tile));
-      grid.appendChild(tile);
+
+    accList.forEach(([accName, variants]) => {
+      const row = document.createElement('div');
+      row.className = 'accessory-row';
+      row.innerHTML = `<div class="acc-label">${accName.replace(/_/g, ' ')}</div>`;
+      const grid = document.createElement('div');
+      grid.className = 'grid';
+      variants.forEach(v => {
+        const tile = document.createElement('div');
+        tile.className = 'tile';
+        if (picks.has(v.id)) tile.classList.add('picked');
+        if (rejects.has(v.id)) tile.classList.add('rejected');
+        tile.innerHTML = `
+          <button class="reject-btn" title="Reject">✕</button>
+          <div class="star">★</div>
+          <img class="preview" src="/${v.path}" alt="${v.id}">
+          <div class="label"><span class="color">${v.color}</span></div>
+        `;
+        tile.addEventListener('click', () => togglePick(v.id, tile));
+        tile.querySelector('.reject-btn').addEventListener('click', (e) => toggleReject(e, v.id, tile));
+        grid.appendChild(tile);
+      });
+      row.appendChild(grid);
+      section.appendChild(row);
     });
+
     root.appendChild(section);
   }
   renderPicksBar();
