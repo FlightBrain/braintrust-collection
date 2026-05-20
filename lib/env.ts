@@ -18,3 +18,22 @@ export const env = {
 
 export const hasContract = () =>
   !!env.contractAddress && /^0x[0-9a-fA-F]{40}$/.test(env.contractAddress);
+
+// Block explorer base URL for the active chain. Used for success-tx links.
+export function explorerUrlFor(chainId: number): string {
+  switch (chainId) {
+    case 8453:   return "https://basescan.org";       // Base mainnet
+    case 84532:  return "https://sepolia.basescan.org"; // Base Sepolia
+    case 1:      return "https://etherscan.io";
+    case 11155111: return "https://sepolia.etherscan.io";
+    default:     return "https://basescan.org";
+  }
+}
+
+export function explorerTxUrl(chainId: number, txHash: string): string {
+  return `${explorerUrlFor(chainId)}/tx/${txHash}`;
+}
+
+export function explorerAddressUrl(chainId: number, address: string): string {
+  return `${explorerUrlFor(chainId)}/address/${address}`;
+}

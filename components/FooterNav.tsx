@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { env } from "@/lib/env";
+import { env, explorerAddressUrl } from "@/lib/env";
 
 export function FooterNav() {
   return (
@@ -45,7 +45,7 @@ export function FooterNav() {
                   <span className="text-muted">Contract:</span>{" "}
                   <a
                     className="text-accent hover:underline"
-                    href={`https://basescan.org/address/${env.contractAddress}`}
+                    href={explorerAddressUrl(env.chainId, env.contractAddress)}
                     target="_blank"
                     rel="noreferrer noopener"
                   >

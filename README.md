@@ -70,30 +70,146 @@ All vars are `NEXT_PUBLIC_*` (browser-exposed values only, no secrets).
 When `NEXT_PUBLIC_CONTRACT_ADDRESS` is blank, the mint card renders a
 "contract not yet deployed" state instead of crashing.
 
-## Testnet path (REQUIRED before mainnet)
+## Testnet walkthrough (Base Sepolia, REQUIRED before mainnet)
 
-Mainnet launch is blocked until Base Sepolia mints pass. Use this exact order:
+Mainnet launch is blocked until Base Sepolia mints pass end-to-end. Follow these steps in order. Do not skip.
+
+The mint UI is wired to call **thirdweb DropERC721 `claim(receiver, quantity, currency, pricePerToken, AllowlistProof, data)`**, so you must deploy that contract type. See `lib/contract.ts` and `components/MintCard.tsx`.
+
+### Step 1: Get Base Sepolia test ETH
+
+You need ~0.05 Sepolia ETH for contract deployment + a few test mints.
+
+Free faucets:
+- https://www.alchemy.com/faucets/base-sepolia (recommended)
+- https://faucet.quicknode.com/base/sepolia
+- https://learnweb3.io/faucets/base_sepolia/
+
+Connect the wallet you'll use as the deployer + treasury and claim a drip.
+
+### Step 2: Deploy thirdweb NFT Drop on Base Sepolia
+
+1. Go to https://thirdweb.com/dashboard
+2. Connect the same wallet you funded in step 1.
+3. Click **Contracts**, then **Deploy contract**.
+4. Pick **Drops, then NFT Drop (ERC-721)**. Confirm it says "DropERC721".
+5. Fill in:
+   - **Name**: `Braintrust Collection (Sepolia Test)`
+   - **Symbol**: `BTC-T` (or your pick)
+   - **Image**: optional; can leave blank for the testnet contract
+   - **Royalties**: recipient = your deployer wallet, percentage = `0` (testnet)
+   - **Primary sale recipient**: your deployer wallet (treasury)
+6. **Network**: select **Base Sepolia Testnet**. CRITICAL: do not pick Base mainnet.
+7. Click **Deploy now**. Approve the deploy transaction in your wallet.
+8. Once deployed, you'll land on the contract dashboard. **Copy the contract address** (top of page).
+
+### Step 3: Upload the 15 metadata items (lazy mint)
+
+In your local terminal, generate metadata with an HTTP base URL (Sepolia testing only):
 
 ```bash
-# 1. Switch to Base Sepolia in .env.local
+# .env.local for testnet
+NEXT_PUBLIC_BASE_IMAGE_URI=https://braintrust-collection.vercel.app
+
+npm run generate-metadata
+npm run collection-metadata
+npm run validate-metadata
+```
+
+This writes `public/metadata/1.json` ... `public/metadata/15.json` referencing the live SVGs.
+
+In the thirdweb dashboard:
+
+1. Open your DropERC721 contract.
+2. Click **NFTs** in the left nav.
+3. Click **Batch upload**. Drag the 15 JSONs from `public/metadata/` (skip `_index.json` and `collection.json`).
+4. thirdweb uploads them to IPFS, then asks you to confirm a "Lazy mint" transaction. Approve.
+5. After it confirms, you should see 15 tokens listed, all currently unowned.
+
+Note: this lazily prepares the tokens. They aren't minted to anyone yet, the `claim` function is what actually mints them on demand.
+
+### Step 4: Configure the claim phase
+
+1. In the contract dashboard, click **Claim Conditions**.
+2. **Add Phase**:
+   - **Name**: `Public`
+   - **When will this phase start**: `Now`
+   - **How many tokens will you drop in this phase**: `15`
+   - **How much do you want to charge to claim**: `0`
+   - **Limit per wallet**: `1`
+   - **What currency**: leave default (native ETH)
+   - **Who can claim**: **Any wallet** (no allowlist)
+3. Save. Approve the transaction.
+
+### Step 5: Set the Vercel env vars
+
+Either in the Vercel dashboard (Project Settings, Environment Variables) or via the CLI:
+
+```bash
+# Required for the testnet site
 NEXT_PUBLIC_CHAIN_ID=84532
 NEXT_PUBLIC_CHAIN_NAME=Base Sepolia
+NEXT_PUBLIC_CONTRACT_ADDRESS=0xYourSepoliaContractAddress
+NEXT_PUBLIC_TOTAL_SUPPLY=15
+NEXT_PUBLIC_MINT_PRICE=0
 NEXT_PUBLIC_RPC_URL=https://sepolia.base.org
-
-# 2. Deploy a test contract to Base Sepolia (via thirdweb or Hardhat/Foundry)
-# 3. Get Sepolia ETH from a faucet:
-#    https://www.alchemy.com/faucets/base-sepolia
-# 4. Paste the testnet address into NEXT_PUBLIC_CONTRACT_ADDRESS
-# 5. Mint one token from the site. Verify:
-#    - transaction confirms on sepolia.basescan.org
-#    - token appears in your wallet
-#    - tokenURI(1) returns the right metadata
-#    - contractURI() returns collection metadata
-#    - metadata renders on OpenSea Testnet:
-#      https://testnets.opensea.io/
-# 6. Test the failure paths: reject the tx, switch to wrong network, etc.
-# 7. ONLY THEN switch to mainnet
+NEXT_PUBLIC_MARKETPLACE_URL=
 ```
+
+Apply to **Production** and **Preview** environments.
+
+### Step 6: Redeploy the site
+
+The current Vercel CLI workflow:
+
+```bash
+cd ~/Desktop/braintrust-collection
+rm -rf .next .vercel/output
+npx vercel pull --yes --environment production
+npx vercel build --prod --yes
+npx vercel deploy --prebuilt --prod --yes
+```
+
+(or just `git push origin main` if Vercel auto-deploy from GitHub is on)
+
+### Step 7: Smoke-test the mint flow
+
+Open https://braintrust-collection.vercel.app in an incognito window. Verify each:
+
+- [ ] Site loads with chain badge showing "Base Sepolia"
+- [ ] Mint card shows price = Free, minted = 0 / 15, max per wallet = 1
+- [ ] Click **Connect Wallet**, pick MetaMask, approve connection
+- [ ] If you're on the wrong network, the **Switch to Base Sepolia** button appears. Click it.
+- [ ] The mint button should now read **Mint free**. Click it. Approve the tx in your wallet.
+- [ ] During pending, the card shows "Transaction pending".
+- [ ] On success, card shows "Minted!" with a **View on Sepolia Basescan** link.
+- [ ] Click the link. The tx confirms on https://sepolia.basescan.org.
+- [ ] Refresh the page. Minted count shows 1 / 15.
+- [ ] Try to mint a second time from the same wallet. The card should now show "You have reached the per-wallet claim limit" or similar reverted-tx state.
+- [ ] Switch your wallet to Ethereum mainnet. The card shows "Wrong network" with a switch button.
+- [ ] Switch back. The mint UI returns.
+- [ ] Mint with a second wallet to confirm minted count goes to 2 / 15.
+
+If all the boxes pass, the testnet flow is solid. Only THEN move to mainnet.
+
+### Step 8: Inspect the contract on Sepolia Basescan
+
+- [ ] Open `https://sepolia.basescan.org/address/<your contract>`
+- [ ] **Read Contract** tab: call `nextTokenIdToMint()`. Should return the count of minted tokens.
+- [ ] Call `getActiveClaimConditionId()`. Should return `0` (first phase).
+- [ ] Call `getClaimConditionById(0)`. Should return your claim phase config (price=0, qty limit=1).
+- [ ] Call `tokenURI(0)`. Should return `ipfs://<cid>/0` (thirdweb starts at 0).
+- [ ] Call `contractURI()`. thirdweb auto-sets this.
+- [ ] (Optional) Verify the contract on Basescan via the **Verify and Publish** tab so the reads are decoded nicely.
+
+### Step 9: Check the metadata renders
+
+- [ ] Open https://testnets.opensea.io/
+- [ ] Search for your contract address. The collection should appear within a few minutes of the first mint.
+- [ ] Each minted token should display the SVG art.
+- [ ] If the thumbnail is missing, click into the token and hit **Refresh metadata**.
+
+Once everything in steps 7-9 is green, you've cleared the testnet gate.
 
 ## Site structure
 

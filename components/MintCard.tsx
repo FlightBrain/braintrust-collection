@@ -1,27 +1,50 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAccount, useChainId, useReadContract, useSwitchChain, useWriteContract, useWaitForTransactionReceipt } from "wagmi";
+import {
+  useAccount,
+  useChainId,
+  useReadContract,
+  useSwitchChain,
+  useWriteContract,
+  useWaitForTransactionReceipt,
+} from "wagmi";
 import { parseEther, formatEther } from "viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { env, hasContract } from "@/lib/env";
-import { collectionAbi } from "@/lib/contract";
+import { env, hasContract, explorerTxUrl } from "@/lib/env";
+import {
+  collectionAbi,
+  makeEmptyAllowlistProof,
+  NATIVE_TOKEN_ADDRESS,
+} from "@/lib/contract";
 import { activeChain } from "@/lib/wagmi";
 
-type ReadState = {
-  totalMinted?: bigint;
-  maxSupply?: bigint;
-  priceWei?: bigint;
-  paused?: boolean;
-  maxPerWallet?: bigint;
+type ClaimCondition = {
+  startTimestamp: bigint;
+  maxClaimableSupply: bigint;
+  supplyClaimed: bigint;
+  quantityLimitPerWallet: bigint;
+  merkleRoot: `0x${string}`;
+  pricePerToken: bigint;
+  currency: `0x${string}`;
+  metadata: string;
 };
 
 function shortError(err: unknown): string {
-  const msg = (err as { shortMessage?: string; message?: string })?.shortMessage
-    ?? (err as { message?: string })?.message ?? String(err);
-  if (msg.includes("User rejected") || msg.includes("User denied")) return "You rejected the transaction.";
-  if (msg.includes("insufficient funds")) return "Insufficient funds in your wallet.";
-  if (msg.includes("execution reverted")) return "Transaction reverted. The contract may be paused, sold out, or over your limit.";
+  const e = err as { shortMessage?: string; message?: string };
+  const msg = e?.shortMessage ?? e?.message ?? String(err);
+  if (msg.includes("User rejected") || msg.includes("User denied"))
+    return "You rejected the transaction.";
+  if (msg.includes("insufficient funds"))
+    return "Insufficient funds in your wallet for gas + mint price.";
+  if (msg.includes("DropClaimExceedLimit"))
+    return "You have reached the per-wallet claim limit.";
+  if (msg.includes("DropClaimExceedMaxSupply"))
+    return "Sold out.";
+  if (msg.includes("DropNoActiveCondition"))
+    return "Sale has not started yet.";
+  if (msg.includes("execution reverted"))
+    return "Transaction reverted. The sale may be paused, sold out, or you exceeded the per-wallet limit.";
   return msg.slice(0, 140);
 }
 
@@ -30,81 +53,94 @@ export function MintCard() {
   const chainId = useChainId();
   const { switchChain, isPending: isSwitching } = useSwitchChain();
 
-  // Skip contract reads entirely if no contract address configured.
   const enabled = hasContract();
   const contractCfg = enabled
     ? { address: env.contractAddress as `0x${string}`, abi: collectionAbi }
     : null;
 
-  const totalSupplyRead = useReadContract({
+  // thirdweb DropERC721: nextTokenIdToMint() is the total minted count.
+  const mintedRead = useReadContract({
     ...(contractCfg ?? {}),
-    functionName: "totalSupply",
+    functionName: "nextTokenIdToMint",
     query: { enabled: !!contractCfg },
   });
   const maxSupplyRead = useReadContract({
     ...(contractCfg ?? {}),
-    functionName: "maxSupply",
+    functionName: "maxTotalSupply",
     query: { enabled: !!contractCfg },
   });
-  const priceRead = useReadContract({
+  // Active claim condition gives us the live price + per-wallet limit.
+  const activeIdRead = useReadContract({
     ...(contractCfg ?? {}),
-    functionName: "mintPrice",
+    functionName: "getActiveClaimConditionId",
     query: { enabled: !!contractCfg },
   });
-  const pausedRead = useReadContract({
+  const conditionRead = useReadContract({
     ...(contractCfg ?? {}),
-    functionName: "paused",
-    query: { enabled: !!contractCfg },
-  });
-  const maxPerWalletRead = useReadContract({
-    ...(contractCfg ?? {}),
-    functionName: "maxPerWallet",
-    query: { enabled: !!contractCfg },
+    functionName: "getClaimConditionById",
+    args:
+      activeIdRead.data !== undefined ? [activeIdRead.data as bigint] : undefined,
+    query: { enabled: !!contractCfg && activeIdRead.data !== undefined },
   });
 
-  // Fallbacks: env-supplied values when contract reads fail or are unavailable.
-  const reads: ReadState = {
-    totalMinted: totalSupplyRead.data as bigint | undefined,
-    maxSupply: (maxSupplyRead.data as bigint | undefined) ?? BigInt(env.totalSupply),
-    priceWei:
-      (priceRead.data as bigint | undefined) ??
-      (env.mintPriceEth ? parseEther(env.mintPriceEth) : undefined),
-    paused: pausedRead.data as boolean | undefined,
-    maxPerWallet: maxPerWalletRead.data as bigint | undefined,
-  };
+  const condition = conditionRead.data as ClaimCondition | undefined;
 
-  const totalMinted = Number(reads.totalMinted ?? 0n);
-  const maxSupply = Number(reads.maxSupply ?? env.totalSupply);
-  const soldOut = enabled && reads.totalMinted !== undefined && reads.maxSupply !== undefined && reads.totalMinted >= reads.maxSupply;
-  const paused = reads.paused === true;
+  const totalMinted = Number(mintedRead.data ?? 0n);
+  const maxSupply = Number(maxSupplyRead.data ?? BigInt(env.totalSupply));
+  const priceWei =
+    condition?.pricePerToken ??
+    (env.mintPriceEth ? parseEther(env.mintPriceEth) : 0n);
+  const maxPerWallet = condition?.quantityLimitPerWallet ?? 0n;
+
+  // Sale state derivation
+  const now = Math.floor(Date.now() / 1000);
+  const saleStarted =
+    !condition || Number(condition.startTimestamp) <= now;
+  const soldOut =
+    enabled &&
+    mintedRead.data !== undefined &&
+    maxSupplyRead.data !== undefined &&
+    (mintedRead.data as bigint) >= (maxSupplyRead.data as bigint);
   const wrongNetwork = isConnected && chainId !== activeChain.id;
 
   const [quantity, setQuantity] = useState(1);
-  const maxPerTx = Math.max(1, Number(reads.maxPerWallet ?? 1));
+  const maxPerTx = maxPerWallet > 0n ? Number(maxPerWallet) : 1;
 
-  const { writeContract, data: txHash, isPending: isWriting, error: writeError, reset } = useWriteContract();
+  const {
+    writeContract,
+    data: txHash,
+    isPending: isWriting,
+    error: writeError,
+    reset,
+  } = useWriteContract();
   const receipt = useWaitForTransactionReceipt({ hash: txHash });
 
-  // Refetch reads on confirmed mint
+  // Refetch minted-count + condition after a confirmed claim.
   useEffect(() => {
     if (receipt.isSuccess) {
-      totalSupplyRead.refetch();
+      mintedRead.refetch();
+      conditionRead.refetch();
     }
   }, [receipt.isSuccess]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const totalCostWei =
-    reads.priceWei !== undefined ? reads.priceWei * BigInt(quantity) : undefined;
+  const totalCostWei = priceWei * BigInt(quantity);
 
-  const onMint = async () => {
-    if (!enabled || !reads.priceWei) return;
+  const onClaim = async () => {
+    if (!enabled || !address) return;
     reset();
+    const proof = makeEmptyAllowlistProof();
     writeContract({
       address: env.contractAddress as `0x${string}`,
       abi: collectionAbi,
-      // We try `mint(uint256)` first. Many drop contracts use `claim(uint256)`
-      // instead; you can edit this to `claim` once you know your contract.
-      functionName: "mint",
-      args: [BigInt(quantity)],
+      functionName: "claim",
+      args: [
+        address,
+        BigInt(quantity),
+        NATIVE_TOKEN_ADDRESS,
+        priceWei,
+        proof,
+        "0x", // empty data
+      ],
       value: totalCostWei,
     });
   };
@@ -121,16 +157,13 @@ export function MintCard() {
           Genesis Drop · {env.chainName}
         </h2>
 
-        {/* Stats grid */}
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           <Stat
             label="Price"
             value={
-              reads.priceWei !== undefined
-                ? `${formatEther(reads.priceWei)} ETH`
-                : env.mintPriceEth
-                ? `${env.mintPriceEth} ETH`
-                : "TBD"
+              priceWei === 0n
+                ? "Free"
+                : `${formatEther(priceWei)} ETH`
             }
           />
           <Stat
@@ -141,19 +174,16 @@ export function MintCard() {
           />
           <Stat
             label="Max per wallet"
-            value={
-              reads.maxPerWallet !== undefined ? String(reads.maxPerWallet) : "n/a"
-            }
+            value={maxPerWallet > 0n ? String(maxPerWallet) : "n/a"}
           />
         </div>
 
-        {/* State machine */}
         <div className="mt-8">
           {!enabled ? (
             <StateBlock
               tone="warn"
               title="Contract not yet deployed"
-              body="The mint contract address has not been configured. The site will go live once NEXT_PUBLIC_CONTRACT_ADDRESS is set in production. See the README for deployment steps."
+              body={`The mint contract address has not been configured for ${env.chainName}. The site will go live once NEXT_PUBLIC_CONTRACT_ADDRESS is set in production. See the README for thirdweb deployment steps.`}
             />
           ) : !isConnected ? (
             <div className="flex flex-col items-center gap-3 rounded-xl border border-line bg-bg/40 p-6 text-center">
@@ -163,13 +193,14 @@ export function MintCard() {
           ) : wrongNetwork ? (
             <StateBlock
               tone="warn"
-              title={`Wrong network`}
+              title="Wrong network"
               body={`You are connected to chain ${chainId}. Switch to ${activeChain.name} to mint.`}
               action={
                 <button
                   className="rounded-md bg-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-105 disabled:opacity-50"
                   onClick={() => switchChain({ chainId: activeChain.id })}
                   disabled={isSwitching}
+                  aria-label={`Switch network to ${activeChain.name}`}
                 >
                   {isSwitching ? "Switching..." : `Switch to ${activeChain.name}`}
                 </button>
@@ -181,7 +212,7 @@ export function MintCard() {
               title="Sold out"
               body="Every card in this drop has been minted. Check the marketplace for resales."
               action={
-                env.marketplaceUrl && (
+                env.marketplaceUrl ? (
                   <a
                     className="rounded-md border border-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-accent hover:bg-accent hover:text-bg"
                     href={env.marketplaceUrl}
@@ -190,20 +221,22 @@ export function MintCard() {
                   >
                     View on marketplace
                   </a>
-                )
+                ) : null
               }
             />
-          ) : paused ? (
+          ) : !saleStarted ? (
             <StateBlock
               tone="dim"
-              title="Sale paused"
-              body="Minting is temporarily paused. Check back soon."
+              title="Sale not started"
+              body={`The public sale starts at ${new Date(
+                Number(condition?.startTimestamp ?? 0n) * 1000
+              ).toLocaleString()}. Come back then.`}
             />
           ) : receipt.isLoading ? (
             <StateBlock
               tone="info"
               title="Transaction pending"
-              body="Waiting for your transaction to confirm on the network. This usually takes a few seconds."
+              body="Waiting for your transaction to confirm. This usually takes a few seconds."
             />
           ) : receipt.isSuccess && txHash ? (
             <StateBlock
@@ -213,11 +246,11 @@ export function MintCard() {
               action={
                 <a
                   className="rounded-md border border-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-accent hover:bg-accent hover:text-bg"
-                  href={`https://basescan.org/tx/${txHash}`}
+                  href={explorerTxUrl(activeChain.id, txHash)}
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  View on Basescan
+                  View on {activeChain.name === "Base Sepolia" ? "Sepolia Basescan" : "Basescan"}
                 </a>
               }
             />
@@ -230,6 +263,7 @@ export function MintCard() {
                 <button
                   className="rounded-md border border-line px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white hover:border-accent hover:text-accent"
                   onClick={() => reset()}
+                  aria-label="Try minting again"
                 >
                   Try again
                 </button>
@@ -239,7 +273,7 @@ export function MintCard() {
             <div className="rounded-xl border border-line bg-bg/40 p-6">
               {maxPerTx > 1 && (
                 <div className="mb-4 flex items-center justify-between">
-                  <label className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                  <label className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted" htmlFor="qty">
                     Quantity
                   </label>
                   <div className="flex items-center gap-2">
@@ -247,14 +281,20 @@ export function MintCard() {
                       type="button"
                       className="h-8 w-8 rounded border border-line text-lg hover:border-accent"
                       onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                      aria-label="Decrease quantity"
                     >
                       −
                     </button>
-                    <span className="w-8 text-center font-mono">{quantity}</span>
+                    <span id="qty" className="w-8 text-center font-mono" aria-live="polite">
+                      {quantity}
+                    </span>
                     <button
                       type="button"
                       className="h-8 w-8 rounded border border-line text-lg hover:border-accent"
-                      onClick={() => setQuantity((q) => Math.min(maxPerTx, q + 1))}
+                      onClick={() =>
+                        setQuantity((q) => Math.min(maxPerTx, q + 1))
+                      }
+                      aria-label="Increase quantity"
                     >
                       +
                     </button>
@@ -262,13 +302,18 @@ export function MintCard() {
                 </div>
               )}
               <button
-                onClick={onMint}
+                onClick={onClaim}
                 disabled={isWriting || receipt.isLoading}
                 className="w-full rounded-md bg-accent px-5 py-3 font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-[1.02] disabled:opacity-50"
+                aria-label={`Mint ${quantity} card${quantity > 1 ? "s" : ""}`}
               >
-                {isWriting ? "Confirm in wallet..." : `Mint ${quantity > 1 ? quantity + " " : ""}now`}
+                {isWriting
+                  ? "Confirm in wallet..."
+                  : priceWei === 0n
+                  ? `Mint ${quantity > 1 ? quantity + " " : ""}free`
+                  : `Mint ${quantity > 1 ? quantity + " " : ""}for ${formatEther(totalCostWei)} ETH`}
               </button>
-              {totalCostWei !== undefined && quantity > 1 && (
+              {priceWei > 0n && quantity > 1 && (
                 <p className="mt-3 text-center font-mono text-[11px] text-muted">
                   Total: {formatEther(totalCostWei)} ETH
                 </p>
@@ -302,14 +347,17 @@ function StateBlock({
   action?: React.ReactNode;
 }) {
   const toneClasses: Record<typeof tone, string> = {
-    info:    "border-uncommon/40 bg-uncommon/5 text-uncommon",
-    warn:    "border-legendary/40 bg-legendary/5 text-legendary",
-    error:   "border-mythic/40 bg-mythic/5 text-mythic",
+    info: "border-uncommon/40 bg-uncommon/5 text-uncommon",
+    warn: "border-legendary/40 bg-legendary/5 text-legendary",
+    error: "border-mythic/40 bg-mythic/5 text-mythic",
     success: "border-accent/40 bg-accent/5 text-accent",
-    dim:     "border-line bg-bg/40 text-muted",
+    dim: "border-line bg-bg/40 text-muted",
   };
   return (
-    <div className={`flex flex-col items-center gap-3 rounded-xl border p-6 text-center ${toneClasses[tone]}`}>
+    <div
+      role={tone === "error" ? "alert" : "status"}
+      className={`flex flex-col items-center gap-3 rounded-xl border p-6 text-center ${toneClasses[tone]}`}
+    >
       <p className="font-mono text-[11px] font-bold uppercase tracking-[0.2em]">{title}</p>
       <p className="text-sm leading-relaxed text-white/80">{body}</p>
       {action}
