@@ -68,6 +68,13 @@
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 12px;
   }
+  body.picked-only .tile:not(.picked) { display: none; }
+  body.picked-only .grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+  body.picked-only .preview { max-width: 180px; }
+  body.picked-only .accessory-row:has(.tile.picked) { display: block; }
+  body.picked-only .accessory-row { display: none; }
+  body.picked-only .accessory-row.has-pick { display: block; }
+  body.picked-only .category:has(.tile.picked) { display: block; }
   .tile {
     background: var(--panel); border: 2px solid var(--line); border-radius: 12px;
     padding: 14px 12px 10px; text-align: center;
@@ -128,6 +135,7 @@
 <div class="picks-bar">
   <div class="picks-count"><strong id="pick-count">0</strong>WINNERS PICKED</div>
   <div class="picks-actions">
+    <button class="btn" id="filter-btn" onclick="toggleFilter()">SHOW PICKED ONLY</button>
     <button class="btn" onclick="copyPicks()">COPY PICKS</button>
     <button class="btn danger" onclick="clearPicks()">CLEAR ALL</button>
   </div>
@@ -180,6 +188,20 @@ function toggleReject(e, id, tileEl) {
     tileEl.classList.remove('picked');
   }
   save();
+}
+
+function toggleFilter() {
+  document.body.classList.toggle('picked-only');
+  const on = document.body.classList.contains('picked-only');
+  document.getElementById('filter-btn').textContent = on ? 'SHOW ALL' : 'SHOW PICKED ONLY';
+  // Mark accessory-rows that contain a picked tile so we can show only those headers
+  document.querySelectorAll('.accessory-row').forEach(row => {
+    if (row.querySelector('.tile.picked')) {
+      row.classList.add('has-pick');
+    } else {
+      row.classList.remove('has-pick');
+    }
+  });
 }
 
 function renderPicksBar() {
