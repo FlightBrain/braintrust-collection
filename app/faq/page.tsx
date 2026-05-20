@@ -39,6 +39,14 @@ const faqs: { q: string; a: string }[] = [
     q: "What if you ask for my seed phrase?",
     a: "We never will. Nobody legitimate ever needs your seed phrase or private keys. If anyone, including a fake support agent, a DM, or a website pretending to be us, asks for your seed phrase, close the window and ignore them.",
   },
+  {
+    q: "Are creator earnings (royalties) guaranteed?",
+    a: "No. We set a recommended royalty in the on-chain ERC-2981 standard and in the collection metadata. Marketplaces honor this where they choose to. Some marketplaces have moved to optional or zero royalties. Treat any royalty income as best-effort, not guaranteed.",
+  },
+  {
+    q: "Is anything on this site financial advice?",
+    a: "No. Nothing on this site is financial, legal, or tax advice. Consult your own qualified advisor before any purchase. There is no promise of profit, resale value, or floor price.",
+  },
 ];
 
 export default function FaqPage() {

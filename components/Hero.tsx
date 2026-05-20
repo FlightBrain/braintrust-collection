@@ -24,7 +24,10 @@ export function Hero() {
         </p>
 
         {/* Floating art preview */}
-        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-5 gap-3">
+        <div
+          className="mx-auto mt-12 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5"
+          aria-label="Featured cards"
+        >
           {FEATURED_SLUGS.map((slug, i) => (
             <div
               key={slug}
@@ -35,8 +38,9 @@ export function Hero() {
             >
               <img
                 src={`/nfts/corporate/${slug}_nft.svg`}
-                alt={slug}
+                alt={`Braintrust Collection card ${slug}`}
                 className="pixelated h-full w-full"
+                loading="lazy"
               />
             </div>
           ))}

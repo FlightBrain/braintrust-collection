@@ -72,13 +72,37 @@ export default function LicensePage() {
             5. Likeness
           </h2>
           <p>
-            The artwork depicts pixel-art likenesses of real people who have
-            consented to being included in the Collection. Do not use the
-            artwork in a way that defames, harasses, or misrepresents them.
+            The artwork depicts pixel-art likenesses of real people. Written
+            consent from each depicted person must be on file before this
+            Collection is publicly minted. Do not use the artwork in a way that
+            defames, harasses, sexualizes, or misrepresents any depicted
+            person. Use that violates this clause terminates the
+            personal-use license immediately.
           </p>
 
           <h2 className="mt-8 text-base font-bold text-white">
-            6. Termination
+            6. Royalties (creator earnings)
+          </h2>
+          <p>
+            The collection contract is configured with an ERC-2981 secondary
+            sale royalty. Marketplaces honor this royalty where they choose
+            to. Royalty income is not guaranteed, and some marketplaces may
+            ignore or override it. Buyers and sellers should not rely on
+            royalty payouts as a fixed condition of resale.
+          </p>
+
+          <h2 className="mt-8 text-base font-bold text-white">
+            7. No investment advice
+          </h2>
+          <p>
+            Nothing in this License, the Terms, the FAQ, or any other page on
+            this site constitutes financial, legal, tax, or investment advice.
+            No profit, resale value, or future utility is promised. Consult
+            your own qualified advisor before any purchase.
+          </p>
+
+          <h2 className="mt-8 text-base font-bold text-white">
+            8. Termination
           </h2>
           <p>
             The project owner may revoke the personal-use license, with notice,
@@ -87,7 +111,7 @@ export default function LicensePage() {
           </p>
 
           <h2 className="mt-8 text-base font-bold text-white">
-            7. Changes
+            9. Changes
           </h2>
           <p>
             We may update this License. Changes apply only to mints that occur

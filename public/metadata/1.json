@@ -1,0 +1,40 @@
+{
+  "name": "Alec Sloan · Genesis #001",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/alec_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#alec",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "UNCOMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 9
+    },
+    {
+      "trait_type": "Score",
+      "value": 262.62
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#7B61FF"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: top_hat",
+      "value": "silver"
+    },
+    {
+      "trait_type": "Accessory: monocle",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: fat_gold_chain",
+      "value": "gold"
+    }
+  ]
+}

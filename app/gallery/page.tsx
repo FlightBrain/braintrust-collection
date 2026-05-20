@@ -56,8 +56,9 @@ export default async function GalleryPage() {
                 <div className="aspect-square">
                   <img
                     src={`/nfts/corporate/${p.slug}_nft.svg`}
-                    alt={p.name}
+                    alt={`${p.name}, ${r?.tier ?? "Common"} rarity, rank ${r?.rank ?? "?"} of 15`}
                     className="pixelated h-full w-full object-cover"
+                    loading="lazy"
                   />
                 </div>
                 <div className="border-t border-line px-3 py-3">

@@ -1,0 +1,40 @@
+{
+  "name": "Garrett Buchanan · Genesis #007",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/garrett_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#garrett",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 15
+    },
+    {
+      "trait_type": "Score",
+      "value": 177.95
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD93D"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: king_crown",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: cigar",
+      "value": "brown"
+    },
+    {
+      "trait_type": "Accessory: beard_full",
+      "value": "black"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Shaune Lundstrom · Genesis #015",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/shaune_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#shaune",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 11
+    },
+    {
+      "trait_type": "Score",
+      "value": 218.95
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD0AA"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: knight_helmet",
+      "value": "steel"
+    },
+    {
+      "trait_type": "Accessory: pipe_sherlock",
+      "value": "default"
+    },
+    {
+      "trait_type": "Accessory: birthmark_star",
+      "value": "default"
+    }
+  ]
+}

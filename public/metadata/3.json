@@ -1,0 +1,40 @@
+{
+  "name": "Catherine Vincent · Genesis #003",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/catherine_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#catherine",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "UNCOMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 7
+    },
+    {
+      "trait_type": "Score",
+      "value": 272.57
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FF66C4"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
+      "value": "pink"
+    },
+    {
+      "trait_type": "Accessory: kiss_print",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: pearl_necklace",
+      "value": "white"
+    }
+  ]
+}

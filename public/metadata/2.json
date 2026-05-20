@@ -1,0 +1,40 @@
+{
+  "name": "Ava Baker · Genesis #002",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ava_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#ava",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 13
+    },
+    {
+      "trait_type": "Score",
+      "value": 215.62
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD0AA"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: halo",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: face_tattoo",
+      "value": "heart"
+    }
+  ]
+}
