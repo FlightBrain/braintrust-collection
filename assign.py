@@ -8,8 +8,12 @@ reveal page can list who got what.
 import json
 import pathlib
 
+import json as _json
 from items_v3 import new_canvas
-from face_template import draw_face_template
+from face_template_v2 import draw_personalized_face
+
+# Load per-SDR traits once
+_TRAITS = {p["slug"]: p for p in _json.load(open("public/auto_people.json"))}
 
 # Pull every accessory function from the merged registry.
 from accessories_v3 import ACCESSORIES as ACC_V3
@@ -187,10 +191,11 @@ def category_of(name):
     return "face"
 
 
-def render_sdr(items):
-    """Render the face template with all listed accessories layered correctly."""
+def render_sdr(items, slug):
+    """Render the personalized face for `slug` + all listed accessories layered correctly."""
     canvas = new_canvas()
-    draw_face_template(canvas)
+    traits = _TRAITS.get(slug, {"slug": slug})
+    draw_personalized_face(canvas, traits)
     # Sort by layer order so e.g. crown ends up on top
     sorted_items = sorted(items, key=lambda i: LAYER_ORDER[category_of(i.split("__")[0])])
     for item_id in sorted_items:
@@ -220,7 +225,7 @@ def main():
     # Render each SDR
     written = []
     for slug, data in ASSIGNMENTS.items():
-        c = render_sdr(data["items"])
+        c = render_sdr(data["items"], slug)
         path = out / f"{slug}.png"
         c.save(path)
         written.append({
