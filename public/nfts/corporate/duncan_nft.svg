@@ -4,7 +4,8 @@
   </defs>
 
   <rect width="1024" height="1024" fill="#050709"/>
-  <g opacity="0.4"><line x1="0" y1="0" x2="0" y2="1024" stroke="#0F1320" stroke-width="1"/>
+  <g opacity="0.4">
+    <line x1="0" y1="0" x2="0" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="64" y1="0" x2="64" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="128" y1="0" x2="128" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="192" y1="0" x2="192" y2="1024" stroke="#0F1320" stroke-width="1"/>
@@ -35,7 +36,8 @@
     <line x1="0" y1="768" x2="1024" y2="768" stroke="#0F1320" stroke-width="1"/>
     <line x1="0" y1="832" x2="1024" y2="832" stroke="#0F1320" stroke-width="1"/>
     <line x1="0" y1="896" x2="1024" y2="896" stroke="#0F1320" stroke-width="1"/>
-    <line x1="0" y1="960" x2="1024" y2="960" stroke="#0F1320" stroke-width="1"/></g>
+    <line x1="0" y1="960" x2="1024" y2="960" stroke="#0F1320" stroke-width="1"/>
+  </g>
 
   <!-- Top bar -->
   <rect x="0" y="0" width="1024" height="80" fill="#0A0E17"/>
@@ -45,9 +47,7 @@
 
   <!-- Avatar panel -->
   <rect x="112" y="120" width="800" height="600" fill="#16112D"/>
-  <clipPath id="panel-clip-5"><rect x="112" y="120" width="800" height="600"/></clipPath>
-  <image href="data:image/png;base64,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" x="212" y="120" width="600" height="600" preserveAspectRatio="xMidYMid meet"/>
-  <g clip-path="url(#panel-clip-5)"></g>
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC6ElEQVR4nO2YwWvTUBjAvzxWBnNlUHQSkFLphOrYDhXx4sF56aEi6GEMPdTDdhN73Z/Qgx46xEt3aBFldKAg7SGX1YPsIuZQmSvYYReU4JRg7SaUCZEXTUhr0iV5L80e+IPwXt77knzf977vvZfHgY88WGyqovhaqz8T73J+fAMB46BheB9zO1lUj7UBmbmEiq9BMupfgCIc6QuslJ6JV8DsfZ2nbzNw52KJak5wXh+083ZxY1srdUUHEZrIGfVSrcEFngPY806Vxxy2l4m/Sc0APWzMyof4FS1s8GXL2JhWHJU/drgaNruZBCt6KN/vaau17kF0MgzSXgfmYo8cyei4yQ9XBiT5RcOAmaQI78QkyN01Qwl+dMFoN+NExowor/pjgA4fGVd1hZqv1oz2qasLYNVuxkpGau3A+RtZX1ZqW37tbqqXE7yKjTmoV4jr4BHXVmfSSbWxI2sexMxOndbKevML0f33Hz8hEeehVBVd6eQ5hC7ETmr1961vWkl6j5GV/eGFEbMhZDag21aM+2vzS7BRLoCZaioLaSHf02YlLxEkMbWFDMdvP+sdxZW8F0aAAtjTjy08Xdx84ko+sBEY5Gka8r6PgO7p1PyS0Sb05UNPn83IBJrEJEjHIYkxD1dyEIpf8dwfuAHL+Qrkstc993vhfwgFDfL7A9i7foKAcRDL3qe2kNkRjcXBbxAwDvL6oJcptLa6DkyE0IlZ68XqoP7n4ItmnoyAT5yZjMC5s1Gt/uGjBJ/26O1AqazE+FfQaqdppqV0tTIWGbXsF8oFYwS8rsREP9HYCCvldcX7sTJEKBdwyHGBzEL4w/37fozS7jhqEwiVx1A7xjCHFObUpZsQmQgbyn9986JHnlRxHernMNsv86rdAubHESICxkHAOAgYBwHjcEcJpNK3HJ9bbm01YDwchv3Ov1MmRu+bnk44VlCoPueIthK70mdwg53y5j637xzaXgh7eNggYBwEjIOCVoCU31GMq+PPk3G6AAAAAElFTkSuQmCC" x="212" y="120" width="600" height="600" preserveAspectRatio="xMidYMid meet"/>
   <rect x="112" y="120" width="800" height="600" fill="none" stroke="#7B61FF" stroke-width="3"/>
 
   <g stroke="#7B61FF" stroke-width="3" fill="none">
@@ -57,21 +57,20 @@
     <polyline points="132,720 112,720 112,700"/>
   </g>
 
-  <!-- Name -->
-  <text x="512" y="790" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">DUNCAN LEWIS</text>
-  <text x="512" y="828" font-family="'JetBrains Mono', monospace" font-size="14" fill="#7B61FF" text-anchor="middle" letter-spacing="6">SDR</text>
+  <!-- Name (role removed per KB) -->
+  <text x="512" y="800" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">DUNCAN LEWIS</text>
 
-  <line x1="380" y1="858" x2="644" y2="858" stroke="#7B61FF" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="850" x2="644" y2="850" stroke="#7B61FF" stroke-width="1" opacity="0.4"/>
 
   <g font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2">
-    <text x="160" y="908" fill="#8B95A8">TRAIT</text>
-    <text x="280" y="908" fill="#7B61FF" font-weight="700">VIOLET</text>
-    <text x="540" y="908" fill="#8B95A8">EDITION</text>
-    <text x="680" y="908" fill="#7B61FF" font-weight="700">GENESIS</text>
-    <text x="160" y="948" fill="#8B95A8">CHAIN</text>
-    <text x="280" y="948" fill="#7B61FF" font-weight="700">BT-1</text>
-    <text x="540" y="948" fill="#8B95A8">MINT</text>
-    <text x="680" y="948" fill="#7B61FF" font-weight="700">MMXXVI</text>
+    <text x="160" y="900" fill="#8B95A8">TRAIT</text>
+    <text x="280" y="900" fill="#7B61FF" font-weight="700">VIOLET</text>
+    <text x="540" y="900" fill="#8B95A8">EDITION</text>
+    <text x="680" y="900" fill="#7B61FF" font-weight="700">GENESIS</text>
+    <text x="160" y="940" fill="#8B95A8">CHAIN</text>
+    <text x="280" y="940" fill="#7B61FF" font-weight="700">BT-1</text>
+    <text x="540" y="940" fill="#8B95A8">MINT</text>
+    <text x="680" y="940" fill="#7B61FF" font-weight="700">MMXXVI</text>
   </g>
 
   <line x1="0" y1="980" x2="1024" y2="980" stroke="#7B61FF" stroke-width="2"/>

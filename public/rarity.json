@@ -175,8 +175,8 @@
         "weight": 12.0
       }
     ],
-    "tier": "RARE",
-    "tier_color": "#9D7AFF",
+    "tier": "LEGENDARY",
+    "tier_color": "#FFD93D",
     "rank": 2
   },
   "duncan": {
@@ -262,8 +262,8 @@
         "weight": 6.0
       }
     ],
-    "tier": "RARE",
-    "tier_color": "#9D7AFF",
+    "tier": "LEGENDARY",
+    "tier_color": "#FFD93D",
     "rank": 3
   },
   "owen": {
@@ -349,8 +349,8 @@
         "weight": 12.0
       }
     ],
-    "tier": "UNCOMMON",
-    "tier_color": "#00D9FF",
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
     "rank": 4
   },
   "joe": {
@@ -436,8 +436,8 @@
         "weight": 12.0
       }
     ],
-    "tier": "UNCOMMON",
-    "tier_color": "#00D9FF",
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
     "rank": 5
   },
   "sacha": {
@@ -523,8 +523,8 @@
         "weight": 6.0
       }
     ],
-    "tier": "UNCOMMON",
-    "tier_color": "#00D9FF",
+    "tier": "RARE",
+    "tier_color": "#9D7AFF",
     "rank": 6
   },
   "catherine": {
@@ -610,8 +610,8 @@
         "weight": 12.0
       }
     ],
-    "tier": "COMMON",
-    "tier_color": "#8B95A8",
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
     "rank": 7
   },
   "evan": {
@@ -697,8 +697,8 @@
         "weight": 6.0
       }
     ],
-    "tier": "COMMON",
-    "tier_color": "#8B95A8",
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
     "rank": 8
   },
   "alec": {
@@ -784,8 +784,8 @@
         "weight": 4.0
       }
     ],
-    "tier": "COMMON",
-    "tier_color": "#8B95A8",
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
     "rank": 9
   },
   "chris": {
@@ -871,8 +871,8 @@
         "weight": 4.0
       }
     ],
-    "tier": "COMMON",
-    "tier_color": "#8B95A8",
+    "tier": "UNCOMMON",
+    "tier_color": "#00D9FF",
     "rank": 10
   },
   "shaune": {

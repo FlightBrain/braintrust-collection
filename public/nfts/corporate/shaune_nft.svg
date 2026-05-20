@@ -4,7 +4,8 @@
   </defs>
 
   <rect width="1024" height="1024" fill="#050709"/>
-  <g opacity="0.4"><line x1="0" y1="0" x2="0" y2="1024" stroke="#0F1320" stroke-width="1"/>
+  <g opacity="0.4">
+    <line x1="0" y1="0" x2="0" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="64" y1="0" x2="64" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="128" y1="0" x2="128" y2="1024" stroke="#0F1320" stroke-width="1"/>
     <line x1="192" y1="0" x2="192" y2="1024" stroke="#0F1320" stroke-width="1"/>
@@ -35,7 +36,8 @@
     <line x1="0" y1="768" x2="1024" y2="768" stroke="#0F1320" stroke-width="1"/>
     <line x1="0" y1="832" x2="1024" y2="832" stroke="#0F1320" stroke-width="1"/>
     <line x1="0" y1="896" x2="1024" y2="896" stroke="#0F1320" stroke-width="1"/>
-    <line x1="0" y1="960" x2="1024" y2="960" stroke="#0F1320" stroke-width="1"/></g>
+    <line x1="0" y1="960" x2="1024" y2="960" stroke="#0F1320" stroke-width="1"/>
+  </g>
 
   <!-- Top bar -->
   <rect x="0" y="0" width="1024" height="80" fill="#0A0E17"/>
@@ -45,9 +47,7 @@
 
   <!-- Avatar panel -->
   <rect x="112" y="120" width="800" height="600" fill="#2D251E"/>
-  <clipPath id="panel-clip-15"><rect x="112" y="120" width="800" height="600"/></clipPath>
-  <image href="data:image/png;base64,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" x="212" y="120" width="600" height="600" preserveAspectRatio="xMidYMid meet"/>
-  <g clip-path="url(#panel-clip-15)"></g>
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACuElEQVR4nGNgGAWjgCLAyEBlcOfRh/9Hjp2E8+PD3RgWrtwF5ydEuFPVTkZKND873PQfxv4mn8cAcriEuBiKGhVlRYY7d+8zvHj5Ci62f88uhvZ4fjhfyraObHcwUupwZMdjAzZW5ljl0D1BrkeYGCgE+ByPDzi6uDFULvxIqfWkewBbsiEXOKJ5Aj1maRoDlDqeWjHBQqxCckKHHPAMag+x+YGkGBCRVAbT585dZqA2OAc1E2YHsYAkD7x5fhdMGxnpMlAbGEHNhNlBt1JooAETuRqpkYGpAUZODEghlQq0zMSk1shklUK0zMQi9CiFaAne0LsUAjXW8PHxqbchoJYuHmhuaiab34wmRw5gJKcpAcpwb8RTqBKKR46dBDetQ3UfoeQtYjMy0W0hZACyaNdTRCgunNNLjjEM8SnF4MYczExyAFmlEK3AI9bQraTawUJpCSElLcNQWd/PQA0g93u195vnpOkhKwkhA3VNLQZqhb7c79XedCmFaFETMzAwIIYuaN2UQM5wlJRCNkh65X6vngiKBXS76F4PUKh3F91LIVgxSA5wRNOLHAtDti3EQGIsUD0TT+iqQ6EJiSObCS2JJjKQAEgaCUNuTux6SnlDjBpDjUy0GFYhNfRBYOGkDXBMil006VIWlDVh5aOLIwORj48ZKlz0wTTd20L46gJccujib/hlGaLn7WWYc+M77dtCoAy3//JHlDSMC+CSQxffcPIWAzmA7Ob0G3FzhmdPnjBQA0jJyGAMtdO8MYdrpuXEgtr/ysrYk9rdu3cZLBKaGak59spErEJKZlFIBVL0bAsNNGBiGOKAiWGIA0ZCCty9g4jOXFev3mDg4eVl+PL5M1Z5mJy2tgbRDty5dR0jRaXQw0fQ4QciAS7HI8uRaiZN+8ToIUxvwMQwxAETwxAHTAPtAEoBALsRJWKqeSXiAAAAAElFTkSuQmCC" x="212" y="120" width="600" height="600" preserveAspectRatio="xMidYMid meet"/>
   <rect x="112" y="120" width="800" height="600" fill="none" stroke="#FFD0AA" stroke-width="3"/>
 
   <g stroke="#FFD0AA" stroke-width="3" fill="none">
@@ -57,21 +57,20 @@
     <polyline points="132,720 112,720 112,700"/>
   </g>
 
-  <!-- Name -->
-  <text x="512" y="790" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">SHAUNE LUNDSTROM</text>
-  <text x="512" y="828" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FFD0AA" text-anchor="middle" letter-spacing="6">SDR</text>
+  <!-- Name (role removed per KB) -->
+  <text x="512" y="800" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="#FFFFFF" text-anchor="middle" letter-spacing="-2">SHAUNE LUNDSTROM</text>
 
-  <line x1="380" y1="858" x2="644" y2="858" stroke="#FFD0AA" stroke-width="1" opacity="0.4"/>
+  <line x1="380" y1="850" x2="644" y2="850" stroke="#FFD0AA" stroke-width="1" opacity="0.4"/>
 
   <g font-family="'JetBrains Mono', monospace" font-size="13" letter-spacing="2">
-    <text x="160" y="908" fill="#8B95A8">TRAIT</text>
-    <text x="280" y="908" fill="#FFD0AA" font-weight="700">SAND</text>
-    <text x="540" y="908" fill="#8B95A8">EDITION</text>
-    <text x="680" y="908" fill="#FFD0AA" font-weight="700">GENESIS</text>
-    <text x="160" y="948" fill="#8B95A8">CHAIN</text>
-    <text x="280" y="948" fill="#FFD0AA" font-weight="700">BT-1</text>
-    <text x="540" y="948" fill="#8B95A8">MINT</text>
-    <text x="680" y="948" fill="#FFD0AA" font-weight="700">MMXXVI</text>
+    <text x="160" y="900" fill="#8B95A8">TRAIT</text>
+    <text x="280" y="900" fill="#FFD0AA" font-weight="700">SAND</text>
+    <text x="540" y="900" fill="#8B95A8">EDITION</text>
+    <text x="680" y="900" fill="#FFD0AA" font-weight="700">GENESIS</text>
+    <text x="160" y="940" fill="#8B95A8">CHAIN</text>
+    <text x="280" y="940" fill="#FFD0AA" font-weight="700">BT-1</text>
+    <text x="540" y="940" fill="#8B95A8">MINT</text>
+    <text x="680" y="940" fill="#FFD0AA" font-weight="700">MMXXVI</text>
   </g>
 
   <line x1="0" y1="980" x2="1024" y2="980" stroke="#FFD0AA" stroke-width="2"/>

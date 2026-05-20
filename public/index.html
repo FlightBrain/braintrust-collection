@@ -820,6 +820,7 @@
     <div class="pack-cards" id="pack-cards"></div>
     <div class="pack-actions">
       <button class="btn" id="pack-flip-btn" style="display:none">REVEAL ALL</button>
+      <button class="btn" id="pack-download-btn" style="display:none" onclick="downloadPack()">⬇ DOWNLOAD PACK</button>
       <button class="btn btn-ghost" id="pack-again-btn" style="display:none">▣ OPEN ANOTHER</button>
     </div>
   </div>
@@ -931,7 +932,6 @@ function renderGrid() {
         </div>
         <div>
           <div class="back-name">${p.name}</div>
-          <div class="back-role">${p.role}</div>
         </div>
         <div class="back-rarity">
           <span class="tier">${r.tier}</span>
@@ -1171,7 +1171,6 @@ function openModal(p, r) {
     <div class="modal-nft"><img src="nfts/${currentTheme}/${p.slug}_nft.svg" alt="${p.name}"></div>
     <div class="modal-meta">
       <h2>${p.name}</h2>
-      <div class="role">${p.role}</div>
     </div>
     <div class="modal-traits">
       <div class="trait-pill">TOKEN<span class="v" style="color:${themeColor}">${token}</span></div>
@@ -2196,6 +2195,7 @@ function openPack() {
   document.getElementById('pack-modal').classList.add('open');
   document.getElementById('pack-title').textContent = 'Opening Pack...';
   document.getElementById('pack-flip-btn').style.display = 'none';
+  document.getElementById('pack-download-btn').style.display = 'none';
   document.getElementById('pack-again-btn').style.display = 'none';
 
   // After shake animation, allow flip
@@ -2224,6 +2224,7 @@ function openPack() {
       if ([...document.querySelectorAll('.pack-card')].every(c => c.classList.contains('flipped'))) {
         document.getElementById('pack-title').textContent = picks.some(p => rarityData[p.slug]?.tier === 'MYTHIC') ? '✨ MYTHIC PULL! ✨' : 'Pack opened';
         document.getElementById('pack-flip-btn').style.display = 'none';
+        document.getElementById('pack-download-btn').style.display = '';
         document.getElementById('pack-again-btn').style.display = '';
       }
     });
@@ -2238,6 +2239,80 @@ document.getElementById('pack-flip-btn').addEventListener('click', () => {
 document.getElementById('pack-again-btn').addEventListener('click', () => openPack());
 document.getElementById('pack-open-btn').addEventListener('click', openPack);
 document.getElementById('pack-btn-floating').addEventListener('click', openPack);
+async function downloadPack() {
+  // Find slugs of every card currently in the pack modal
+  const cards = [...document.querySelectorAll('.pack-card')];
+  if (!cards.length) return;
+  const slugs = cards.map(c => c.dataset.slug);
+
+  // Layout: N cards in a row, 512px each + 20px gaps + 80px title + 60px footer
+  const TILE = 512;
+  const GAP = 20;
+  const PAD = 32;
+  const TITLE_H = 100;
+  const FOOTER_H = 50;
+  const cols = Math.min(slugs.length, 5);
+  const rows = Math.ceil(slugs.length / cols);
+  const W = cols * TILE + (cols + 1) * GAP + PAD * 2;
+  const H = TITLE_H + rows * TILE + (rows + 1) * GAP + FOOTER_H + PAD * 2;
+
+  const canvas = document.createElement('canvas');
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#050709';
+  ctx.fillRect(0, 0, W, H);
+
+  // Title bar
+  ctx.fillStyle = '#FFFFFF';
+  ctx.font = 'bold 44px Inter, system-ui, sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('BRAINTRUST · YOUR PACK', PAD, PAD + 48);
+  ctx.font = '14px JetBrains Mono, monospace';
+  ctx.fillStyle = '#8B95A8';
+  ctx.fillText(new Date().toISOString().slice(0,10).replace(/-/g,'.') + ' · GENESIS DROP', PAD, PAD + 72);
+
+  // Load each SVG, draw to canvas
+  await Promise.all(slugs.map((slug, idx) => new Promise((resolve, reject) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const col = idx % cols;
+      const row = Math.floor(idx / cols);
+      const x = PAD + GAP + col * (TILE + GAP);
+      const y = PAD + TITLE_H + GAP + row * (TILE + GAP);
+      // Tier border
+      const r = rarityData[slug] || { tier_color: '#8B95A8' };
+      ctx.fillStyle = r.tier_color;
+      ctx.fillRect(x - 4, y - 4, TILE + 8, TILE + 8);
+      ctx.drawImage(img, x, y, TILE, TILE);
+      resolve();
+    };
+    img.onerror = () => { console.warn('Failed to load', slug); resolve(); };
+    img.src = `nfts/${currentTheme}/${slug}_nft.svg`;
+  })));
+
+  // Footer
+  ctx.fillStyle = '#8B95A8';
+  ctx.font = '12px JetBrains Mono, monospace';
+  ctx.textAlign = 'right';
+  ctx.fillText('braintrust-collection.vercel.app', W - PAD, H - PAD - 4);
+  ctx.textAlign = 'left';
+  ctx.fillText(`${slugs.length} CARDS · ${currentTheme.toUpperCase()}`, PAD, H - PAD - 4);
+
+  // Trigger download
+  const link = document.createElement('a');
+  const stamp = Date.now().toString(36);
+  link.download = `braintrust-pack-${stamp}.png`;
+  link.href = canvas.toDataURL('image/png');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  playChord([659, 784, 988], 0.3);
+}
+
 function closePack() { document.getElementById('pack-modal').classList.remove('open'); }
 document.getElementById('pack-modal').addEventListener('click', e => { if (e.target.id === 'pack-modal') closePack(); });
 </script>
