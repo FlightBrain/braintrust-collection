@@ -138,6 +138,107 @@
           "path": "variants/head/wizard_hat/black.png",
           "color": "black"
         }
+      ],
+      "spartan_helmet": [
+        {
+          "id": "spartan_helmet__bronze",
+          "path": "variants/head/spartan_helmet/bronze.png",
+          "color": "bronze"
+        }
+      ],
+      "motorcycle_helmet": [
+        {
+          "id": "motorcycle_helmet__black",
+          "path": "variants/head/motorcycle_helmet/black.png",
+          "color": "black"
+        },
+        {
+          "id": "motorcycle_helmet__red",
+          "path": "variants/head/motorcycle_helmet/red.png",
+          "color": "red"
+        },
+        {
+          "id": "motorcycle_helmet__white",
+          "path": "variants/head/motorcycle_helmet/white.png",
+          "color": "white"
+        }
+      ],
+      "baseball_cap": [
+        {
+          "id": "baseball_cap__red",
+          "path": "variants/head/baseball_cap/red.png",
+          "color": "red"
+        },
+        {
+          "id": "baseball_cap__navy",
+          "path": "variants/head/baseball_cap/navy.png",
+          "color": "navy"
+        },
+        {
+          "id": "baseball_cap__white",
+          "path": "variants/head/baseball_cap/white.png",
+          "color": "white"
+        }
+      ],
+      "durag": [
+        {
+          "id": "durag__black",
+          "path": "variants/head/durag/black.png",
+          "color": "black"
+        },
+        {
+          "id": "durag__red",
+          "path": "variants/head/durag/red.png",
+          "color": "red"
+        },
+        {
+          "id": "durag__blue",
+          "path": "variants/head/durag/blue.png",
+          "color": "blue"
+        }
+      ],
+      "knight_helmet": [
+        {
+          "id": "knight_helmet__steel",
+          "path": "variants/head/knight_helmet/steel.png",
+          "color": "steel"
+        }
+      ],
+      "crown_of_thorns": [
+        {
+          "id": "crown_of_thorns__default",
+          "path": "variants/head/crown_of_thorns/default.png",
+          "color": "default"
+        }
+      ],
+      "viking_helmet": [
+        {
+          "id": "viking_helmet__silver",
+          "path": "variants/head/viking_helmet/silver.png",
+          "color": "silver"
+        },
+        {
+          "id": "viking_helmet__bronze",
+          "path": "variants/head/viking_helmet/bronze.png",
+          "color": "bronze"
+        }
+      ],
+      "headband": [
+        {
+          "id": "headband__red",
+          "path": "variants/head/headband/red.png",
+          "color": "red"
+        },
+        {
+          "id": "headband__white",
+          "path": "variants/head/headband/white.png",
+          "color": "white"
+        },
+        {
+          "id": "headband__black",
+          "path": "variants/head/headband/black.png",
+          "color": "black"
+        }
       ]
     },
     "eyes": {
@@ -324,6 +425,116 @@
           "path": "variants/eyes/glowing_eyes/yellow.png",
           "color": "yellow"
         }
+      ],
+      "heart_eyes": [
+        {
+          "id": "heart_eyes__pink",
+          "path": "variants/eyes/heart_eyes/pink.png",
+          "color": "pink"
+        },
+        {
+          "id": "heart_eyes__red",
+          "path": "variants/eyes/heart_eyes/red.png",
+          "color": "red"
+        }
+      ],
+      "hypnosis_swirl": [
+        {
+          "id": "hypnosis_swirl__default",
+          "path": "variants/eyes/hypnosis_swirl/default.png",
+          "color": "default"
+        }
+      ],
+      "third_eye": [
+        {
+          "id": "third_eye__purple",
+          "path": "variants/eyes/third_eye/purple.png",
+          "color": "purple"
+        },
+        {
+          "id": "third_eye__cyan",
+          "path": "variants/eyes/third_eye/cyan.png",
+          "color": "cyan"
+        },
+        {
+          "id": "third_eye__gold",
+          "path": "variants/eyes/third_eye/gold.png",
+          "color": "gold"
+        }
+      ],
+      "kaleidoscope_eyes": [
+        {
+          "id": "kaleidoscope_eyes__default",
+          "path": "variants/eyes/kaleidoscope_eyes/default.png",
+          "color": "default"
+        }
+      ],
+      "anime_sparkle_eyes": [
+        {
+          "id": "anime_sparkle_eyes__blue",
+          "path": "variants/eyes/anime_sparkle_eyes/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "anime_sparkle_eyes__green",
+          "path": "variants/eyes/anime_sparkle_eyes/green.png",
+          "color": "green"
+        },
+        {
+          "id": "anime_sparkle_eyes__purple",
+          "path": "variants/eyes/anime_sparkle_eyes/purple.png",
+          "color": "purple"
+        }
+      ],
+      "blindfold": [
+        {
+          "id": "blindfold__black",
+          "path": "variants/eyes/blindfold/black.png",
+          "color": "black"
+        },
+        {
+          "id": "blindfold__red",
+          "path": "variants/eyes/blindfold/red.png",
+          "color": "red"
+        },
+        {
+          "id": "blindfold__silk",
+          "path": "variants/eyes/blindfold/silk.png",
+          "color": "silk"
+        }
+      ],
+      "skull_eye_socket": [
+        {
+          "id": "skull_eye_socket__default",
+          "path": "variants/eyes/skull_eye_socket/default.png",
+          "color": "default"
+        }
+      ],
+      "evil_red_glow": [
+        {
+          "id": "evil_red_glow__default",
+          "path": "variants/eyes/evil_red_glow/default.png",
+          "color": "default"
+        }
+      ],
+      "cyber_implant": [
+        {
+          "id": "cyber_implant__cyan",
+          "path": "variants/eyes/cyber_implant/cyan.png",
+          "color": "cyan"
+        },
+        {
+          "id": "cyber_implant__red",
+          "path": "variants/eyes/cyber_implant/red.png",
+          "color": "red"
+        }
+      ],
+      "tear_drop_blood": [
+        {
+          "id": "tear_drop_blood__default",
+          "path": "variants/eyes/tear_drop_blood/default.png",
+          "color": "default"
+        }
       ]
     },
     "mouth": {
@@ -358,6 +569,63 @@
           "id": "gold_grill__diamond",
           "path": "variants/mouth/gold_grill/diamond.png",
           "color": "diamond"
+        }
+      ],
+      "pipe_sherlock": [
+        {
+          "id": "pipe_sherlock__default",
+          "path": "variants/mouth/pipe_sherlock/default.png",
+          "color": "default"
+        }
+      ],
+      "joint": [
+        {
+          "id": "joint__default",
+          "path": "variants/mouth/joint/default.png",
+          "color": "default"
+        }
+      ],
+      "gold_tooth_single": [
+        {
+          "id": "gold_tooth_single__default",
+          "path": "variants/mouth/gold_tooth_single/default.png",
+          "color": "default"
+        }
+      ],
+      "lipstick": [
+        {
+          "id": "lipstick__red",
+          "path": "variants/mouth/lipstick/red.png",
+          "color": "red"
+        },
+        {
+          "id": "lipstick__pink",
+          "path": "variants/mouth/lipstick/pink.png",
+          "color": "pink"
+        },
+        {
+          "id": "lipstick__black",
+          "path": "variants/mouth/lipstick/black.png",
+          "color": "black"
+        },
+        {
+          "id": "lipstick__purple",
+          "path": "variants/mouth/lipstick/purple.png",
+          "color": "purple"
+        }
+      ],
+      "tongue_out": [
+        {
+          "id": "tongue_out__default",
+          "path": "variants/mouth/tongue_out/default.png",
+          "color": "default"
+        }
+      ],
+      "bubble_gum_bubble": [
+        {
+          "id": "bubble_gum_bubble__default",
+          "path": "variants/mouth/bubble_gum_bubble/default.png",
+          "color": "default"
         }
       ]
     },
@@ -396,20 +664,168 @@
           "id": "bowtie__purple",
           "path": "variants/neck/bowtie/purple.png",
           "color": "purple"
+        },
+        {
+          "id": "bowtie__striped",
+          "path": "variants/neck/bowtie/striped.png",
+          "color": "striped"
+        }
+      ],
+      "necktie": [
+        {
+          "id": "necktie__red",
+          "path": "variants/neck/necktie/red.png",
+          "color": "red"
+        },
+        {
+          "id": "necktie__navy",
+          "path": "variants/neck/necktie/navy.png",
+          "color": "navy"
+        },
+        {
+          "id": "necktie__striped",
+          "path": "variants/neck/necktie/striped.png",
+          "color": "striped"
+        }
+      ],
+      "pearl_necklace": [
+        {
+          "id": "pearl_necklace__white",
+          "path": "variants/neck/pearl_necklace/white.png",
+          "color": "white"
+        },
+        {
+          "id": "pearl_necklace__black",
+          "path": "variants/neck/pearl_necklace/black.png",
+          "color": "black"
+        },
+        {
+          "id": "pearl_necklace__pink",
+          "path": "variants/neck/pearl_necklace/pink.png",
+          "color": "pink"
+        }
+      ],
+      "brain_pendant_chain": [
+        {
+          "id": "brain_pendant_chain__gold",
+          "path": "variants/neck/brain_pendant_chain/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "brain_pendant_chain__silver",
+          "path": "variants/neck/brain_pendant_chain/silver.png",
+          "color": "silver"
+        }
+      ],
+      "dog_tags": [
+        {
+          "id": "dog_tags__silver",
+          "path": "variants/neck/dog_tags/silver.png",
+          "color": "silver"
+        },
+        {
+          "id": "dog_tags__gold",
+          "path": "variants/neck/dog_tags/gold.png",
+          "color": "gold"
+        }
+      ],
+      "bandana_neck": [
+        {
+          "id": "bandana_neck__red",
+          "path": "variants/neck/bandana_neck/red.png",
+          "color": "red"
+        },
+        {
+          "id": "bandana_neck__blue",
+          "path": "variants/neck/bandana_neck/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "bandana_neck__black",
+          "path": "variants/neck/bandana_neck/black.png",
+          "color": "black"
+        }
+      ],
+      "ascot": [
+        {
+          "id": "ascot__red",
+          "path": "variants/neck/ascot/red.png",
+          "color": "red"
+        },
+        {
+          "id": "ascot__gold",
+          "path": "variants/neck/ascot/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "ascot__navy",
+          "path": "variants/neck/ascot/navy.png",
+          "color": "navy"
+        }
+      ],
+      "choker_spike": [
+        {
+          "id": "choker_spike__default",
+          "path": "variants/neck/choker_spike/default.png",
+          "color": "default"
+        }
+      ],
+      "crystal_pendant": [
+        {
+          "id": "crystal_pendant__purple",
+          "path": "variants/neck/crystal_pendant/purple.png",
+          "color": "purple"
+        },
+        {
+          "id": "crystal_pendant__blue",
+          "path": "variants/neck/crystal_pendant/blue.png",
+          "color": "blue"
+        },
+        {
+          "id": "crystal_pendant__green",
+          "path": "variants/neck/crystal_pendant/green.png",
+          "color": "green"
+        },
+        {
+          "id": "crystal_pendant__ruby",
+          "path": "variants/neck/crystal_pendant/ruby.png",
+          "color": "ruby"
+        }
+      ],
+      "gold_medallion": [
+        {
+          "id": "gold_medallion__gold",
+          "path": "variants/neck/gold_medallion/gold.png",
+          "color": "gold"
+        },
+        {
+          "id": "gold_medallion__silver",
+          "path": "variants/neck/gold_medallion/silver.png",
+          "color": "silver"
         }
       ]
     },
     "face": {
       "face_tattoo": [
         {
-          "id": "face_tattoo__black",
-          "path": "variants/face/face_tattoo/black.png",
-          "color": "black"
+          "id": "face_tattoo__heart",
+          "path": "variants/face/face_tattoo/heart.png",
+          "color": "heart"
         },
         {
-          "id": "face_tattoo__purple",
-          "path": "variants/face/face_tattoo/purple.png",
-          "color": "purple"
+          "id": "face_tattoo__dollar",
+          "path": "variants/face/face_tattoo/dollar.png",
+          "color": "dollar"
+        },
+        {
+          "id": "face_tattoo__star",
+          "path": "variants/face/face_tattoo/star.png",
+          "color": "star"
+        },
+        {
+          "id": "face_tattoo__cross",
+          "path": "variants/face/face_tattoo/cross.png",
+          "color": "cross"
         }
       ],
       "scar": [
@@ -436,6 +852,90 @@
           "id": "blush__pink",
           "path": "variants/face/blush/pink.png",
           "color": "pink"
+        },
+        {
+          "id": "blush__red",
+          "path": "variants/face/blush/red.png",
+          "color": "red"
+        }
+      ],
+      "kiss_print": [
+        {
+          "id": "kiss_print__red",
+          "path": "variants/face/kiss_print/red.png",
+          "color": "red"
+        },
+        {
+          "id": "kiss_print__hot_pink",
+          "path": "variants/face/kiss_print/hot_pink.png",
+          "color": "hot_pink"
+        }
+      ],
+      "mustache_chevron": [
+        {
+          "id": "mustache_chevron__black",
+          "path": "variants/face/mustache_chevron/black.png",
+          "color": "black"
+        },
+        {
+          "id": "mustache_chevron__brown",
+          "path": "variants/face/mustache_chevron/brown.png",
+          "color": "brown"
+        }
+      ],
+      "beard_full": [
+        {
+          "id": "beard_full__black",
+          "path": "variants/face/beard_full/black.png",
+          "color": "black"
+        },
+        {
+          "id": "beard_full__brown",
+          "path": "variants/face/beard_full/brown.png",
+          "color": "brown"
+        },
+        {
+          "id": "beard_full__red",
+          "path": "variants/face/beard_full/red.png",
+          "color": "red"
+        },
+        {
+          "id": "beard_full__white",
+          "path": "variants/face/beard_full/white.png",
+          "color": "white"
+        }
+      ],
+      "goatee": [
+        {
+          "id": "goatee__black",
+          "path": "variants/face/goatee/black.png",
+          "color": "black"
+        },
+        {
+          "id": "goatee__brown",
+          "path": "variants/face/goatee/brown.png",
+          "color": "brown"
+        }
+      ],
+      "face_paint_war": [
+        {
+          "id": "face_paint_war__default",
+          "path": "variants/face/face_paint_war/default.png",
+          "color": "default"
+        }
+      ],
+      "freckles": [
+        {
+          "id": "freckles__default",
+          "path": "variants/face/freckles/default.png",
+          "color": "default"
+        }
+      ],
+      "birthmark_star": [
+        {
+          "id": "birthmark_star__default",
+          "path": "variants/face/birthmark_star/default.png",
+          "color": "default"
         }
       ]
     }
