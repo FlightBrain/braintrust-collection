@@ -1,0 +1,596 @@
+{
+  "items": {
+    "ai_orb_v2": [
+      {
+        "id": "ai_orb_v2__cyber_M",
+        "path": "variants/ai_orb_v2/cyber_M.png",
+        "palette": "cyber",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__cyber_L",
+        "path": "variants/ai_orb_v2/cyber_L.png",
+        "palette": "cyber",
+        "size": "L"
+      },
+      {
+        "id": "ai_orb_v2__emerald_M",
+        "path": "variants/ai_orb_v2/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__emerald_L",
+        "path": "variants/ai_orb_v2/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "ai_orb_v2__amethyst_M",
+        "path": "variants/ai_orb_v2/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__amethyst_L",
+        "path": "variants/ai_orb_v2/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "ai_orb_v2__plasma_M",
+        "path": "variants/ai_orb_v2/plasma_M.png",
+        "palette": "plasma",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__plasma_L",
+        "path": "variants/ai_orb_v2/plasma_L.png",
+        "palette": "plasma",
+        "size": "L"
+      },
+      {
+        "id": "ai_orb_v2__molten_M",
+        "path": "variants/ai_orb_v2/molten_M.png",
+        "palette": "molten",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__molten_L",
+        "path": "variants/ai_orb_v2/molten_L.png",
+        "palette": "molten",
+        "size": "L"
+      },
+      {
+        "id": "ai_orb_v2__holo_M",
+        "path": "variants/ai_orb_v2/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "ai_orb_v2__holo_L",
+        "path": "variants/ai_orb_v2/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      }
+    ],
+    "crystal_ball": [
+      {
+        "id": "crystal_ball__amethyst_M",
+        "path": "variants/crystal_ball/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__amethyst_L",
+        "path": "variants/crystal_ball/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "crystal_ball__sapphire_M",
+        "path": "variants/crystal_ball/sapphire_M.png",
+        "palette": "sapphire",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__sapphire_L",
+        "path": "variants/crystal_ball/sapphire_L.png",
+        "palette": "sapphire",
+        "size": "L"
+      },
+      {
+        "id": "crystal_ball__ruby_M",
+        "path": "variants/crystal_ball/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__ruby_L",
+        "path": "variants/crystal_ball/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      },
+      {
+        "id": "crystal_ball__emerald_M",
+        "path": "variants/crystal_ball/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__emerald_L",
+        "path": "variants/crystal_ball/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "crystal_ball__void_M",
+        "path": "variants/crystal_ball/void_M.png",
+        "palette": "void",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__void_L",
+        "path": "variants/crystal_ball/void_L.png",
+        "palette": "void",
+        "size": "L"
+      },
+      {
+        "id": "crystal_ball__holo_M",
+        "path": "variants/crystal_ball/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "crystal_ball__holo_L",
+        "path": "variants/crystal_ball/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      }
+    ],
+    "plasma_sphere": [
+      {
+        "id": "plasma_sphere__plasma_M",
+        "path": "variants/plasma_sphere/plasma_M.png",
+        "palette": "plasma",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__plasma_L",
+        "path": "variants/plasma_sphere/plasma_L.png",
+        "palette": "plasma",
+        "size": "L"
+      },
+      {
+        "id": "plasma_sphere__cyber_M",
+        "path": "variants/plasma_sphere/cyber_M.png",
+        "palette": "cyber",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__cyber_L",
+        "path": "variants/plasma_sphere/cyber_L.png",
+        "palette": "cyber",
+        "size": "L"
+      },
+      {
+        "id": "plasma_sphere__amethyst_M",
+        "path": "variants/plasma_sphere/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__amethyst_L",
+        "path": "variants/plasma_sphere/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "plasma_sphere__molten_M",
+        "path": "variants/plasma_sphere/molten_M.png",
+        "palette": "molten",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__molten_L",
+        "path": "variants/plasma_sphere/molten_L.png",
+        "palette": "molten",
+        "size": "L"
+      },
+      {
+        "id": "plasma_sphere__void_M",
+        "path": "variants/plasma_sphere/void_M.png",
+        "palette": "void",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__void_L",
+        "path": "variants/plasma_sphere/void_L.png",
+        "palette": "void",
+        "size": "L"
+      },
+      {
+        "id": "plasma_sphere__holo_M",
+        "path": "variants/plasma_sphere/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "plasma_sphere__holo_L",
+        "path": "variants/plasma_sphere/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      }
+    ],
+    "brain_orb": [
+      {
+        "id": "brain_orb__ruby_M",
+        "path": "variants/brain_orb/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__ruby_L",
+        "path": "variants/brain_orb/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      },
+      {
+        "id": "brain_orb__amethyst_M",
+        "path": "variants/brain_orb/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__amethyst_L",
+        "path": "variants/brain_orb/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "brain_orb__plasma_M",
+        "path": "variants/brain_orb/plasma_M.png",
+        "palette": "plasma",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__plasma_L",
+        "path": "variants/brain_orb/plasma_L.png",
+        "palette": "plasma",
+        "size": "L"
+      },
+      {
+        "id": "brain_orb__emerald_M",
+        "path": "variants/brain_orb/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__emerald_L",
+        "path": "variants/brain_orb/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "brain_orb__gold_M",
+        "path": "variants/brain_orb/gold_M.png",
+        "palette": "gold",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__gold_L",
+        "path": "variants/brain_orb/gold_L.png",
+        "palette": "gold",
+        "size": "L"
+      },
+      {
+        "id": "brain_orb__molten_M",
+        "path": "variants/brain_orb/molten_M.png",
+        "palette": "molten",
+        "size": "M"
+      },
+      {
+        "id": "brain_orb__molten_L",
+        "path": "variants/brain_orb/molten_L.png",
+        "palette": "molten",
+        "size": "L"
+      }
+    ],
+    "halo_orb": [
+      {
+        "id": "halo_orb__gold_M",
+        "path": "variants/halo_orb/gold_M.png",
+        "palette": "gold",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__gold_L",
+        "path": "variants/halo_orb/gold_L.png",
+        "palette": "gold",
+        "size": "L"
+      },
+      {
+        "id": "halo_orb__holo_M",
+        "path": "variants/halo_orb/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__holo_L",
+        "path": "variants/halo_orb/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      },
+      {
+        "id": "halo_orb__emerald_M",
+        "path": "variants/halo_orb/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__emerald_L",
+        "path": "variants/halo_orb/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "halo_orb__sapphire_M",
+        "path": "variants/halo_orb/sapphire_M.png",
+        "palette": "sapphire",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__sapphire_L",
+        "path": "variants/halo_orb/sapphire_L.png",
+        "palette": "sapphire",
+        "size": "L"
+      },
+      {
+        "id": "halo_orb__amethyst_M",
+        "path": "variants/halo_orb/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__amethyst_L",
+        "path": "variants/halo_orb/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "halo_orb__ruby_M",
+        "path": "variants/halo_orb/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "halo_orb__ruby_L",
+        "path": "variants/halo_orb/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      }
+    ],
+    "disco_ball": [
+      {
+        "id": "disco_ball__holo_M",
+        "path": "variants/disco_ball/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__holo_L",
+        "path": "variants/disco_ball/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      },
+      {
+        "id": "disco_ball__amethyst_M",
+        "path": "variants/disco_ball/amethyst_M.png",
+        "palette": "amethyst",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__amethyst_L",
+        "path": "variants/disco_ball/amethyst_L.png",
+        "palette": "amethyst",
+        "size": "L"
+      },
+      {
+        "id": "disco_ball__gold_M",
+        "path": "variants/disco_ball/gold_M.png",
+        "palette": "gold",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__gold_L",
+        "path": "variants/disco_ball/gold_L.png",
+        "palette": "gold",
+        "size": "L"
+      },
+      {
+        "id": "disco_ball__cyber_M",
+        "path": "variants/disco_ball/cyber_M.png",
+        "palette": "cyber",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__cyber_L",
+        "path": "variants/disco_ball/cyber_L.png",
+        "palette": "cyber",
+        "size": "L"
+      },
+      {
+        "id": "disco_ball__ruby_M",
+        "path": "variants/disco_ball/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__ruby_L",
+        "path": "variants/disco_ball/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      },
+      {
+        "id": "disco_ball__emerald_M",
+        "path": "variants/disco_ball/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "disco_ball__emerald_L",
+        "path": "variants/disco_ball/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      }
+    ],
+    "lightning": [
+      {
+        "id": "lightning__gold_M",
+        "path": "variants/lightning/gold_M.png",
+        "palette": "gold",
+        "size": "M"
+      },
+      {
+        "id": "lightning__gold_L",
+        "path": "variants/lightning/gold_L.png",
+        "palette": "gold",
+        "size": "L"
+      },
+      {
+        "id": "lightning__cyber_M",
+        "path": "variants/lightning/cyber_M.png",
+        "palette": "cyber",
+        "size": "M"
+      },
+      {
+        "id": "lightning__cyber_L",
+        "path": "variants/lightning/cyber_L.png",
+        "palette": "cyber",
+        "size": "L"
+      },
+      {
+        "id": "lightning__plasma_M",
+        "path": "variants/lightning/plasma_M.png",
+        "palette": "plasma",
+        "size": "M"
+      },
+      {
+        "id": "lightning__plasma_L",
+        "path": "variants/lightning/plasma_L.png",
+        "palette": "plasma",
+        "size": "L"
+      },
+      {
+        "id": "lightning__ruby_M",
+        "path": "variants/lightning/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "lightning__ruby_L",
+        "path": "variants/lightning/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      },
+      {
+        "id": "lightning__emerald_M",
+        "path": "variants/lightning/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "lightning__emerald_L",
+        "path": "variants/lightning/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "lightning__holo_M",
+        "path": "variants/lightning/holo_M.png",
+        "palette": "holo",
+        "size": "M"
+      },
+      {
+        "id": "lightning__holo_L",
+        "path": "variants/lightning/holo_L.png",
+        "palette": "holo",
+        "size": "L"
+      }
+    ],
+    "neon_dollar": [
+      {
+        "id": "neon_dollar__emerald_M",
+        "path": "variants/neon_dollar/emerald_M.png",
+        "palette": "emerald",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__emerald_L",
+        "path": "variants/neon_dollar/emerald_L.png",
+        "palette": "emerald",
+        "size": "L"
+      },
+      {
+        "id": "neon_dollar__gold_M",
+        "path": "variants/neon_dollar/gold_M.png",
+        "palette": "gold",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__gold_L",
+        "path": "variants/neon_dollar/gold_L.png",
+        "palette": "gold",
+        "size": "L"
+      },
+      {
+        "id": "neon_dollar__cyber_M",
+        "path": "variants/neon_dollar/cyber_M.png",
+        "palette": "cyber",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__cyber_L",
+        "path": "variants/neon_dollar/cyber_L.png",
+        "palette": "cyber",
+        "size": "L"
+      },
+      {
+        "id": "neon_dollar__plasma_M",
+        "path": "variants/neon_dollar/plasma_M.png",
+        "palette": "plasma",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__plasma_L",
+        "path": "variants/neon_dollar/plasma_L.png",
+        "palette": "plasma",
+        "size": "L"
+      },
+      {
+        "id": "neon_dollar__ruby_M",
+        "path": "variants/neon_dollar/ruby_M.png",
+        "palette": "ruby",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__ruby_L",
+        "path": "variants/neon_dollar/ruby_L.png",
+        "palette": "ruby",
+        "size": "L"
+      },
+      {
+        "id": "neon_dollar__molten_M",
+        "path": "variants/neon_dollar/molten_M.png",
+        "palette": "molten",
+        "size": "M"
+      },
+      {
+        "id": "neon_dollar__molten_L",
+        "path": "variants/neon_dollar/molten_L.png",
+        "palette": "molten",
+        "size": "L"
+      }
+    ]
+  }
+}

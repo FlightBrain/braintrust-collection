@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Item Picker · Braintrust Collection</title>
+<link rel="icon" href="https://www.braintrust.dev/icon180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #050709; --panel: #0F1320; --line: rgba(255,255,255,0.08);
+    --text: #ffffff; --text-dim: #8B95A8;
+    --accent: #00FF94; --pick: #FFD93D; --reject: #FF3366;
+  }
+  html, body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+  body { padding: 32px 24px 80px; }
+
+  /* === Header === */
+  .head { max-width: 1400px; margin: 0 auto 32px; text-align: center; }
+  .tag { display: inline-flex; gap: 8px; align-items: center; padding: 6px 14px; border: 1px solid var(--line); border-radius: 100px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.24em; color: var(--text-dim); margin-bottom: 18px; }
+  .tag .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+  h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; margin-bottom: 14px; }
+  .accent { color: var(--accent); }
+  .sub { color: var(--text-dim); font-size: 14px; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+  /* === Picks summary === */
+  .picks-bar {
+    max-width: 1400px; margin: 0 auto 32px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+  }
+  .picks-count { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-dim); letter-spacing: 0.1em; }
+  .picks-count strong { color: var(--pick); font-size: 18px; font-weight: 700; margin-right: 4px; }
+  .picks-actions { margin-left: auto; display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line);
+    background: transparent; color: var(--text);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent); }
+  .btn.primary { background: var(--accent); color: #050709; border-color: var(--accent); }
+  .btn.primary:hover { background: #00cc7a; color: #050709; }
+  .btn.danger:hover { border-color: var(--reject); color: var(--reject); }
+  .picks-list { width: 100%; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); line-height: 1.7; word-break: break-all; }
+  .picks-list .winner { color: var(--pick); }
+
+  /* === Sections === */
+  .section { max-width: 1400px; margin: 0 auto 48px; }
+  .section-head {
+    display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px;
+    padding-bottom: 12px; border-bottom: 1px solid var(--line);
+  }
+  .section-name { font-size: 22px; font-weight: 800; letter-spacing: -0.02em; }
+  .section-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+
+  /* === Grid === */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 14px;
+  }
+  .tile {
+    background: var(--panel); border: 2px solid var(--line); border-radius: 12px;
+    padding: 16px 14px 12px; text-align: center;
+    transition: all 0.2s; cursor: pointer;
+    position: relative; overflow: hidden;
+  }
+  .tile:hover { border-color: rgba(255,255,255,0.20); transform: translateY(-2px); }
+  .tile.picked { border-color: var(--pick); background: rgba(255, 217, 61, 0.08); box-shadow: 0 0 24px rgba(255,217,61,0.2); }
+  .tile.rejected { opacity: 0.35; }
+  .tile.rejected img { filter: grayscale(1); }
+
+  .star {
+    position: absolute; top: 8px; right: 10px;
+    font-size: 18px; opacity: 0; transition: opacity 0.2s;
+    pointer-events: none;
+  }
+  .tile.picked .star { opacity: 1; }
+
+  .preview {
+    width: 100%; aspect-ratio: 1 / 1; max-width: 144px;
+    margin: 0 auto 10px;
+    image-rendering: pixelated; image-rendering: crisp-edges;
+    background: rgba(0,0,0,0.4); border-radius: 8px;
+  }
+  .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--text-dim); letter-spacing: 0.1em;
+  }
+  .label .pal { color: #ffffff; font-weight: 600; }
+  .label .size { opacity: 0.7; margin-left: 4px; }
+
+  /* === Reject button === */
+  .reject-btn {
+    position: absolute; top: 8px; left: 10px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: transparent; border: 1px solid var(--line);
+    color: var(--text-dim); cursor: pointer;
+    font-size: 12px; line-height: 1; opacity: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.2s;
+  }
+  .tile:hover .reject-btn { opacity: 0.7; }
+  .tile .reject-btn:hover { opacity: 1; border-color: var(--reject); color: var(--reject); }
+  .tile.rejected .reject-btn { opacity: 1; border-color: var(--reject); color: var(--reject); }
+
+  /* === Loading === */
+  .loading { text-align: center; color: var(--text-dim); padding: 80px; font-family: 'JetBrains Mono', monospace; }
+
+  /* === Footer === */
+  .foot { max-width: 1400px; margin: 60px auto 0; padding-top: 24px; border-top: 1px solid var(--line); text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-dim); letter-spacing: 0.18em; }
+  .foot a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div class="tag"><span class="dot"></span> ITEM PICKER · v3 · 48x48</div>
+  <h1>Pick the <span class="accent">god-tier</span> items.</h1>
+  <p class="sub">96 candidates across 8 signature types. Click to star a variant. Reject (X) to mark a dud. When you have your winners, copy the list at the top and send it back.</p>
+</div>
+
+<div class="picks-bar">
+  <div class="picks-count"><strong id="pick-count">0</strong>WINNERS PICKED</div>
+  <div class="picks-actions">
+    <button class="btn" onclick="copyPicks()">COPY PICKS</button>
+    <button class="btn danger" onclick="clearPicks()">CLEAR ALL</button>
+  </div>
+  <div class="picks-list" id="picks-list">No picks yet. Click any tile to star it.</div>
+</div>
+
+<div id="root">
+  <div class="loading">Loading variants...</div>
+</div>
+
+<div class="foot">
+  BRAINTRUST COLLECTION · ITEM PICKER · <a href="/">BACK TO GALLERY</a>
+</div>
+
+<script>
+const STORAGE_PICKS = 'item_picks_v3';
+const STORAGE_REJECTS = 'item_rejects_v3';
+
+let picks = new Set(JSON.parse(localStorage.getItem(STORAGE_PICKS) || '[]'));
+let rejects = new Set(JSON.parse(localStorage.getItem(STORAGE_REJECTS) || '[]'));
+
+function save() {
+  localStorage.setItem(STORAGE_PICKS, JSON.stringify([...picks]));
+  localStorage.setItem(STORAGE_REJECTS, JSON.stringify([...rejects]));
+  renderPicksBar();
+}
+
+function togglePick(id, tileEl) {
+  if (picks.has(id)) {
+    picks.delete(id);
+    tileEl.classList.remove('picked');
+  } else {
+    picks.add(id);
+    rejects.delete(id);
+    tileEl.classList.add('picked');
+    tileEl.classList.remove('rejected');
+  }
+  save();
+}
+
+function toggleReject(e, id, tileEl) {
+  e.stopPropagation();
+  if (rejects.has(id)) {
+    rejects.delete(id);
+    tileEl.classList.remove('rejected');
+  } else {
+    rejects.add(id);
+    picks.delete(id);
+    tileEl.classList.add('rejected');
+    tileEl.classList.remove('picked');
+  }
+  save();
+}
+
+function renderPicksBar() {
+  document.getElementById('pick-count').textContent = picks.size;
+  const list = document.getElementById('picks-list');
+  if (picks.size === 0) {
+    list.innerHTML = 'No picks yet. Click any tile to star it.';
+  } else {
+    list.innerHTML = [...picks].map(p => `<span class="winner">★ ${p}</span>`).join(' &nbsp; ');
+  }
+}
+
+function copyPicks() {
+  const text = [...picks].join('\n');
+  navigator.clipboard.writeText(text).then(() => {
+    alert(`Copied ${picks.size} picks to clipboard.`);
+  });
+}
+
+function clearPicks() {
+  if (!confirm('Clear all picks and rejects?')) return;
+  picks.clear();
+  rejects.clear();
+  save();
+  document.querySelectorAll('.tile').forEach(t => t.classList.remove('picked', 'rejected'));
+}
+
+async function load() {
+  const res = await fetch('/variants/manifest.json');
+  const data = await res.json();
+  const root = document.getElementById('root');
+  root.innerHTML = '';
+
+  for (const [itemName, variants] of Object.entries(data.items)) {
+    const section = document.createElement('div');
+    section.className = 'section';
+    section.innerHTML = `
+      <div class="section-head">
+        <div class="section-name">${itemName.replace(/_/g, ' ')}</div>
+        <div class="section-meta">${variants.length} VARIANTS</div>
+      </div>
+      <div class="grid"></div>
+    `;
+    const grid = section.querySelector('.grid');
+    variants.forEach(v => {
+      const tile = document.createElement('div');
+      tile.className = 'tile';
+      if (picks.has(v.id)) tile.classList.add('picked');
+      if (rejects.has(v.id)) tile.classList.add('rejected');
+      tile.innerHTML = `
+        <button class="reject-btn" title="Reject this variant">✕</button>
+        <div class="star">★</div>
+        <img class="preview" src="/${v.path}" alt="${v.id}">
+        <div class="label"><span class="pal">${v.palette}</span><span class="size">${v.size}</span></div>
+      `;
+      tile.addEventListener('click', () => togglePick(v.id, tile));
+      tile.querySelector('.reject-btn').addEventListener('click', (e) => toggleReject(e, v.id, tile));
+      grid.appendChild(tile);
+    });
+    root.appendChild(section);
+  }
+  renderPicksBar();
+}
+
+load();
+</script>
+</body>
+</html>
