@@ -189,19 +189,26 @@ export default function AdminStatusPage() {
           </ul>
         </div>
 
-        {contractReady && (
-          <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
-            Contract on chain:&nbsp;
-            <a
-              className="text-accent hover:underline"
-              href={explorerAddressUrl(env.chainId, env.contractAddress)}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              {env.contractAddress}
-            </a>
-          </p>
-        )}
+        {contractReady && (() => {
+          const explorerHref = explorerAddressUrl(env.chainId, env.contractAddress);
+          return (
+            <p className="mt-6 text-center font-mono text-[10px] uppercase tracking-[0.22em] text-muted">
+              Contract on chain:&nbsp;
+              {explorerHref ? (
+                <a
+                  className="text-accent hover:underline"
+                  href={explorerHref}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {env.contractAddress}
+                </a>
+              ) : (
+                <span className="text-accent">{env.contractAddress}</span>
+              )}
+            </p>
+          );
+        })()}
       </section>
       <FooterNav />
     </main>

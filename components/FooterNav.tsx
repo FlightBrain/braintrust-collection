@@ -40,19 +40,27 @@ export function FooterNav() {
             </p>
             <ul className="mt-2 space-y-1 text-sm">
               <li><span className="text-muted">Chain:</span> {env.chainName}</li>
-              {env.contractAddress ? (
-                <li className="break-all">
-                  <span className="text-muted">Contract:</span>{" "}
-                  <a
-                    className="text-accent hover:underline"
-                    href={explorerAddressUrl(env.chainId, env.contractAddress)}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    {env.contractAddress.slice(0, 6)}...{env.contractAddress.slice(-4)}
-                  </a>
-                </li>
-              ) : (
+              {env.contractAddress ? (() => {
+                const href = explorerAddressUrl(env.chainId, env.contractAddress);
+                const short = `${env.contractAddress.slice(0, 6)}...${env.contractAddress.slice(-4)}`;
+                return (
+                  <li className="break-all">
+                    <span className="text-muted">Contract:</span>{" "}
+                    {href ? (
+                      <a
+                        className="text-accent hover:underline"
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        {short}
+                      </a>
+                    ) : (
+                      <span className="text-accent">{short}</span>
+                    )}
+                  </li>
+                );
+              })() : (
                 <li className="text-muted">Contract: not yet deployed</li>
               )}
               {env.marketplaceUrl && (

@@ -95,7 +95,18 @@ You should see 10 ETH in your wallet (the deploy script pre-funded you).
 3. Click **Connect Wallet**, pick MetaMask, approve.
 4. The mint card should read "Free coworker mint, 1 per wallet".
 5. Click **Mint free**. MetaMask asks you to sign. Approve.
-6. Success state shows. The token is in your wallet (MetaMask "NFTs" tab if your version of MetaMask supports it).
+6. Success state shows. The local chain has no public block explorer, so instead of a "View on Basescan" button you see the tx hash inline (e.g. `Tx hash: 0xabc123...def0`). The token is in your wallet (MetaMask "NFTs" tab if your version of MetaMask supports it).
+
+## Verify per-wallet limit
+
+To confirm the contract is enforcing max 1 per wallet:
+
+1. Mint once (above).
+2. Click **Mint free** again from the same wallet.
+3. MetaMask will let you sign, but the transaction will revert on chain.
+4. The site catches it and shows: **You have reached the per-wallet claim limit.**
+
+To mint a second token, switch MetaMask to a different account (or import one of the 20 Hardhat test accounts printed by `npm run chain:local`).
 
 ## Reset
 

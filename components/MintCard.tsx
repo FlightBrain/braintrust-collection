@@ -11,7 +11,7 @@ import {
 } from "wagmi";
 import { parseEther, formatEther } from "viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { env, hasContract, explorerTxUrl } from "@/lib/env";
+import { env, hasContract, explorerTxUrl, explorerNameFor } from "@/lib/env";
 import {
   collectionAbi,
   makeEmptyAllowlistProof,
@@ -239,21 +239,33 @@ export function MintCard() {
               body="Waiting for your transaction to confirm. This usually takes a few seconds."
             />
           ) : receipt.isSuccess && txHash ? (
-            <StateBlock
-              tone="success"
-              title="Minted!"
-              body="Your card is on its way to your wallet."
-              action={
-                <a
-                  className="rounded-md border border-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-accent hover:bg-accent hover:text-bg"
-                  href={explorerTxUrl(activeChain.id, txHash)}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  View on {activeChain.name === "Base Sepolia" ? "Sepolia Basescan" : "Basescan"}
-                </a>
-              }
-            />
+            (() => {
+              const txUrl = explorerTxUrl(activeChain.id, txHash);
+              const explorerName = explorerNameFor(activeChain.id);
+              return (
+                <StateBlock
+                  tone="success"
+                  title="Minted!"
+                  body={
+                    txUrl
+                      ? "Your card is on its way to your wallet."
+                      : `Your card is on its way to your wallet. Tx hash: ${txHash.slice(0, 10)}...${txHash.slice(-8)}`
+                  }
+                  action={
+                    txUrl && explorerName ? (
+                      <a
+                        className="rounded-md border border-accent px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-accent hover:bg-accent hover:text-bg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                        href={txUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        View on {explorerName}
+                      </a>
+                    ) : null
+                  }
+                />
+              );
+            })()
           ) : writeError ? (
             <StateBlock
               tone="error"
