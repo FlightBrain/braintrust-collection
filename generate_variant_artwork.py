@@ -97,6 +97,11 @@ def mythic_addons_for(rare_items):
     return []
 
 
+# BANNED accessories: never use these in any loadout. KB feedback says the
+# multi-color rainbow eye designs read as cheap. Keep them out of every tier.
+BANNED_ACCESSORIES = {"laser_eyes_rainbow", "kaleidoscope_eyes"}
+
+
 # Hand-curated Mythic loadout per SDR. The Mythic tier is NOT a uniform addon
 # on top of Rare; each SDR gets a unique premium kit that reflects their
 # personality. One item per slot (head/eyes/mouth/neck/face) to avoid visual
@@ -110,14 +115,24 @@ MYTHIC_LOADOUTS = {
     "evan":       ["durag__black",          "money_eyes__gold",        "gold_grill__diamond",      "diamond_chain__white"],
     "garrett":    ["king_crown__gold",      "cigar__brown",            "diamond_chain__white",     "beard_full__black"],
     "joe":        ["spartan_helmet__bronze", "glowing_eyes__red",      "fat_gold_chain__gold",     "face_tattoo__dollar"],
-    "kensington": ["jeweled_crown__gold",   "laser_eyes_rainbow__default", "gold_medallion__gold"],
+    "kensington": ["jeweled_crown__gold",   "cyber_visor__cyan",       "gold_medallion__gold"],
     "keslar":     ["viking_helmet__bronze", "glowing_eyes__yellow",    "ascot__red",               "beard_full__red"],
     "nick":       ["top_hat__black",        "monocle__gold",           "necktie__striped",         "mustache_handlebar__brown"],
     "owen":       ["cowboy_hat__brown",     "cigar__brown",            "bandana_neck__red",        "scar__default"],
-    "ryan":       ["headband__red",         "laser_eyes_rainbow__default", "brain_pendant_chain__gold", "third_eye__cyan"],
+    "ryan":       ["headband__red",         "cyber_implant__cyan",     "brain_pendant_chain__gold", "third_eye__cyan"],
     "sacha":      ["baseball_cap__red",    "cyber_visor__red",        "gold_medallion__gold",     "kiss_print__hot_pink"],
     "shaune":     ["knight_helmet__steel",  "pipe_sherlock__default",  "diamond_chain__white",     "birthmark_star__default"],
 }
+
+# Sanity check: refuse to generate if any loadout contains a banned accessory.
+for _slug, _items in MYTHIC_LOADOUTS.items():
+    for _item in _items:
+        _name = _item.split("__")[0]
+        if _name in BANNED_ACCESSORIES:
+            raise ValueError(
+                f"BANNED accessory '{_name}' used in {_slug} mythic loadout. "
+                f"Remove it before regenerating."
+            )
 
 
 # ===== SVG templates per tier =====

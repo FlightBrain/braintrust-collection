@@ -111,9 +111,6 @@ export function VariantDetailModal({
                 whyText={why}
                 attributes={variant.attributes}
               />
-              <p className="mt-3 text-center font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                Click card to flip
-              </p>
             </div>
 
             <div className="space-y-5">
