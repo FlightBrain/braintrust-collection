@@ -18,7 +18,7 @@ import path from "node:path";
 const inputPath = path.resolve(process.argv[2] ?? "data/allowlist.example.csv");
 const outputPath = path.resolve(process.argv[3] ?? "data/allowlist.thirdweb.csv");
 
-const NATIVE_TOKEN = "0xEEeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
+const NATIVE_TOKEN = "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE";
 const OUT_HEADERS = ["address", "maxClaimable", "price", "currencyAddress"];
 
 if (!fs.existsSync(inputPath)) {

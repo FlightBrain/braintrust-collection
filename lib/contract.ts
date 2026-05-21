@@ -25,8 +25,11 @@
 // The contract validates the actual claim against the active claim phase
 // configured in the thirdweb dashboard.
 
+// EIP-55 checksummed. Viem rejects any other casing. Matches the constant in
+// contracts/LocalMockDrop.sol so the local mock + the real thirdweb Drop both
+// accept the same value.
 export const NATIVE_TOKEN_ADDRESS =
-  "0xEEeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
+  "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE" as const;
 
 // Empty allowlist proof, used for public claim phases.
 export function makeEmptyAllowlistProof() {
