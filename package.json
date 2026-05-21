@@ -20,6 +20,9 @@
     "package-metadata": "tsx scripts/package-metadata.ts",
     "validate-allowlist": "tsx scripts/validate-allowlist.ts",
     "export-thirdweb-allowlist": "tsx scripts/export-thirdweb-allowlist.ts",
+    "chain:local": "hardhat node",
+    "contract:compile": "hardhat compile",
+    "contract:deploy:local": "hardhat run scripts/deploy-local-contract.ts --network localhost",
     "prelaunch": "npm run lint && npm run generate-metadata && npm run collection-metadata && npm run validate-metadata && npm run build",
     "prelaunch:strict": "STRICT=1 npm run check-env && METADATA_MODE=ipfs npm run validate-production-metadata && npm run lint && npm run build"
   },
@@ -33,6 +36,8 @@
     "wagmi": "^2.12.20"
   },
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.0.2",
     "@types/node": "^20.16.11",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
@@ -40,6 +45,7 @@
     "dotenv": "^16.4.5",
     "eslint": "^8.57.1",
     "eslint-config-next": "^14.2.30",
+    "hardhat": "^2.22.15",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13",
     "tsx": "^4.19.1",

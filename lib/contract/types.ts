@@ -1,6 +1,10 @@
 import type { Abi } from "viem";
 
-export type ContractMode = "thirdweb-drop" | "custom-erc721" | "placeholder";
+export type ContractMode =
+  | "thirdweb-drop"
+  | "local-mock-drop"
+  | "custom-erc721"
+  | "placeholder";
 
 export interface ContractAdapter {
   mode: ContractMode;

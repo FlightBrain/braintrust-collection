@@ -1,15 +1,19 @@
 "use client";
 
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { base, baseSepolia, mainnet } from "wagmi/chains";
+import { base, baseSepolia, hardhat, mainnet } from "wagmi/chains";
 import { http } from "viem";
 import { env } from "./env";
 
 // Pick the chain that matches NEXT_PUBLIC_CHAIN_ID. Default Base mainnet.
-const chainMap: Record<number, (typeof base | typeof baseSepolia | typeof mainnet)> = {
+const chainMap: Record<
+  number,
+  typeof base | typeof baseSepolia | typeof mainnet | typeof hardhat
+> = {
   [base.id]: base,
   [baseSepolia.id]: baseSepolia,
   [mainnet.id]: mainnet,
+  [hardhat.id]: hardhat, // localhost (31337)
 };
 
 const activeChain = chainMap[env.chainId] ?? base;

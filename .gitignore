@@ -9,3 +9,11 @@ out
 build
 .env*.local
 next-env.d.ts
+
+# Hardhat
+.cache
+.env.localchain.generated
+typechain-types
+
+# dist
+dist

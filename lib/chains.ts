@@ -4,6 +4,15 @@
  */
 
 export const CHAINS = {
+  localhost: {
+    id: 31337,
+    name: "Localhost",
+    shortName: "Local",
+    testnet: true,
+    rpc: "http://127.0.0.1:8545",
+    explorer: "http://127.0.0.1:8545",
+    nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
+  },
   baseMainnet: {
     id: 8453,
     name: "Base",
