@@ -1,0 +1,274 @@
+{
+  "variants": [
+    {
+      "token_id": 0,
+      "slug": "alec",
+      "variant": "common",
+      "path": "public/nfts/variants/alec_common.svg"
+    },
+    {
+      "token_id": 1,
+      "slug": "alec",
+      "variant": "rare",
+      "path": "public/nfts/variants/alec_rare.svg"
+    },
+    {
+      "token_id": 2,
+      "slug": "alec",
+      "variant": "mythic",
+      "path": "public/nfts/variants/alec_mythic.svg"
+    },
+    {
+      "token_id": 3,
+      "slug": "ava",
+      "variant": "common",
+      "path": "public/nfts/variants/ava_common.svg"
+    },
+    {
+      "token_id": 4,
+      "slug": "ava",
+      "variant": "rare",
+      "path": "public/nfts/variants/ava_rare.svg"
+    },
+    {
+      "token_id": 5,
+      "slug": "ava",
+      "variant": "mythic",
+      "path": "public/nfts/variants/ava_mythic.svg"
+    },
+    {
+      "token_id": 6,
+      "slug": "catherine",
+      "variant": "common",
+      "path": "public/nfts/variants/catherine_common.svg"
+    },
+    {
+      "token_id": 7,
+      "slug": "catherine",
+      "variant": "rare",
+      "path": "public/nfts/variants/catherine_rare.svg"
+    },
+    {
+      "token_id": 8,
+      "slug": "catherine",
+      "variant": "mythic",
+      "path": "public/nfts/variants/catherine_mythic.svg"
+    },
+    {
+      "token_id": 9,
+      "slug": "chris",
+      "variant": "common",
+      "path": "public/nfts/variants/chris_common.svg"
+    },
+    {
+      "token_id": 10,
+      "slug": "chris",
+      "variant": "rare",
+      "path": "public/nfts/variants/chris_rare.svg"
+    },
+    {
+      "token_id": 11,
+      "slug": "chris",
+      "variant": "mythic",
+      "path": "public/nfts/variants/chris_mythic.svg"
+    },
+    {
+      "token_id": 12,
+      "slug": "duncan",
+      "variant": "common",
+      "path": "public/nfts/variants/duncan_common.svg"
+    },
+    {
+      "token_id": 13,
+      "slug": "duncan",
+      "variant": "rare",
+      "path": "public/nfts/variants/duncan_rare.svg"
+    },
+    {
+      "token_id": 14,
+      "slug": "duncan",
+      "variant": "mythic",
+      "path": "public/nfts/variants/duncan_mythic.svg"
+    },
+    {
+      "token_id": 15,
+      "slug": "evan",
+      "variant": "common",
+      "path": "public/nfts/variants/evan_common.svg"
+    },
+    {
+      "token_id": 16,
+      "slug": "evan",
+      "variant": "rare",
+      "path": "public/nfts/variants/evan_rare.svg"
+    },
+    {
+      "token_id": 17,
+      "slug": "evan",
+      "variant": "mythic",
+      "path": "public/nfts/variants/evan_mythic.svg"
+    },
+    {
+      "token_id": 18,
+      "slug": "garrett",
+      "variant": "common",
+      "path": "public/nfts/variants/garrett_common.svg"
+    },
+    {
+      "token_id": 19,
+      "slug": "garrett",
+      "variant": "rare",
+      "path": "public/nfts/variants/garrett_rare.svg"
+    },
+    {
+      "token_id": 20,
+      "slug": "garrett",
+      "variant": "mythic",
+      "path": "public/nfts/variants/garrett_mythic.svg"
+    },
+    {
+      "token_id": 21,
+      "slug": "joe",
+      "variant": "common",
+      "path": "public/nfts/variants/joe_common.svg"
+    },
+    {
+      "token_id": 22,
+      "slug": "joe",
+      "variant": "rare",
+      "path": "public/nfts/variants/joe_rare.svg"
+    },
+    {
+      "token_id": 23,
+      "slug": "joe",
+      "variant": "mythic",
+      "path": "public/nfts/variants/joe_mythic.svg"
+    },
+    {
+      "token_id": 24,
+      "slug": "kensington",
+      "variant": "common",
+      "path": "public/nfts/variants/kensington_common.svg"
+    },
+    {
+      "token_id": 25,
+      "slug": "kensington",
+      "variant": "rare",
+      "path": "public/nfts/variants/kensington_rare.svg"
+    },
+    {
+      "token_id": 26,
+      "slug": "kensington",
+      "variant": "mythic",
+      "path": "public/nfts/variants/kensington_mythic.svg"
+    },
+    {
+      "token_id": 27,
+      "slug": "keslar",
+      "variant": "common",
+      "path": "public/nfts/variants/keslar_common.svg"
+    },
+    {
+      "token_id": 28,
+      "slug": "keslar",
+      "variant": "rare",
+      "path": "public/nfts/variants/keslar_rare.svg"
+    },
+    {
+      "token_id": 29,
+      "slug": "keslar",
+      "variant": "mythic",
+      "path": "public/nfts/variants/keslar_mythic.svg"
+    },
+    {
+      "token_id": 30,
+      "slug": "nick",
+      "variant": "common",
+      "path": "public/nfts/variants/nick_common.svg"
+    },
+    {
+      "token_id": 31,
+      "slug": "nick",
+      "variant": "rare",
+      "path": "public/nfts/variants/nick_rare.svg"
+    },
+    {
+      "token_id": 32,
+      "slug": "nick",
+      "variant": "mythic",
+      "path": "public/nfts/variants/nick_mythic.svg"
+    },
+    {
+      "token_id": 33,
+      "slug": "owen",
+      "variant": "common",
+      "path": "public/nfts/variants/owen_common.svg"
+    },
+    {
+      "token_id": 34,
+      "slug": "owen",
+      "variant": "rare",
+      "path": "public/nfts/variants/owen_rare.svg"
+    },
+    {
+      "token_id": 35,
+      "slug": "owen",
+      "variant": "mythic",
+      "path": "public/nfts/variants/owen_mythic.svg"
+    },
+    {
+      "token_id": 36,
+      "slug": "ryan",
+      "variant": "common",
+      "path": "public/nfts/variants/ryan_common.svg"
+    },
+    {
+      "token_id": 37,
+      "slug": "ryan",
+      "variant": "rare",
+      "path": "public/nfts/variants/ryan_rare.svg"
+    },
+    {
+      "token_id": 38,
+      "slug": "ryan",
+      "variant": "mythic",
+      "path": "public/nfts/variants/ryan_mythic.svg"
+    },
+    {
+      "token_id": 39,
+      "slug": "sacha",
+      "variant": "common",
+      "path": "public/nfts/variants/sacha_common.svg"
+    },
+    {
+      "token_id": 40,
+      "slug": "sacha",
+      "variant": "rare",
+      "path": "public/nfts/variants/sacha_rare.svg"
+    },
+    {
+      "token_id": 41,
+      "slug": "sacha",
+      "variant": "mythic",
+      "path": "public/nfts/variants/sacha_mythic.svg"
+    },
+    {
+      "token_id": 42,
+      "slug": "shaune",
+      "variant": "common",
+      "path": "public/nfts/variants/shaune_common.svg"
+    },
+    {
+      "token_id": 43,
+      "slug": "shaune",
+      "variant": "rare",
+      "path": "public/nfts/variants/shaune_rare.svg"
+    },
+    {
+      "token_id": 44,
+      "slug": "shaune",
+      "variant": "mythic",
+      "path": "public/nfts/variants/shaune_mythic.svg"
+    }
+  ]
+}

@@ -125,13 +125,19 @@ function main() {
     }
   }
 
-  // Sequential token IDs
+  // Sequential token IDs (accept either 0-based or 1-based start)
   const ids = files.map((f) => parseInt(f)).sort((a, b) => a - b);
-  for (let i = 0; i < ids.length; i++) {
-    if (ids[i] !== i + 1) {
-      console.log(`\nERROR: token ID sequence broken at #${i + 1}. Found ${ids[i]}.`);
-      totalErrors++;
-      break;
+  const start = ids[0];
+  if (start !== 0 && start !== 1) {
+    console.log(`\nERROR: token IDs must start at 0 or 1. First id: ${start}.`);
+    totalErrors++;
+  } else {
+    for (let i = 0; i < ids.length; i++) {
+      if (ids[i] !== start + i) {
+        console.log(`\nERROR: token ID sequence broken at index ${i}. Expected ${start + i}, got ${ids[i]}.`);
+        totalErrors++;
+        break;
+      }
     }
   }
 

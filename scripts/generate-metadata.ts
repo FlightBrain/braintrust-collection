@@ -39,6 +39,8 @@ const VARIANTS_PER_SDR = 3;
 
 // Rarity tiers per variant index. Pre-generated, not random on chain.
 const VARIANT_TIERS = ["Common", "Rare", "Mythic"] as const;
+// File-name suffix for each tier (lowercased).
+const VARIANT_FILE_TIER = ["common", "rare", "mythic"] as const;
 
 type Person = { slug: string; name: string; trait?: string };
 type Rarity = { tier: string; rank: number; score: number };
@@ -91,7 +93,7 @@ function metadataFor(
       `Braintrust Collection: Genesis. ` +
       `Variant ${variantIndex + 1} of ${VARIANTS_PER_SDR} for ${p.name} (${variantTier} rarity). ` +
       `Wallet-bound coworker mint: only ${p.name}'s wallet can claim ${p.name}'s variants.`,
-    image: `${BASE_IMAGE_URI}/nfts/corporate/${p.slug}_nft.svg`,
+    image: `${BASE_IMAGE_URI}/nfts/variants/${p.slug}_${VARIANT_FILE_TIER[variantIndex]}.svg`,
     external_url: `https://braintrust-collection.vercel.app/gallery#${p.slug}`,
     attributes,
   };

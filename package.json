@@ -19,6 +19,8 @@
     "validate-production-metadata": "tsx scripts/validate-production-metadata.ts",
     "package-metadata": "tsx scripts/package-metadata.ts",
     "validate-allowlist": "tsx scripts/validate-allowlist.ts",
+    "validate-variants": "tsx scripts/validate-variants.ts",
+    "generate-variant-artwork": "python3 generate_variant_artwork.py",
     "export-thirdweb-allowlist": "tsx scripts/export-thirdweb-allowlist.ts",
     "chain:local": "hardhat node",
     "contract:compile": "hardhat compile",
