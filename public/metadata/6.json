@@ -1,40 +1,56 @@
 {
-  "name": "Evan O'Reilly · Genesis #006",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/evan_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#evan",
+  "name": "Catherine Vincent · Variant 1 of 3 · #006",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Catherine Vincent (Common rarity). Wallet-bound coworker mint: only Catherine Vincent's wallet can claim Catherine Vincent's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/catherine_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#catherine",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "UNCOMMON"
+      "trait_type": "Name",
+      "value": "Catherine Vincent"
     },
     {
-      "trait_type": "Rank",
-      "value": 8
+      "trait_type": "SDR Index",
+      "value": 2
     },
     {
-      "trait_type": "Score",
-      "value": 264.17
+      "trait_type": "Variant",
+      "value": 1
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#00FF94"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: durag",
-      "value": "black"
+      "trait_type": "Original Rarity",
+      "value": "UNCOMMON"
     },
     {
-      "trait_type": "Accessory: gold_grill",
-      "value": "diamond"
+      "trait_type": "Original Rank",
+      "value": 7
     },
     {
-      "trait_type": "Accessory: money_eyes",
-      "value": "green"
+      "trait_type": "Trait Color",
+      "value": "#FF66C4"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
+      "value": "pink"
+    },
+    {
+      "trait_type": "Accessory: kiss_print",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: pearl_necklace",
+      "value": "white"
     }
   ]
 }

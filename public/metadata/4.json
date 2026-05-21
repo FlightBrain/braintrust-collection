@@ -1,40 +1,56 @@
 {
-  "name": "Chris Koenig · Genesis #004",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/chris_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#chris",
+  "name": "Ava Baker · Variant 2 of 3 · #004",
+  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Ava Baker (Rare rarity). Wallet-bound coworker mint: only Ava Baker's wallet can claim Ava Baker's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ava_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#ava",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "UNCOMMON"
+      "trait_type": "Name",
+      "value": "Ava Baker"
     },
     {
-      "trait_type": "Rank",
-      "value": 10
+      "trait_type": "SDR Index",
+      "value": 1
     },
     {
-      "trait_type": "Score",
-      "value": 221.52
+      "trait_type": "Variant",
+      "value": 2
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#00D9FF"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Rare"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: motorcycle_helmet",
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 13
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD0AA"
+    },
+    {
+      "trait_type": "Accessory: halo",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
       "value": "red"
     },
     {
-      "trait_type": "Accessory: cyber_visor",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: scar",
-      "value": "default"
+      "trait_type": "Accessory: face_tattoo",
+      "value": "heart"
     }
   ]
 }

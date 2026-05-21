@@ -1,6 +1,6 @@
 {
-  "name": "Evan O'Reilly · Variant 1 of 3 · #015",
-  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Evan O'Reilly (Common rarity). Wallet-bound coworker mint: only Evan O'Reilly's wallet can claim Evan O'Reilly's variants.",
+  "name": "Evan O'Reilly · Variant 2 of 3 · #016",
+  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Evan O'Reilly (Rare rarity). Wallet-bound coworker mint: only Evan O'Reilly's wallet can claim Evan O'Reilly's variants.",
   "image": "https://braintrust-collection.vercel.app/nfts/corporate/evan_nft.svg",
   "external_url": "https://braintrust-collection.vercel.app/gallery#evan",
   "attributes": [
@@ -14,7 +14,7 @@
     },
     {
       "trait_type": "Variant",
-      "value": 1
+      "value": 2
     },
     {
       "trait_type": "Variants Total",
@@ -22,7 +22,7 @@
     },
     {
       "trait_type": "Variant Rarity",
-      "value": "Common"
+      "value": "Rare"
     },
     {
       "trait_type": "Edition",

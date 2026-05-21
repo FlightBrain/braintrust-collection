@@ -1,39 +1,55 @@
 {
-  "name": "Ryan Gwyn · Genesis #013",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ryan_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#ryan",
+  "name": "Duncan Lewis · Variant 2 of 3 · #013",
+  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Duncan Lewis (Rare rarity). Wallet-bound coworker mint: only Duncan Lewis's wallet can claim Duncan Lewis's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/duncan_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#duncan",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "MYTHIC"
+      "trait_type": "Name",
+      "value": "Duncan Lewis"
     },
     {
-      "trait_type": "Rank",
-      "value": 1
+      "trait_type": "SDR Index",
+      "value": 4
     },
     {
-      "trait_type": "Score",
-      "value": 420.57
+      "trait_type": "Variant",
+      "value": 2
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#B8FF3D"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Rare"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: brain_pendant_chain",
-      "value": "gold"
+      "trait_type": "Original Rarity",
+      "value": "LEGENDARY"
     },
     {
-      "trait_type": "Accessory: glowing_eyes",
-      "value": "red"
+      "trait_type": "Original Rank",
+      "value": 3
     },
     {
-      "trait_type": "Accessory: pixel_shades",
+      "trait_type": "Trait Color",
+      "value": "#7B61FF"
+    },
+    {
+      "trait_type": "Accessory: wizard_hat",
+      "value": "purple"
+    },
+    {
+      "trait_type": "Accessory: crown_of_thorns",
+      "value": "default"
+    },
+    {
+      "trait_type": "Accessory: goatee",
       "value": "black"
     }
   ]

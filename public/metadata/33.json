@@ -1,0 +1,56 @@
+{
+  "name": "Owen Bloomer · Variant 1 of 3 · #033",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Owen Bloomer (Common rarity). Wallet-bound coworker mint: only Owen Bloomer's wallet can claim Owen Bloomer's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/owen_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#owen",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Owen Bloomer"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 11
+    },
+    {
+      "trait_type": "Variant",
+      "value": 1
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 4
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFAA00"
+    },
+    {
+      "trait_type": "Accessory: cowboy_hat",
+      "value": "brown"
+    },
+    {
+      "trait_type": "Accessory: cigarette",
+      "value": "white"
+    },
+    {
+      "trait_type": "Accessory: mustache_chevron",
+      "value": "brown"
+    }
+  ]
+}

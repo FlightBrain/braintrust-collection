@@ -1,40 +1,56 @@
 {
-  "name": "Garrett Buchanan · Genesis #007",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/garrett_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#garrett",
+  "name": "Catherine Vincent · Variant 2 of 3 · #007",
+  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Catherine Vincent (Rare rarity). Wallet-bound coworker mint: only Catherine Vincent's wallet can claim Catherine Vincent's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/catherine_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#catherine",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "COMMON"
+      "trait_type": "Name",
+      "value": "Catherine Vincent"
     },
     {
-      "trait_type": "Rank",
-      "value": 15
+      "trait_type": "SDR Index",
+      "value": 2
     },
     {
-      "trait_type": "Score",
-      "value": 177.95
+      "trait_type": "Variant",
+      "value": 2
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#FFD93D"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Rare"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: king_crown",
-      "value": "gold"
+      "trait_type": "Original Rarity",
+      "value": "UNCOMMON"
     },
     {
-      "trait_type": "Accessory: cigar",
-      "value": "brown"
+      "trait_type": "Original Rank",
+      "value": 7
     },
     {
-      "trait_type": "Accessory: beard_full",
-      "value": "black"
+      "trait_type": "Trait Color",
+      "value": "#FF66C4"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
+      "value": "pink"
+    },
+    {
+      "trait_type": "Accessory: kiss_print",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: pearl_necklace",
+      "value": "white"
     }
   ]
 }

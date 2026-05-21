@@ -1,6 +1,6 @@
 /**
- * Deploy LocalMockDrop to a running local Hardhat node and pre-fund the
- * developer wallet with test ETH.
+ * Deploy LocalMockDrop (v2, wallet-bound 3-variant mint) to a running local
+ * Hardhat node and pre-fund the developer wallet with test ETH.
  *
  * Usage:
  *   # terminal 1
@@ -10,32 +10,28 @@
  *   npm run contract:deploy:local
  *
  * Writes .env.localchain.generated with the deployed address + chain config.
- * Copy those values into .env.local to point the Next.js site at the local
- * chain.
- *
- * Local private keys: the Hardhat node ships 20 deterministic accounts
- * (private keys hard-coded in Hardhat). They are FAKE, public, and used
- * worldwide for tests. Do not send real funds to them, ever.
+ * Copy it to .env.local so the Next.js site points at the local chain.
  */
 import fs from "node:fs";
 import path from "node:path";
-// Hardhat 2.x ships as CommonJS. Node 22+ resolves this script as ESM, so we
-// use the default import + destructure pattern Hardhat recommends.
 import hre from "hardhat";
 const { ethers, network } = hre;
 
-// KB's wallet on file. Pre-funded with test ETH so KB can mint from his
-// real MetaMask address without importing any private keys.
 const KB_WALLET = "0x6D0ab0B66EF699FDb5f8e8af69FcFcb395D4208E";
-
-// Where token JSON metadata lives (testnet style, served by Vercel). Each
-// tokenURI(id) resolves to "<BASE_URI><id>.json", e.g.
-// https://.../metadata/0.json (note: this mock starts ids at 0).
 const BASE_URI = "https://braintrust-collection.vercel.app/metadata/";
-
 const NAME = "Braintrust Collection (Local)";
 const SYMBOL = "BTC-L";
-const MAX_SUPPLY = 15;
+
+// Slug -> 1-based index used by setAllowlistEntry. Indices match the order
+// in public/auto_people.json:
+//   1=alec, 2=ava, 3=catherine, 4=chris, 5=duncan, 6=evan, 7=garrett,
+//   8=joe, 9=kensington, 10=keslar, 11=nick, 12=owen, 13=ryan,
+//   14=sacha, 15=shaune
+const SDR_SLUG_TO_INDEX1: Record<string, number> = {
+  alec: 1, ava: 2, catherine: 3, chris: 4, duncan: 5, evan: 6, garrett: 7,
+  joe: 8, kensington: 9, keslar: 10, nick: 11, owen: 12, ryan: 13,
+  sacha: 14, shaune: 15,
+};
 
 async function main() {
   if (network.name !== "localhost" && network.name !== "hardhat") {
@@ -45,26 +41,57 @@ async function main() {
   }
 
   const [deployer] = await ethers.getSigners();
-  console.log("=== LocalMockDrop deploy ===");
+  console.log("=== LocalMockDrop (v2) deploy ===");
   console.log(`  Network:  ${network.name} (chainId ${(await ethers.provider.getNetwork()).chainId})`);
   console.log(`  Deployer: ${deployer.address}`);
-  console.log(`  Balance:  ${ethers.formatEther(await ethers.provider.getBalance(deployer.address))} ETH`);
+  console.log(
+    `  Balance:  ${ethers.formatEther(await ethers.provider.getBalance(deployer.address))} ETH`
+  );
 
   // Deploy
   const Factory = await ethers.getContractFactory("LocalMockDrop");
-  const contract = await Factory.deploy(NAME, SYMBOL, MAX_SUPPLY);
+  const contract = await Factory.deploy(NAME, SYMBOL);
   await contract.waitForDeployment();
   const address = await contract.getAddress();
   console.log(`  Contract: ${address}`);
 
-  // Set base URI
-  const tx = await contract.setBaseURI(BASE_URI);
-  await tx.wait();
+  // Base URI -> 45 token JSONs live at /metadata/{0..44}.json
+  await (await contract.setBaseURI(BASE_URI)).wait();
   console.log(`  baseURI:  ${BASE_URI}`);
 
-  // Pre-fund KB's wallet with 10 test ETH so he can mint without importing
-  // any private keys. Just connect MetaMask to the localhost network and the
-  // funds will appear.
+  // Allowlist: read the example file, push into the contract.
+  const allowlistPath = path.join(process.cwd(), "data", "allowlist.example.json");
+  if (fs.existsSync(allowlistPath)) {
+    const rows: { slug: string; wallet_address: string }[] = JSON.parse(
+      fs.readFileSync(allowlistPath, "utf-8")
+    );
+    const wallets: string[] = [];
+    const slugIndices: number[] = [];
+    for (const r of rows) {
+      const idx = SDR_SLUG_TO_INDEX1[r.slug];
+      if (!idx) {
+        console.log(`  skip:    unknown slug "${r.slug}"`);
+        continue;
+      }
+      wallets.push(r.wallet_address);
+      slugIndices.push(idx);
+    }
+    if (wallets.length > 0) {
+      const tx = await contract.setAllowlistBatch(wallets, slugIndices);
+      await tx.wait();
+      console.log(`  Allowlist set for ${wallets.length} wallet(s):`);
+      for (let i = 0; i < wallets.length; i++) {
+        const slug = Object.keys(SDR_SLUG_TO_INDEX1).find(
+          (k) => SDR_SLUG_TO_INDEX1[k] === slugIndices[i]
+        );
+        console.log(
+          `    - ${wallets[i]}  ->  slug "${slug}" (idx ${slugIndices[i] - 1}, tokens ${(slugIndices[i] - 1) * 3}..${(slugIndices[i] - 1) * 3 + 2})`
+        );
+      }
+    }
+  }
+
+  // Pre-fund KB's wallet so he can mint without importing any private keys.
   const fundTx = await deployer.sendTransaction({
     to: KB_WALLET,
     value: ethers.parseEther("10"),
@@ -72,13 +99,12 @@ async function main() {
   await fundTx.wait();
   console.log(`  Funded:   ${KB_WALLET} with 10 ETH (local only)`);
 
-  // Sanity check: read back claim condition
-  const condition = await contract.getClaimConditionById(0);
-  console.log(
-    `  Phase:    price=${condition.pricePerToken}, perWallet=${condition.quantityLimitPerWallet}, supply=${condition.maxClaimableSupply}`
-  );
+  // Sanity reads
+  const remaining = await contract.remainingForWallet(KB_WALLET);
+  const slug1 = await contract.slugIndexFor(KB_WALLET);
+  console.log(`  KB state: slugIndex1Based=${slug1}, remaining=${remaining}/3`);
 
-  // Write env file for Next.js
+  // Write env file
   const envOut = path.join(process.cwd(), ".env.localchain.generated");
   const envContent =
     `# AUTO-GENERATED by scripts/deploy-local-contract.ts
@@ -90,28 +116,19 @@ NEXT_PUBLIC_CHAIN_NAME=Localhost
 NEXT_PUBLIC_RPC_URL=http://127.0.0.1:8545
 NEXT_PUBLIC_CONTRACT_ADDRESS=${address}
 NEXT_PUBLIC_CONTRACT_MODE=local-mock-drop
-NEXT_PUBLIC_TOTAL_SUPPLY=15
+NEXT_PUBLIC_TOTAL_SUPPLY=45
 NEXT_PUBLIC_MINT_PRICE=0
 NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID=1244257340c4eca87602fb431b8ec3a9
 NEXT_PUBLIC_BASE_IMAGE_URI=${BASE_URI}
-` ;
+`;
   fs.writeFileSync(envOut, envContent);
   console.log(`  Wrote:    ${envOut}`);
 
-  // Print Hardhat test accounts so KB can see them if he wants.
-  const accounts = await ethers.getSigners();
-  console.log("\n  Hardhat test accounts (FAKE, dev only):");
-  for (let i = 0; i < Math.min(5, accounts.length); i++) {
-    const a = accounts[i];
-    const bal = await ethers.provider.getBalance(a.address);
-    console.log(`    ${i}: ${a.address}  ${ethers.formatEther(bal)} ETH`);
-  }
-
   console.log("\nNext steps:");
   console.log("  1. cp .env.localchain.generated .env.local");
-  console.log("  2. npm run dev  (Next.js dev server on http://localhost:3000)");
-  console.log("  3. In MetaMask, add Localhost network: RPC http://127.0.0.1:8545, chainId 31337");
-  console.log("  4. Click Connect Wallet on the site, pick Localhost, mint.");
+  console.log("  2. Stop and restart `npm run dev`");
+  console.log("  3. In MetaMask, switch to Localhost (chainId 31337)");
+  console.log("  4. Click Connect Wallet on the site, mint up to 3 of your bound SDR's variants.");
 }
 
 main().catch((err) => {

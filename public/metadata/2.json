@@ -1,40 +1,56 @@
 {
-  "name": "Ava Baker · Genesis #002",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ava_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#ava",
+  "name": "Alec Sloan · Variant 3 of 3 · #002",
+  "description": "Braintrust Collection: Genesis. Variant 3 of 3 for Alec Sloan (Mythic rarity). Wallet-bound coworker mint: only Alec Sloan's wallet can claim Alec Sloan's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/alec_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#alec",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "COMMON"
+      "trait_type": "Name",
+      "value": "Alec Sloan"
     },
     {
-      "trait_type": "Rank",
-      "value": 13
+      "trait_type": "SDR Index",
+      "value": 0
     },
     {
-      "trait_type": "Score",
-      "value": 215.62
+      "trait_type": "Variant",
+      "value": 3
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#FFD0AA"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Mythic"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: halo",
+      "trait_type": "Original Rarity",
+      "value": "UNCOMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 9
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#7B61FF"
+    },
+    {
+      "trait_type": "Accessory: top_hat",
+      "value": "silver"
+    },
+    {
+      "trait_type": "Accessory: monocle",
       "value": "gold"
     },
     {
-      "trait_type": "Accessory: heart_eyes",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: face_tattoo",
-      "value": "heart"
+      "trait_type": "Accessory: fat_gold_chain",
+      "value": "gold"
     }
   ]
 }

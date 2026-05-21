@@ -37,14 +37,18 @@ function shortError(err: unknown): string {
     return "You rejected the transaction.";
   if (msg.includes("insufficient funds"))
     return "Insufficient funds in your wallet for gas + mint price.";
+  if (msg.includes("NotAllowlisted"))
+    return "Your wallet is not on the allowlist for this drop.";
   if (msg.includes("DropClaimExceedLimit"))
-    return "You have reached the per-wallet claim limit.";
+    return "You have already claimed all 3 variants of your card.";
   if (msg.includes("DropClaimExceedMaxSupply"))
     return "Sold out.";
   if (msg.includes("DropNoActiveCondition"))
     return "Sale has not started yet.";
+  if (msg.includes("DropPaused"))
+    return "Sale is paused.";
   if (msg.includes("execution reverted"))
-    return "Transaction reverted. The sale may be paused, sold out, or you exceeded the per-wallet limit.";
+    return "Transaction reverted. You may have exceeded your claim limit or your wallet may not be on the allowlist.";
   return msg.slice(0, 140);
 }
 
@@ -83,6 +87,27 @@ export function MintCard() {
     query: { enabled: !!contractCfg && activeIdRead.data !== undefined },
   });
 
+  // Wallet-bound 3-variant drop: read per-wallet state. Best-effort: if the
+  // contract is not the local mock (e.g. real thirdweb DropERC721), these
+  // reads will fail silently and the UI falls back to the generic claim flow.
+  const slugIndexRead = useReadContract({
+    ...(contractCfg ?? {}),
+    functionName: "slugIndexFor",
+    args: address ? [address] : undefined,
+    query: { enabled: !!contractCfg && !!address },
+  });
+  const remainingRead = useReadContract({
+    ...(contractCfg ?? {}),
+    functionName: "remainingForWallet",
+    args: address ? [address] : undefined,
+    query: { enabled: !!contractCfg && !!address },
+  });
+  const slugIndex1Based = slugIndexRead.data as bigint | undefined;
+  const remainingForWallet = remainingRead.data as bigint | undefined;
+  const isAllowlisted = slugIndex1Based !== undefined && slugIndex1Based > 0n;
+  const fullyClaimed =
+    remainingForWallet !== undefined && remainingForWallet === 0n;
+
   const condition = conditionRead.data as ClaimCondition | undefined;
 
   const totalMinted = Number(mintedRead.data ?? 0n);
@@ -104,7 +129,15 @@ export function MintCard() {
   const wrongNetwork = isConnected && chainId !== activeChain.id;
 
   const [quantity, setQuantity] = useState(1);
-  const maxPerTx = maxPerWallet > 0n ? Number(maxPerWallet) : 1;
+  // The contract reports the per-wallet cap (3). The actual remaining for
+  // this wallet is `remainingForWallet`. Clamp quantity selector to that.
+  const remainingForUser =
+    remainingForWallet !== undefined
+      ? Number(remainingForWallet)
+      : maxPerWallet > 0n
+      ? Number(maxPerWallet)
+      : 1;
+  const maxPerTx = Math.max(1, remainingForUser);
 
   const {
     writeContract,
@@ -115,11 +148,12 @@ export function MintCard() {
   } = useWriteContract();
   const receipt = useWaitForTransactionReceipt({ hash: txHash });
 
-  // Refetch minted-count + condition after a confirmed claim.
+  // Refetch minted-count + condition + per-wallet state after a confirmed claim.
   useEffect(() => {
     if (receipt.isSuccess) {
       mintedRead.refetch();
       conditionRead.refetch();
+      remainingRead.refetch();
     }
   }, [receipt.isSuccess]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -173,8 +207,14 @@ export function MintCard() {
             }
           />
           <Stat
-            label="Max per wallet"
-            value={maxPerWallet > 0n ? String(maxPerWallet) : "n/a"}
+            label={isConnected ? "Your variants" : "Max per wallet"}
+            value={
+              isConnected && remainingForWallet !== undefined
+                ? `${3 - Number(remainingForWallet)} of 3 claimed`
+                : maxPerWallet > 0n
+                ? `${maxPerWallet} per wallet`
+                : "n/a"
+            }
           />
         </div>
 
@@ -205,6 +245,18 @@ export function MintCard() {
                   {isSwitching ? "Switching..." : `Switch to ${activeChain.name}`}
                 </button>
               }
+            />
+          ) : isConnected && !isAllowlisted && slugIndexRead.isFetched ? (
+            <StateBlock
+              tone="warn"
+              title="Wallet not on allowlist"
+              body="This drop is bound 1-to-1: each coworker's wallet can only mint their own card. Your wallet is not on the allowlist for any SDR. If you think this is a mistake, reach out to the team."
+            />
+          ) : isConnected && fullyClaimed ? (
+            <StateBlock
+              tone="dim"
+              title="All 3 variants claimed"
+              body="You've already minted all 3 variants of your card. Check your wallet's NFT tab to see them."
             />
           ) : soldOut ? (
             <StateBlock

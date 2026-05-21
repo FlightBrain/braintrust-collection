@@ -1,0 +1,56 @@
+{
+  "name": "Joe Meade · Variant 1 of 3 · #021",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Joe Meade (Common rarity). Wallet-bound coworker mint: only Joe Meade's wallet can claim Joe Meade's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/joe_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#joe",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Joe Meade"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 7
+    },
+    {
+      "trait_type": "Variant",
+      "value": 1
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 5
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FF3366"
+    },
+    {
+      "trait_type": "Accessory: spartan_helmet",
+      "value": "bronze"
+    },
+    {
+      "trait_type": "Accessory: mustache_chevron",
+      "value": "black"
+    },
+    {
+      "trait_type": "Accessory: face_tattoo",
+      "value": "dollar"
+    }
+  ]
+}

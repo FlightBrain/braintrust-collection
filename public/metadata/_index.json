@@ -1,77 +1,272 @@
 [
   {
+    "tokenId": 0,
+    "slug": "alec",
+    "variant": 1,
+    "file": "0.json"
+  },
+  {
     "tokenId": 1,
     "slug": "alec",
+    "variant": 2,
     "file": "1.json"
   },
   {
     "tokenId": 2,
-    "slug": "ava",
+    "slug": "alec",
+    "variant": 3,
     "file": "2.json"
   },
   {
     "tokenId": 3,
-    "slug": "catherine",
+    "slug": "ava",
+    "variant": 1,
     "file": "3.json"
   },
   {
     "tokenId": 4,
-    "slug": "chris",
+    "slug": "ava",
+    "variant": 2,
     "file": "4.json"
   },
   {
     "tokenId": 5,
-    "slug": "duncan",
+    "slug": "ava",
+    "variant": 3,
     "file": "5.json"
   },
   {
     "tokenId": 6,
-    "slug": "evan",
+    "slug": "catherine",
+    "variant": 1,
     "file": "6.json"
   },
   {
     "tokenId": 7,
-    "slug": "garrett",
+    "slug": "catherine",
+    "variant": 2,
     "file": "7.json"
   },
   {
     "tokenId": 8,
-    "slug": "joe",
+    "slug": "catherine",
+    "variant": 3,
     "file": "8.json"
   },
   {
     "tokenId": 9,
-    "slug": "kensington",
+    "slug": "chris",
+    "variant": 1,
     "file": "9.json"
   },
   {
     "tokenId": 10,
-    "slug": "keslar",
+    "slug": "chris",
+    "variant": 2,
     "file": "10.json"
   },
   {
     "tokenId": 11,
-    "slug": "nick",
+    "slug": "chris",
+    "variant": 3,
     "file": "11.json"
   },
   {
     "tokenId": 12,
-    "slug": "owen",
+    "slug": "duncan",
+    "variant": 1,
     "file": "12.json"
   },
   {
     "tokenId": 13,
-    "slug": "ryan",
+    "slug": "duncan",
+    "variant": 2,
     "file": "13.json"
   },
   {
     "tokenId": 14,
-    "slug": "sacha",
+    "slug": "duncan",
+    "variant": 3,
     "file": "14.json"
   },
   {
     "tokenId": 15,
-    "slug": "shaune",
+    "slug": "evan",
+    "variant": 1,
     "file": "15.json"
+  },
+  {
+    "tokenId": 16,
+    "slug": "evan",
+    "variant": 2,
+    "file": "16.json"
+  },
+  {
+    "tokenId": 17,
+    "slug": "evan",
+    "variant": 3,
+    "file": "17.json"
+  },
+  {
+    "tokenId": 18,
+    "slug": "garrett",
+    "variant": 1,
+    "file": "18.json"
+  },
+  {
+    "tokenId": 19,
+    "slug": "garrett",
+    "variant": 2,
+    "file": "19.json"
+  },
+  {
+    "tokenId": 20,
+    "slug": "garrett",
+    "variant": 3,
+    "file": "20.json"
+  },
+  {
+    "tokenId": 21,
+    "slug": "joe",
+    "variant": 1,
+    "file": "21.json"
+  },
+  {
+    "tokenId": 22,
+    "slug": "joe",
+    "variant": 2,
+    "file": "22.json"
+  },
+  {
+    "tokenId": 23,
+    "slug": "joe",
+    "variant": 3,
+    "file": "23.json"
+  },
+  {
+    "tokenId": 24,
+    "slug": "kensington",
+    "variant": 1,
+    "file": "24.json"
+  },
+  {
+    "tokenId": 25,
+    "slug": "kensington",
+    "variant": 2,
+    "file": "25.json"
+  },
+  {
+    "tokenId": 26,
+    "slug": "kensington",
+    "variant": 3,
+    "file": "26.json"
+  },
+  {
+    "tokenId": 27,
+    "slug": "keslar",
+    "variant": 1,
+    "file": "27.json"
+  },
+  {
+    "tokenId": 28,
+    "slug": "keslar",
+    "variant": 2,
+    "file": "28.json"
+  },
+  {
+    "tokenId": 29,
+    "slug": "keslar",
+    "variant": 3,
+    "file": "29.json"
+  },
+  {
+    "tokenId": 30,
+    "slug": "nick",
+    "variant": 1,
+    "file": "30.json"
+  },
+  {
+    "tokenId": 31,
+    "slug": "nick",
+    "variant": 2,
+    "file": "31.json"
+  },
+  {
+    "tokenId": 32,
+    "slug": "nick",
+    "variant": 3,
+    "file": "32.json"
+  },
+  {
+    "tokenId": 33,
+    "slug": "owen",
+    "variant": 1,
+    "file": "33.json"
+  },
+  {
+    "tokenId": 34,
+    "slug": "owen",
+    "variant": 2,
+    "file": "34.json"
+  },
+  {
+    "tokenId": 35,
+    "slug": "owen",
+    "variant": 3,
+    "file": "35.json"
+  },
+  {
+    "tokenId": 36,
+    "slug": "ryan",
+    "variant": 1,
+    "file": "36.json"
+  },
+  {
+    "tokenId": 37,
+    "slug": "ryan",
+    "variant": 2,
+    "file": "37.json"
+  },
+  {
+    "tokenId": 38,
+    "slug": "ryan",
+    "variant": 3,
+    "file": "38.json"
+  },
+  {
+    "tokenId": 39,
+    "slug": "sacha",
+    "variant": 1,
+    "file": "39.json"
+  },
+  {
+    "tokenId": 40,
+    "slug": "sacha",
+    "variant": 2,
+    "file": "40.json"
+  },
+  {
+    "tokenId": 41,
+    "slug": "sacha",
+    "variant": 3,
+    "file": "41.json"
+  },
+  {
+    "tokenId": 42,
+    "slug": "shaune",
+    "variant": 1,
+    "file": "42.json"
+  },
+  {
+    "tokenId": 43,
+    "slug": "shaune",
+    "variant": 2,
+    "file": "43.json"
+  },
+  {
+    "tokenId": 44,
+    "slug": "shaune",
+    "variant": 3,
+    "file": "44.json"
   }
 ]

@@ -13,15 +13,19 @@ gas fee paid by the minter).
 ## CSV format
 
 ```
-name_optional,email_optional,wallet_address,max_claimable,price,notes_optional
-Alex Doe,,0x1234...abcd,1,0,
-Sam Lee,,0xabcd...1234,1,0,
+name,slug,wallet_address,max_claimable,price,notes_optional
+Alex Doe,alec,0x1234...abcd,3,0,
+Sam Lee,sacha,0xabcd...1234,3,0,
 ```
 
-- `name_optional`, `email_optional`, `notes_optional`: leave blank if you prefer.
-- `wallet_address`: required.
-- `max_claimable`: should be `1` per wallet for the coworker drop.
-- `price`: should be `0` for the coworker drop.
+- `name`: optional display name.
+- `slug`: REQUIRED. The SDR this wallet is allowed to mint. Must be one of: alec, ava, catherine, chris, duncan, evan, garrett, joe, kensington, keslar, nick, owen, ryan, sacha, shaune.
+- `wallet_address`: REQUIRED. 0x + 40 hex chars.
+- `max_claimable`: 1 to 3. The coworker drop uses 3.
+- `price`: must be `0` for the coworker drop.
+- `notes_optional`: anything you want.
+
+**Wallet-bound rule:** each wallet is mapped to exactly one SDR. That wallet can ONLY mint their own SDR's variants. Token IDs are deterministic: `slugIndex * 3 + walletClaimedCount`. For example, KB at slug "kensington" (index 8) mints tokens 24, 25, 26.
 
 ## Validate the list
 

@@ -2,32 +2,30 @@
 pragma solidity ^0.8.20;
 
 /**
- * LocalMockDrop
+ * LocalMockDrop (v2)
  *
- * A minimal mock of thirdweb's DropERC721 used ONLY on a local Hardhat node
- * for frontend testing. It is NOT production-grade and must never be deployed
- * to mainnet. The ABI is intentionally shaped to match thirdweb's
- * `claim(receiver, quantity, currency, pricePerToken, AllowlistProof, data)`
- * so the existing MintCard frontend works unchanged.
+ * Local-only mock used for testing the wallet-bound 3-variant mint flow.
+ * Supply: 15 SDRs x 3 variants = 45 tokens.
+ * Each wallet on the allowlist is bound to exactly one SDR (slug index).
+ * That wallet can mint up to 3 tokens, and each mint returns the next
+ * sequential variant of that wallet's SDR (no other SDR is reachable from
+ * this wallet).
  *
- * What it implements:
- *   - ERC-721 mint with token ids starting at 0
- *   - Free claim (price = 0)
- *   - Per-wallet limit (1 by default, configurable)
- *   - Hard total supply cap (default 15)
- *   - Pausable
- *   - tokenURI = baseURI + id
- *   - thirdweb-style claim condition reads
+ * Token layout:
+ *   slug index 0  -> tokens 0, 1, 2
+ *   slug index 1  -> tokens 3, 4, 5
+ *   ...
+ *   slug index 14 -> tokens 42, 43, 44
  *
- * What it does NOT implement:
- *   - Merkle allowlists (proof is accepted and ignored)
- *   - ERC-2981 royalty enforcement
- *   - Currency other than native ETH
- *   - Sale window scheduling beyond `startTimestamp`
- *   - Access control beyond a single owner
+ * This logic does NOT exist in thirdweb's DropERC721. Production deployment
+ * (Sepolia or mainnet) will need either a custom ERC721 with the same rules,
+ * or thirdweb claim conditions split into 15 per-SDR allowlisted phases.
+ * This contract is for local frontend testing ONLY. Not audited. Not for
+ * production.
  *
- * Anyone reading this contract for production use: stop. Use thirdweb's real
- * DropERC721 or an audited OpenZeppelin-based contract.
+ * The claim() signature still mirrors thirdweb's so the MintCard frontend
+ * works unchanged. The receiver/quantity/value enforcement plus the
+ * wallet-to-SDR binding all live in this contract.
  */
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -36,13 +34,26 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 contract LocalMockDrop is ERC721, Ownable {
     using Strings for uint256;
 
+    // ====== Constants ======
+    uint256 public constant VARIANTS_PER_SDR = 3;
+    uint256 public constant SDR_COUNT = 15;
+    uint256 public constant MAX_PER_WALLET = 3;
+    // Slug indices are stored 1-based so 0 acts as "not allowlisted".
+
+    address public constant NATIVE_TOKEN =
+        0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
+
     // ====== Storage ======
     string private _baseUriValue;
-    uint256 public nextTokenIdToMint;   // doubles as supply-claimed count
-    uint256 public maxTotalSupply;
+    uint256 public totalMinted;
     bool private _paused;
 
-    // ====== thirdweb-compatible claim condition ======
+    // wallet -> 1-based slug index (1..15). 0 means "not on allowlist".
+    mapping(address => uint256) public walletSlugIndex;
+    // wallet -> count of variants already claimed (0..3).
+    mapping(address => uint256) public walletClaimedCount;
+
+    // ====== thirdweb-compatible claim condition (purely informational) ======
     struct ClaimCondition {
         uint256 startTimestamp;
         uint256 maxClaimableSupply;
@@ -60,29 +71,24 @@ contract LocalMockDrop is ERC721, Ownable {
         address currency;
     }
     ClaimCondition private _condition;
-    mapping(address => uint256) public claimedPerWallet;
-
-    address public constant NATIVE_TOKEN =
-        0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
 
     // ====== Events ======
     event Claimed(address indexed receiver, uint256 startTokenId, uint256 quantity);
+    event AllowlistSet(address indexed wallet, uint256 slugIndex1Based);
 
-    constructor(
-        string memory name_,
-        string memory symbol_,
-        uint256 maxSupply_
-    ) ERC721(name_, symbol_) Ownable(msg.sender) {
-        maxTotalSupply = maxSupply_;
+    constructor(string memory name_, string memory symbol_)
+        ERC721(name_, symbol_)
+        Ownable(msg.sender)
+    {
         _condition = ClaimCondition({
             startTimestamp: block.timestamp,
-            maxClaimableSupply: maxSupply_,
+            maxClaimableSupply: SDR_COUNT * VARIANTS_PER_SDR,
             supplyClaimed: 0,
-            quantityLimitPerWallet: 1,
+            quantityLimitPerWallet: MAX_PER_WALLET,
             merkleRoot: bytes32(0),
             pricePerToken: 0,
             currency: NATIVE_TOKEN,
-            metadata: "local-mock"
+            metadata: "local-mock-v2"
         });
     }
 
@@ -95,17 +101,40 @@ contract LocalMockDrop is ERC721, Ownable {
         _paused = p;
     }
 
-    function setMaxPerWallet(uint256 n) external onlyOwner {
-        _condition.quantityLimitPerWallet = n;
+    function setAllowlistEntry(address wallet, uint256 slugIndex1Based) external onlyOwner {
+        require(slugIndex1Based <= SDR_COUNT, "BadSlugIndex");
+        walletSlugIndex[wallet] = slugIndex1Based;
+        emit AllowlistSet(wallet, slugIndex1Based);
     }
 
-    // ====== Reads (thirdweb-compatible names) ======
+    function setAllowlistBatch(
+        address[] calldata wallets,
+        uint256[] calldata slugIndices1Based
+    ) external onlyOwner {
+        require(wallets.length == slugIndices1Based.length, "LengthMismatch");
+        for (uint256 i = 0; i < wallets.length; i++) {
+            require(slugIndices1Based[i] <= SDR_COUNT, "BadSlugIndex");
+            walletSlugIndex[wallets[i]] = slugIndices1Based[i];
+            emit AllowlistSet(wallets[i], slugIndices1Based[i]);
+        }
+    }
+
+    // ====== Reads ======
     function paused() external view returns (bool) {
         return _paused;
     }
 
-    function maxClaimableSupply() external view returns (uint256) {
-        return maxTotalSupply;
+    function maxTotalSupply() external pure returns (uint256) {
+        return SDR_COUNT * VARIANTS_PER_SDR;
+    }
+
+    function nextTokenIdToMint() external view returns (uint256) {
+        // Returns total minted count, used by frontend "minted / maxSupply" display.
+        return totalMinted;
+    }
+
+    function maxClaimableSupply() external pure returns (uint256) {
+        return SDR_COUNT * VARIANTS_PER_SDR;
     }
 
     function getActiveClaimConditionId() external pure returns (uint256) {
@@ -118,6 +147,20 @@ contract LocalMockDrop is ERC721, Ownable {
         returns (ClaimCondition memory)
     {
         return _condition;
+    }
+
+    function isAllowlisted(address wallet) external view returns (bool) {
+        return walletSlugIndex[wallet] > 0;
+    }
+
+    function slugIndexFor(address wallet) external view returns (uint256) {
+        // Returns 0 if not allowlisted, else 1..15.
+        return walletSlugIndex[wallet];
+    }
+
+    function remainingForWallet(address wallet) external view returns (uint256) {
+        uint256 claimed = walletClaimedCount[wallet];
+        return claimed >= MAX_PER_WALLET ? 0 : MAX_PER_WALLET - claimed;
     }
 
     function _baseURI() internal view override returns (string memory) {
@@ -143,25 +186,26 @@ contract LocalMockDrop is ERC721, Ownable {
     ) external payable {
         require(!_paused, "DropPaused");
         require(quantity > 0, "DropBadQuantity");
-        require(
-            nextTokenIdToMint + quantity <= maxTotalSupply,
-            "DropClaimExceedMaxSupply"
-        );
-        require(
-            claimedPerWallet[receiver] + quantity <= _condition.quantityLimitPerWallet,
-            "DropClaimExceedLimit"
-        );
-        // Free claim by design. Reject any sent ETH to keep behavior obvious.
         require(msg.value == 0, "DropFreeClaimOnly");
 
-        uint256 startId = nextTokenIdToMint;
+        uint256 slugIdx1 = walletSlugIndex[receiver];
+        require(slugIdx1 > 0, "NotAllowlisted");
+        // Convert to 0-based.
+        uint256 slugIdx = slugIdx1 - 1;
+
+        uint256 alreadyClaimed = walletClaimedCount[receiver];
+        require(alreadyClaimed + quantity <= MAX_PER_WALLET, "DropClaimExceedLimit");
+
+        // Token id for this wallet's k-th claim is slugIdx * 3 + k (0-indexed).
+        uint256 startTokenId = slugIdx * VARIANTS_PER_SDR + alreadyClaimed;
         for (uint256 i = 0; i < quantity; i++) {
-            _safeMint(receiver, nextTokenIdToMint);
-            unchecked { nextTokenIdToMint += 1; }
+            _safeMint(receiver, startTokenId + i);
         }
-        claimedPerWallet[receiver] += quantity;
+
+        walletClaimedCount[receiver] = alreadyClaimed + quantity;
+        totalMinted += quantity;
         _condition.supplyClaimed += quantity;
 
-        emit Claimed(receiver, startId, quantity);
+        emit Claimed(receiver, startTokenId, quantity);
     }
 }

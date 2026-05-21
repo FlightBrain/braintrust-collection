@@ -114,6 +114,24 @@ export const collectionAbi = [
     inputs: [],
     outputs: [{ type: "bool" }],
   },
+  // === Wallet-bound 3-variant reads (only exist on the local mock) ===
+  // Returns the 1-based SDR index the wallet is allowed to mint (0 if not
+  // on the allowlist). Real thirdweb Drops will not have this function, and
+  // wagmi will silently return undefined.
+  {
+    type: "function",
+    name: "slugIndexFor",
+    stateMutability: "view",
+    inputs: [{ name: "wallet", type: "address" }],
+    outputs: [{ type: "uint256" }],
+  },
+  {
+    type: "function",
+    name: "remainingForWallet",
+    stateMutability: "view",
+    inputs: [{ name: "wallet", type: "address" }],
+    outputs: [{ type: "uint256" }],
+  },
   // === Writes ===
   {
     type: "function",

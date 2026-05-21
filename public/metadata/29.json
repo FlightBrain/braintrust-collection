@@ -1,0 +1,52 @@
+{
+  "name": "Keslar Simpson · Variant 3 of 3 · #029",
+  "description": "Braintrust Collection: Genesis. Variant 3 of 3 for Keslar Simpson (Mythic rarity). Wallet-bound coworker mint: only Keslar Simpson's wallet can claim Keslar Simpson's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/keslar_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#keslar",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Keslar Simpson"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 9
+    },
+    {
+      "trait_type": "Variant",
+      "value": 3
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 12
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#4ECDC4"
+    },
+    {
+      "trait_type": "Accessory: viking_helmet",
+      "value": "bronze"
+    },
+    {
+      "trait_type": "Accessory: beard_full",
+      "value": "red"
+    }
+  ]
+}

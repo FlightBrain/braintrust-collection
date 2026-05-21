@@ -1,20 +1,26 @@
 /**
- * Generates ERC-721 metadata JSON for each token in the collection.
+ * Generates ERC-721 metadata JSON for the wallet-bound 3-variant flow.
  *
- * Reads existing per-SDR data:
- *   public/auto_people.json  (name, trait, accessories, etc.)
- *   public/rarity.json       (tier, rank, score)
- *   public/sdrs/assignments.json (each SDR's chosen accessories)
+ * Layout: 15 SDRs x 3 variants = 45 tokens.
+ *   Tokens 0,1,2   -> SDR 0 (alec)   variants Common, Rare, Mythic
+ *   Tokens 3,4,5   -> SDR 1 (ava)    variants Common, Rare, Mythic
+ *   ...
+ *   Tokens 42,43,44 -> SDR 14 (shaune) variants Common, Rare, Mythic
+ *
+ * Reads:
+ *   public/auto_people.json
+ *   public/rarity.json
+ *   public/sdrs/assignments.json (assigned accessories per SDR, optional)
  *
  * Writes:
- *   public/metadata/{tokenId}.json    (one per token)
- *   public/metadata/_index.json       (collection-level index)
+ *   public/metadata/{0..44}.json
+ *   public/metadata/_index.json
  *
- * Image URL: by default points at the local /nfts/corporate/{slug}_nft.svg.
- * For production, edit BASE_IMAGE_URI to an IPFS gateway URI (e.g.
- *   ipfs://<cid>/{slug}_nft.svg or https://<gateway>/ipfs/<cid>/{slug}_nft.svg).
- *
- * Does NOT touch any artwork. Only writes metadata JSON.
+ * IMAGE NOTE: until we generate dedicated variant SVGs, all 3 variants of a
+ * given SDR reference the same SVG (the existing /nfts/corporate/{slug}_nft.svg).
+ * Metadata attributes encode the variant + rarity tier. Art is unchanged.
+ * Variant SVGs will be generated as a separate task after this system is
+ * approved.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -25,10 +31,14 @@ const RARITY_PATH = path.join(ROOT, "public", "rarity.json");
 const ASSIGN_PATH = path.join(ROOT, "public", "sdrs", "assignments.json");
 const OUT_DIR = path.join(ROOT, "public", "metadata");
 
-// Edit this for production. Use an IPFS URI once art is pinned.
 const BASE_IMAGE_URI =
   process.env.NEXT_PUBLIC_BASE_IMAGE_URI ??
   "https://braintrust-collection.vercel.app";
+
+const VARIANTS_PER_SDR = 3;
+
+// Rarity tiers per variant index. Pre-generated, not random on chain.
+const VARIANT_TIERS = ["Common", "Rare", "Mythic"] as const;
 
 type Person = { slug: string; name: string; trait?: string };
 type Rarity = { tier: string; rank: number; score: number };
@@ -45,29 +55,42 @@ function load() {
   return { people, rarity, accByslug };
 }
 
-function metadataFor(p: Person, idx: number, rarity: Record<string, Rarity>, accByslug: Record<string, string[]>) {
-  const tokenId = idx + 1;
+function metadataFor(
+  p: Person,
+  sdrIndex: number,
+  variantIndex: number,
+  rarity: Record<string, Rarity>,
+  accByslug: Record<string, string[]>
+) {
+  const tokenId = sdrIndex * VARIANTS_PER_SDR + variantIndex;
   const r = rarity[p.slug];
   const accs = accByslug[p.slug] ?? [];
+  const variantTier = VARIANT_TIERS[variantIndex];
 
-  const attributes: { trait_type: string; value: string | number }[] = [];
+  const attributes: { trait_type: string; value: string | number }[] = [
+    { trait_type: "Name", value: p.name },
+    { trait_type: "SDR Index", value: sdrIndex },
+    { trait_type: "Variant", value: variantIndex + 1 },
+    { trait_type: "Variants Total", value: VARIANTS_PER_SDR },
+    { trait_type: "Variant Rarity", value: variantTier },
+    { trait_type: "Edition", value: "Genesis" },
+  ];
   if (r) {
-    attributes.push({ trait_type: "Rarity", value: r.tier });
-    attributes.push({ trait_type: "Rank", value: r.rank });
-    attributes.push({ trait_type: "Score", value: r.score });
+    attributes.push({ trait_type: "Original Rarity", value: r.tier });
+    attributes.push({ trait_type: "Original Rank", value: r.rank });
   }
   if (p.trait) attributes.push({ trait_type: "Trait Color", value: p.trait });
-  attributes.push({ trait_type: "Edition", value: "Genesis" });
   for (const acc of accs) {
     const [item, color] = acc.split("__");
     attributes.push({ trait_type: `Accessory: ${item}`, value: color });
   }
 
   return {
-    name: `${p.name} · Genesis #${String(tokenId).padStart(3, "0")}`,
+    name: `${p.name} · Variant ${variantIndex + 1} of ${VARIANTS_PER_SDR} · #${String(tokenId).padStart(3, "0")}`,
     description:
-      "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. " +
-      "1 of 1, with hand-picked NFT accessories.",
+      `Braintrust Collection: Genesis. ` +
+      `Variant ${variantIndex + 1} of ${VARIANTS_PER_SDR} for ${p.name} (${variantTier} rarity). ` +
+      `Wallet-bound coworker mint: only ${p.name}'s wallet can claim ${p.name}'s variants.`,
     image: `${BASE_IMAGE_URI}/nfts/corporate/${p.slug}_nft.svg`,
     external_url: `https://braintrust-collection.vercel.app/gallery#${p.slug}`,
     attributes,
@@ -76,21 +99,31 @@ function metadataFor(p: Person, idx: number, rarity: Record<string, Rarity>, acc
 
 function main() {
   const { people, rarity, accByslug } = load();
+
+  // Wipe + rebuild only the per-token JSONs; preserve collection.json + _index.json (regenerated).
   fs.mkdirSync(OUT_DIR, { recursive: true });
+  for (const f of fs.readdirSync(OUT_DIR)) {
+    if (/^\d+\.json$/.test(f)) fs.unlinkSync(path.join(OUT_DIR, f));
+  }
 
-  const index: { tokenId: number; slug: string; file: string }[] = [];
+  const index: { tokenId: number; slug: string; variant: number; file: string }[] = [];
 
-  for (let i = 0; i < people.length; i++) {
-    const p = people[i];
-    const meta = metadataFor(p, i, rarity, accByslug);
-    const file = `${i + 1}.json`;
-    fs.writeFileSync(path.join(OUT_DIR, file), JSON.stringify(meta, null, 2));
-    index.push({ tokenId: i + 1, slug: p.slug, file });
-    console.log(`  #${String(i + 1).padStart(3, "0")} ${p.name.padEnd(22)} -> metadata/${file}`);
+  for (let sdrIndex = 0; sdrIndex < people.length; sdrIndex++) {
+    const p = people[sdrIndex];
+    for (let v = 0; v < VARIANTS_PER_SDR; v++) {
+      const tokenId = sdrIndex * VARIANTS_PER_SDR + v;
+      const meta = metadataFor(p, sdrIndex, v, rarity, accByslug);
+      const file = `${tokenId}.json`;
+      fs.writeFileSync(path.join(OUT_DIR, file), JSON.stringify(meta, null, 2));
+      index.push({ tokenId, slug: p.slug, variant: v + 1, file });
+    }
+    console.log(
+      `  SDR ${String(sdrIndex).padStart(2, "0")} ${p.name.padEnd(22)} -> tokens ${sdrIndex * 3}, ${sdrIndex * 3 + 1}, ${sdrIndex * 3 + 2}`
+    );
   }
 
   fs.writeFileSync(path.join(OUT_DIR, "_index.json"), JSON.stringify(index, null, 2));
-  console.log(`\nwrote ${people.length} token metadata files to ${OUT_DIR}`);
+  console.log(`\nwrote ${index.length} token metadata files to ${OUT_DIR}`);
 }
 
 main();

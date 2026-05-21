@@ -1,40 +1,56 @@
 {
-  "name": "Duncan Lewis · Genesis #005",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/duncan_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#duncan",
+  "name": "Ava Baker · Variant 3 of 3 · #005",
+  "description": "Braintrust Collection: Genesis. Variant 3 of 3 for Ava Baker (Mythic rarity). Wallet-bound coworker mint: only Ava Baker's wallet can claim Ava Baker's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ava_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#ava",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "LEGENDARY"
+      "trait_type": "Name",
+      "value": "Ava Baker"
     },
     {
-      "trait_type": "Rank",
+      "trait_type": "SDR Index",
+      "value": 1
+    },
+    {
+      "trait_type": "Variant",
       "value": 3
     },
     {
-      "trait_type": "Score",
-      "value": 339.4
+      "trait_type": "Variants Total",
+      "value": 3
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#7B61FF"
+      "trait_type": "Variant Rarity",
+      "value": "Mythic"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: wizard_hat",
-      "value": "purple"
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
     },
     {
-      "trait_type": "Accessory: crown_of_thorns",
-      "value": "default"
+      "trait_type": "Original Rank",
+      "value": 13
     },
     {
-      "trait_type": "Accessory: goatee",
-      "value": "black"
+      "trait_type": "Trait Color",
+      "value": "#FFD0AA"
+    },
+    {
+      "trait_type": "Accessory: halo",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: heart_eyes",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: face_tattoo",
+      "value": "heart"
     }
   ]
 }

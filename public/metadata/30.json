@@ -1,0 +1,56 @@
+{
+  "name": "Nick Gaspardone · Variant 1 of 3 · #030",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Nick Gaspardone (Common rarity). Wallet-bound coworker mint: only Nick Gaspardone's wallet can claim Nick Gaspardone's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/nick_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#nick",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Nick Gaspardone"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 10
+    },
+    {
+      "trait_type": "Variant",
+      "value": 1
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 14
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#88CCFF"
+    },
+    {
+      "trait_type": "Accessory: top_hat",
+      "value": "black"
+    },
+    {
+      "trait_type": "Accessory: aviators",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: necktie",
+      "value": "navy"
+    }
+  ]
+}

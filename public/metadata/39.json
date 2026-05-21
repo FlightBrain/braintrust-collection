@@ -1,0 +1,56 @@
+{
+  "name": "Sacha Thompson · Variant 1 of 3 · #039",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Sacha Thompson (Common rarity). Wallet-bound coworker mint: only Sacha Thompson's wallet can claim Sacha Thompson's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/sacha_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#sacha",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Sacha Thompson"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 13
+    },
+    {
+      "trait_type": "Variant",
+      "value": 1
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 6
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FF8C42"
+    },
+    {
+      "trait_type": "Accessory: baseball_cap",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: headband",
+      "value": "white"
+    },
+    {
+      "trait_type": "Accessory: bubble_gum_bubble",
+      "value": "default"
+    }
+  ]
+}

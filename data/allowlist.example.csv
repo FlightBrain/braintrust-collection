@@ -1,4 +1,4 @@
-name_optional,email_optional,wallet_address,max_claimable,price,notes_optional
-Kensington Belza (deployer),,0x6D0ab0B66EF699FDb5f8e8af69FcFcb395D4208E,1,0,KB main wallet
-Example Coworker 1,,0x0000000000000000000000000000000000000001,1,0,example only
-Example Coworker 2,,0x0000000000000000000000000000000000000002,1,0,example only
+name,slug,wallet_address,max_claimable,price,notes_optional
+Kensington Belza (deployer),kensington,0x6D0ab0B66EF699FDb5f8e8af69FcFcb395D4208E,3,0,KB main wallet (SDR index 8 -> tokens 24,25,26)
+Example Coworker (Alec),alec,0x0000000000000000000000000000000000000001,3,0,placeholder
+Example Coworker (Ava),ava,0x0000000000000000000000000000000000000002,3,0,placeholder

@@ -1,0 +1,56 @@
+{
+  "name": "Garrett Buchanan · Variant 3 of 3 · #020",
+  "description": "Braintrust Collection: Genesis. Variant 3 of 3 for Garrett Buchanan (Mythic rarity). Wallet-bound coworker mint: only Garrett Buchanan's wallet can claim Garrett Buchanan's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/garrett_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#garrett",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Garrett Buchanan"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 6
+    },
+    {
+      "trait_type": "Variant",
+      "value": 3
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 15
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD93D"
+    },
+    {
+      "trait_type": "Accessory: king_crown",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: cigar",
+      "value": "brown"
+    },
+    {
+      "trait_type": "Accessory: beard_full",
+      "value": "black"
+    }
+  ]
+}

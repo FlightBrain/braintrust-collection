@@ -1,0 +1,56 @@
+{
+  "name": "Ryan Gwyn · Variant 1 of 3 · #036",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Ryan Gwyn (Common rarity). Wallet-bound coworker mint: only Ryan Gwyn's wallet can claim Ryan Gwyn's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ryan_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#ryan",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Ryan Gwyn"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 12
+    },
+    {
+      "trait_type": "Variant",
+      "value": 1
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "MYTHIC"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 1
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#B8FF3D"
+    },
+    {
+      "trait_type": "Accessory: brain_pendant_chain",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: glowing_eyes",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: pixel_shades",
+      "value": "black"
+    }
+  ]
+}

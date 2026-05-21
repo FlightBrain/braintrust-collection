@@ -88,25 +88,62 @@ In MetaMask:
 
 You should see 10 ETH in your wallet (the deploy script pre-funded you).
 
-## Mint
+## Mint flow (wallet-bound, 3 variants per coworker)
+
+The local mock contract enforces:
+- Each wallet is bound to one SDR via an allowlist set at deploy time.
+- That wallet can mint up to 3 NFTs, each one a sequential pre-generated variant of their SDR's card.
+- No other wallet can mint that SDR's tokens.
+- Non-allowlisted wallets cannot mint anything.
+- Free mints (price = 0).
+
+KB's wallet `0x6D0a...208E` is pre-seeded as `kensington` (SDR index 8). His
+3 variant token ids are **24, 25, 26**.
+
+### Walkthrough
 
 1. Open http://localhost:3000.
-2. The header pill should read "Testnet live" (the chain id is 31337, contract is configured).
+2. Header pill reads "Testnet live" (chain 31337, contract configured).
 3. Click **Connect Wallet**, pick MetaMask, approve.
-4. The mint card should read "Free coworker mint, 1 per wallet".
-5. Click **Mint free**. MetaMask asks you to sign. Approve.
-6. Success state shows. The local chain has no public block explorer, so instead of a "View on Basescan" button you see the tx hash inline (e.g. `Tx hash: 0xabc123...def0`). The token is in your wallet (MetaMask "NFTs" tab if your version of MetaMask supports it).
+4. The mint card should show:
+   - Price: Free
+   - Minted: 0 / 45
+   - Your variants: 0 of 3 claimed
+5. Click **Mint free**. MetaMask prompts you to sign. Approve.
+6. Success state shows the tx hash inline (local chain has no public block explorer).
+7. Refresh the page. Stats update:
+   - Minted: 1 / 45
+   - Your variants: 1 of 3 claimed
+   - You now own token 24 (visible in MetaMask "NFTs" tab if enabled).
+8. Click **Mint free** twice more to claim variants 2 and 3 (tokens 25 and 26).
 
-## Verify per-wallet limit
+### Verify per-wallet limit
 
-To confirm the contract is enforcing max 1 per wallet:
+After 3 successful mints, click **Mint free** a fourth time. MetaMask will
+let you sign, but the tx will revert. The site shows:
+**"You have already claimed all 3 variants of your card."**
 
-1. Mint once (above).
-2. Click **Mint free** again from the same wallet.
-3. MetaMask will let you sign, but the transaction will revert on chain.
-4. The site catches it and shows: **You have reached the per-wallet claim limit.**
+(After the third mint, the UI also surfaces a dedicated "All 3 variants
+claimed" state instead of a Mint button.)
 
-To mint a second token, switch MetaMask to a different account (or import one of the 20 Hardhat test accounts printed by `npm run chain:local`).
+### Verify allowlist (non-allowlisted wallets cannot mint)
+
+1. In MetaMask, switch to a different account (or "Add account").
+2. The new account is not on the allowlist.
+3. The site should display: **"Wallet not on allowlist."** No mint button.
+
+### Verify wallet-to-SDR binding
+
+The contract enforces that token IDs are tied to the wallet's SDR. KB's
+wallet cannot mint Alec's tokens (0, 1, 2) even if it tries via a manual
+transaction. This is enforced inside `claim()`: token id is always computed
+as `sdrIndex * 3 + walletClaimedCount`.
+
+### Mint quantity selector
+
+If your wallet has any remaining variants, the mint card shows a quantity
+selector (1 to whatever you have left, max 3). Minting 3 in one transaction
+is allowed.
 
 ## Reset
 

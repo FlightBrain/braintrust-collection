@@ -1,40 +1,56 @@
 {
-  "name": "Owen Bloomer · Genesis #012",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/owen_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#owen",
+  "name": "Duncan Lewis · Variant 1 of 3 · #012",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Duncan Lewis (Common rarity). Wallet-bound coworker mint: only Duncan Lewis's wallet can claim Duncan Lewis's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/duncan_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#duncan",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "RARE"
+      "trait_type": "Name",
+      "value": "Duncan Lewis"
     },
     {
-      "trait_type": "Rank",
+      "trait_type": "SDR Index",
       "value": 4
     },
     {
-      "trait_type": "Score",
-      "value": 327.45
+      "trait_type": "Variant",
+      "value": 1
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#FFAA00"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: cowboy_hat",
-      "value": "brown"
+      "trait_type": "Original Rarity",
+      "value": "LEGENDARY"
     },
     {
-      "trait_type": "Accessory: cigarette",
-      "value": "white"
+      "trait_type": "Original Rank",
+      "value": 3
     },
     {
-      "trait_type": "Accessory: mustache_chevron",
-      "value": "brown"
+      "trait_type": "Trait Color",
+      "value": "#7B61FF"
+    },
+    {
+      "trait_type": "Accessory: wizard_hat",
+      "value": "purple"
+    },
+    {
+      "trait_type": "Accessory: crown_of_thorns",
+      "value": "default"
+    },
+    {
+      "trait_type": "Accessory: goatee",
+      "value": "black"
     }
   ]
 }

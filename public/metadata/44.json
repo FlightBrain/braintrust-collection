@@ -1,0 +1,56 @@
+{
+  "name": "Shaune Lundstrom · Variant 3 of 3 · #044",
+  "description": "Braintrust Collection: Genesis. Variant 3 of 3 for Shaune Lundstrom (Mythic rarity). Wallet-bound coworker mint: only Shaune Lundstrom's wallet can claim Shaune Lundstrom's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/shaune_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#shaune",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Shaune Lundstrom"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 14
+    },
+    {
+      "trait_type": "Variant",
+      "value": 3
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Mythic"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 11
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFD0AA"
+    },
+    {
+      "trait_type": "Accessory: knight_helmet",
+      "value": "steel"
+    },
+    {
+      "trait_type": "Accessory: pipe_sherlock",
+      "value": "default"
+    },
+    {
+      "trait_type": "Accessory: birthmark_star",
+      "value": "default"
+    }
+  ]
+}

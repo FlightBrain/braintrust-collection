@@ -1,0 +1,56 @@
+{
+  "name": "Kensington Belza · Variant 2 of 3 · #025",
+  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Kensington Belza (Rare rarity). Wallet-bound coworker mint: only Kensington Belza's wallet can claim Kensington Belza's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/kensington_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#kensington",
+  "attributes": [
+    {
+      "trait_type": "Name",
+      "value": "Kensington Belza"
+    },
+    {
+      "trait_type": "SDR Index",
+      "value": 8
+    },
+    {
+      "trait_type": "Variant",
+      "value": 2
+    },
+    {
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Original Rarity",
+      "value": "LEGENDARY"
+    },
+    {
+      "trait_type": "Original Rank",
+      "value": 2
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#9D7AFF"
+    },
+    {
+      "trait_type": "Accessory: jeweled_crown",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: third_eye",
+      "value": "purple"
+    },
+    {
+      "trait_type": "Accessory: gold_medallion",
+      "value": "gold"
+    }
+  ]
+}

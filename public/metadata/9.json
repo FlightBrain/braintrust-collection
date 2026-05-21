@@ -1,40 +1,56 @@
 {
-  "name": "Kensington Belza · Genesis #009",
-  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
-  "image": "https://braintrust-collection.vercel.app/nfts/corporate/kensington_nft.svg",
-  "external_url": "https://braintrust-collection.vercel.app/gallery#kensington",
+  "name": "Chris Koenig · Variant 1 of 3 · #009",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Chris Koenig (Common rarity). Wallet-bound coworker mint: only Chris Koenig's wallet can claim Chris Koenig's variants.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/chris_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#chris",
   "attributes": [
     {
-      "trait_type": "Rarity",
-      "value": "LEGENDARY"
+      "trait_type": "Name",
+      "value": "Chris Koenig"
     },
     {
-      "trait_type": "Rank",
-      "value": 2
+      "trait_type": "SDR Index",
+      "value": 3
     },
     {
-      "trait_type": "Score",
-      "value": 379.35
+      "trait_type": "Variant",
+      "value": 1
     },
     {
-      "trait_type": "Trait Color",
-      "value": "#9D7AFF"
+      "trait_type": "Variants Total",
+      "value": 3
+    },
+    {
+      "trait_type": "Variant Rarity",
+      "value": "Common"
     },
     {
       "trait_type": "Edition",
       "value": "Genesis"
     },
     {
-      "trait_type": "Accessory: jeweled_crown",
-      "value": "gold"
+      "trait_type": "Original Rarity",
+      "value": "UNCOMMON"
     },
     {
-      "trait_type": "Accessory: third_eye",
-      "value": "purple"
+      "trait_type": "Original Rank",
+      "value": 10
     },
     {
-      "trait_type": "Accessory: gold_medallion",
-      "value": "gold"
+      "trait_type": "Trait Color",
+      "value": "#00D9FF"
+    },
+    {
+      "trait_type": "Accessory: motorcycle_helmet",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: cyber_visor",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: scar",
+      "value": "default"
     }
   ]
 }

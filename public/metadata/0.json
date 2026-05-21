@@ -1,6 +1,6 @@
 {
-  "name": "Alec Sloan · Variant 2 of 3 · #001",
-  "description": "Braintrust Collection: Genesis. Variant 2 of 3 for Alec Sloan (Rare rarity). Wallet-bound coworker mint: only Alec Sloan's wallet can claim Alec Sloan's variants.",
+  "name": "Alec Sloan · Variant 1 of 3 · #000",
+  "description": "Braintrust Collection: Genesis. Variant 1 of 3 for Alec Sloan (Common rarity). Wallet-bound coworker mint: only Alec Sloan's wallet can claim Alec Sloan's variants.",
   "image": "https://braintrust-collection.vercel.app/nfts/corporate/alec_nft.svg",
   "external_url": "https://braintrust-collection.vercel.app/gallery#alec",
   "attributes": [
@@ -14,7 +14,7 @@
     },
     {
       "trait_type": "Variant",
-      "value": 2
+      "value": 1
     },
     {
       "trait_type": "Variants Total",
@@ -22,7 +22,7 @@
     },
     {
       "trait_type": "Variant Rarity",
-      "value": "Rare"
+      "value": "Common"
     },
     {
       "trait_type": "Edition",
