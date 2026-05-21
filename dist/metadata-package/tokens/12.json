@@ -1,0 +1,40 @@
+{
+  "name": "Owen Bloomer · Genesis #012",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/owen_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#owen",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 4
+    },
+    {
+      "trait_type": "Score",
+      "value": 327.45
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FFAA00"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: cowboy_hat",
+      "value": "brown"
+    },
+    {
+      "trait_type": "Accessory: cigarette",
+      "value": "white"
+    },
+    {
+      "trait_type": "Accessory: mustache_chevron",
+      "value": "brown"
+    }
+  ]
+}

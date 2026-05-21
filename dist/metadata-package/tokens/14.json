@@ -1,0 +1,40 @@
+{
+  "name": "Sacha Thompson · Genesis #014",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/sacha_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#sacha",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 6
+    },
+    {
+      "trait_type": "Score",
+      "value": 281.52
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FF8C42"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: baseball_cap",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: headband",
+      "value": "white"
+    },
+    {
+      "trait_type": "Accessory: bubble_gum_bubble",
+      "value": "default"
+    }
+  ]
+}

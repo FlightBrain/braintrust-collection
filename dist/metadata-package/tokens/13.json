@@ -1,0 +1,40 @@
+{
+  "name": "Ryan Gwyn · Genesis #013",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ryan_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#ryan",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "MYTHIC"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 1
+    },
+    {
+      "trait_type": "Score",
+      "value": 420.57
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#B8FF3D"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: brain_pendant_chain",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: glowing_eyes",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: pixel_shades",
+      "value": "black"
+    }
+  ]
+}

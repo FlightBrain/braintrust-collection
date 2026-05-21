@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { MobileMenu } from "./MobileMenu";
+import { StatusPill } from "./StatusPill";
 
 export function Header() {
   return (
@@ -15,10 +17,10 @@ export function Header() {
       >
         Skip to mint
       </a>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-4 py-3 sm:px-6 sm:py-4">
         <Link
           href="/"
-          className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-white"
+          className="flex items-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded"
         >
           <img
             src="https://www.braintrust.dev/icon180.png"
@@ -28,20 +30,26 @@ export function Header() {
           />
           <span className="hidden sm:inline">Braintrust Collection</span>
         </Link>
+        <div className="hidden md:block">
+          <StatusPill />
+        </div>
         <nav
           aria-label="Main"
           className="hidden gap-6 font-mono text-[10px] uppercase tracking-[0.2em] text-muted md:flex"
         >
-          <Link href="/" className="hover:text-white">Mint</Link>
-          <Link href="/gallery" className="hover:text-white">Gallery</Link>
-          <Link href="/faq" className="hover:text-white">FAQ</Link>
-          <Link href="/terms" className="hover:text-white">Terms</Link>
+          <Link href="/" className="hover:text-white focus:outline-none focus-visible:text-white focus-visible:ring-2 focus-visible:ring-accent rounded px-1">Mint</Link>
+          <Link href="/gallery" className="hover:text-white focus:outline-none focus-visible:text-white focus-visible:ring-2 focus-visible:ring-accent rounded px-1">Gallery</Link>
+          <Link href="/faq" className="hover:text-white focus:outline-none focus-visible:text-white focus-visible:ring-2 focus-visible:ring-accent rounded px-1">FAQ</Link>
+          <Link href="/terms" className="hover:text-white focus:outline-none focus-visible:text-white focus-visible:ring-2 focus-visible:ring-accent rounded px-1">Terms</Link>
         </nav>
-        <ConnectButton
-          chainStatus="icon"
-          accountStatus={{ smallScreen: "avatar", largeScreen: "full" }}
-          showBalance={false}
-        />
+        <div className="flex items-center gap-2">
+          <ConnectButton
+            chainStatus="icon"
+            accountStatus={{ smallScreen: "avatar", largeScreen: "full" }}
+            showBalance={false}
+          />
+          <MobileMenu />
+        </div>
       </div>
     </header>
   );

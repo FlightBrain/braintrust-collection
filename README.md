@@ -1,15 +1,75 @@
 # Braintrust Collection
 
 NFT minting website for **Braintrust Collection: Genesis**. 15 hand-pixeled
-collectible cards, designed as a 1/1 ERC-721 drop on Base.
+collectible cards, designed as a free coworker ERC-721 drop on Base.
 
 Built with Next.js 14 App Router, wagmi v2, RainbowKit, Tailwind. The artwork
 itself lives unchanged in `public/nfts/corporate/*.svg` and is referenced by
 both the website and the on-chain metadata.
 
 > **Status: not launch-ready.** The contract has not been deployed. Art has
-> not been pinned to IPFS. A legally-blocking TODO around employee likeness
-> consent is open. See **Launch readiness** below.
+> not been pinned to IPFS. Employee likeness consent + Braintrust brand
+> approval are open. See `docs/legal-brand-consent-checklist.md`.
+
+## Where we are now
+
+| Piece | State |
+|---|---|
+| Website | Built and live at https://braintrust-collection.vercel.app |
+| Wallet connect | Wired (Reown project ID `1244257340c4eca87602fb431b8ec3a9`) |
+| Mint UI | Ready, with all 11 mint states + a dev preview at `/dev/mint-states` |
+| Status dashboard | `/admin/status` (read-only) |
+| Token metadata | 15 JSONs generated at `public/metadata/` |
+| Collection metadata | `collection.json` generated (OpenSea format) |
+| Allowlist tooling | Validator + thirdweb-CSV exporter built |
+| Contract | NOT deployed |
+| IPFS | NOT pinned |
+| Mainnet | BLOCKED until testnet pass + legal approvals |
+| Deployer wallet on file | `0x6D0ab0B66EF699FDb5f8e8af69FcFcb395D4208E` (KB, MetaMask account 1) |
+
+## What I need to do when I come back
+
+A 12-step beginner checklist. Each step links to a doc that explains it.
+
+1. **Create MetaMask** (or pick another wallet) and back up the seed phrase **offline**. Never type it into a website. Already done if you have account `0x6D0a...208E` ready.
+2. **Get Base Sepolia test ETH** from https://www.alchemy.com/faucets/base-sepolia. Free.
+3. **Open thirdweb** at https://thirdweb.com/dashboard and connect your wallet.
+4. **Deploy NFT Drop on Base Sepolia.** Step-by-step in `docs/thirdweb-base-sepolia-walkthrough.md`.
+5. **Lazy-mint the 15 JSONs** from `public/metadata/` via thirdweb dashboard.
+6. **Configure the claim phase**: free, 1 per wallet, allowlist or open.
+7. **Copy the contract address.**
+8. **Paste it into Vercel env vars.** Step-by-step in `docs/vercel-env-walkthrough.md`.
+9. **Redeploy** the site (`npx vercel build --prod && npx vercel deploy --prebuilt --prod`).
+10. **Mint your first test token.** Verify success state + Basescan link.
+11. **Only after testnet passes**: pin art + metadata to IPFS (`docs/ipfs-finalization.md`), deploy a fresh mainnet contract, and follow `docs/mainnet-launch-runbook.md`.
+12. **Mainnet is blocked** until employee consent + brand approval (`docs/legal-brand-consent-checklist.md`) are resolved.
+
+## Beginner glossary: what each thing means
+
+- **Wallet**: An app (MetaMask, Rainbow, Coinbase Wallet) that holds a key pair. Used to sign transactions. Like a bank account that **you** control.
+- **Public wallet address**: A 42-character string starting with `0x`. Safe to share. Like an email.
+- **Seed phrase / recovery phrase**: 12 or 24 words that let anyone restore the wallet. **NEVER share.** Anyone who has it owns the wallet.
+- **Base**: A blockchain. Cheap, fast, made by Coinbase. Where this collection lives.
+- **Base Sepolia**: The Base testnet. Same shape as Base mainnet, but uses fake ETH. Free to use.
+- **Mainnet**: A blockchain that uses real money. Transactions cost real ETH.
+- **Testnet**: A blockchain that uses fake money. Free.
+- **Gas**: The fee paid to the network to process a transaction. On Base mainnet, usually a few cents.
+- **Test ETH**: Fake ETH on Base Sepolia. Get it from a faucet.
+- **Contract**: A program deployed on the blockchain. Our contract handles minting.
+- **Contract address**: A 42-character string. Where the contract lives.
+- **NFT Drop**: A contract type (from thirdweb) for collections.
+- **thirdweb**: A no-code service for deploying NFT contracts.
+- **Minting**: Creating a new token from the contract.
+- **Claiming**: thirdweb's term for minting from a Drop contract.
+- **Metadata**: A JSON file per token describing the name, image, and traits.
+- **IPFS**: A decentralized storage network. Used to host metadata + art so they survive even if our website goes offline.
+- **CID**: A content-addressed ID (looks like `bafy...`). Points at a file on IPFS.
+- **Vercel env vars**: Configuration values used by the site. Visible to anyone, so no secrets.
+- **Allowlist**: A list of wallet addresses that are allowed to mint.
+- **Royalty**: A percentage of secondary sales that goes to the creator. Marketplaces may or may not honor it.
+- **Marketplace**: Where NFTs are bought, sold, viewed (OpenSea, Magic Eden, etc.).
+- **ERC-721**: The standard for unique NFTs (1 of each).
+- **ERC-2981**: The royalty standard.
 
 ## Stack
 

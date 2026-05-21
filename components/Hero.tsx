@@ -46,16 +46,16 @@ export function Hero() {
           ))}
         </div>
 
-        <div className="mt-10 flex justify-center gap-3">
+        <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <Link
             href="#mint"
-            className="rounded-md bg-accent px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-105"
+            className="min-h-[44px] rounded-md bg-accent px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg motion-reduce:transition-none motion-reduce:hover:transform-none"
           >
             Mint a card
           </Link>
           <Link
             href="/gallery"
-            className="rounded-md border border-line px-5 py-2.5 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-accent hover:text-accent"
+            className="min-h-[44px] rounded-md border border-line px-6 py-3 font-mono text-[11px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-accent hover:text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             View gallery
           </Link>

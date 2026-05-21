@@ -1,0 +1,4 @@
+name_optional,email_optional,wallet_address,max_claimable,price,notes_optional
+Kensington Belza (deployer),,0x6D0ab0B66EF699FDb5f8e8af69FcFcb395D4208E,1,0,KB main wallet
+Example Coworker 1,,0x0000000000000000000000000000000000000001,1,0,example only
+Example Coworker 2,,0x0000000000000000000000000000000000000002,1,0,example only

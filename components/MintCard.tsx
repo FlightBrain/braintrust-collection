@@ -149,7 +149,7 @@ export function MintCard() {
 
   return (
     <section id="mint" className="mx-auto mt-16 max-w-2xl px-6">
-      <div className="rounded-2xl border border-line bg-panel p-8 shadow-2xl">
+      <div className="rounded-2xl border border-line bg-panel p-6 shadow-2xl sm:p-8">
         <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-accent">
           Mint
         </p>
@@ -279,21 +279,23 @@ export function MintCard() {
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
-                      className="h-8 w-8 rounded border border-line text-lg hover:border-accent"
+                      className="h-11 w-11 rounded border border-line text-lg hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:opacity-40"
                       onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+                      disabled={quantity <= 1}
                       aria-label="Decrease quantity"
                     >
                       −
                     </button>
-                    <span id="qty" className="w-8 text-center font-mono" aria-live="polite">
+                    <span id="qty" className="w-10 text-center font-mono text-base" aria-live="polite">
                       {quantity}
                     </span>
                     <button
                       type="button"
-                      className="h-8 w-8 rounded border border-line text-lg hover:border-accent"
+                      className="h-11 w-11 rounded border border-line text-lg hover:border-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:opacity-40"
                       onClick={() =>
                         setQuantity((q) => Math.min(maxPerTx, q + 1))
                       }
+                      disabled={quantity >= maxPerTx}
                       aria-label="Increase quantity"
                     >
                       +
@@ -304,7 +306,7 @@ export function MintCard() {
               <button
                 onClick={onClaim}
                 disabled={isWriting || receipt.isLoading}
-                className="w-full rounded-md bg-accent px-5 py-3 font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-[1.02] disabled:opacity-50"
+                className="min-h-[48px] w-full rounded-md bg-accent px-5 py-3 font-mono text-[12px] font-bold uppercase tracking-[0.18em] text-bg transition hover:scale-[1.02] disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg motion-reduce:transition-none motion-reduce:hover:transform-none"
                 aria-label={`Mint ${quantity} card${quantity > 1 ? "s" : ""}`}
               >
                 {isWriting

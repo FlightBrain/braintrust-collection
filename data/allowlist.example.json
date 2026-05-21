@@ -1,0 +1,26 @@
+[
+  {
+    "name_optional": "Example Coworker 1",
+    "email_optional": null,
+    "wallet_address": "0x0000000000000000000000000000000000000001",
+    "max_claimable": 1,
+    "price": 0,
+    "notes_optional": "example only"
+  },
+  {
+    "name_optional": "Example Coworker 2",
+    "email_optional": null,
+    "wallet_address": "0x0000000000000000000000000000000000000002",
+    "max_claimable": 1,
+    "price": 0,
+    "notes_optional": "example only"
+  },
+  {
+    "name_optional": "Example Coworker 3",
+    "email_optional": null,
+    "wallet_address": "0x0000000000000000000000000000000000000003",
+    "max_claimable": 1,
+    "price": 0,
+    "notes_optional": "example only"
+  }
+]

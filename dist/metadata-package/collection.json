@@ -1,0 +1,8 @@
+{
+  "name": "Braintrust Collection: Genesis",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. The original Braintrust sales floor, kitted out with NFT accessories chosen from a 157-variant catalog. Each card is a 1-of-1 with a unique rarity tier.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/ryan_nft.svg",
+  "external_link": "https://braintrust-collection.vercel.app",
+  "seller_fee_basis_points": 500,
+  "fee_recipient": ""
+}

@@ -1,0 +1,40 @@
+{
+  "name": "Chris Koenig · Genesis #004",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/chris_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#chris",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "UNCOMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 10
+    },
+    {
+      "trait_type": "Score",
+      "value": 221.52
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#00D9FF"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: motorcycle_helmet",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: cyber_visor",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: scar",
+      "value": "default"
+    }
+  ]
+}

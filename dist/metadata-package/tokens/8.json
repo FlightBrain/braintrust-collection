@@ -1,0 +1,40 @@
+{
+  "name": "Joe Meade · Genesis #008",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/joe_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#joe",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "RARE"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 5
+    },
+    {
+      "trait_type": "Score",
+      "value": 321.85
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#FF3366"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: spartan_helmet",
+      "value": "bronze"
+    },
+    {
+      "trait_type": "Accessory: mustache_chevron",
+      "value": "black"
+    },
+    {
+      "trait_type": "Accessory: face_tattoo",
+      "value": "dollar"
+    }
+  ]
+}

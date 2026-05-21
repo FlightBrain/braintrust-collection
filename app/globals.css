@@ -27,3 +27,22 @@ img.pixelated {
 .tier-RARE      { --tier: #9D7AFF; }
 .tier-UNCOMMON  { --tier: #00D9FF; }
 .tier-COMMON    { --tier: #8B95A8; }
+
+/* Honor reduced-motion: kill our hover scale + animated pulse */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Minimum tap-target size for any interactive element we missed */
+@media (pointer: coarse) {
+  a, button, [role="button"] {
+    min-height: 44px;
+  }
+}

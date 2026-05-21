@@ -1,0 +1,40 @@
+{
+  "name": "Kensington Belza · Genesis #009",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/kensington_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#kensington",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "LEGENDARY"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 2
+    },
+    {
+      "trait_type": "Score",
+      "value": 379.35
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#9D7AFF"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: jeweled_crown",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: third_eye",
+      "value": "purple"
+    },
+    {
+      "trait_type": "Accessory: gold_medallion",
+      "value": "gold"
+    }
+  ]
+}

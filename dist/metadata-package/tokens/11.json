@@ -1,0 +1,40 @@
+{
+  "name": "Nick Gaspardone · Genesis #011",
+  "description": "Braintrust Collection: Genesis. 15 hand-pixeled collectible cards. 1 of 1, with hand-picked NFT accessories.",
+  "image": "https://braintrust-collection.vercel.app/nfts/corporate/nick_nft.svg",
+  "external_url": "https://braintrust-collection.vercel.app/gallery#nick",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "COMMON"
+    },
+    {
+      "trait_type": "Rank",
+      "value": 14
+    },
+    {
+      "trait_type": "Score",
+      "value": 213.92
+    },
+    {
+      "trait_type": "Trait Color",
+      "value": "#88CCFF"
+    },
+    {
+      "trait_type": "Edition",
+      "value": "Genesis"
+    },
+    {
+      "trait_type": "Accessory: top_hat",
+      "value": "black"
+    },
+    {
+      "trait_type": "Accessory: aviators",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: necktie",
+      "value": "navy"
+    }
+  ]
+}

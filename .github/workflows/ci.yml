@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Generate token metadata
+        run: npm run generate-metadata
+
+      - name: Generate collection metadata
+        run: npm run collection-metadata
+
+      - name: Validate metadata (lenient)
+        run: npm run validate-metadata
+
+      - name: Validate allowlist (example file)
+        run: npm run validate-allowlist
+
+      - name: Check contract adapter
+        run: npm run check-contract
+
+      - name: Check env (lenient, warnings allowed)
+        run: npm run check-env
+
+      - name: Check links
+        run: npm run check-links
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
