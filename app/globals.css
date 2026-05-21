@@ -28,6 +28,40 @@ img.pixelated {
 .tier-UNCOMMON  { --tier: #00D9FF; }
 .tier-COMMON    { --tier: #8B95A8; }
 
+/* 3D card flip */
+.card-flip-wrapper {
+  perspective: 1400px;
+}
+.card-flip-button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+.card-flip {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+.card-flip.flipped {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.card-face.card-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-flip { transition: none; }
+}
+
 /* Honor reduced-motion: kill our hover scale + animated pulse */
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -1,82 +1,148 @@
-import fs from "fs";
-import path from "path";
+"use client";
+
+import { useEffect, useState } from "react";
 import { Header } from "@/components/Header";
 import { FooterNav } from "@/components/FooterNav";
+import { RarityBadge } from "@/components/RarityBadge";
+import { NftCard } from "@/components/NftCard";
+import { VariantDetailModal, type VariantData } from "@/components/VariantDetailModal";
+import { describeVariant, whyThisCard, type Tier } from "@/lib/card-copy";
 
-type Person = {
-  slug: string;
-  name: string;
-  trait?: string;
-  id?: number;
-};
+type Person = { slug: string; name: string };
+type Attr = { trait_type: string; value: string | number };
+type TokenMeta = { name: string; description: string; image: string; attributes: Attr[] };
 
-type Rarity = {
-  tier: string;
-  tier_color: string;
-  rank: number;
-  score: number;
-};
+const TIERS: { tier: Tier; key: "common" | "rare" | "mythic" }[] = [
+  { tier: "Common", key: "common" },
+  { tier: "Rare", key: "rare" },
+  { tier: "Mythic", key: "mythic" },
+];
 
-async function loadData() {
-  const peoplePath = path.join(process.cwd(), "public", "auto_people.json");
-  const rarityPath = path.join(process.cwd(), "public", "rarity.json");
-  const people: Person[] = JSON.parse(fs.readFileSync(peoplePath, "utf-8"));
-  const rarity: Record<string, Rarity> = JSON.parse(fs.readFileSync(rarityPath, "utf-8"));
-  return { people, rarity };
-}
+export default function GalleryPage() {
+  const [people, setPeople] = useState<Person[]>([]);
+  const [metadata, setMetadata] = useState<Record<number, TokenMeta>>({});
+  const [selected, setSelected] = useState<VariantData | null>(null);
 
-export default async function GalleryPage() {
-  const { people, rarity } = await loadData();
+  useEffect(() => {
+    (async () => {
+      const peopleRes = await fetch("/auto_people.json");
+      const peopleJson: Person[] = await peopleRes.json();
+      setPeople(peopleJson);
+      // Fetch all 45 metadata files in parallel
+      const promises = peopleJson.flatMap((_, sdrIdx) =>
+        [0, 1, 2].map(async (v) => {
+          const tokenId = sdrIdx * 3 + v;
+          const r = await fetch(`/metadata/${tokenId}.json`);
+          if (!r.ok) return null;
+          const d: TokenMeta = await r.json();
+          return [tokenId, d] as const;
+        })
+      );
+      const results = await Promise.all(promises);
+      const map: Record<number, TokenMeta> = {};
+      for (const r of results) if (r) map[r[0]] = r[1];
+      setMetadata(map);
+    })();
+  }, []);
+
+  const openVariant = (sdrIdx: number, variantIdx: number, person: Person) => {
+    const tokenId = sdrIdx * 3 + variantIdx;
+    const m = metadata[tokenId];
+    if (!m) return;
+    setSelected({
+      tokenId,
+      slug: person.slug,
+      name: person.name,
+      tier: TIERS[variantIdx].tier,
+      variantNumber: variantIdx + 1,
+      imagePath: `/nfts/variants/${person.slug}_${TIERS[variantIdx].key}.svg`,
+      attributes: m.attributes,
+    });
+  };
 
   return (
     <main>
       <Header />
-      <section className="mx-auto max-w-6xl px-6 pt-16 pb-12">
+      <section className="mx-auto max-w-6xl px-4 pb-12 pt-12 sm:px-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">
           The collection
         </p>
         <h1 className="mt-2 text-4xl font-black tracking-tight md:text-5xl">
-          Genesis · 15 cards
+          45 cards. 15 coworkers. 3 variants each.
         </h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted">
-          Existing artwork. Each card is a 1-of-1 with hand-picked NFT
-          accessories and a unique rarity tier.
+          A wallet-bound mint: each coworker can claim their own three cards,
+          one Common, one Rare, one Mythic. Click any card to flip it and
+          read about that variant.
         </p>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-          {people.map((p) => {
-            const r = rarity[p.slug];
-            const color = r?.tier_color ?? "#8B95A8";
-            return (
-              <div
-                key={p.slug}
-                className="overflow-hidden rounded-xl border border-line bg-panel"
-                style={{ boxShadow: `0 0 0 1px ${color}22` }}
-              >
-                <div className="aspect-square">
-                  <img
-                    src={`/nfts/corporate/${p.slug}_nft.svg`}
-                    alt={`${p.name}, ${r?.tier ?? "Common"} rarity, rank ${r?.rank ?? "?"} of 15`}
-                    className="pixelated h-full w-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="border-t border-line px-3 py-3">
-                  <p className="truncate text-sm font-semibold">{p.name}</p>
-                  {r && (
-                    <p
-                      className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em]"
-                      style={{ color }}
-                    >
-                      {r.tier} · #{String(r.rank).padStart(2, "0")}/15
-                    </p>
-                  )}
-                </div>
+        {/* Rarity legend */}
+        <div className="mt-6 flex flex-wrap gap-2">
+          <RarityBadge tier="Common" size="md" />
+          <RarityBadge tier="Rare" size="md" />
+          <RarityBadge tier="Mythic" size="md" />
+        </div>
+
+        {/* Grid grouped by person */}
+        <div className="mt-10 space-y-12">
+          {people.map((p, sdrIdx) => (
+            <div key={p.slug}>
+              <div className="mb-4 flex items-baseline justify-between border-b border-line pb-2">
+                <h2 className="text-lg font-bold tracking-tight">{p.name}</h2>
+                <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
+                  tokens {sdrIdx * 3}–{sdrIdx * 3 + 2}
+                </span>
               </div>
-            );
-          })}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                {TIERS.map((t, vIdx) => {
+                  const tokenId = sdrIdx * 3 + vIdx;
+                  const meta = metadata[tokenId];
+                  if (!meta) {
+                    return (
+                      <div
+                        key={t.key}
+                        className="aspect-square rounded-2xl border border-line bg-panel"
+                        aria-label="Loading"
+                      />
+                    );
+                  }
+                  return (
+                    <NftCard
+                      key={t.key}
+                      name={p.name}
+                      slug={p.slug}
+                      tier={t.tier}
+                      tokenId={tokenId}
+                      variantNumber={vIdx + 1}
+                      imagePath={`/nfts/variants/${p.slug}_${t.key}.svg`}
+                      description={describeVariant({
+                        tier: t.tier,
+                        name: p.name,
+                        accessoryCount: meta.attributes.filter((a) =>
+                          a.trait_type.startsWith("Accessory: ")
+                        ).length,
+                        accessoryNames: meta.attributes
+                          .filter((a) => a.trait_type.startsWith("Accessory: "))
+                          .map(
+                            (a) =>
+                              `${a.trait_type.replace(/^Accessory: /, "")}__${a.value}`
+                          ),
+                      })}
+                      whyText={whyThisCard({ tier: t.tier, name: p.name })}
+                      attributes={meta.attributes}
+                      flippable={false}
+                      onClick={() => openVariant(sdrIdx, vIdx, p)}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
+
+      <VariantDetailModal variant={selected} onClose={() => setSelected(null)} />
+
       <FooterNav />
     </main>
   );

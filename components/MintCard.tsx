@@ -18,6 +18,15 @@ import {
   NATIVE_TOKEN_ADDRESS,
 } from "@/lib/contract";
 import { activeChain } from "@/lib/wagmi";
+import { slugForIndex1Based, SDR_NAMES } from "@/lib/sdr-list";
+import { RarityBadge } from "./RarityBadge";
+import type { Tier } from "@/lib/card-copy";
+
+const TIERS: { tier: Tier; key: "common" | "rare" | "mythic" }[] = [
+  { tier: "Common", key: "common" },
+  { tier: "Rare", key: "rare" },
+  { tier: "Mythic", key: "mythic" },
+];
 
 type ClaimCondition = {
   startTimestamp: bigint;
@@ -107,6 +116,14 @@ export function MintCard() {
   const isAllowlisted = slugIndex1Based !== undefined && slugIndex1Based > 0n;
   const fullyClaimed =
     remainingForWallet !== undefined && remainingForWallet === 0n;
+  // Map on-chain slug index to a human-readable name + slug for art paths.
+  const ownerSlug = slugIndex1Based
+    ? slugForIndex1Based(Number(slugIndex1Based))
+    : null;
+  const ownerName = ownerSlug ? SDR_NAMES[ownerSlug] : null;
+  // How many of the 3 variants the wallet has already claimed (0..3).
+  const claimedCount =
+    remainingForWallet !== undefined ? 3 - Number(remainingForWallet) : 0;
 
   const condition = conditionRead.data as ClaimCondition | undefined;
 
@@ -188,8 +205,14 @@ export function MintCard() {
           Mint
         </p>
         <h2 className="mt-1 text-2xl font-bold tracking-tight">
-          Genesis Drop · {env.chainName}
+          {ownerName ? `${ownerName}'s cards` : "Genesis Drop"}{" "}
+          <span className="text-muted">· {env.chainName}</span>
         </h2>
+        {ownerName && (
+          <p className="mt-1 text-sm text-muted">
+            You can mint up to 3 {ownerName.split(" ")[0]} cards. Each variant is unique.
+          </p>
+        )}
 
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           <Stat
@@ -217,6 +240,39 @@ export function MintCard() {
             }
           />
         </div>
+
+        {/* Variant thumb strip for the connected coworker */}
+        {ownerName && ownerSlug && (
+          <div className="mt-6 rounded-xl border border-line bg-bg/30 p-4">
+            <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
+              Your three variants
+            </p>
+            <div className="grid grid-cols-3 gap-3">
+              {TIERS.map((t, i) => {
+                const claimed = i < claimedCount;
+                return (
+                  <div
+                    key={t.key}
+                    className={`overflow-hidden rounded-lg border bg-panel transition ${claimed ? "border-line opacity-50" : "border-line"}`}
+                  >
+                    <img
+                      src={`/nfts/variants/${ownerSlug}_${t.key}.svg`}
+                      alt={`${ownerName} ${t.tier} variant`}
+                      className="block w-full"
+                      loading="lazy"
+                    />
+                    <div className="flex items-center justify-between gap-1 px-2 py-1.5">
+                      <RarityBadge tier={t.tier} size="sm" withDot={false} />
+                      <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted">
+                        {claimed ? "Claimed" : "Available"}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="mt-8">
           {!enabled ? (
@@ -249,14 +305,14 @@ export function MintCard() {
           ) : isConnected && !isAllowlisted && slugIndexRead.isFetched ? (
             <StateBlock
               tone="warn"
-              title="Wallet not on allowlist"
-              body="This drop is bound 1-to-1: each coworker's wallet can only mint their own card. Your wallet is not on the allowlist for any SDR. If you think this is a mistake, reach out to the team."
+              title="This wallet is not on the coworker allowlist"
+              body="Cards are only mintable from the wallet of the depicted coworker. If you think this is your card, reach out and we'll check the mapping."
             />
           ) : isConnected && fullyClaimed ? (
             <StateBlock
               tone="dim"
-              title="All 3 variants claimed"
-              body="You've already minted all 3 variants of your card. Check your wallet's NFT tab to see them."
+              title={`All 3 of ${ownerName ? ownerName.split(" ")[0] + "'s" : "your"} variants claimed`}
+              body="You've minted Common, Rare, and Mythic. Check your wallet's NFT tab to see them, or open the gallery to compare with other coworkers."
             />
           ) : soldOut ? (
             <StateBlock
@@ -297,11 +353,11 @@ export function MintCard() {
               return (
                 <StateBlock
                   tone="success"
-                  title="Minted!"
+                  title={txUrl ? "Minted!" : "Local test mint complete"}
                   body={
                     txUrl
-                      ? "Your card is on its way to your wallet."
-                      : `Your card is on its way to your wallet. Tx hash: ${txHash.slice(0, 10)}...${txHash.slice(-8)}`
+                      ? `Your card is on its way to your wallet. Check the NFTs tab to see it.`
+                      : `Your card has been minted to your wallet on the local chain. Tx hash: ${txHash.slice(0, 10)}...${txHash.slice(-8)}`
                   }
                   action={
                     txUrl && explorerName ? (
@@ -374,10 +430,10 @@ export function MintCard() {
                 aria-label={`Mint ${quantity} card${quantity > 1 ? "s" : ""}`}
               >
                 {isWriting
-                  ? "Confirm in wallet..."
+                  ? "Confirm in your wallet..."
                   : priceWei === 0n
-                  ? `Mint ${quantity > 1 ? quantity + " " : ""}free`
-                  : `Mint ${quantity > 1 ? quantity + " " : ""}for ${formatEther(totalCostWei)} ETH`}
+                  ? `Claim ${quantity > 1 ? `${quantity} cards` : "next card"}`
+                  : `Claim ${quantity > 1 ? `${quantity} cards` : "card"} for ${formatEther(totalCostWei)} ETH`}
               </button>
               {priceWei > 0n && quantity > 1 && (
                 <p className="mt-3 text-center font-mono text-[11px] text-muted">
