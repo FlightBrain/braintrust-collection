@@ -93,15 +93,31 @@ def render_png(traits, accessories_list):
 
 
 def mythic_addons_for(rare_items):
-    """Pick a premium addon for Mythic based on which categories are free in Rare."""
-    cats = {category_of(i.split("__")[0]) for i in rare_items if "__" in i}
-    if "neck" not in cats:
-        return ["gold_medallion__gold"]
-    if "head" not in cats:
-        return ["halo__gold"]
-    if "face" not in cats:
-        return ["face_tattoo__star"]
+    """Deprecated: see MYTHIC_LOADOUTS below for hand-curated per-SDR sets."""
     return []
+
+
+# Hand-curated Mythic loadout per SDR. The Mythic tier is NOT a uniform addon
+# on top of Rare; each SDR gets a unique premium kit that reflects their
+# personality. One item per slot (head/eyes/mouth/neck/face) to avoid visual
+# overlap inside the same pixel zone.
+MYTHIC_LOADOUTS = {
+    "alec":       ["top_hat__silver",       "monocle__gold",           "fat_gold_chain__gold",     "mustache_handlebar__black"],
+    "ava":        ["halo__gold",            "heart_eyes__red",         "pearl_necklace__white",    "face_tattoo__heart"],
+    "catherine":  ["laurel_crown__gold",    "heart_eyes__pink",        "diamond_chain__white",     "kiss_print__red"],
+    "chris":      ["motorcycle_helmet__red", "fat_gold_chain__gold",   "scar__default"],
+    "duncan":     ["wizard_hat__purple",    "glowing_eyes__cyan",      "ascot__navy",              "goatee__black"],
+    "evan":       ["durag__black",          "money_eyes__gold",        "gold_grill__diamond",      "diamond_chain__white"],
+    "garrett":    ["king_crown__gold",      "cigar__brown",            "diamond_chain__white",     "beard_full__black"],
+    "joe":        ["spartan_helmet__bronze", "glowing_eyes__red",      "fat_gold_chain__gold",     "face_tattoo__dollar"],
+    "kensington": ["jeweled_crown__gold",   "laser_eyes_rainbow__default", "gold_medallion__gold"],
+    "keslar":     ["viking_helmet__bronze", "glowing_eyes__yellow",    "ascot__red",               "beard_full__red"],
+    "nick":       ["top_hat__black",        "monocle__gold",           "necktie__striped",         "mustache_handlebar__brown"],
+    "owen":       ["cowboy_hat__brown",     "cigar__brown",            "bandana_neck__red",        "scar__default"],
+    "ryan":       ["headband__red",         "laser_eyes_rainbow__default", "brain_pendant_chain__gold", "third_eye__cyan"],
+    "sacha":      ["baseball_cap__red",    "cyber_visor__red",        "gold_medallion__gold",     "kiss_print__hot_pink"],
+    "shaune":     ["knight_helmet__steel",  "pipe_sherlock__default",  "diamond_chain__white",     "birthmark_star__default"],
+}
 
 
 # ===== SVG templates per tier =====
@@ -286,7 +302,9 @@ def main():
     for sdr_index, traits in enumerate(people):
         slug = traits["slug"]
         rare_loadout = ASSIGNMENTS[slug]["items"] if slug in ASSIGNMENTS else []
-        mythic_loadout = list(rare_loadout) + mythic_addons_for(rare_loadout)
+        # Mythic uses a hand-curated unique loadout per SDR (NOT a uniform
+        # addon on top of Rare).
+        mythic_loadout = MYTHIC_LOADOUTS.get(slug, list(rare_loadout))
 
         common_png = render_png(traits, [])
         rare_png = render_png(traits, rare_loadout)
