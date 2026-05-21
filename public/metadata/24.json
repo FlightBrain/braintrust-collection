@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#9D7AFF"
-    },
-    {
-      "trait_type": "Accessory: jeweled_crown",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: third_eye",
-      "value": "purple"
-    },
-    {
-      "trait_type": "Accessory: gold_medallion",
-      "value": "gold"
     }
   ]
 }

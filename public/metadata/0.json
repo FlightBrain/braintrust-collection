@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#7B61FF"
-    },
-    {
-      "trait_type": "Accessory: top_hat",
-      "value": "silver"
-    },
-    {
-      "trait_type": "Accessory: monocle",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: fat_gold_chain",
-      "value": "gold"
     }
   ]
 }

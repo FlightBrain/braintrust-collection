@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#FF8C42"
-    },
-    {
-      "trait_type": "Accessory: baseball_cap",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: headband",
-      "value": "white"
-    },
-    {
-      "trait_type": "Accessory: bubble_gum_bubble",
-      "value": "default"
     }
   ]
 }

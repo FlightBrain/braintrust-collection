@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#FFD0AA"
-    },
-    {
-      "trait_type": "Accessory: halo",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: heart_eyes",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: face_tattoo",
-      "value": "heart"
     }
   ]
 }

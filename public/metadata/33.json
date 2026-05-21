@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#FFAA00"
-    },
-    {
-      "trait_type": "Accessory: cowboy_hat",
-      "value": "brown"
-    },
-    {
-      "trait_type": "Accessory: cigarette",
-      "value": "white"
-    },
-    {
-      "trait_type": "Accessory: mustache_chevron",
-      "value": "brown"
     }
   ]
 }

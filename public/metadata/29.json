@@ -45,6 +45,14 @@
       "value": "bronze"
     },
     {
+      "trait_type": "Accessory: glowing_eyes",
+      "value": "yellow"
+    },
+    {
+      "trait_type": "Accessory: ascot",
+      "value": "red"
+    },
+    {
       "trait_type": "Accessory: beard_full",
       "value": "red"
     }

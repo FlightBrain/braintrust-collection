@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#7B61FF"
-    },
-    {
-      "trait_type": "Accessory: wizard_hat",
-      "value": "purple"
-    },
-    {
-      "trait_type": "Accessory: crown_of_thorns",
-      "value": "default"
-    },
-    {
-      "trait_type": "Accessory: goatee",
-      "value": "black"
     }
   ]
 }

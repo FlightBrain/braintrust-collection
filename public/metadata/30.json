@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#88CCFF"
-    },
-    {
-      "trait_type": "Accessory: top_hat",
-      "value": "black"
-    },
-    {
-      "trait_type": "Accessory: aviators",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: necktie",
-      "value": "navy"
     }
   ]
 }

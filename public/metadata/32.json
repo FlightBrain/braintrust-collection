@@ -45,12 +45,16 @@
       "value": "black"
     },
     {
-      "trait_type": "Accessory: aviators",
+      "trait_type": "Accessory: monocle",
       "value": "gold"
     },
     {
       "trait_type": "Accessory: necktie",
-      "value": "navy"
+      "value": "striped"
+    },
+    {
+      "trait_type": "Accessory: mustache_handlebar",
+      "value": "brown"
     }
   ]
 }

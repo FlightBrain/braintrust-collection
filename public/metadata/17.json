@@ -45,12 +45,16 @@
       "value": "black"
     },
     {
+      "trait_type": "Accessory: money_eyes",
+      "value": "gold"
+    },
+    {
       "trait_type": "Accessory: gold_grill",
       "value": "diamond"
     },
     {
-      "trait_type": "Accessory: money_eyes",
-      "value": "green"
+      "trait_type": "Accessory: diamond_chain",
+      "value": "white"
     }
   ]
 }

@@ -41,16 +41,20 @@
       "value": "#FF66C4"
     },
     {
+      "trait_type": "Accessory: laurel_crown",
+      "value": "gold"
+    },
+    {
       "trait_type": "Accessory: heart_eyes",
       "value": "pink"
     },
     {
-      "trait_type": "Accessory: kiss_print",
-      "value": "red"
+      "trait_type": "Accessory: diamond_chain",
+      "value": "white"
     },
     {
-      "trait_type": "Accessory: pearl_necklace",
-      "value": "white"
+      "trait_type": "Accessory: kiss_print",
+      "value": "red"
     }
   ]
 }

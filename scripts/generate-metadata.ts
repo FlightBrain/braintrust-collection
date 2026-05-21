@@ -29,6 +29,7 @@ const ROOT = path.resolve(__dirname, "..");
 const PEOPLE_PATH = path.join(ROOT, "public", "auto_people.json");
 const RARITY_PATH = path.join(ROOT, "public", "rarity.json");
 const ASSIGN_PATH = path.join(ROOT, "public", "sdrs", "assignments.json");
+const LOADOUTS_PATH = path.join(ROOT, "public", "nfts", "variants", "_loadouts.json");
 const OUT_DIR = path.join(ROOT, "public", "metadata");
 
 const BASE_IMAGE_URI =
@@ -46,6 +47,8 @@ type Person = { slug: string; name: string; trait?: string };
 type Rarity = { tier: string; rank: number; score: number };
 type Assignment = { slug: string; items: string[] };
 
+type PerTierLoadouts = Record<string, { common: string[]; rare: string[]; mythic: string[] }>;
+
 function load() {
   const people: Person[] = JSON.parse(fs.readFileSync(PEOPLE_PATH, "utf-8"));
   const rarity: Record<string, Rarity> = JSON.parse(fs.readFileSync(RARITY_PATH, "utf-8"));
@@ -54,19 +57,32 @@ function load() {
     : { sdrs: [] };
   const accByslug: Record<string, string[]> = {};
   for (const a of assignments.sdrs) accByslug[a.slug] = a.items ?? [];
-  return { people, rarity, accByslug };
+
+  // Per-tier loadouts emitted by generate_variant_artwork.py. Authoritative.
+  const tierLoadouts: PerTierLoadouts = fs.existsSync(LOADOUTS_PATH)
+    ? JSON.parse(fs.readFileSync(LOADOUTS_PATH, "utf-8"))
+    : {};
+
+  return { people, rarity, accByslug, tierLoadouts };
 }
+
+const TIER_KEY = ["common", "rare", "mythic"] as const;
 
 function metadataFor(
   p: Person,
   sdrIndex: number,
   variantIndex: number,
   rarity: Record<string, Rarity>,
-  accByslug: Record<string, string[]>
+  accByslug: Record<string, string[]>,
+  tierLoadouts: PerTierLoadouts
 ) {
   const tokenId = sdrIndex * VARIANTS_PER_SDR + variantIndex;
   const r = rarity[p.slug];
-  const accs = accByslug[p.slug] ?? [];
+  // Prefer per-tier loadouts (authoritative). Fall back to the legacy
+  // single-loadout assignment if the loadouts file is missing.
+  const tierKey = TIER_KEY[variantIndex];
+  const accs =
+    tierLoadouts[p.slug]?.[tierKey] ?? (variantIndex === 1 ? (accByslug[p.slug] ?? []) : []);
   const variantTier = VARIANT_TIERS[variantIndex];
 
   const attributes: { trait_type: string; value: string | number }[] = [
@@ -100,7 +116,7 @@ function metadataFor(
 }
 
 function main() {
-  const { people, rarity, accByslug } = load();
+  const { people, rarity, accByslug, tierLoadouts } = load();
 
   // Wipe + rebuild only the per-token JSONs; preserve collection.json + _index.json (regenerated).
   fs.mkdirSync(OUT_DIR, { recursive: true });
@@ -114,7 +130,7 @@ function main() {
     const p = people[sdrIndex];
     for (let v = 0; v < VARIANTS_PER_SDR; v++) {
       const tokenId = sdrIndex * VARIANTS_PER_SDR + v;
-      const meta = metadataFor(p, sdrIndex, v, rarity, accByslug);
+      const meta = metadataFor(p, sdrIndex, v, rarity, accByslug, tierLoadouts);
       const file = `${tokenId}.json`;
       fs.writeFileSync(path.join(OUT_DIR, file), JSON.stringify(meta, null, 2));
       index.push({ tokenId, slug: p.slug, variant: v + 1, file });

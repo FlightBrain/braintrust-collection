@@ -348,8 +348,25 @@ def main():
     # Write a manifest
     manifest_path = OUT_DIR / "_manifest.json"
     manifest_path.write_text(json.dumps({"variants": written}, indent=2))
+
+    # Also write a per-slug per-tier loadout file so the metadata generator
+    # (TS) can attach the CORRECT accessory list per variant.
+    loadouts: dict = {}
+    for traits in people:
+        slug = traits["slug"]
+        rare_loadout = ASSIGNMENTS[slug]["items"] if slug in ASSIGNMENTS else []
+        mythic_loadout = MYTHIC_LOADOUTS.get(slug, list(rare_loadout))
+        loadouts[slug] = {
+            "common": [],
+            "rare": rare_loadout,
+            "mythic": mythic_loadout,
+        }
+    loadouts_path = OUT_DIR / "_loadouts.json"
+    loadouts_path.write_text(json.dumps(loadouts, indent=2))
+
     print(f"\nwrote {len(written)} variant SVGs to {OUT_DIR}")
-    print(f"manifest: {manifest_path}")
+    print(f"manifest:  {manifest_path}")
+    print(f"loadouts:  {loadouts_path}")
     print(f"originals at public/nfts/corporate/ are unchanged.")
 
 

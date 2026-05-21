@@ -45,8 +45,12 @@
       "value": "bronze"
     },
     {
-      "trait_type": "Accessory: mustache_chevron",
-      "value": "black"
+      "trait_type": "Accessory: glowing_eyes",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: fat_gold_chain",
+      "value": "gold"
     },
     {
       "trait_type": "Accessory: face_tattoo",

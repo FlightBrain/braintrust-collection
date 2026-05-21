@@ -45,12 +45,16 @@
       "value": "brown"
     },
     {
-      "trait_type": "Accessory: cigarette",
-      "value": "white"
+      "trait_type": "Accessory: cigar",
+      "value": "brown"
     },
     {
-      "trait_type": "Accessory: mustache_chevron",
-      "value": "brown"
+      "trait_type": "Accessory: bandana_neck",
+      "value": "red"
+    },
+    {
+      "trait_type": "Accessory: scar",
+      "value": "default"
     }
   ]
 }

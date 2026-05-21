@@ -45,12 +45,16 @@
       "value": "red"
     },
     {
-      "trait_type": "Accessory: headband",
-      "value": "white"
+      "trait_type": "Accessory: cyber_visor",
+      "value": "red"
     },
     {
-      "trait_type": "Accessory: bubble_gum_bubble",
-      "value": "default"
+      "trait_type": "Accessory: gold_medallion",
+      "value": "gold"
+    },
+    {
+      "trait_type": "Accessory: kiss_print",
+      "value": "hot_pink"
     }
   ]
 }

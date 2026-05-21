@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#FFD93D"
-    },
-    {
-      "trait_type": "Accessory: king_crown",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: cigar",
-      "value": "brown"
-    },
-    {
-      "trait_type": "Accessory: beard_full",
-      "value": "black"
     }
   ]
 }

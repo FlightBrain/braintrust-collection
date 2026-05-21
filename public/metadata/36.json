@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#B8FF3D"
-    },
-    {
-      "trait_type": "Accessory: brain_pendant_chain",
-      "value": "gold"
-    },
-    {
-      "trait_type": "Accessory: glowing_eyes",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: pixel_shades",
-      "value": "black"
     }
   ]
 }

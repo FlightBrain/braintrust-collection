@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#FF3366"
-    },
-    {
-      "trait_type": "Accessory: spartan_helmet",
-      "value": "bronze"
-    },
-    {
-      "trait_type": "Accessory: mustache_chevron",
-      "value": "black"
-    },
-    {
-      "trait_type": "Accessory: face_tattoo",
-      "value": "dollar"
     }
   ]
 }

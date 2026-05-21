@@ -39,18 +39,6 @@
     {
       "trait_type": "Trait Color",
       "value": "#00D9FF"
-    },
-    {
-      "trait_type": "Accessory: motorcycle_helmet",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: cyber_visor",
-      "value": "red"
-    },
-    {
-      "trait_type": "Accessory: scar",
-      "value": "default"
     }
   ]
 }

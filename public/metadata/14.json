@@ -45,8 +45,12 @@
       "value": "purple"
     },
     {
-      "trait_type": "Accessory: crown_of_thorns",
-      "value": "default"
+      "trait_type": "Accessory: glowing_eyes",
+      "value": "cyan"
+    },
+    {
+      "trait_type": "Accessory: ascot",
+      "value": "navy"
     },
     {
       "trait_type": "Accessory: goatee",
